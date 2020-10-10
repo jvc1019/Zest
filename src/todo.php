@@ -1,1 +1,1 @@
-//placeholder file for the todo list feature
+<!-- placeholder file for the todo list feature -->
