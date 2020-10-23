@@ -1,6 +1,6 @@
 # CMSC128
-```html
-<span style="color: red">IMPORTANT: Experiment on the "dev" branch then push to the "main" branch after review.</span>
+```
+❗❗❗IMPORTANT: Experiment on the "dev" branch then push to the "main" branch after review.❗❗❗
 ```
 This will be the repository for CMSC 128 - Section 3.
 Files included would be for the prototype system we will
