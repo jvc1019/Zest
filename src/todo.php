@@ -2,7 +2,6 @@
 <?php
 include('header.php'); // navigation bar
 
-//design goes here
 
 
 
