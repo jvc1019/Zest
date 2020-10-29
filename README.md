@@ -1,7 +1,4 @@
 # CMSC128
-```
-❗❗❗IMPORTANT: Experiment on the "dev" branch then push to the "main" branch after review.❗❗❗
-```
 This will be the repository for CMSC 128 - Section 3.
 Files included would be for the prototype system we will
 create in the scrum process through series of sprints.
