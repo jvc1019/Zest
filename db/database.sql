@@ -21,11 +21,12 @@ CREATE TABLE `task` (
   `task_ID` int(4) ZEROFILL NOT NULL AUTO_INCREMENT, -- supports up to 9999 tasks
   `task_Name` varchar(250) DEFAULT NULL,
   `task_Desc` longtext DEFAULT NULL,
-  `task_Due` datetime DEFAULT NULL,
-  `task_lastModified` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `task_Due` date DEFAULT NULL,
+  `task_Reminder_Date` date DEFAULT NULL,
+  `task_Reminder_Time` time DEFAULT NULL,
   `task_isDone` tinyint(1) NOT NULL DEFAULT 0,
-  `task_Tags` text DEFAULT NULL,
-  `user_ID` int ZEROFILL NOT NULL,
+  `task_Tags` varchar(250) DEFAULT NULL,
+  `user_ID` int(3) ZEROFILL NOT NULL,
   PRIMARY KEY (`task_ID`),
   UNIQUE KEY `task_Name` (`task_Name`),
   FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`)
@@ -38,7 +39,7 @@ CREATE TABLE `task` (
 --
 
 CREATE TABLE `subject` (
-  `subject_ID` int(2) ZEROFILL NOT NULL AUTO_INCREMENT,
+  `subject_ID` int(2) ZEROFILL NOT NULL AUTO_INCREMENT, -- up to 99 subjects
   `subject_Icon` varchar(1) DEFAULT NULL, -- show an emoji picker when adding or editing a subject, serves as icon
   `subject_Name` varchar(150) DEFAULT NULL,
   `subject_Type` varchar(3) NOT NULL DEFAULT "LEC", -- just add a dropdown to select a subject type adding or editing a subject
@@ -46,7 +47,7 @@ CREATE TABLE `subject` (
   `subject_Desc` longtext DEFAULT NULL,
   `subject_Day` varchar(8) DEFAULT NULL,
   `subject_Time` time DEFAULT NULL,
-  `user_ID` int ZEROFILL NOT NULL,
+  `user_ID` int(3) ZEROFILL NOT NULL,
   PRIMARY KEY (`subject_ID`),
   UNIQUE KEY `subject_Name` (`subject_Name`),
   FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`)
@@ -63,7 +64,7 @@ CREATE TABLE `note` (
   `note_Title` varchar(150) DEFAULT NULL,
   `note_Content` longtext DEFAULT NULL,
   `note_Tags` text DEFAULT NULL,
-  `user_ID` int ZEROFILL NOT NULL,
+  `user_ID` int(3) ZEROFILL NOT NULL,
   PRIMARY KEY (`note_ID`),
   UNIQUE KEY `note_Title` (`note_Title`),
   FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`)

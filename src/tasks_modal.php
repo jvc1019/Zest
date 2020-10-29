@@ -1,0 +1,59 @@
+<!-- View/Edit Task -->
+<div class="modal fade" id="taskdetails<?php echo $row['task_ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Task Details</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form method="POST" action="tasks_edit.php?task_ID=<?php echo $row['task_ID']; ?>" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="task_Name" value="<?php echo $row['task_Name']; ?>" placeholder="Task name" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="task_Desc" value="<?php echo $row['task_Desc']; ?>" placeholder="Task description (optional)" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="task_Due" class="form-label">Due date: </label>
+                            <input type="date" class="form-control" name="task_Due" value="<?php echo $row['task_Due']; ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Remind me: </label>
+                            <input type="date" class="form-control" name="task_Reminder_Date" value="<?php echo $row['task_Reminder_Date']; ?>">
+                            <input type="time" class="form-control" name="task_Reminder_Time" value="<?php echo $row['task_Reminder_Time']; ?>">
+                        </div>
+
+                        <input type="text" class="form-control" name="task_Tags" value="<?php echo $row['task_Tags']; ?>" placeholder="Tags (separated by a comma)" rows="3">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn text-secondary btn-sm" data-dismiss="modal"><span class="oi oi-x"></span> Cancel</button>
+                <button type="submit" class="btn text-primary btn-sm"><span class="oi oi-check"></span> Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Task -->
+<div class="modal fade" id="taskdelete<?php echo $row['task_ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Delete task</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center"><?php echo $row['task_Name']; ?></h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm text-secondary" data-dismiss="modal"><span class="oi oi-x"></span> Cancel</button>
+                <a href="tasks_delete.php?task_ID=<?php echo $row['task_ID']; ?>" class="btn btn-sm text-danger"><span class="oi oi-trash"></span> Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
