@@ -12,7 +12,7 @@ First sprint has passed on October 22, 2020.
 The first sprint included the mockup designs for our project.
 It also included the relational model of the database.
 
-#Quick Start Guide
+# Quick Start Guide
 
 1. All major components should be wrapped in a div with a class "container". That way, it will be easier to apply color schemes and other customization.
 
