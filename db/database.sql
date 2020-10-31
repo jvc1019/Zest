@@ -22,7 +22,7 @@ CREATE TABLE `task` (
   `task_Name` varchar(250) DEFAULT NULL,
   `task_Desc` mediumtext DEFAULT NULL,
   `task_Due` date DEFAULT NULL,
-  `task_Reminder_Date` datetime DEFAULT NULL, -- added support for the reminder feature
+  `task_Reminder` datetime DEFAULT NULL, -- added support for the reminder feature
   `task_isDone` tinyint(1) NOT NULL DEFAULT 0,
   `task_Tags` varchar(250) DEFAULT NULL,
   `user_ID` int(3) ZEROFILL NOT NULL,
