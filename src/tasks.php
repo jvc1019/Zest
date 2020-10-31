@@ -115,34 +115,26 @@ don't need to zap the elements XD-->
     </div>
     <script>
         $(document).ready(function() {
-            // reminders
-            // collect all the reminder times, call set alarm for each
-            for (const time in reminders) {
-                if (reminders.hasOwnProperty(time)) {
-                    setAlarm(reminders[time]);
+            // Reminder Feature
+            // collect all the reminder times, call setReminder for each
+            for (const task_ID in reminders) {
+                if (reminders.hasOwnProperty(task_ID)) {
+                    setReminder(reminders[task_ID], task_ID);
                 }
             }
-            var sound = new Audio("../resources/alarm.mp3");
 
-            function setAlarm(time) {
-                //alert(time);
-                var alarm = new Date(time);
-                var alarmTime = new Date(alarm.getUTCFullYear(), alarm.getUTCMonth(), alarm.getUTCDate(), alarm.getUTCHours(), alarm.getUTCMinutes(), alarm.getUTCSeconds());
-                //alert(alarmTime);
+            function setReminder(datetime, task_ID) {
+                var alarmTime = new Date(parseInt(datetime.substr(0, 4)), parseInt(datetime.substr(5, 2)) - 1, parseInt(datetime.substr(8, 2)), parseInt(datetime.substr(11, 2)), parseInt(datetime.substr(14, 2)), parseInt(datetime.substr(17, 2)));
                 var duration = alarmTime.getTime() - (new Date()).getTime();
-                //alert(duration);
-
-                if (duration < 0) {
+                if (isNaN(duration) || duration < 0) {
                     return;
                 }
 
-                var timer = setTimeout(runAlarm, duration);
-                //alert("success");
+                var timer = setTimeout(runReminder, duration);
             }
 
-            function runAlarm() {
-                sound.loop = true;
-                sound.play();
+            function runReminder() {
+                (new Audio("../resources/notification.ogg")).play();
             }
 
             // destroy notification after 5 seconds 
