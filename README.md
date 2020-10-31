@@ -14,6 +14,24 @@ It also included the relational model of the database.
 
 ## Quick Start Guide
 
+### A. Prerequisites
+
+1. To clone the repository on your machine (on Windows, using WSL)
+   1a. Make sure XAMPP is running Apache and MySQL
+   1b. Navigate to `xampp\htdocs`
+   1c. On the navigation bar, type `wsl`
+   1d. Run the following command:
+
+```
+git clone https://github.com/jvc1019/CMSC128.git
+```
+
+2. Open `phpMyAdmin`: http://localhost/phpmyadmin/server_databases.php
+   2a. Create a new database named `database` with `utf8mb4_general_ci` as encoding
+   2b. Import `database.sql` from `db/database.sql`. It will generate dummy entries which should not be deleted.
+
+### B. Quality-of-Life (QoL) Guide
+
 1. All major components should be wrapped in a div with a class `container`. That way, it will be easier to apply color schemes and stylesheets.
 
 ```html
@@ -28,9 +46,7 @@ It also included the relational model of the database.
 <?php include('header.php'); ?>
 ```
 
-After including header.php, only the `<body>` needs to be defined. Notice how the `<div>` with the `container` class is nested inside the body as described in #1.
-
-Check out `tasks.php` to see how it works.
+After including header.php, only the `<body>` needs to be defined. Notice how the `<div>` with the `container` class is nested inside the body as described in #1. Check out `tasks.php` to see how it works.
 
 ```html
 <body>
@@ -40,10 +56,18 @@ Check out `tasks.php` to see how it works.
 </body>
 ```
 
-3. For subcomponents that need database access, you can include `conn.php`.
-
-Check out `tasks_add.php` to see how it works.
+3. For subcomponents that need database access, you can include `conn.php`. Check out `tasks_add.php` to see how it works.
 
 ```php
 include('conn.php');
 ```
+
+### C. Using GitHub (on Windows, using WSL)
+
+1.  It is recommended to use Visual Studio Code as your text editor as it offers an easy way of resolving merge conflicts.
+
+2.  On the navigation bar, type `wsl`
+    1a. To get the latest version of the repository (needs an internet connection): `git pull`
+    1b. To add files for staging: `git add file_path`
+    1c. To commit the changes: `git commit -m message` Note: You can commit even when offline. Do not commit after every little change.
+    1d. Committing your changes only affects your working tree. To push the changes to the remote repository (needs an internet connection): `git push`
