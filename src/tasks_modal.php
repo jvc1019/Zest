@@ -26,7 +26,9 @@
                             <?php
                             // wew bakit iba format ng datetime
                             // 2020-10-31T01:10:00
-                            $reminder = str_replace(" ", "", (substr_replace($row['task_Reminder'], "T", 10, 0)));
+                            if (!empty($row['task_Reminder'])) {
+                                $reminder = str_replace(" ", "", (substr_replace($row['task_Reminder'], "T", 10, 0)));
+                            }
                             ?>
                             <input type="datetime-local" class="form-control" name="task_Reminder" value="<?php echo $reminder; ?>">
                         </div>

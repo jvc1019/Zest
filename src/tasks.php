@@ -6,18 +6,9 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 don't need to zap the elements XD-->
 
 <body>
-    <!-- show last status message as a Boostrap notification -->
-    <?php if (!empty($_GET['status'])) { ?>
-        <div class="alert alert-info alert-dismissible fade show" role="alert">
-            <strong><?php echo $_GET['status']; ?></strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    <?php
-    }
-    ?>
-
+    <script>
+        var reminders = {};
+    </script>
     <div class="container">
         <h1 class="text-center">Tasks</h1>
         <div class="alert alert-light shadow sticky-top" role="alert">
@@ -30,11 +21,15 @@ don't need to zap the elements XD-->
                         <?php
                         $value = isset($_GET['sortBy']) ? $_GET['sortBy'] : 0;
                         if ($value == 0) {
-                            echo "<option selected value='0'>Name</option>";
-                            echo "<option value='1'>Due date</option>";
+                        ?>
+                            <option selected value='0'>Name</option>
+                            <option value="1">Due date</option>
+                        <?php
                         } elseif ($value == 1) {
-                            echo "<option value='0'>Name</option>";
-                            echo "<option selected value='1'>Due date</option>";
+                        ?>
+                            <option value="0">Name</option>
+                            <option selected value="1">Due date</option>
+                        <?php
                         }
                         ?>
                     </select>
@@ -42,15 +37,20 @@ don't need to zap the elements XD-->
                         <?php
                         $value = isset($_GET['sortDir']) ? $_GET['sortDir'] : 0;
                         if ($value == 0) {
-                            echo "<option selected value='0'>Ascending</option>";
-                            echo "<option value='1'>Descending</option>";
+                        ?>
+                            <option selected value="0">Ascending</option>
+                            <option value='1'>Descending</option>
+                        <?php
                         } elseif ($value == 1) {
-                            echo "<option value='0'>Ascending</option>";
-                            echo "<option selected value='1'>Descending</option>";
+                        ?>
+                            <option value="0">Ascending</option>
+                            <option selected value="1">Descending</option>
+                        <?php
                         }
                         ?>
                     </select>
                 </div>
+                <!-- Search box -->
                 <div class="col-sm-5 input-group">
                     <input type="text" class="form-control" id="search" placeholder="Search tasks..." value="<?php if (isset($_GET['search'])) {
                                                                                                                     echo $_GET['search'];
@@ -63,6 +63,12 @@ don't need to zap the elements XD-->
                             <!-- TO UI people, just add a search icon here--></button>
                     </div>
                 </div>
+                <!-- New task button -->
+                <div class="col-sm-3">
+                    <a href="#addtask" data-toggle="modal" class="btn btn-sm btn-outline-primary">
+                        <!-- To the UI ppl: plus icon--> New task</a>
+                </div>
+
                 <?php
                 $sortBy = "task_Name";
                 if (isset($_GET['sortBy'])) {
@@ -85,181 +91,65 @@ don't need to zap the elements XD-->
                     }
                 }
                 ?>
-                <div class="col-sm-3">
-                    <a href="#addtask" data-toggle="modal" class="btn btn-sm btn-outline-primary"><span class="oi oi-plus"></span> New task</a>
-                </div>
             </div>
+
         </div>
         <?php include('tasks_modal_add.php'); ?>
-
+        <!-- show last status message as a Boostrap notification -->
+        <?php if (!empty($_GET['status'])) { ?>
+            <div id="notification" class="alert alert-info alert-dismissible fade show" role="alert">
+                <strong><?php echo $_GET['status']; ?></strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <?php
+        }
+        ?>
         <?php
         if (empty($search)) {
-        ?>
-            <div id="tasks">
-                <!-- INCOMPLETE TASKS -->
-                <ul id="incomplete_tasks" class="list-group">
-                    <?php
-                    $query = "SELECT * FROM task LEFT JOIN user ON task.user_ID=user.user_ID WHERE task_isDone=0 AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
-                    $result = $conn->query($query);
-                    if (!($result->num_rows > 0)) {
-                        echo "<h6 class='text-center'>☜(ﾟヮﾟ☜) There's nothing around here. You're all set!</h6>";
-                    } else {
-                        while ($row = $result->fetch_assoc()) {
-                    ?>
-                            <li class="list-group-item">
-                                <!-- check box | task name and due | edit button | delete button -->
-                                <!--     2     |         6         |     2       |      2        -->
-                                <div class="row col-12 form-inline">
-                                    <!-- check box -->
-                                    <div class="col-sm-2">
-                                        <input class="checkbox" type="checkbox" value=<?php echo $row['task_ID']; ?>>
-                                    </div>
-                                    <!-- task name and due -->
-                                    <div class="col-sm-6">
-                                        <h6><?php echo $row['task_Name']; ?></h6>
-                                        <p>
-                                            <!-- for UI ppl, calendar icon --><?php if (isset($row['task_Due'])) {
-                                                                                    echo $row['task_Due'] . " \u{2022}";
-                                                                                }; ?>
-                                            <!-- for UI ppl, reminder/bell icon --><?php echo $row['task_Reminder']; ?>
-                                        </p>
-                                    </div>
-
-                                    <!-- edit and delete button -->
-                                    <div class="col-sm-4">
-                                        <a href="#taskdetails<?php echo $row['task_ID']; ?>" data-toggle="modal" class="btn text-primary btn-sm"><span class="oi oi-pencil"></span> Details</a> <a href="#taskdelete<?php echo $row['task_ID']; ?>" data-toggle="modal" class="btn text-danger btn-sm"><span class="oi oi-trash"></span> Delete</a>
-                                        <?php include('tasks_modal.php'); ?>
-                                    </div>
-                                </div>
-                            </li>
-                    <?php
-                        }
-                    }
-                    ?>
-                </ul>
-
-                <!-- COMPLETED TASKS -->
-                <button id="show_completed_tasks" data-toggle="collapse" data-target="#completed_tasks" class="btn btn-primary btn-sm">&#8595; Show completed tasks</button>
-                <div id="completed_tasks" class="collapse">
-                    <ul class="list-group">
-                        <?php
-                        $query = "SELECT * FROM task LEFT JOIN user ON task.user_ID=user.user_ID WHERE task_isDone=1 AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
-                        $result = $conn->query($query);
-                        if (!($result->num_rows > 0)) {
-                            echo "<h6 class='text-center'>(┬┬﹏┬┬) No completed tasks yet.</h6>";
-                        } else {
-                            while ($row = $result->fetch_assoc()) {
-                        ?>
-                                <li class="list-group-item">
-                                    <!-- check box | task name and due | edit button | delete button -->
-                                    <!--     2     |         6         |     2       |      2        -->
-                                    <div class="row col-12 form-inline">
-                                        <!-- check box -->
-                                        <div class="col-sm-2">
-                                            <!-- TODO: Check the box -->
-                                            <input class="checkbox" type="checkbox" value=<?php echo $row['task_ID']; ?> checked>
-                                        </div>
-                                        <!-- task name and due -->
-                                        <div class="col-sm-6 justify-content-between">
-                                            <h6 style="text-decoration: line-through;"><?php echo $row['task_Name']; ?></h6>
-                                            <p>
-                                                <!-- calendar icon --><?php if (isset($row['task_Due'])) {
-                                                                            echo $row['task_Due'] . " \u{2022}";
-                                                                        }; ?>
-                                                <!-- reminder/bell icon --><?php echo $row['task_Reminder']; ?>
-                                            </p>
-                                        </div>
-                                        <!-- edit and delete button -->
-                                        <div class="col-sm-4">
-                                            <a href="#taskdetails<?php echo $row['task_ID']; ?>" data-toggle="modal" class="btn text-primary btn-sm"><span class="oi oi-pencil"></span> Details</a> <a href="#taskdelete<?php echo $row['task_ID']; ?>" data-toggle="modal" class="btn text-danger btn-sm"><span class="oi oi-trash"></span> Delete</a>
-                                            <?php include('tasks_modal.php'); ?>
-                                        </div>
-                                    </div>
-                                </li>
-                        <?php
-                            }
-                        }
-                        ?>
-                    </ul>
-                </div>
-            </div>
-        <?php } else {
-        ?>
-            <div id="search">
-                <ul id="search">
-                    <?php
-                    $query = "SELECT * FROM task LEFT JOIN user ON task.user_ID=user.user_ID $search";
-                    $result = $conn->query($query);
-                    if (!($result->num_rows > 0)) {
-                        echo "<h6>No results found.</h6>";
-                    } else {
-                        while ($row = $result->fetch_assoc()) {
-                    ?>
-                            <li class="list-group-item">
-                                <!-- check box | task name and due | edit button | delete button -->
-                                <!--     2     |         6         |     2       |      2        -->
-                                <div class="row col-12 form-inline">
-                                    <!-- check box -->
-                                    <div class="col-sm-2">
-                                        <?php
-                                        if ($row['task_isDone'] == 0) {
-                                            echo "<input class='checkbox' type='checkbox' value=$row[task_ID]>";
-                                        } else {
-                                            echo "<input class='checkbox' type='checkbox' value=$row[task_ID] checked>";
-                                        }
-                                        ?>
-                                    </div>
-                                    <!-- task name and due -->
-                                    <div class="col-sm-6 justify-content-between">
-                                        <?php
-                                        if ($row['task_isDone'] == 0) {
-                                        ?>
-                                            <h6><?php echo $row['task_Name']; ?></h6>
-                                            <p>
-                                                <!-- calendar icon --><?php if (isset($row['task_Due'])) {
-                                                                            echo $row['task_Due'] . " \u{2022}";
-                                                                        }; ?>
-                                                <!-- reminder/bell icon --><?php echo $row['task_Reminder']; ?>
-                                            </p>
-                                        <?php
-                                        } else {
-                                        ?>
-                                            <h6 style='text-decoration: line-through;'><?php echo $row['task_Name']; ?></h6>
-                                            <p>
-                                                <!-- calendar icon --><?php echo $row['task_Due'] . " \u{2022}"; ?>
-                                                <!-- reminder/bell icon --><?php echo $row['task_Reminder']; ?>
-                                            </p>
-                                        <?php
-                                        }
-                                        ?>
-                                    </div>
-                                    <!-- edit and delete button -->
-                                    <div class="col-sm-4">
-                                        <a href="#taskdetails<?php echo $row['task_ID']; ?>" data-toggle="modal" class="btn text-primary btn-sm"><span class="oi oi-pencil"></span> Details</a> <a href="#taskdelete<?php echo $row['task_ID']; ?>" data-toggle="modal" class="btn text-danger btn-sm"><span class="oi oi-trash"></span> Delete</a>
-                                    </div>
-                                </div>
-                                <?php include('tasks_modal.php'); ?>
-                            </li>
-                    <?php
-                        }
-                    }
-                    ?>
-                </ul>
-            </div>
-        <?php } ?>
+            include('tasks_list.php');
+        } else {
+            include('tasks_search.php');
+        } ?>
     </div>
     <script>
         $(document).ready(function() {
             // reminders
             // collect all the reminder times, call set alarm for each
-            // for ()
+            for (const time in reminders) {
+                if (reminders.hasOwnProperty(time)) {
+                    setAlarm(reminders[time]);
+                }
+            }
+            var sound = new Audio("../resources/alarm.mp3");
 
-            // function setAlarm() {
-            //     var $
-            // }
-            // setInterval(function(e) {
+            function setAlarm(time) {
+                //alert(time);
+                var alarm = new Date(time);
+                var alarmTime = new Date(alarm.getUTCFullYear(), alarm.getUTCMonth(), alarm.getUTCDate(), alarm.getUTCHours(), alarm.getUTCMinutes(), alarm.getUTCSeconds());
+                //alert(alarmTime);
+                var duration = alarmTime.getTime() - (new Date()).getTime();
+                //alert(duration);
 
-            // }, 5000);
+                if (duration < 0) {
+                    return;
+                }
+
+                var timer = setTimeout(runAlarm, duration);
+                //alert("success");
+            }
+
+            function runAlarm() {
+                sound.loop = true;
+                sound.play();
+            }
+
+            // destroy notification after 5 seconds 
+            setTimeout(function(e) {
+                $("#notification").remove();
+            }, 5000);
+
             $("#sortBy").on('change', sort_);
             $("#sortDir").on('change', sort_);
             $("#searchBtn").click(sort_);
