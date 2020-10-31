@@ -13,6 +13,21 @@ if ($task_isChecked === "true") {
         $query = "UPDATE task SET task_isDone=1 WHERE task_ID='$task_ID'";
 }
 
-$conn->query($query);
+if (!$conn->query($query)) {
+        if ($task_isChecked === "true") {
+                $status = "Failed to mark task as incomplete.";
+        } else {
+                $status = "Failed to mark task as complete.";
+        }
+} else {
+        $query = "SELECT * FROM task WHERE task_ID='$task_ID'";
+        $task_Name = ($conn->query($query)->fetch_assoc())['task_Name'];
 
-header("Location:tasks.php");
+        if ($task_isChecked === "true") {
+                $status = "\"" . $task_Name . "\" has been marked as incomplete.";
+        } else {
+                $status = "\"" . $task_Name . "\" has been marked as completed.";
+        }
+}
+
+header('Location:tasks.php?status=' . $status);

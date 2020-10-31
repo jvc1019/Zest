@@ -3,30 +3,24 @@ include('conn.php');
 
 $task_ID = $_GET['task_ID'];
 
-$task_Name = $_POST['task_Name'];
-$task_Desc = isset($_POST['task_Desc']) ? $_POST['task_Desc'] : null;
-$task_Due = isset($_POST['task_Due']) ? $_POST['task_Due'] : null;
-$task_Reminder_Date = isset($_POST['task_Reminder_Date']) ? $_POST['task_Reminder_Date'] : null;
-$task_Reminder_Time = isset($_POST['task_Reminder_Time']) ? $_POST['task_Reminder_Time'] : null;
-$task_Tags = isset($_POST['task_Tags']) ? $_POST['task_Tags'] : null;
+$task_Name = "'" . $_POST['task_Name'] . "'";
+$task_Desc = !empty($_POST['task_Desc']) ? "'" . $_POST['task_Desc'] . "'" : "NULL";
+$task_Due = !empty($_POST['task_Due']) ? "'" . $_POST['task_Due'] . "'" : "NULL";
+$task_Reminder = !empty($_POST['task_Reminder']) ? "'" . $_POST['task_Reminder'] . "'" : "NULL";
+$task_Tags = !empty($_POST['task_Tags']) ? "'" . $_POST['task_Tags'] . "'" : "NULL";
 
-$query = "UPDATE task 
-          SET task_Name='$task_Name', 
-              task_Desc='$task_Desc', 
-              task_Due='$task_Due', 
-              task_Reminder_Date='$task_Reminder_Date',
-              task_Reminder_Time='$task_Reminder_Time',
-              task_Tags='$task_Tags' 
-          WHERE task_ID='$task_ID'";
+$query = "UPDATE `task` 
+          SET `task_Name`=$task_Name, 
+              `task_Desc`=$task_Desc, 
+              `task_Due`=$task_Due, 
+              `task_Reminder`=$task_Reminder,
+              `task_Tags`=$task_Tags
+          WHERE `task_ID`=$task_ID";
 
 if (!$conn->query($query)) {
-    echo '<script>';
-    echo 'alert("Failed to edit task: Possible duplicate.")';
-    echo '</script>';
+    $status = "Failed to edit task " . $task_Name . ".";
 } else {
-    echo '<script>';
-    echo 'Successfuly edited task.';
-    echo '</script>';
+    $status = "Successfully edited task " . $task_Name . ".";
 }
 
-header('Location:tasks.php');
+header('Location:tasks.php?status=' . $status);

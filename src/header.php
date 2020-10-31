@@ -10,16 +10,6 @@
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
 
-	<!-- Custom stylesheet overriding the default ones -->
-	<?php
-	$user_ID = isset($_POST['user_ID']) ? $_POST['user_ID'] : 001;
-	$user = $conn->query("SELECT * FROM user WHERE user_ID='$user_ID'")->fetch_assoc();
-	$theme = $user['user_Theme'];
-	if (file_exists("themes/" . $theme)) {
-		echo "<link href='$theme.css' rel='stylesheet'>";
-	}
-	?>
-
 	<!-- Favicon -->
 	<link rel="icon" href="./CMSC128/resources/favicon.jpg">
 
@@ -27,4 +17,25 @@
 	<script src="js/jquery-3.5.1.slim.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Custom CSS user theme overriding the default ones -->
+	<?php
+	session_start();
+	if (!isset($_SESSION['user_ID'])) {
+		// if the username is not set, redirect to login page. 
+		// header("Location: loginpage.php");
+		/* for testing purposes (assuming the loginpage was not created yet) 
+		   you can change the line above to the one below: */
+		$user_ID = 1;                        // $user_ID = 1; // superuser
+	} else {
+		$user_ID = $_SESSION['user_ID']; /* you can also access $user_ID on your php as long as you 
+			                                include header.php*/
+	}
+
+	$user = $conn->query("SELECT * FROM user WHERE user_ID='$user_ID'")->fetch_assoc();
+	$user_Theme = $user['user_Theme'];
+	if (file_exists("themes/" . $user_Theme)) {
+		echo "<link href='$user_Theme.css' rel='stylesheet'>";
+	}
+	?>
 </head>

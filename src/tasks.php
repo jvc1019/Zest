@@ -6,6 +6,18 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 don't need to zap the elements XD-->
 
 <body>
+    <!-- show last status message as a Boostrap notification -->
+    <?php if (!empty($_GET['status'])) { ?>
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong><?php echo $_GET['status']; ?></strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php
+    }
+    ?>
+
     <div class="container">
         <h1 class="text-center">Tasks</h1>
         <div class="alert alert-light shadow sticky-top" role="alert">
@@ -69,7 +81,7 @@ don't need to zap the elements XD-->
                 if (isset($_GET['search'])) {
                     $searchQuery = $_GET['search'];
                     if (!empty($searchQuery)) {
-                        $search = "WHERE task_Name LIKE '%" . $searchQuery . "%'";
+                        $search = "WHERE task_Name LIKE '%" . $searchQuery . "%' AND task.user_ID=$user_ID";
                     }
                 }
                 ?>
@@ -87,7 +99,7 @@ don't need to zap the elements XD-->
                 <!-- INCOMPLETE TASKS -->
                 <ul id="incomplete_tasks" class="list-group">
                     <?php
-                    $query = "SELECT * FROM task LEFT JOIN user ON task.user_ID=user.user_ID WHERE task_isDone=0 ORDER BY $sortBy $sortDir";
+                    $query = "SELECT * FROM task LEFT JOIN user ON task.user_ID=user.user_ID WHERE task_isDone=0 AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
                     $result = $conn->query($query);
                     if (!($result->num_rows > 0)) {
                         echo "<h6 class='text-center'>☜(ﾟヮﾟ☜) There's nothing around here. You're all set!</h6>";
@@ -103,10 +115,16 @@ don't need to zap the elements XD-->
                                         <input class="checkbox" type="checkbox" value=<?php echo $row['task_ID']; ?>>
                                     </div>
                                     <!-- task name and due -->
-                                    <div class="col-sm-6 justify-content-between">
+                                    <div class="col-sm-6">
                                         <h6><?php echo $row['task_Name']; ?></h6>
-                                        <p><?php echo $row['task_Due']; ?></p>
+                                        <p>
+                                            <!-- for UI ppl, calendar icon --><?php if (isset($row['task_Due'])) {
+                                                                                    echo $row['task_Due'] . " \u{2022}";
+                                                                                }; ?>
+                                            <!-- for UI ppl, reminder/bell icon --><?php echo $row['task_Reminder']; ?>
+                                        </p>
                                     </div>
+
                                     <!-- edit and delete button -->
                                     <div class="col-sm-4">
                                         <a href="#taskdetails<?php echo $row['task_ID']; ?>" data-toggle="modal" class="btn text-primary btn-sm"><span class="oi oi-pencil"></span> Details</a> <a href="#taskdelete<?php echo $row['task_ID']; ?>" data-toggle="modal" class="btn text-danger btn-sm"><span class="oi oi-trash"></span> Delete</a>
@@ -125,7 +143,7 @@ don't need to zap the elements XD-->
                 <div id="completed_tasks" class="collapse">
                     <ul class="list-group">
                         <?php
-                        $query = "SELECT * FROM task LEFT JOIN user ON task.user_ID=user.user_ID WHERE task_isDone=1 ORDER BY $sortBy $sortDir";
+                        $query = "SELECT * FROM task LEFT JOIN user ON task.user_ID=user.user_ID WHERE task_isDone=1 AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
                         $result = $conn->query($query);
                         if (!($result->num_rows > 0)) {
                             echo "<h6 class='text-center'>(┬┬﹏┬┬) No completed tasks yet.</h6>";
@@ -143,9 +161,13 @@ don't need to zap the elements XD-->
                                         </div>
                                         <!-- task name and due -->
                                         <div class="col-sm-6 justify-content-between">
-                                            <!-- TODO: Add strikethrough effect -->
                                             <h6 style="text-decoration: line-through;"><?php echo $row['task_Name']; ?></h6>
-                                            <p><?php echo $row['task_Due']; ?></p>
+                                            <p>
+                                                <!-- calendar icon --><?php if (isset($row['task_Due'])) {
+                                                                            echo $row['task_Due'] . " \u{2022}";
+                                                                        }; ?>
+                                                <!-- reminder/bell icon --><?php echo $row['task_Reminder']; ?>
+                                            </p>
                                         </div>
                                         <!-- edit and delete button -->
                                         <div class="col-sm-4">
@@ -191,20 +213,32 @@ don't need to zap the elements XD-->
                                     <div class="col-sm-6 justify-content-between">
                                         <?php
                                         if ($row['task_isDone'] == 0) {
-                                            echo "<h6>$row[task_Name]</h6>";
-                                            echo "<p>$row[task_Due]</p>";
+                                        ?>
+                                            <h6><?php echo $row['task_Name']; ?></h6>
+                                            <p>
+                                                <!-- calendar icon --><?php if (isset($row['task_Due'])) {
+                                                                            echo $row['task_Due'] . " \u{2022}";
+                                                                        }; ?>
+                                                <!-- reminder/bell icon --><?php echo $row['task_Reminder']; ?>
+                                            </p>
+                                        <?php
                                         } else {
-                                            echo "<h6 style='text-decoration: line-through;'>$row[task_Name]</h6>";
-                                            echo "<p>$row[task_Due]</p>";
+                                        ?>
+                                            <h6 style='text-decoration: line-through;'><?php echo $row['task_Name']; ?></h6>
+                                            <p>
+                                                <!-- calendar icon --><?php echo $row['task_Due'] . " \u{2022}"; ?>
+                                                <!-- reminder/bell icon --><?php echo $row['task_Reminder']; ?>
+                                            </p>
+                                        <?php
                                         }
                                         ?>
                                     </div>
                                     <!-- edit and delete button -->
                                     <div class="col-sm-4">
                                         <a href="#taskdetails<?php echo $row['task_ID']; ?>" data-toggle="modal" class="btn text-primary btn-sm"><span class="oi oi-pencil"></span> Details</a> <a href="#taskdelete<?php echo $row['task_ID']; ?>" data-toggle="modal" class="btn text-danger btn-sm"><span class="oi oi-trash"></span> Delete</a>
-                                        <?php include('tasks_modal.php'); ?>
                                     </div>
                                 </div>
+                                <?php include('tasks_modal.php'); ?>
                             </li>
                     <?php
                         }
@@ -217,8 +251,12 @@ don't need to zap the elements XD-->
     <script>
         $(document).ready(function() {
             // reminders
-            // collect all the due dates, then compare them against the current time
+            // collect all the reminder times, call set alarm for each
+            // for ()
 
+            // function setAlarm() {
+            //     var $
+            // }
             // setInterval(function(e) {
 
             // }, 5000);
@@ -240,7 +278,7 @@ don't need to zap the elements XD-->
                 window.location.search = 'sortBy=' + $sortBy + '&sortDir=' + $sortDir + '&search=' + $searchQuery;
             }
 
-            $(".checkbox").click(function(e) {
+            $(".checkbox").on('click', function(e) {
                 e.preventDefault();
                 var $task_ID = $(this).val();
                 var $isChecked = ($(this).attr('checked') === undefined) ? "false" : "true";

@@ -13,7 +13,7 @@
                             <input type="text" class="form-control" name="task_Name" value="<?php echo $row['task_Name']; ?>" placeholder="Task name" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="task_Desc" value="<?php echo $row['task_Desc']; ?>" placeholder="Task description (optional)" rows="3"></textarea>
+                            <textarea class="form-control" name="task_Desc" placeholder="Task description (optional)" rows="3"><?php echo $row['task_Desc']; ?></textarea>
                         </div>
 
                         <div class="form-group">
@@ -23,8 +23,12 @@
 
                         <div class="form-group">
                             <label class="form-label">Remind me: </label>
-                            <input type="date" class="form-control" name="task_Reminder_Date" value="<?php echo $row['task_Reminder_Date']; ?>">
-                            <input type="time" class="form-control" name="task_Reminder_Time" value="<?php echo $row['task_Reminder_Time']; ?>">
+                            <?php
+                            // wew bakit iba format ng datetime
+                            // 2020-10-31T01:10:00
+                            $reminder = str_replace(" ", "", (substr_replace($row['task_Reminder'], "T", 10, 0)));
+                            ?>
+                            <input type="datetime-local" class="form-control" name="task_Reminder" value="<?php echo $reminder; ?>">
                         </div>
 
                         <input type="text" class="form-control" name="task_Tags" value="<?php echo $row['task_Tags']; ?>" placeholder="Tags (separated by a comma)" rows="3">

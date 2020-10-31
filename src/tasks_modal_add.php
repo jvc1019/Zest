@@ -23,11 +23,13 @@
 
                         <div class="form-group">
                             <label class="form-label">Remind me: </label>
-                            <input type="date" class="form-control" name="task_Reminder_Date">
-                            <input type="time" class="form-control" name="task_Reminder_Time">
+                            <input type="datetime-local" class="form-control" name="task_Reminder">
                         </div>
 
                         <input type=" text" class="form-control" name="task_Tags" placeholder="Tags (separated by a comma)">
+
+                        <!-- Hidden input for storing the user_ID -->
+                        <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
                 </div>
             </div>
             <div class="modal-footer">
