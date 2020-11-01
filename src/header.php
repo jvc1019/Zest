@@ -18,7 +18,7 @@
 	<script src="js/popper.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 
-	<!-- Custom CSS user theme overriding the default ones -->
+	<!-- Custom CSS user theme overriding the default ones. Also stores the user_ID -->
 	<?php
 	session_start();
 	if (!isset($_SESSION['user_ID'])) {
