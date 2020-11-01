@@ -37,8 +37,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn text-secondary btn-sm" data-dismiss="modal"><span class="oi oi-x"></span> Cancel</button>
-                <button type="submit" class="btn text-primary btn-sm"><span class="oi oi-check"></span> Update</button>
+                <button type="button" class="btn text-secondary btn-sm" data-dismiss="modal">
+                    <!-- x icon --> Cancel</button>
+                <button type="submit" class="btn text-primary btn-sm">
+                    <!-- check icon --> Update</button>
                 </form>
             </div>
         </div>
@@ -57,8 +59,10 @@
                 <h3 class="text-center"><?php echo $row['task_Name']; ?></h3>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-sm text-secondary" data-dismiss="modal"><span class="oi oi-x"></span> Cancel</button>
-                <a href="tasks_delete.php?task_ID=<?php echo $row['task_ID']; ?>" class="btn btn-sm text-danger"><span class="oi oi-trash"></span> Delete</a>
+                <button type="button" class="btn btn-sm text-secondary" data-dismiss="modal">
+                    <!-- x icon --> Cancel</button>
+                <a href="tasks_delete.php?task_ID=<?php echo $row['task_ID']; ?>" class="btn btn-sm text-danger">
+                    <!-- trash bin icon --> Delete</a>
             </div>
         </div>
     </div>

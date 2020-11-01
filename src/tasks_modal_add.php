@@ -33,8 +33,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-sm text-secondary" data-dismiss="modal"><span class="oi oi-x"></span> Cancel</button>
-                <button type="submit" class="btn btn-sm text-primary"><span class="oi oi-check"></span> Save</button>
+                <button type="button" class="btn btn-sm text-secondary" data-dismiss="modal">
+                    <!-- x icon --> Cancel</button>
+                <button type="submit" class="btn btn-sm text-primary">
+                    <!-- check/floppy icon --></span> Save</button>
                 </form>
             </div>
         </div>
