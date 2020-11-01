@@ -70,4 +70,4 @@ include('conn.php');
     1. To get the latest version of the repository (needs an internet connection): `git pull`
     2. To add files for staging: `git add file_path`
     3. To commit the changes: `git commit -m message` Note: You can commit even when offline. Do not commit after every little change.
-    4. Committing your changes only affects your working tree. To push the changes to the remote repository (needs an internet connection): `git push`. But remember to `git pull` before `git push` to lessen the changes of "merge conflicts" 🙈.
+    4. Committing your changes only affects your working tree. To push the changes to the remote repository (needs an internet connection): `git push`. But remember to `git pull` before `git push` to lessen the chances of "merge conflicts" 🙈.
