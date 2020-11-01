@@ -116,16 +116,16 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
         $(document).ready(function() {
             // GENERAL FUNCTION FOR HANDLING NOTIFICATIONS
             if ($("#notification").length) {
+                if (window.history.replaceState) {
+                    //prevents browser from storing history with each change:
+                    window.history.replaceState(null, "", "tasks.php");
+                }
                 // if notification is visible, play a sound effect
                 (new Audio("../resources/notification.ogg")).play();
-                // destroy any notification after 3.25 seconds
+                // destroy any notification after 5 seconds
                 setTimeout(function(e) {
                     $("#notification").remove();
-                    if (window.history.replaceState) {
-                        //prevents browser from storing history with each change:
-                        window.history.replaceState(null, "", "tasks.php");
-                    }
-                }, 3250);
+                }, 5000);
             }
             // END OF HANDLER
 
@@ -145,7 +145,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 }
 
                 var timer = setTimeout(function(e) {
-                    window.location.search = "status=REMINDER: " + task_Name;
+                    window.location.search = "status=🔔 REMINDER: " + task_Name;
                 }, duration);
             }
             // END OF REMINDER FEATURE
