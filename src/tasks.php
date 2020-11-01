@@ -1,9 +1,8 @@
 <?php include('header.php'); ?>
 
 <!-- Upon page load, the task list, grouped if "completed" or "not completed", will show. 
-If the user presses the check button, the isComplete id of the tasks item is marked as true. The page will then be refreshed. 
-If the user presses the "add new task" button, a pop-up will appear, asking for the details. We have no need to use JS much as we 
-don't need to zap the elements XD-->
+If the user presses the check button, the task_isDone of the tasks item is marked as true. The page will then be refreshed. 
+If the user presses the "add new task" button, a pop-up will appear, asking for the details. -->
 
 <body>
     <div class="container">
@@ -92,7 +91,7 @@ don't need to zap the elements XD-->
 
         </div>
         <?php include('tasks_modal_add.php'); ?>
-        <!-- show last status message as a Boostrap notification -->
+        <!-- show last status message as a Boostrap alert -->
         <?php if (!empty($_GET['status'])) { ?>
             <div id="notification" class="alert alert-info alert-dismissible fade show" role="alert">
                 <strong><?php echo $_GET['status']; ?></strong>
@@ -104,7 +103,7 @@ don't need to zap the elements XD-->
         }
         ?>
         <script>
-            var reminders = {};
+            var reminders = {}; // stores the reminder timestamps of the tasks
         </script>
         <?php
         if (empty($search)) {
@@ -115,16 +114,22 @@ don't need to zap the elements XD-->
     </div>
     <script>
         $(document).ready(function() {
-            // if notification is visible, play a sound effect
+            // GENERAL FUNCTION FOR HANDLING NOTIFICATIONS
             if ($("#notification").length) {
+                // if notification is visible, play a sound effect
                 (new Audio("../resources/notification.ogg")).play();
-                // destroy any notification after 5 seconds
+                // destroy any notification after 3.25 seconds
                 setTimeout(function(e) {
                     $("#notification").remove();
-                }, 5000);
+                    if (window.history.replaceState) {
+                        //prevents browser from storing history with each change:
+                        window.history.replaceState(null, "", "tasks.php");
+                    }
+                }, 3250);
             }
+            // END OF HANDLER
 
-            // Reminder Feature
+            // REMINDER FEATURE
             // collect all the reminder times, call setReminder for each
             for (const task_Name in reminders) {
                 if (reminders.hasOwnProperty(task_Name)) {
@@ -143,10 +148,23 @@ don't need to zap the elements XD-->
                     window.location.search = "status=REMINDER: " + task_Name;
                 }, duration);
             }
+            // END OF REMINDER FEATURE
 
-            $("#sortBy").on('change', sort_);
-            $("#sortDir").on('change', sort_);
-            $("#searchBtn").click(sort_);
+            // SORTING HANDLER
+            // Sorts the tasks list
+            $("#sortBy").on('change', sort);
+            $("#sortDir").on('change', sort);
+            $("#searchBtn").click(sort);
+
+            function sort() {
+                $sortBy = $("#sortBy").val();
+                $sortDir = $("#sortDir").val();
+                $searchQuery = $("#search").val();
+                window.location.search = "sortBy=" + $sortBy + "&sortDir=" + $sortDir + "&search=" + $searchQuery;
+            }
+            // END OF SORTING HANDLER
+
+            // Show completed tasks button
             $("#show_completed_tasks").click(function(e) {
                 if ($("#completed_tasks:hidden").length)
                     $("#show_completed_tasks").text("\u2191 Hide completed tasks");
@@ -155,13 +173,7 @@ don't need to zap the elements XD-->
                 }
             });
 
-            function sort_() {
-                $sortBy = $("#sortBy").val();
-                $sortDir = $("#sortDir").val();
-                $searchQuery = $("#search").val();
-                window.location.search = "sortBy=" + $sortBy + "&sortDir=" + $sortDir + "&search=" + $searchQuery;
-            }
-
+            // Marks task as complete 
             $(".checkbox").on('click', function(e) {
                 e.preventDefault();
                 var $task_ID = $(this).val();
