@@ -50,7 +50,7 @@
                             </p>
 
                             <script>
-                                reminders["<?php echo $row['task_ID']; ?>"] = "<?php echo $row['task_Reminder']; ?>";
+                                reminders["<?php echo $row['task_Name']; ?>"] = "<?php echo $row['task_Reminder']; ?>";
                             </script>
                         </div>
                         <!-- edit and delete button -->

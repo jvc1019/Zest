@@ -115,38 +115,40 @@ don't need to zap the elements XD-->
     </div>
     <script>
         $(document).ready(function() {
+            // if notification is visible, play a sound effect
+            if ($("#notification").length) {
+                (new Audio("../resources/notification.ogg")).play();
+                // destroy any notification after 5 seconds
+                setTimeout(function(e) {
+                    $("#notification").remove();
+                }, 5000);
+            }
+
             // Reminder Feature
             // collect all the reminder times, call setReminder for each
-            for (const task_ID in reminders) {
-                if (reminders.hasOwnProperty(task_ID)) {
-                    setReminder(reminders[task_ID], task_ID);
+            for (const task_Name in reminders) {
+                if (reminders.hasOwnProperty(task_Name)) {
+                    setReminder(reminders[task_Name], task_Name);
                 }
             }
 
-            function setReminder(datetime, task_ID) {
+            function setReminder(datetime, task_Name) {
                 var alarmTime = new Date(parseInt(datetime.substr(0, 4)), parseInt(datetime.substr(5, 2)) - 1, parseInt(datetime.substr(8, 2)), parseInt(datetime.substr(11, 2)), parseInt(datetime.substr(14, 2)), parseInt(datetime.substr(17, 2)));
                 var duration = alarmTime.getTime() - (new Date()).getTime();
                 if (isNaN(duration) || duration < 0) {
                     return;
                 }
 
-                var timer = setTimeout(runReminder, duration);
+                var timer = setTimeout(function(e) {
+                    window.location.search = "status=REMINDER: " + task_Name;
+                }, duration);
             }
-
-            function runReminder() {
-                (new Audio("../resources/notification.ogg")).play();
-            }
-
-            // destroy notification after 5 seconds 
-            setTimeout(function(e) {
-                $("#notification").remove();
-            }, 5000);
 
             $("#sortBy").on('change', sort_);
             $("#sortDir").on('change', sort_);
             $("#searchBtn").click(sort_);
             $("#show_completed_tasks").click(function(e) {
-                if ($("div#completed_tasks:hidden").length)
+                if ($("#completed_tasks:hidden").length)
                     $("#show_completed_tasks").text("\u2191 Hide completed tasks");
                 else {
                     $("#show_completed_tasks").text("\u2193 Show completed tasks");
@@ -157,7 +159,7 @@ don't need to zap the elements XD-->
                 $sortBy = $("#sortBy").val();
                 $sortDir = $("#sortDir").val();
                 $searchQuery = $("#search").val();
-                window.location.search = 'sortBy=' + $sortBy + '&sortDir=' + $sortDir + '&search=' + $searchQuery;
+                window.location.search = "sortBy=" + $sortBy + "&sortDir=" + $sortDir + "&search=" + $searchQuery;
             }
 
             $(".checkbox").on('click', function(e) {
