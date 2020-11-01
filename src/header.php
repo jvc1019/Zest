@@ -8,10 +8,9 @@
 
 	<!-- Stylesheets -->
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
 
 	<!-- Favicon -->
-	<link rel="icon" href="./CMSC128/resources/favicon.jpg">
+	<link rel="icon" href="../resources/favicon.jpg"> <!-- Replace this with the proper icon -->
 
 	<!-- Bootstrap JS, jQuery, and Popper -->
 	<script src="js/jquery-3.5.1.slim.min.js"></script>
