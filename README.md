@@ -17,18 +17,18 @@ It also included the relational model of the database.
 ### A. Prerequisites
 
 1. To clone the repository on your machine (on Windows, using WSL)
-   1a. Make sure XAMPP is running Apache and MySQL
-   1b. Navigate to `xampp\htdocs`
-   1c. On the navigation bar, type `wsl`
-   1d. Run the following command:
+   1. Make sure XAMPP is running Apache and MySQL
+   2. Navigate to `xampp\htdocs`
+   3. On the navigation bar, type `wsl`
+   4. Run the following command:
 
 ```
 git clone https://github.com/jvc1019/CMSC128.git
 ```
 
 2. Open `phpMyAdmin`: http://localhost/phpmyadmin/server_databases.php
-   2a. Create a new database named `database` with `utf8mb4_general_ci` as encoding
-   2b. Import `database.sql` from `db/database.sql`. It will generate dummy entries which should not be deleted.
+   1. Create a new database named `database` with `utf8mb4_general_ci` as encoding
+   2. Import `database.sql` from `db/database.sql`. It will generate dummy entries which should not be deleted.
 
 ### B. Quality-of-Life (QoL) Guide
 
@@ -67,7 +67,7 @@ include('conn.php');
 1.  It is recommended to use Visual Studio Code as your text editor as it offers an easy way of resolving merge conflicts.
 
 2.  Navigate inside the repository location (`xampp\htdocs\CMSC128`). On the navigation bar, type `wsl`
-    1a. To get the latest version of the repository (needs an internet connection): `git pull`
-    1b. To add files for staging: `git add file_path`
-    1c. To commit the changes: `git commit -m message` Note: You can commit even when offline. Do not commit after every little change.
-    1d. Committing your changes only affects your working tree. To push the changes to the remote repository (needs an internet connection): `git push`. But remember to `git pull` before `git push` to lessen the changes of "merge conflicts" 🙈.
+    1. To get the latest version of the repository (needs an internet connection): `git pull`
+    2. To add files for staging: `git add file_path`
+    3. To commit the changes: `git commit -m message` Note: You can commit even when offline. Do not commit after every little change.
+    4. Committing your changes only affects your working tree. To push the changes to the remote repository (needs an internet connection): `git push`. But remember to `git pull` before `git push` to lessen the changes of "merge conflicts" 🙈.
