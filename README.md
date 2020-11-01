@@ -66,8 +66,8 @@ include('conn.php');
 
 1.  It is recommended to use Visual Studio Code as your text editor as it offers an easy way of resolving merge conflicts.
 
-2.  On the navigation bar, type `wsl`
+2.  Navigate inside the repository location (`xampp\htdocs\CMSC128`). On the navigation bar, type `wsl`
     1a. To get the latest version of the repository (needs an internet connection): `git pull`
     1b. To add files for staging: `git add file_path`
     1c. To commit the changes: `git commit -m message` Note: You can commit even when offline. Do not commit after every little change.
-    1d. Committing your changes only affects your working tree. To push the changes to the remote repository (needs an internet connection): `git push`
+    1d. Committing your changes only affects your working tree. To push the changes to the remote repository (needs an internet connection): `git push`. But remember to `git pull` before `git push` to lessen the changes of "merge conflicts" 🙈.
