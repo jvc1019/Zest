@@ -6,9 +6,6 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 don't need to zap the elements XD-->
 
 <body>
-    <script>
-        var reminders = {};
-    </script>
     <div class="container">
         <h1 class="text-center">Tasks</h1>
         <div class="alert alert-light shadow sticky-top" role="alert">
@@ -106,6 +103,9 @@ don't need to zap the elements XD-->
         <?php
         }
         ?>
+        <script>
+            var reminders = {};
+        </script>
         <?php
         if (empty($search)) {
             include('tasks_list.php');
