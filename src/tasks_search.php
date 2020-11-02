@@ -10,24 +10,24 @@
         ?>
                 <li class="list-group-item">
                     <!-- check box | task name and due | edit button | delete button -->
-                    <!--     2     |         8         |     1       |      1        -->
+                    <!--     1     |         9         |     1       |      1        -->
                     <div class="row col-12 form-inline">
                         <!-- check box -->
-                        <div class="col-sm-2">
+                        <div class="col-sm-1 form-check">
                             <?php
                             if ($row['task_isDone'] == 0) {
                             ?>
-                                <input class='checkbox' type='checkbox' value=<?php echo $row['task_ID']; ?>>
+                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?>>
                             <?php
                             } else {
                             ?>
-                                <input class='checkbox' type='checkbox' value=<?php echo $row['task_ID']; ?> checked>
+                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> checked>
                             <?php
                             }
                             ?>
                         </div>
                         <!-- task name and due -->
-                        <div class="col-sm-8 justify-content-between">
+                        <div class="col-sm-9">
                             <?php
                             if ($row['task_isDone'] == 0) {
                             ?>
@@ -39,15 +39,14 @@
                             <?php
                             }
                             ?>
-                            <p>
+                            <small>
                                 <!-- calendar icon --><?php if (!empty($row['task_Due'])) {
-                                                            echo $row['task_Due'];
+                                                            echo "🗓 " . date("D, d M Y", strtotime($row['task_Due']));
                                                         }; ?>
                                 <!-- reminder/bell icon --><?php if (!empty($row['task_Reminder'])) {
-                                                                echo " \u{2022} " . $row['task_Reminder'];
+                                                                echo " 🔔 " . date("D, d M Y h:i A", strtotime($row['task_Reminder']));
                                                             } ?>
-
-                            </p>
+                            </small>
 
                             <script>
                                 reminders["<?php echo $row['task_Name']; ?>"] = "<?php echo $row['task_Reminder']; ?>";

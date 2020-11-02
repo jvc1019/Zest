@@ -92,19 +92,12 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
         </div>
         <?php include('tasks_modal_add.php'); ?>
         <!-- show last status message as a Boostrap alert -->
-        <?php if (!empty($_GET['status'])) { ?>
-            <div id="notification" class="alert alert-info alert-dismissible fade show" role="alert">
-                <strong><?php echo $_GET['status']; ?></strong>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        <?php
-        }
-        ?>
+        <?php include('notification.php'); ?>
         <script>
             var reminders = {}; // stores the reminder timestamps of the tasks
         </script>
+        <!-- Show last status as a bootstrap alert -->
+
         <?php
         if (empty($search)) {
             include('tasks_list.php');
@@ -114,21 +107,6 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
     </div>
     <script>
         $(document).ready(function() {
-            // GENERAL FUNCTION FOR HANDLING NOTIFICATIONS
-            if ($("#notification").length) {
-                if (window.history.replaceState) {
-                    //prevents browser from storing history with each change:
-                    window.history.replaceState(null, "", "tasks.php");
-                }
-                // if notification is visible, play a sound effect
-                (new Audio("../resources/notification.ogg")).play();
-                // destroy any notification after 5 seconds
-                setTimeout(function(e) {
-                    $("#notification").remove();
-                }, 5000);
-            }
-            // END OF HANDLER
-
             // REMINDER FEATURE
             // collect all the reminder times, call setReminder for each
             for (const task_Name in reminders) {
@@ -145,7 +123,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 }
 
                 var timer = setTimeout(function(e) {
-                    window.location.search = "status=🔔 REMINDER: " + task_Name;
+                    window.location.search = "status_heading=🔔 REMINDER: " + "&status=" + task_Name + "&isAlarm=true";
                 }, duration);
             }
             // END OF REMINDER FEATURE
