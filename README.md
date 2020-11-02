@@ -62,6 +62,13 @@ After including header.php, only the `<body>` needs to be defined. Notice how th
 include('conn.php');
 ```
 
+4. To implement notifications, you may use `notification.php`. Check out `notification.php` to see how to use it.
+
+```php
+// I want my notif to appear here
+<?php include('notification.php') ?>
+```
+
 ### C. Using GitHub (on Windows, using WSL)
 
 1.  It is recommended to use Visual Studio Code as your text editor as it offers an easy way of resolving merge conflicts.
