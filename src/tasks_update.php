@@ -30,4 +30,4 @@ if (!$conn->query($query)) {
         }
 }
 
-header('Location:tasks.php?status=' . $status);
+header('Location:tasks.php?status=' . $status . "&isNotif=true");

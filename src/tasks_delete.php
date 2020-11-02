@@ -11,4 +11,4 @@ if (!$conn->query($query)) {
     $status = "Successfully deleted task.";
 }
 
-header('Location:tasks.php?status=' . $status);
+header('Location:tasks.php?status=' . $status . "&isNotif=true");
