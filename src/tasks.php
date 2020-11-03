@@ -5,7 +5,9 @@ If the user presses the check button, the task_isDone of the tasks item is marke
 If the user presses the "add new task" button, a pop-up will appear, asking for the details. -->
 
 <body>
-    <div class="container">
+    <!-- navigation bar -->
+    <?php include 'navbar.php'; ?>
+    <div class="container" id="main">
         <h1 class="text-center">Tasks</h1>
         <div class="alert alert-light shadow sticky-top" role="alert">
             <!-- sort by | sort direction | search box | add new task -->

@@ -8,6 +8,12 @@
 
 	<!-- Stylesheets -->
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/sidebar.css" rel="stylesheet">
+
+	<!-- Scripts -->
+	<script src="js/sidebar.js"></script>
+	<script src="js/clock.js"></script>
+
 
 	<!-- Favicon -->
 	<link rel="icon" href="../resources/favicon.jpg"> <!-- Replace this with the proper icon -->
