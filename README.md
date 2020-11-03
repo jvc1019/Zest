@@ -75,6 +75,7 @@ include('conn.php');
 
 2.  Navigate inside the repository location (`xampp\htdocs\CMSC128`). On the navigation bar, type `wsl`
     1. To get the latest version of the repository (needs an internet connection): `git pull`
-    2. To add files for staging: `git add file_path`
-    3. To commit the changes: `git commit -m message` Note: You can commit even when offline. Do not commit after every little change.
-    4. Committing your changes only affects your working tree. To push the changes to the remote repository (needs an internet connection): `git push`. But remember to `git pull` before `git push` to lessen the chances of "merge conflicts" 🙈.
+    2. Switch to a separate branch if you're planning to alter another team member's code, then initiate a `pull request`. Do not commit your changes to `main` unless **you're only altering your own code**.
+    3. To add files for staging: `git add file_path`
+    4. To commit the changes: `git commit -m message` Note: You can commit even when offline. **Do not commit after every little change.**
+    5. Committing your changes only affects your working tree. To push the changes to the remote repository (needs an internet connection): `git push`. But remember to `git pull` or `git fetch` (safer than `git pull`) before `git push` to lessen the chances of "merge conflicts" 🙈.
