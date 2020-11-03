@@ -7,11 +7,11 @@
     <a href="#">Notebook</a>
 </div>
 
-<nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="background: #222222;height: 53px;">
+<nav class="navbar navbar-dark navbar-expand-md navigation-clean-button" style="background: #222222;height: 53px;">
     <div class="container">
         <div>
             <button class="openbtn" id ="clicker" onclick="openNav()">☰</button> 
-            <a class="navbar-brand" href="#"> App Name</a>
+            <a class="navbar-brand" href="#"><img class="nav-icon" src="/cmsc128/resources/icons/circle-square.svg"> App Name</a>
         </div>
         <span class="actions">
             <a href="LoggedIn.php">Login  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

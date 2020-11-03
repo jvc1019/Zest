@@ -40,19 +40,21 @@ body{
 
 .logo
 {
-	max-height: 30vh;
+	width: 30vh;
 }
 
 .iconholder
 {
 	background-color: rgb(255,255,255,0.8);
 	text-align: center;
-	padding: 10px 10px 10px 10px;
+	min-height: 15vh;
+	min-width: 15vh;
+	padding: 15px 15px 15px 15px;
 }
 
 .appIcon
 {
-	max-height: 10vh;
+	width: 10vh;
 }
 
 #clockHeader

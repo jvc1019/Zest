@@ -1,11 +1,16 @@
+.nav-icon
+{
+  width: 5vh;
+}
+
 .sidebar {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 20;
+  z-index: 10000;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: rgb(1,1,1,0.95);
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;

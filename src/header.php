@@ -12,7 +12,6 @@
 
 	<!-- Scripts -->
 	<script src="js/sidebar.js"></script>
-	<script src="js/clock.js"></script>
 
 
 	<!-- Favicon -->

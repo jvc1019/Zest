@@ -15,13 +15,13 @@
     		</div>
     	</div>
     	<div class="row">
-    		<div class="col-md-4 hidden-md-down"></div>
-    		<div class="col-md-4">
+    		<div class="col-md-3 col-xl-4 hidden-md-down"></div>
+    		<div class="col-md-6 col-xl-4">
     			<div class="row">
 		    		<div class="col-md-4">
-		    			<a href="tasks.php">
+		    			<a href="#">
 		    				<div class = "iconholder">
-		    					<img class="appIcon" src="/cmsc128/resources/book.svg"><br>
+		    					<img class="appIcon" src="/cmsc128/resources/icons/book-half.svg"><br>
 		    					<h6>Subjects</h6>
 		    				</div>
 		    			</a>
@@ -29,22 +29,22 @@
 		    		<div class="col-md-4">
 		    			<a href="tasks.php">
 		    				<div class = "iconholder">
-		    					<img class="appIcon" src="/cmsc128/resources/checklist.svg"><br>
+		    					<img class="appIcon" src="/cmsc128/resources/icons/ui-checks.svg"><br>
 		    					<h6>Task</h6>
 		    				</div>
 		    			</a>
 		    		</div>
 		    		<div class="col-md-4">
-		    			<a href="tasks.php">
+		    			<a href="#">
 		    				<div class = "iconholder">
-		    					<img class="appIcon" src="/cmsc128/resources/notebook.svg"><br>
+		    					<img class="appIcon" src="/cmsc128/resources/icons/journal-text.svg"><br>
 		    					<h6>Notebook</h6>
 		    				</div>
 		    			</a>
 		    		</div>
     			</div>
     		</div>
-    		<div class="col-md-4 hidden-md-down"></div>
+    		<div class="col-md-3 col-xl-4 hidden-md-down"></div>
     	</div>
     </div>
 

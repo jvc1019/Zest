@@ -9,7 +9,7 @@
     	<div class = "row">
     		<div class = "col-md-7 " id="leftbox">
     			<div class="innerLeft">
-    				<img class="logo" src="/cmsc128/resources/placeholder.png"><br>
+    				<img class="logo" src="/cmsc128/resources/icons/circle-square.svg"><br>
     				<h4 >This is an example of random words <br>to be added here. It's all about <br> the App we are making.</h4>
     			</div>
     		</div>

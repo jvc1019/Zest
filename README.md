@@ -71,7 +71,7 @@ include('conn.php');
 
 ### C. Using GitHub (on Windows, using WSL)
 
-1.  It is recommended to use Visual Studio Code as your text editor as it offers an easy way of resolving merge conflicts.
+1.  It is recommended to use Visual Studio Code as your text editor as it offers an easy way of resolving merge conflicts. (**Optional**) Instructions on how to integrate WSL with Visual Studio Code: https://code.visualstudio.com/docs/remote/wsl
 
 2.  Navigate inside the repository location (`xampp\htdocs\CMSC128`). On the navigation bar, type `wsl`
     1. To get the latest version of the repository (needs an internet connection): `git pull`
