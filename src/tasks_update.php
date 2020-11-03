@@ -24,10 +24,10 @@ if (!$conn->query($query)) {
         $task_Name = ($conn->query($query)->fetch_assoc())['task_Name'];
 
         if ($task_isChecked === "true") {
-                $status = "\"" . $task_Name . "\" has been marked as incomplete.";
+                $status = " has been marked as incomplete.";
         } else {
-                $status = "\"" . $task_Name . "\" has been marked as completed.";
+                $status = " has been marked as completed.";
         }
 }
 
-header('Location:tasks.php?status=' . $status . "&isNotif=true");
+header("Location:tasks.php?status_heading=\"" . $task_Name . "\"&status=" . $status . "&isNotif=true");
