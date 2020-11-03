@@ -6,7 +6,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 
 <body>
     <!-- navigation bar -->
-    <?php include 'navbar.php'; ?>
+    <?php include('navbar.php'); ?>
     <div class="container" id="main">
         <h1 class="text-center">Tasks</h1>
         <div class="alert alert-light shadow sticky-top" role="alert">
