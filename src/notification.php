@@ -86,16 +86,16 @@ Alarm:
                 $('#notification').alert('close');
             }, 3750);
         }
-    }
 
-    function stopAlarm() {
-        sound.pause();
-        sound.currentTime = 0;
-    }
+        function stopAlarm() {
+            sound.pause();
+            sound.currentTime = 0;
+        }
 
-    if (window.history.replaceState) {
-        // prevents browser from storing history with each change
-        // hides the GET value of notifications and search methods
-        window.history.replaceState(null, "", window.location.href.split(/[?#]/)[0]);
+        if (window.history.replaceState) {
+            // prevents browser from storing history with each change
+            // hides the GET value of notifications
+            window.history.replaceState(null, "", window.location.href.split(/[?#]/)[0]);
+        }
     }
 </script>
