@@ -57,8 +57,12 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                                                                                                                 }
                                                                                                                 ?>">
                     <div class="input-group-append">
-                        <button id="searchBtn" class="btn btn-primary">
-                            <!-- TO UI people, just add a search icon here--></button>
+                        <button id="search_clear" class="btn btn-outline-danger">
+                            <!-- x icon -->
+                        </button>
+                        <button id="search_button" class="btn btn-primary">
+                            <!-- TO UI people, just add a search icon here-->
+                        </button>
                     </div>
                 </div>
                 <!-- New task button -->
@@ -130,11 +134,16 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             }
             // END OF REMINDER FEATURE
 
+            // clears the search box 
+            $("#search_clear").on('click', function(e) {
+                $("#search").val("");
+            });
+
             // SORTING HANDLER
             // Sorts the tasks list
             $("#sortBy").on('change', sort);
             $("#sortDir").on('change', sort);
-            $("#searchBtn").click(sort);
+            $("#search_button").on('click', sort);
 
             function sort() {
                 $sortBy = $("#sortBy").val();
@@ -147,20 +156,19 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             // Show completed tasks button
             $("#show_completed_tasks").click(function(e) {
                 if ($("#completed_tasks:hidden").length)
-                    $("#show_completed_tasks").text("\u2191 Hide completed tasks");
+                    $(this).text("\u2191 Hide completed tasks");
                 else {
-                    $("#show_completed_tasks").text("\u2193 Show completed tasks");
+                    $(this).text("\u2193 Show completed tasks");
                 }
             });
 
             // Marks task as complete 
-            $(".checkbox").on('click', function(e) {
-                e.preventDefault();
+            $(".checkbox").click(function(e) {
                 var $task_ID = $(this).val();
                 var $isChecked = ($(this).attr('checked') === undefined) ? "false" : "true";
 
                 window.location = "tasks_update.php?task_ID=" + $task_ID + "&task_isChecked=" + $isChecked;
-            })
+            });
         });
     </script>
 </body>
