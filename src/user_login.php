@@ -18,7 +18,7 @@ if ($row['user_Name'] == $username && $row['user_Password'] == $password) {
 	session_start();
 	$_SESSION['username'] = $username;
 	$logged = true;
-	header("Location:tasks.php");
+	header("Location:index.php");
 } else {
 	header("Location:login.php?status=Login Error&isNotif=true");
 }
