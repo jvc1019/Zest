@@ -10,27 +10,23 @@
             } else {
                 while ($row = $result->fetch_assoc()) {
             ?>
-            <li class="list-group-item">
-                <!-- note title and content | edit button | delete button -->
-                <!--               9        |     1       |      1        -->
-                <div class="row col-12 form-inline">
-                    <!-- note title and content -->
-                    <div class="col-sm-9">
-                        <h6><?php echo $row['note_Title']; ?></h6>
-                            <small>
-                                <!-- edit icon here -->
-                            </small>
-                    </div>
-
-                    <!-- edit and delete button -->
-                    <div class="col-sm-2">
-                        <a href="#notedetails<?php echo $row['note_ID']; ?>" data-toggle="modal" class="btn text-primary btn-sm">
-                            <!-- info icon?--> Details</a> <a href="#notedelete<?php echo $row['note_ID']; ?>" data-toggle="modal" class="btn text-danger btn-sm">
-                            <!-- garbage bin icon--></span> Delete</a>
+                <li class="list-group-item">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $row['note_Title']; ?></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><?php echo $row['note_Tags']; ?></h6>
+                                <p class="card-text"><?php echo $row['note_Content']; ?></p>
+                                <a href="#notedetails<?php echo $row['note_ID']; ?>" data-toggle="modal" class="btn text-primary btn-sm">
+                                    <!-- info icon?--> Details</a> <a href="#notedelete<?php echo $row['note_ID']; ?>" data-toggle="modal" class="btn text-danger btn-sm">
+                                    <!-- garbage bin icon--></span> Delete</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <?php include('notes_modal.php'); ?>
-            </li>
+                </li>
             <?php
             }
         }
