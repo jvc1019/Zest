@@ -5,10 +5,12 @@
 CREATE TABLE `user` (
   `user_ID` int(3) ZEROFILL NOT NULL AUTO_INCREMENT, -- supports up to 999 users
   `user_Name` varchar(30) NOT NULL,
+  `user_Email` varchar(200) NOT NULL,
   `user_Password` varchar(100) NOT NULL, -- before placed here, the string is hashed via MD5
   `user_Theme` varchar(50) NOT NULL DEFAULT "default", -- stores the theme name of the user
   PRIMARY KEY (`user_ID`),
-  UNIQUE KEY `user_Name` (`user_Name`)
+  UNIQUE KEY `user_Name` (`user_Name`),
+  UNIQUE KEY `user_Email` (`user_Email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
