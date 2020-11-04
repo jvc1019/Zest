@@ -1,5 +1,10 @@
 <?php include('header.php'); ?>
-
+<!-- if not logged in, will rediect to landing.php -->
+<?php    
+    if (!isset($_SESSION['username'])) {
+        header("Location:landing.php");
+    }
+?>
 <body>
     <!-- navigation bar -->
     <?php include('navbar.php'); ?>
