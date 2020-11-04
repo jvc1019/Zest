@@ -5,12 +5,13 @@ This will be the repository for CMSC 128 - Section 3. Files included would be fo
 Prototype Consultations
 
 - November 4, 2020 (Wireframe Consultation)
-  Next sprint deadline is November 12, 2020.
+
+Next sprint deadline is November 12, 2020.
   
 Zoom Meeting Details:
-Link: https://up-edu.zoom.us/j/89346774676
-Meeting ID: 893 4677 4676
-Passcode: Cmsc128-3
+- Link: https://up-edu.zoom.us/j/89346774676
+- Meeting ID: 893 4677 4676
+- Passcode: Cmsc128-3
 
 First sprint has passed on October 22, 2020. The first sprint included the mockup designs for our project. It also included the relational model of the database.
 
