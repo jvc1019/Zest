@@ -2,29 +2,29 @@
 
 This will be the repository for CMSC 128 - Section 3. Files included would be for the prototype system we will create in the scrum process through series of sprints.
   
-# Zoom Meeting Details:
+## Zoom Meeting Details:
 - Link: https://up-edu.zoom.us/j/89346774676
 - Meeting ID: 893 4677 4676
 - Passcode: Cmsc128-3
 
-# Sprints
+## Sprints
 Next sprint deadline is November 12, 2020.
-1. First sprint (October 22, 2020)
+### 1. First sprint (October 22, 2020)
 - The first sprint included the mockup designs for our project.
 - It also included the relational model of the database.
 
-# Consultations
+## Consultations
 - November 4, 2020 (Wireframe Consultation)
 
-# Members:
+## Members:
 
-1. FRONT END (User Interface)
+### 1. FRONT END (User Interface)
 - Carpio, Eman
 - Faeldonea, Ken
 - Jinon, Robien
 - Visto, Ronald
 
-2. BACK END (Database)
+### 2. BACK END (Database)
 - Castaneda, Jayvee (Reminders)
 - Garcia, Mico (Subjects)
 - Jomoc, Gracielou (Notebook)
