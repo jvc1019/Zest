@@ -6,7 +6,7 @@
 ?>
 <link href="css/home.css" rel="stylesheet">
 
-<body>
+<body class="index-bg">
     <!-- navigation bar -->
     <?php include 'navbar.php'; ?>
 
