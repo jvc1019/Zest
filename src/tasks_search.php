@@ -2,11 +2,11 @@
     <ul class="list-group">
         <?php
         $query = "SELECT * FROM task LEFT JOIN user ON task.user_ID=user.user_ID $search";
-        $result = $conn->query($query);
-        if (!($result->num_rows > 0)) {
-            echo "<h6>No results found.</h6>";
+        $search = $conn->query($query);
+        if (!($search->num_rows > 0)) {
+            echo "<h6 class='text-center'>（；´д｀）ゞ No results found.</h6>";
         } else {
-            while ($row = $result->fetch_assoc()) {
+            while ($row = $search->fetch_assoc()) {
         ?>
                 <li class="list-group-item">
                     <!-- check box | task name and due | edit button | delete button -->
@@ -49,7 +49,7 @@
                             </small>
 
                             <script>
-                                reminders["<?php echo $row['task_Name']; ?>"] = "<?php echo $row['task_Reminder']; ?>";
+                                alarms["<?php echo $row['task_Name']; ?>"] = "<?php echo $row['task_Reminder']; ?>";
                             </script>
                         </div>
                         <!-- edit and delete button -->
