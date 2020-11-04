@@ -5,16 +5,16 @@ If the user presses the check button, the task_isDone of the tasks item is marke
 If the user presses the "add new task" button, a pop-up will appear, asking for the details. -->
 
 <body>
-    <!-- navigation bar -->
-    <?php include('navbar.php'); ?>
-    <div class="container" id="main">
-        <h1 class="text-center">Tasks</h1>
-        <div class="alert alert-light shadow sticky-top" role="alert">
-            <!-- sort by | sort direction | search box | add new task -->
-            <!--    2    |       2        |      5     |       3      -->
+    <div class="container">
+        <div class="alert alert-light shadow sticky-top">
+            <!-- Tasks | sort by | sort direction | search box | add new task -->
+            <!--   2   |          3               |      5     |       2      -->
             <div class="row form-inline">
+                <div class="col-sm-2">
+                    <h3 class="text-primary text-center">Tasks</h3>
+                </div>
                 <!-- Sort by and sort direction -->
-                <div class="col-sm-4">
+                <div class="col-sm-3 form-inline">
                     <select id="sortBy" class="btn btn-sm">
                         <?php
                         $value = isset($_GET['sortBy']) ? $_GET['sortBy'] : 0;
@@ -66,7 +66,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                     </div>
                 </div>
                 <!-- New task button -->
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <a href="#addtask" data-toggle="modal" class="btn btn-sm btn-outline-primary">
                         <!-- To the UI ppl: plus icon--> New task</a>
                 </div>
@@ -100,9 +100,8 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
         <!-- show last status message as a Boostrap alert -->
         <?php include('notification.php'); ?>
         <script>
-            var reminders = {}; // stores the reminder timestamps of the tasks
+            var alarms = {}; // stores the reminder timestamps of the tasks
         </script>
-        <!-- Show last status as a bootstrap alert -->
 
         <?php
         if (empty($search)) {
@@ -113,15 +112,15 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
     </div>
     <script>
         $(document).ready(function() {
-            // REMINDER FEATURE
-            // collect all the reminder times, call setReminder for each
-            for (const task_Name in reminders) {
-                if (reminders.hasOwnProperty(task_Name)) {
-                    setReminder(reminders[task_Name], task_Name);
+            // ALARM FEATURE
+            // collect all the alarm times, call setAlarm for each
+            for (const task_Name in alarms) {
+                if (alarms.hasOwnProperty(task_Name)) {
+                    setAlarm(alarms[task_Name], task_Name);
                 }
             }
 
-            function setReminder(datetime, task_Name) {
+            function setAlarm(datetime, task_Name) {
                 var alarmTime = new Date(parseInt(datetime.substr(0, 4)), parseInt(datetime.substr(5, 2)) - 1, parseInt(datetime.substr(8, 2)), parseInt(datetime.substr(11, 2)), parseInt(datetime.substr(14, 2)), parseInt(datetime.substr(17, 2)));
                 var duration = alarmTime.getTime() - (new Date()).getTime();
                 if (isNaN(duration) || duration < 0) {
@@ -132,7 +131,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                     window.location.search = "status_heading=🔔 REMINDER: " + "&status=" + task_Name + "&isAlarm=true";
                 }, duration);
             }
-            // END OF REMINDER FEATURE
+            // END OF ALARM FEATURE
 
             // clears the search box 
             $("#search_clear").on('click', function(e) {
