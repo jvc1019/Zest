@@ -1,4 +1,9 @@
 <?php include('header.php'); ?>
+<?php    
+    if (!isset($_SESSION['username'])) {
+    	header("Location:landing.php");
+    }
+?>
 <link href="css/home.css" rel="stylesheet">
 
 <body>
@@ -15,8 +20,8 @@
     		</div>
     	</div>
     	<div class="row">
-    		<div class="col-md-3 col-xl-4 hidden-md-down"></div>
-    		<div class="col-md-6 col-xl-4">
+    		<div class="col-md-3 col-lg hidden-md-down"></div>
+    		<div class="col-md-6 col-lg-4">
     			<div class="row">
 		    		<div class="col-md-4">
 		    			<a href="#">
@@ -44,7 +49,7 @@
 		    		</div>
     			</div>
     		</div>
-    		<div class="col-md-3 col-xl-4 hidden-md-down"></div>
+    		<div class="col-md-3 col-lg hidden-md-down"></div>
     	</div>
     </div>
 
