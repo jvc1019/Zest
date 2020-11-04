@@ -1,30 +1,37 @@
 # CMSC128
 
 This will be the repository for CMSC 128 - Section 3. Files included would be for the prototype system we will create in the scrum process through series of sprints.
-  
+
 ## Zoom Meeting Details:
+
 - Link: https://up-edu.zoom.us/j/89346774676
 - Meeting ID: 893 4677 4676
 - Passcode: Cmsc128-3
 
 ## Sprints
+
 Next sprint deadline is November 12, 2020.
+
 ### 1. First sprint (October 22, 2020)
+
 - The first sprint included the mockup designs for our project.
 - It also included the relational model of the database.
 
 ## Consultations
+
 - November 4, 2020 (Wireframe Consultation)
 
 ## Members:
 
 ### 1. FRONT END (User Interface)
+
 - Carpio, Eman
 - Faeldonea, Ken
 - Jinon, Robien
 - Visto, Ronald
 
 ### 2. BACK END (Database)
+
 - Castaneda, Jayvee (Reminders)
 - Garcia, Mico (Subjects)
 - Jomoc, Gracielou (Notebook)
@@ -169,7 +176,7 @@ include('conn.php');
 
 2.  Navigate inside the repository location (`xampp\htdocs\CMSC128`). On the navigation bar, type `wsl`
     1. To get the latest version of the repository (needs an internet connection): `git pull`
-    2. **Switch to a separate branch if you're planning to alter another team member's code**, then ask that team member's permission before merging your changes. **Do not commit your changes to `main` immediately unless you're only altering your own code**.
+    2. **Switch to a separate branch if you're planning to alter another team member's code**, then ask that team member's permission or create a `pull request` before merging/pushing your changes. **Do not commit your changes to `main` immediately unless you're only altering your own code**.
     3. To add files for staging: `git add file_path`
     4. To commit the changes: `git commit -m message` Note: You can commit even when offline. **Do not commit after every little change.**
     5. Committing your changes only affects your working tree. To push the changes to the remote repository (needs an internet connection): `git push`. But remember to `git pull` or `git fetch` (safer than `git pull`) before `git push` to lessen the chances of "merge conflicts" 🙈. **Must read: [Difference of `git fetch` and `git pull`](https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull/)**
