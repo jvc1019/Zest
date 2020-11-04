@@ -14,17 +14,17 @@ The first sprint included the mockup designs for our project.
 It also included the relational model of the database.
 
 Members:
-Carpio, Eman
-Castaneda, Jayvee
-Faeldonea, Ken
-Garcia, Mico
-Jinon, Robien
-Jomoc, Gracielou
-Luciano, Kirl
-Molina, Janley
-Rabe, Jett Adriel
-Visto, Ronald
-Zamudio, Kent
+- Carpio, Eman
+- Castaneda, Jayvee
+- Faeldonea, Ken
+- Garcia, Mico
+- Jinon, Robien
+- Jomoc, Gracielou
+- Luciano, Kirl
+- Molina, Janley
+- Rabe, Jett Adriel
+- Visto, Ronald
+- Zamudio, Kent
 
 ## Quick Start Guide
 
