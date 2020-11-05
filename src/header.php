@@ -21,6 +21,7 @@
 	<script src="js/jquery-3.5.1.slim.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="ckeditor/ckeditor.js"></script>
 
 
 	<?php
