@@ -168,7 +168,7 @@
                                 </small>
 
                                 <script>
-                                    alarms["<?php echo $row['task_ID']; ?>"] = "<?php echo $row['task_Reminder']; ?>";
+                                    alarms["<?php echo $row['task_Name']; ?>"] = "<?php echo $row['task_Reminder']; ?>";
                                 </script>
                             </div>
                             <!-- edit and delete button -->

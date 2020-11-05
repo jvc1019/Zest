@@ -18,20 +18,33 @@
 
                         <div class="form-group">
                             <label for="task_Due" class="form-label">Due date: </label>
-                            <input type="date" class="form-control" name="task_Due" value="<?php echo $row['task_Due']; ?>">
+                            <input type="date" id="task_Due<?php echo $row['task_ID']; ?>" class="form-control" name="task_Due" value="<?php echo $row['task_Due']; ?>">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">Remind me: </label>
                             <?php
-                            // wew bakit iba format ng datetime
                             // 2020-10-31T01:10:00
                             if (!empty($row['task_Reminder'])) {
                                 $reminder = str_replace(" ", "", (substr_replace($row['task_Reminder'], "T", 10, 0)));
                             }
                             ?>
-                            <input type="datetime-local" class="form-control" name="task_Reminder" value="<?php echo $reminder; ?>">
+                            <input type="datetime-local" id="task_Reminder<?php echo $row['task_ID']; ?>" class="form-control" name="task_Reminder" value="<?php echo $reminder; ?>">
+                            <small id="date_warning<?php echo $row['task_ID']; ?>" class="text-white">WARNING: Setting a reminder time later than the due date.</small>
                         </div>
+
+                        <script>
+                            $("#task_Reminder<?php echo $row['task_ID']; ?>").change(function(e) {
+                                var due = new Date($("#task_Due<?php echo $row['task_ID']; ?>").val());
+                                var reminder = new Date(($("#task_Reminder<?php echo $row['task_ID']; ?>").val()).substr(0, 10));
+
+                                if (reminder > due) {
+                                    $("#date_warning<?php echo $row['task_ID']; ?>").attr("class", "text-danger");
+                                } else {
+                                    $("#date_warning<?php echo $row['task_ID']; ?>").attr("class", "text-white");
+                                }
+                            });
+                        </script>
 
                         <input type="text" class="form-control" name="task_Tags" value="<?php echo $row['task_Tags']; ?>" placeholder="Tags (separated by a comma)" rows="3">
                 </div>
@@ -46,6 +59,8 @@
         </div>
     </div>
 </div>
+
+
 
 <!-- Delete Task -->
 <div class="modal fade" id="taskdelete<?php echo $row['task_ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

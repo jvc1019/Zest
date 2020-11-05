@@ -24,7 +24,21 @@
                         <div class="form-group">
                             <label class="form-label">Remind me: </label>
                             <input type="datetime-local" class="form-control" name="task_Reminder">
+                            <small id="date_warning<?php echo $row['task_ID']; ?>" class="text-white">WARNING: Setting a reminder time later than the due date.</small>
                         </div>
+
+                        <script>
+                            $("#task_Reminder<?php echo $row['task_ID']; ?>").change(function(e) {
+                                var due = new Date($("#task_Due<?php echo $row['task_ID']; ?>").val());
+                                var reminder = new Date(($("#task_Reminder<?php echo $row['task_ID']; ?>").val()).substr(0, 10));
+
+                                if (reminder > due) {
+                                    $("#date_warning<?php echo $row['task_ID']; ?>").attr("class", "text-danger");
+                                } else {
+                                    $("#date_warning<?php echo $row['task_ID']; ?>").attr("class", "text-white");
+                                }
+                            });
+                        </script>
 
                         <input type=" text" class="form-control" name="task_Tags" placeholder="Tags (separated by a comma)">
 
