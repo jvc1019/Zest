@@ -1,4 +1,6 @@
 <?php include('header.php'); ?>
+<?php include('notification.php'); ?>
+
 
 <body class="index-bg">
 	<!-- navigation bar -->

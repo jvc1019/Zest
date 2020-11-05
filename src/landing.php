@@ -28,7 +28,7 @@
                             </div>
                             <div class="rounded-top rounded-bottom form-inner shadow p-3">
                                 <br>
-                                <form method="POST" action="user_login.php">
+                                <form method="POST" action="signup.php">
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="username" placeholder="Enter username" required="">
                                     </div>
@@ -39,7 +39,10 @@
                                         <input type="password" class="form-control" name="password" placeholder="Enter password" required="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-rounded" name="password" placeholder="Re-enter password" required="">
+                                        <?php include('notification.php'); ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-rounded" name="re_password" placeholder="Re-enter password" required="">
                                         <a class="forgot" href="#">Forgot your password?</a>
                                     </div>
                                     <div class="form-group">
