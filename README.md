@@ -9,7 +9,9 @@ This will be the repository for CMSC 128 - Section 3. Files included would be fo
 - Passcode: Cmsc128-3
 
 ## Sprints
+
 Second sprint ends on November 12, 2020.
+
 ### 1. First sprint (October 22, 2020)
 
 - The first sprint included the mockup designs for our project.
@@ -34,7 +36,7 @@ Second sprint ends on November 12, 2020.
 - Garcia, Mico (Subjects)
 - Jomoc, Gracielou (Notebook)
 - Luciano, Kirl (Notebook)
-- Molina, Janley (Tasks)
+- Molina, Janley (Tasks, Reminders, other backend modules)
 - Rabe, Jett Adriel (Subjects)
 - Zamudio, Kent (Login and Registration Pages)
 
