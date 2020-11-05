@@ -4,13 +4,15 @@
     <!-- navigation bar -->
     <?php include('navbar.php'); ?>
     <div class="container" id="main">
-        <h1 class="text-center">Notebook</h1>
         <div class="alert alert-light shadow sticky-top" role="alert">
             <!-- sort by | sort direction | search box | add new task -->
             <!--    2    |       2        |      5     |       3      -->
             <div class="row form-inline">
+                 <div class="col-sm-2">
+                    <h3 class="text-primary text-center">Notebook</h3>
+                </div>
                 <!-- Sort by and sort direction -->
-                <div class="col-sm-4">
+                <div class="col-sm-2">
                     <select id="sortDir" class="btn btn-sm">
                         <?php
                         $value = isset($_GET['sortDir']) ? $_GET['sortDir'] : 0;
