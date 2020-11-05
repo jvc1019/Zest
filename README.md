@@ -8,7 +8,7 @@ This will be the repository for CMSC 128 - Section 3. Files included would be fo
 - Passcode: Cmsc128-3
 
 ## Sprints
-Next sprint deadline is November 12, 2020.
+Second sprint ends on November 12, 2020.
 ### 1. First sprint (October 22, 2020)
 - The first sprint included the mockup designs for our project.
 - It also included the relational model of the database.
@@ -31,7 +31,7 @@ Next sprint deadline is November 12, 2020.
 - Luciano, Kirl (Notebook)
 - Molina, Janley (Tasks)
 - Rabe, Jett Adriel (Subjects)
-- Zamudio, Kent (Customization)
+- Zamudio, Kent (Login and Registration Pages)
 
 ## Quick Start Guide
 
