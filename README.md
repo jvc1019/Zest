@@ -180,3 +180,5 @@ include('conn.php');
     3. To add files for staging: `git add file_path`
     4. To commit the changes: `git commit -m message` Note: You can commit even when offline. **Do not commit after every little change.**
     5. Committing your changes only affects your working tree. To push the changes to the remote repository (needs an internet connection): `git push`. But remember to `git pull` or `git fetch` (safer than `git pull`) before `git push` to lessen the chances of "merge conflicts" 🙈. **Must read: [Difference of `git fetch` and `git pull`](https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull/)**
+  
+3. If you want to report bugs or suggest improvements, you can file an issue here: https://github.com/jvc1019/CMSC128/issues.
