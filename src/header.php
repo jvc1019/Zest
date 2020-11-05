@@ -8,7 +8,7 @@
 
 	<!-- Stylesheets -->
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/sidebar.css" rel="stylesheet">
+	<link href="css/home.css" rel="stylesheet">
 
 	<!-- Scripts -->
 	<script src="js/sidebar.js"></script>

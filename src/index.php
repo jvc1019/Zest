@@ -1,7 +1,12 @@
 <?php include('header.php'); ?>
-<link href="css/home.css" rel="stylesheet">
+<!-- if not logged in, will rediect to landing.php -->
+<?php    
+    if (!isset($_SESSION['username'])) {
+    	header("Location:landing.php");
+    }
+?>
 
-<body>
+<body class="index-bg">
     <!-- navigation bar -->
     <?php include 'navbar.php'; ?>
 
@@ -15,11 +20,11 @@
     		</div>
     	</div>
     	<div class="row">
-    		<div class="col-md-3 col-xl-4 hidden-md-down"></div>
-    		<div class="col-md-6 col-xl-4">
+    		<div class="col-md-3 col-lg hidden-md-down"></div>
+    		<div class="col-md-6 col-lg-4">
     			<div class="row">
 		    		<div class="col-md-4">
-		    			<a href="#">
+		    			<a href="subjects.php">
 		    				<div class = "iconholder">
 		    					<img class="appIcon" src="/cmsc128/resources/icons/book-half.svg"><br>
 		    					<h6>Subjects</h6>
@@ -35,7 +40,7 @@
 		    			</a>
 		    		</div>
 		    		<div class="col-md-4">
-		    			<a href="#">
+		    			<a href="notes.php">
 		    				<div class = "iconholder">
 		    					<img class="appIcon" src="/cmsc128/resources/icons/journal-text.svg"><br>
 		    					<h6>Notebook</h6>
@@ -44,7 +49,7 @@
 		    		</div>
     			</div>
     		</div>
-    		<div class="col-md-3 col-xl-4 hidden-md-down"></div>
+    		<div class="col-md-3 col-lg hidden-md-down"></div>
     	</div>
     </div>
 

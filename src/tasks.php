@@ -1,5 +1,10 @@
 <?php include('header.php'); ?>
-
+<!-- if not logged in, will rediect to landing.php -->
+<?php    
+    if (!isset($_SESSION['username'])) {
+        header("Location:landing.php");
+    }
+?>
 <!-- Upon page load, the task list, grouped if "completed" or "not completed", will show. 
 If the user presses the check button, the task_isDone of the tasks item is marked as true. The page will then be refreshed. 
 If the user presses the "add new task" button, a pop-up will appear, asking for the details. -->

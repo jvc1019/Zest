@@ -63,7 +63,7 @@ CREATE TABLE `subject` (
 CREATE TABLE `note` (
   `note_ID` int(2) ZEROFILL NOT NULL AUTO_INCREMENT, -- up to 99 notes
   `note_Title` varchar(250) DEFAULT NULL,
-  `note_Content` mediumtext DEFAULT NULL,
+  `note_Content` text COLLATE utf8_unicode_ci NOT NULL,
   `note_Tags` text DEFAULT NULL,
   `user_ID` int(3) ZEROFILL NOT NULL,
   PRIMARY KEY (`note_ID`),

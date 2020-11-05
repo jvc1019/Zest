@@ -1,27 +1,82 @@
-body{
+/* sidebar css */
+.nav-icon
+{
+  height: 1.5em;
+  fill: white;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  background-color: rgb(1,1,1,0.95);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left 1s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+/* index, landing css */
+.index-bg{
 	background-image: url("/cmsc128/resources/ricardo-gomez-angel-5OxgiLq33KM-unsplash.jpg");
 	background-size: cover; 
 	background-repeat: no-repeat;
 }
-#rightbox,
-{
-	display: flex;
-	min-height: 100vh;
-	align-items: center;
-}
 
+#time, #date{
+	text-shadow: -3px 3px 7px rgba(0,0,0,0.9);
+	color: white!important;
+}
 #time h1
 {
 	font-size: 60px;
-}
-
-.innerRight
-{
-	margin-top: 10vh;
-	text-align: center;
-	background-color: rgb(0,0,0,0.5);
-	padding: 50px 50px 50px 50px;
-	color: white;
+	
 }
 
 #leftbox
@@ -62,4 +117,52 @@ body{
 	margin-top: 10vh;
 	text-align: center;
 	margin-bottom: 10vh;
+}
+
+/* login, signup css */
+.page-center
+{
+	height: 100vh;
+	align-items: center;
+}
+.login-cover
+{
+	background-image: url("/cmsc128/resources/erik-eastman-7jSRJZJSvy4-unsplash.jpg");
+	background-size: cover; 
+	background-repeat: no-repeat;
+}
+
+.form-box
+{
+	background-color: #FFBA33;
+	padding: 0px 0px 0px 0px !important;
+}
+.signup-head
+{
+	background-color: white;
+	padding: 20px 20px 20px 20px;
+	margin: 40px 20px 0px 20px;
+}
+
+.form-head
+{
+	background-color: white;
+	padding: 20px 20px 20px 20px;
+	margin: 70px 20px 0px 20px;
+}
+.form-inner
+{
+	background-color: white;
+	padding: 50px 20px 20px 20px;
+	margin: -5px 20px 20px 20px;
+}
+
+.form-links
+{
+	margin: 20px 20px 60px 20px;
+}
+
+.signup-links
+{
+	margin: 20px 20px 40px 20px;
 }
