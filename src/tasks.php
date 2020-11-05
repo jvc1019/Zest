@@ -138,6 +138,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             // clears the search box 
             $("#search_clear").on('click', function(e) {
                 $("#search").val("");
+                window.location = "tasks.php";
             });
 
             // SORTING HANDLER
