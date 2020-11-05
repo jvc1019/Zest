@@ -32,6 +32,7 @@
 		!isset($_SESSION['user_Name'])
 		&& (strcmp($_SERVER['REQUEST_URI'], "/CMSC128/src/landing.php") != 0)
 		&& (strcmp($_SERVER['REQUEST_URI'], "/CMSC128/src/login.php") != 0)
+		&& (strcmp($_SERVER['REQUEST_URI'], "/CMSC128/src/signup-page.php") != 0)
 	) {
 		header("Location: landing.php");
 	} else if (isset($_SESSION['user_Name'])) {

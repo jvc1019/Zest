@@ -153,7 +153,7 @@
 .form-inner
 {
 	background-color: white;
-	padding: 50px 20px 20px 20px;
+	padding: 30px 50px 30px 50px !important;
 	margin: -5px 20px 20px 20px;
 }
 
