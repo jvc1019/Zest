@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include('conn.php');
 
@@ -8,7 +8,7 @@ $password = $_POST['password'];
 // $hashed = password_hash($password);
 // $sql = "SELECT *  FROM `user` WHERE `user_Name` = $username";
 
-$sql = "SELECT *  FROM `user` WHERE `user_Name` = '".$username."';";
+$sql = "SELECT *  FROM `user` WHERE `user_Name` = '" . $username . "';";
 
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
@@ -16,11 +16,9 @@ $logged = false;
 
 if ($row['user_Name'] == $username && $row['user_Password'] == $password) {
 	session_start();
-	$_SESSION['username'] = $username;
+	$_SESSION['user_Name'] = $username;
 	$logged = true;
 	header("Location:index.php");
 } else {
 	header("Location:login.php?status=Login Error&isNotif=true");
 }
-
-?>

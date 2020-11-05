@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>[Dev] Student Organizer</title>
+	<title>[Dev] Productivity App</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Stylesheets -->
@@ -22,26 +22,30 @@
 	<script src="js/popper.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 
-	<!-- Custom CSS user theme overriding the default ones. Also stores the user_ID -->
-	<?php
-	session_start();
-	if (!isset($_SESSION['user_ID'])) {
-		// if the user_ID is not set, redirect to login page. 
-		// header("Location: loginpage.php");
-		/* for testing purposes (assuming the loginpage was not created yet) 
-		   you can change the line above to the one below: */
-		$user_ID = 1;                        // $user_ID = 1; // superuser
-	} else {
-		$user_ID = $_SESSION['user_ID']; /* you can also access $user_ID on your php as long as you 
-			                                include header.php*/
-	}
 
-	$user = $conn->query("SELECT * FROM user WHERE user_ID='$user_ID'")->fetch_assoc();
-	$user_Name = $user['user_Name']; /* you can also access $user_Name on your php as long as you 
+	<?php
+	// Stores the user_Name and user_ID
+	session_start();
+	date_default_timezone_set("Asia/Manila");
+
+	if (
+		!isset($_SESSION['user_Name'])
+		&& (strcmp($_SERVER['REQUEST_URI'], "/CMSC128/src/landing.php") != 0)
+		&& (strcmp($_SERVER['REQUEST_URI'], "/CMSC128/src/login.php") != 0)
+	) {
+		header("Location: landing.php");
+	} else if (isset($_SESSION['user_Name'])) {
+		$user_Name = $_SESSION['user_Name']; /* you can also access $user_Name on your php as long as you 
+											include header.php*/
+		$user = $conn->query("SELECT * FROM user WHERE user_Name='$user_Name'")->fetch_assoc();
+		$user_ID = $user['user_ID']; /* you can also access $user_ID on your php as long as you 
 										include header.php*/
-	$user_Theme = $user['user_Theme'];
-	if (file_exists("css/" . $user_Theme)) {
-		echo "<link href='$user_Theme.css' rel='stylesheet'>";
+		$user_Theme = $user['user_Theme'];
+
+		// Custom CSS user theme overriding the default ones.
+		if (file_exists("css/" . $user_Theme)) {
+			echo "<link href='$user_Theme.css' rel='stylesheet'>";
+		}
 	}
 	?>
 </head>
