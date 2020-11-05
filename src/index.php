@@ -5,7 +5,6 @@
     	header("Location:landing.php");
     }
 ?>
-<link href="css/home.css" rel="stylesheet">
 
 <body class="index-bg">
     <!-- navigation bar -->

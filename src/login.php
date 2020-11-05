@@ -1,24 +1,22 @@
 <?php include('header.php'); ?>
 <?php include('notification.php') ?>
-<link href="css/home.css" rel="stylesheet">
 
 
-<body>
+<body class="index-bg">
 	<!-- navbar goes here -->
 	<div class="container">
-		<h1>Login</h1>
-		<div class="row">
+		<div class="row page-center">
 			<div class="col-lg"></div>
-			<div class="col-md-6" >
-				hello.
-				<div class="row form-bg">
-					<div class="col-md form-field"></div>
+			<div class="col-md-8" >
+				<div class="row rounded-bottom rounded-top form-box shadow p-3">
+					<div class="col-md login-cover rounded-left"></div>
 					<div class="col-md-7 text-center">
-						<div class="rounded-top rounded-bottom" style="background-color: pink">
+						<div class="form-group rounded-top form-head shadow p-3 sticky-top">
+							<div class="text-right">Need help?</div>
+						</div>
+						<div class="rounded-top rounded-bottom form-inner shadow p-3">
+							<br>
 							<form method="POST" action="user_login.php">
-								<div class="form-group">
-									<div class="text-right">Need help?</div>
-								</div>
 								<div class="form-group">
 									<input type="text" class="form-control" name="username" placeholder="Enter username" required="">
 								</div>
@@ -31,8 +29,10 @@
 								</div>
 							</form>
 						</div>
-						<div class="text-gray-dark">Don't have an account yet?</div>
-						<a class="text-light" href="signup.php">Create an Account</a>
+						<div class="form-links">
+							<div class="text-gray-dark">Don't have an account yet?</div>
+							<a class="text-light" href="landing.php">Create an Account</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -43,7 +43,7 @@
 
 
 
-
+		<!-- modal -->
 		<div class="modal fade" id="errorLoginModal" tabindex="-1" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
