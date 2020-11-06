@@ -1,28 +1,55 @@
 <?php 
 
 include('conn.php');
+$errorMsg = "";
+$username = $email = $password = "";
 
-$username = $_POST['username'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-$re_password = $_POST['re_password'];
+if (isset($_POST['register'])) {
 
-//check if password and re-entered password are the same
-if ($password !== $re_password) {
-	header("Location: landing.php?status=Password doesn't match&isNotif=true");
-} else {
+	$username = $_POST['username'];
+	$email = $_POST['email'];
+	$password = $_POST['password'];
+	$re_password = $_POST['re_password'];
 
-	$sql = "INSERT INTO user(`user_Name`, `user_Email`, `user_Password`) VALUES ('$username', '$email', '$password');";
-
-	if (mysqli_query($conn, $sql)) {
-		session_start();
-		$_SESSION['user_Name'] = $username;
-		header("Location:index.php?status=Signup successfull. Welcome $username");
+	//check if password and re-entered password are the same
+	if ($password !== $re_password) {
+		$errorMsg = "Password doesn't match";
+		?>
+		<script>
+			 $(document).ready(function(){
+				$("#errorSignupModal").modal("show");
+			});
+		</script>
+		<?php
 	} else {
-		header("Location:login.php?status=Signup Error&isNotif=true");
+
+		$sql = "SELECT * FROM user WHERE `user_Name` = '$username';";
+
+		//if username is nonexistent
+		if (! mysqli_query($conn, $sql)) { 
+			
+			$sql = "INSERT INTO user(`user_Name`, `user_Email`, `user_Password`) VALUES ('$username', '$email', '$password');";
+
+			if (mysqli_query($conn, $sql)) {
+				session_start();
+				$_SESSION['user_Name'] = $username;
+				header("Location:index.php?status=Signup successfull. Welcome $username");
+			}
+		} else {
+			$errorMsg = "Username already taken.";
+			?>
+				<script>
+					 $(document).ready(function(){
+						$("#errorSignupModal").modal("show");
+					});
+				</script>
+			<?php
+		}
+
 	}
 
 }
 
-
  ?>
+
+
