@@ -52,7 +52,7 @@
                         </button>
                     </div>
                 </div>
-                <!-- New task button -->
+                <!-- New Note button -->
                 <div class="col-sm-3">
                 <a href="notes_full.php" class="btn btn-sm btn-outline-primary" role="button" aria-pressed="true">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
