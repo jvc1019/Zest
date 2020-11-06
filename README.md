@@ -126,18 +126,21 @@ git clone https://github.com/jvc1019/CMSC128.git
   }
   ```
 
-- As much as possible, **follow the Bootstrap 4 convention and its built-in classes for layouting elements** to avoid huge amounts of CSS and JS files for every page, and to make the UI **more consistent**. If you need a **box**, you probably need a **Bootstrap Card**.
+- As much as possible, **follow the Bootstrap 4 convention and its built-in classes for layouting elements** to avoid huge amounts of CSS and JS files for every page, and to make the UI **more consistent**.
+  - If you need a **box**, you probably need a **Bootstrap Card**.
+  - If you need to center your text, you probably need to use the class `text-center`.
+  - More on: https://getbootstrap.com/docs/4.0/components/
 
 2. Most components (navbar, tasks, notebook, subjects) should include the `header.php` file at the top. The `header.php` file contains the `<head>`, with the necessary CSS and JS files for cleaner and consistent code.
 
 ```php
-<?php include('header.php'); ?>
+<?php include("header.php"); ?>
 ```
 
 - If you want to access user details, you can include `user_details.php`.
 
 ```php
-<?php include('user_details.php'); ?>
+<?php include("user_details.php"); ?>
 ```
 
 - After including `header.php`, **only the `<body>`, or additionally, the `<footer>` needs to be defined**. Notice how the `<div>` with the `container` class is nested inside the body as described in #1. Check out `tasks.php` to see how it works.
@@ -153,14 +156,13 @@ git clone https://github.com/jvc1019/CMSC128.git
 3. For subcomponents that need database access, you can include `conn.php`. Check out `tasks_add.php` to see how it works.
 
 ```php
-include('conn.php');
+include("conn.php");
 ```
 
-4. To implement notifications, you may use `notification.php`. Check out `notification.php` to see how to use it, and around lines 114-135 on `tasks.php` to see a sample implementation.
+4. To implement notifications, you may use `notification.php`. Check out `notification.php` to see how to use it, and around lines 114-135 on `tasks.php` to see a sample implementation. **UPDATE: Notifications will now appear at the bottom right of the screen for consistency.**
 
 ```php
-// I want my notif to appear here
-<?php include('notification.php') ?>
+<?php include("notification.php") ?>
 ```
 
 5. There are some useful functions provided by **jQuery** to shorten your Javascript code, such as
