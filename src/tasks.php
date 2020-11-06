@@ -58,14 +58,10 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                                                                                                                     echo "";
                                                                                                                 }
                                                                                                                 ?>">
+                    <button class="btn bg-transparent" id="search_clear" style="margin-left: -40px; z-index: 100;" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <div class="input-group-append">
-                        <button id="search_clear" class="btn btn-outline-danger">
-                            <!-- x icon -->
-                           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                            </svg>
-                        </button>
-                        </button>
                         <button id="search_button" class="btn btn-primary">
                             <!-- TO UI people, just add a search icon here-->
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
