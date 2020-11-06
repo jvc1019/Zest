@@ -15,8 +15,8 @@
             ?>
 
                 
-                    <div class="col-sm-6">
-                        <div class="card" style="width: 18rem;">
+                    <div class="col-sm">
+                        <div class="card" style="width: 18rem; height: 11rem;">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row['note_Title']; ?></h5>
                                 <h6 class="card-subtitle mb-2 text-muted"><?php echo $row['note_Tags']; ?></h6>
