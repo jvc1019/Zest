@@ -21,6 +21,7 @@
 	<script src="js/jquery-3.5.1.slim.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="ckeditor/ckeditor.js"></script>
 
 
 	<?php
@@ -32,6 +33,7 @@
 		!isset($_SESSION['user_Name'])
 		&& (strcmp($_SERVER['REQUEST_URI'], "/CMSC128/src/landing.php") != 0)
 		&& (strcmp($_SERVER['REQUEST_URI'], "/CMSC128/src/login.php") != 0)
+		&& (strcmp($_SERVER['REQUEST_URI'], "/CMSC128/src/signup-page.php") != 0)
 	) {
 		header("Location: landing.php");
 	} else if (isset($_SESSION['user_Name'])) {

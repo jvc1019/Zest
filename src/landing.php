@@ -23,36 +23,27 @@
                 <div class="innerRight">
                     <div class="row rounded-bottom rounded-top form-box shadow p-3">
                         <div class="col-md text-center">
-                            <div class="form-group rounded-top signup-head shadow p-3 sticky-top">
+                            <div class="form-group rounded-top form-head shadow p-3 sticky-top">
                                 <div class="text-right">Need help?</div>
                             </div>
                             <div class="rounded-top rounded-bottom form-inner shadow p-3">
                                 <br>
-                                <form method="POST" action="signup.php">
+                                <form method="POST" action="user_login.php">
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="username" placeholder="Enter username" required="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="email" placeholder="Enter email address" required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" name="password" placeholder="Enter password" required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <?php include('notification.php'); ?>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-rounded" name="re_password" placeholder="Re-enter password" required="">
+                                        <input type="password" class="form-control form-rounded" name="password" placeholder="Enter password" required="">
                                         <a class="forgot" href="#">Forgot your password?</a>
                                     </div>
                                     <div class="form-group">
-                                        <button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+                                        <button class="btn btn-primary btn-block" type="submit">Log In</button>
                                     </div>
                                 </form>
                             </div>
-                            <div class="signup-links">
-                                <div class="text-gray-dark">Have an account??</div>
-                                <a class="text-light" href="login.php">Login</a>
+                            <div class="form-links">
+                                <div class="text-gray-dark">Don't have an account yet?</div>
+                                <a class="text-light" href="signup-page.php">Create an Account</a>
                             </div>
                         </div>
                     </div>
