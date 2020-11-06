@@ -1,3 +1,8 @@
+<!-- 
+    ORIGINAL CODE AND MARKUP by Janley Molina
+    Derivatives of this code/markup are covered by https://opensource.org/licenses/CDDL-1.0
+-->
+
 <?php
 include('conn.php');
 
