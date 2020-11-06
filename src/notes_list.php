@@ -1,18 +1,21 @@
 <div id="notes_list">
     <ul id="complete_notes" class="list-group">
+        <div class="row">
         <?php
         $query = "SELECT * FROM note LEFT JOIN user ON note.user_ID=user.user_ID WHERE note.user_ID=$user_ID";
         $result = $conn->query($query);
         if (!($result->num_rows > 0)) {
             ?>
                 <h6 class="text-center">☜(ﾟヮﾟ☜) There's nothing around here. You're all set!</h6>
+            
+
             <?php
             } else {
                 while ($row = $result->fetch_assoc()) {
             ?>
-                <li class="list-group-item">
-                <div class="row">
-                    <div class="col-sm">
+
+                
+                    <div class="col-sm-6">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row['note_Title']; ?></h5>
@@ -24,12 +27,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
                 <?php include('notes_modal.php'); ?>
-                </li>
+            
+
             <?php
             }
         }
         ?>
+    </div>
+
     </ul>
 </div>
