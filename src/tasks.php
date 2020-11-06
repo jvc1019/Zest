@@ -4,8 +4,9 @@
 -->
 
 <?php
-include('header.php');
-include('user_details.php');
+include("header.php");
+include("user_details.php");
+include("notification.php");
 ?>
 
 <!-- Upon page load, the task list, grouped if "completed" or "not completed", will show. 
@@ -81,8 +82,12 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 </div>
                 <!-- New task button -->
                 <div class="col-sm-2">
-                    <a href="#addtask" data-toggle="modal" class="btn btn-sm btn-outline-primary">
-                        <!-- To the UI ppl: plus icon--> New task</a>
+                    <button href="#addtask" data-toggle="modal" class="btn btn-sm btn-outline-primary">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg>
+                        New task
+                    </button>
                 </div>
 
                 <?php
@@ -111,8 +116,6 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 
         </div>
         <?php include('tasks_modal_add.php'); ?>
-        <!-- show last status message as a Boostrap alert -->
-        <?php include('notification.php'); ?>
         <script>
             var alarms = {}; // stores the reminder timestamps of the tasks
         </script>

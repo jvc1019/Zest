@@ -32,6 +32,8 @@
                             // 2020-10-31T01:10:00
                             if (!empty($row['task_Reminder'])) {
                                 $reminder = str_replace(" ", "", (substr_replace($row['task_Reminder'], "T", 10, 0)));
+                            } else {
+                                $reminder = null;
                             }
                             ?>
                             <input type="datetime-local" id="task_Reminder<?php echo $row['task_ID']; ?>" class="form-control" name="task_Reminder" value="<?php echo $reminder; ?>">

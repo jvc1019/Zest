@@ -54,7 +54,7 @@
                             <?php
                             } else {
                             ?>
-                                <h6 style='text-decoration: line-through;'><?php echo $row['task_Name']; ?></h6>
+                                <h6><del><?php echo $row['task_Name']; ?></del></h6>
                             <?php
                             }
                             ?>
@@ -127,7 +127,7 @@
             ?>
                 <li class="list-group-item">
                     <!-- check box | task name and due | edit button | delete button -->
-                    <!--     1     |         8        |             2                -->
+                    <!--     1     |         8        |             3                -->
                     <div class="row form-inline">
                         <!-- check box -->
                         <div class="col-sm-1 form-check">
@@ -208,15 +208,15 @@
                 ?>
                     <li class="list-group-item">
                         <!-- check box | task name and due | edit button | delete button -->
-                        <!--     1     |         9         |     1       |      1        -->
+                        <!--     1     |         8        |             3                -->
                         <div class="row col-12 form-inline">
                             <!-- check box -->
                             <div class="col-sm-1 form-check">
                                 <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> checked>
                             </div>
                             <!-- task name and due -->
-                            <div class="col-sm-9">
-                                <h6 style="text-decoration: line-through;"><?php echo $row['task_Name']; ?></h6>
+                            <div class="col-sm-8">
+                                <h6><del><?php echo $row['task_Name']; ?></del></h6>
                                 <small>
                                     <?php if (!empty($row['task_Due'])) { ?>
                                         <!-- calendar icon -->
@@ -240,7 +240,7 @@
                                 </script>
                             </div>
                             <!-- edit and delete button -->
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <a href="#taskdetails<?php echo $row['task_ID']; ?>" data-toggle="modal" class="btn text-primary btn-sm">
                                     <!-- info icon?-->
                                     <span>
