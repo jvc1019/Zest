@@ -1,13 +1,13 @@
-<?php include('header.php'); ?>
-<!DOCTYPE html>
+<?php include('header.php'); 
+include('user_details.php');?>
 
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<title>Notebook editor</title>
 		<script src="ckeditor/ckeditor.js"></script>
 	</head>
-
 
 	<body>
 		<center><h1 style="padding: 20px"> Notes <h1></center>
@@ -25,7 +25,7 @@
 				<div class="row justify-content-center my-1">
 					<textarea name="note_Content" id="content" rows="10" cols="80" value="Input notes here!"></textarea>
 				</div>
-				<input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
+					<input type="hidden" name="user_ID" value="<?php echo (isset($user_ID) ? $user_ID: ''); ?>" />
 
 				<div class="row justify-content-center my-1">
 					<button type="button" class="btn btn-sm text-secondary" name="cancel" value="cancel" onClick="window.location.href='notes.php';">Cancel</button>
