@@ -23,7 +23,7 @@
 
 				<!-- RICHTEXT EDITOR -->
 				<div class="row justify-content-center my-1">
-					<textarea name="content" id="content" rows="10" cols="80" value="Input notes here!"></textarea>
+					<textarea name="note_Content" id="content" rows="10" cols="80" value="Input notes here!"></textarea>
 				</div>
 				<input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
 
