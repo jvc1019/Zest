@@ -13,7 +13,7 @@
 		<center><h1 style="padding: 20px"> Notes <h1></center>
 
 		<div class="container">
-			<form method="post" action="notes_add.php">
+			<form method="post" action="notes_add.php" id="#addnote" enctype="multipart/form-data">
 
 				<!-- TITLE AND TAG TEXTBOXES -->
 				<div class="row mx-5 px-4 justify-content-left">
@@ -25,6 +25,7 @@
 				<div class="row justify-content-center my-1">
 					<textarea name="content" id="content" rows="10" cols="80" value="Input notes here!"></textarea>
 				</div>
+				<input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
 
 				<div class="row justify-content-center my-1">
 					<button type="button" class="btn btn-sm text-secondary" data-dismiss="modal">Cancel</button>
