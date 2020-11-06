@@ -13,8 +13,8 @@
 		<center><h1 style="padding: 20px"> Edit Note <h1></center>
 
 		<div class="container">
-			<form method="post" action="notes_edit.php?note_ID=<?php echo $row['note_ID']; ?>" enctype="multipart/form-data">
-
+			<form method="post" action="notes_edit.php" id="#editnote" enctype="multipart/form-data">
+                          
 				<!-- TITLE AND TAG TEXTBOXES -->
 				<div class="row mx-5 px-4 justify-content-left">
 					<input class="mr-2" type="text" name="note_Title" value="<?php echo $row['note_Title']; ?>">  

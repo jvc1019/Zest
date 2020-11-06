@@ -21,7 +21,7 @@
                                 <h5 class="card-title"><?php echo $row['note_Title']; ?></h5>
                                 <h6 class="card-subtitle mb-2 text-muted"><?php echo $row['note_Tags']; ?></h6>
                                 <p class="card-text"><?php echo $row['note_Content']; ?></p>
-                                <a href="#notedetails<?php echo $row['note_ID']; ?>" data-toggle="modal" class="btn text-primary btn-sm">
+                                <a href="notes_editor.php" method="post"  id="#editnote"  class="btn text-primary btn-sm">
                                     <!-- info icon?--> Details</a> <a href="#notedelete<?php echo $row['note_ID']; ?>" data-toggle="modal" class="btn text-danger btn-sm">
                                     <!-- garbage bin icon--></span> Delete</a>
                             </div>
