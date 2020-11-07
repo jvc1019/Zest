@@ -8,7 +8,6 @@ include("header.php");
 include("user_details.php");
 include("notification.php");
 ?>
-
 <!-- Upon page load, the task list, grouped if "completed" or "not completed", will show. 
 If the user presses the check button, the task_isDone of the tasks item is marked as true. The page will then be refreshed. 
 If the user presses the "add new task" button, a pop-up will appear, asking for the details. -->
@@ -108,7 +107,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 if (isset($_GET['search'])) {
                     $searchQuery = $_GET['search'];
                     if (!empty($searchQuery)) {
-                        $search = "WHERE task_Name LIKE '%" . $searchQuery . "%' AND task.user_ID=$user_ID";
+                        $search = "WHERE task_Name LIKE '%" . $searchQuery . "%' OR task_Tags LIKE '%" . $searchQuery . "%' AND task.user_ID=$user_ID";
                     }
                 }
                 ?>
@@ -186,6 +185,19 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 
                 window.location = "tasks_update.php?task_ID=" + $task_ID + "&task_isChecked=" + $isChecked;
             });
+
+            // reload the browser every midnight to update the Due today section
+            const c_Time = new Date();
+            const midnight = new Date(c_Time.getFullYear(),
+                c_Time.getMonth(),
+                c_Time.getDate() + 1,
+                0, 0, 0, 0); // TODO: Verify other ways of updating the date
+
+            var duration = midnight.getTime() - c_Time.getTime();
+
+            setTimeout(setInterval(function() {
+                window.location.reload;
+            }, 86400000), duration);
         });
     </script>
 </body>
