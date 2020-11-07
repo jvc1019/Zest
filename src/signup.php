@@ -23,18 +23,13 @@ if (isset($_POST['register'])) {
 		<?php
 	} else {
 
-		$sql = "SELECT * FROM user WHERE `user_Name` = '$username';";
+		$sql = "INSERT INTO user(`user_Name`, `user_Email`, `user_Password`) VALUES ('$username', '$email', '$password');";
 
 		//if username is nonexistent
-		if (! mysqli_query($conn, $sql)) { 
-			
-			$sql = "INSERT INTO user(`user_Name`, `user_Email`, `user_Password`) VALUES ('$username', '$email', '$password');";
-
-			if (mysqli_query($conn, $sql)) {
-				session_start();
-				$_SESSION['user_Name'] = $username;
-				header("Location:index.php?status=Signup successfull. Welcome $username");
-			}
+		if ($conn->query($sql)) { 
+			session_start();
+			$_SESSION['user_Name'] = $username;
+			header("Location:index.php?status=Signup successfull. Welcome $username");
 		} else {
 			$errorMsg = "Username already taken.";
 			?>
