@@ -18,10 +18,10 @@
                     </div>
                     <!--Body-->
                     <div class="modal-body">
-                        <form>
+                        <form method="POST" action="subjects_add.php">
                             <div class="form-group">
                                 <label for="addSubjectName">Subject Name</label>
-                                <input type="text" class="form-control form-control-sm" id="addSubjectName">
+                                <input type="text" class="form-control form-control-sm" id="addSubjectName" required>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="addSubjectType" id="addLecture" value="option1" checked>
@@ -51,12 +51,13 @@
                                     <option>Sun</option>
                                 </select>
                             </div>
-                        </form>                         
+                                                 
                     </div>
                     <!--Footer-->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Add Subject</button>
+                        <button type="submit" class="btn btn-primary">Add Subject</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </form>
                     </div>
                 </div>
             </div>
