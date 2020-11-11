@@ -2,7 +2,41 @@
 <!--To be worked on by Mico and Jett-->
 
 <body>
+
     <div class="container">
+
+
+        <!--Modal Area-->
+        <div class="modal fade" id="addSubjectModal">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Add Subject</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="addSubjectName">Subject Name</label>
+                                <input type="text" class="form-control" id="addSubjectName">
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="addSubjectType" id="addLecture" value="option1" checked>
+                                <label class="form-check-label" for="addLecture">Lecture</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="addSubjectType" id="addLaboratory" value="option2">
+                                <label class="form-check-label" for="addLaboratory">Laboratory</label>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--This is only temporary--> 
+        <a href="#" data-toggle="modal" data-target="#addSubjectModal">Add Subject</a>
         <br>
     <?php
         include("header.php");
@@ -23,7 +57,7 @@
                     // print_r($subjects);
 
                     //this portion of the code was taken from a previous activity last semester
-                    $inc = ($inc == 4) ? 1 : $inc+1;
+                    $inc = ($inc == 4) ? 1 : $inc + 1;
                     if($inc == 1) echo "<div class='row'>";
     ?>
                     <!--Cards Section-->
@@ -32,8 +66,9 @@
                             <img class="card-img-top" src="img/something.jpg" alt="Image here/Maybe emoji">
                             
                             <!--an overly long description can go past this height, so find a way to prevent that-->
-                            <div class="card-body" style="height: 20rem;">
+                            <div class="card-body" style="height: 15rem;">
                                 <h4 class="card-title"><?php echo $subjects['subject_Name']?></h4>
+                                <!--Change the muted to Time-->
                                 <h5 class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Instructor']?></h5>
                                 <p class="card-text"><?php echo $subjects['subject_Desc']?></p>
 
@@ -59,7 +94,7 @@
 
             else{
                 //format this in a pleasing way, for now its is like this for functionality
-                echo"no subjects to diplsay";
+                echo "No subjects to diplsay";
             }
 
         //end of if ($result){
