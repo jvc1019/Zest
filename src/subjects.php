@@ -7,17 +7,21 @@
 
 
         <!--Modal Area-->
+
+        <!--Add subject modal-->
         <div class="modal fade" id="addSubjectModal">
             <div class="modal-dialog modal-md">
                 <div class="modal-content">
+                    <!--Header-->
                     <div class="modal-header">
-                        <h3>Add Subject</h3>
+                        <h4>Add Subject</h4>
                     </div>
+                    <!--Body-->
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
                                 <label for="addSubjectName">Subject Name</label>
-                                <input type="text" class="form-control" id="addSubjectName">
+                                <input type="text" class="form-control form-control-sm" id="addSubjectName">
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="addSubjectType" id="addLecture" value="option1" checked>
@@ -27,9 +31,32 @@
                             <input class="form-check-input" type="radio" name="addSubjectType" id="addLaboratory" value="option2">
                                 <label class="form-check-label" for="addLaboratory">Laboratory</label>
                             </div>
+                            <div class="form-group">
+                                <label for="addSubjectInstructor">Instructor</label>
+                                <input type="text" class="form-control form-control-sm" id="addSubjectInstructor">
+                            </div>
+                            <div class="form-group">
+                                <label for="addSubjectDesc">Description</label>
+                                <textarea class="form-control" id="addSubjectDesc" rows="2"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="addSubjectDay">Day of the Week</label>
+                                <select id="addSubjectDay" class="form-control form-control-sm">
+                                    <option selected>Mon</option>
+                                    <option>Tue</option>
+                                    <option>Wed</option>
+                                    <option>Thu</option>
+                                    <option>Fri</option>
+                                    <option>Sat</option>
+                                    <option>Sun</option>
+                                </select>
+                            </div>
+                        </form>                         
                     </div>
+                    <!--Footer-->
                     <div class="modal-footer">
-                        
+                        <button type="button" class="btn btn-primary">Add Subject</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
             </div>
