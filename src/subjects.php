@@ -3,6 +3,7 @@
 <?php 
         include("header.php");
         include("user_details.php");
+        include("notification.php");
 ?>
 <body>
 

@@ -3,6 +3,7 @@
 
 <?php
     include("header.php");
+    include("notification.php");
 
     $sName = $_POST ["subjectName"];
     $sType = $_POST ["subjectType"];
@@ -14,7 +15,11 @@
     $subjectsql = "INSERT INTO subject (subject_Name, subject_Type, subject_Instructor, subject_Desc, subject_Day, user_ID)
                     VALUES ('$sName', '$sType', '$sInstructor', '$sDesc', '$sDay', '$uID')";
 
-    $conn->query($subjectsql);
+    if (!$conn->query($subjectsql)) {
+        $status = "Subject addition failed. " . $sName . " has already been made.";
+    } else {
+        $status = "Successfully added task " . $sName . ".";
+    }
 
-    header('location:subjects.php');
+    header('Location:subjects.php?status=' . $status . "&isNotif=true");
 ?>
