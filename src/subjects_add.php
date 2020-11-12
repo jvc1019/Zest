@@ -10,6 +10,7 @@
     $sInstructor = $_POST ["subjectInstructor"];
     $sDesc = $_POST ["subjectDesc"];
     $sDay = $_POST ["subjectDay"];
+    
 
     //checking
     // echo $sName;
@@ -18,6 +19,12 @@
     // echo $sDesc;
     // echo $sDay;
 
-    // $subjectsql = "INSERT INTO "
+    $uID = 003;
+    //user_ID VALUE will be changed to the user logged in on user_details.php
+    $subjectsql = "INSERT INTO subject (subject_Name, subject_Type, subject_Instructor, subject_Desc, subject_Day, user_ID)
+                    VALUES ('$sName', '$sType', '$sInstructor', '$sDesc', '$sDay', '$uID')";
+
+    $conn->query($subjectsql);
+
 
 ?>
