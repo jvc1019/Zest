@@ -151,8 +151,10 @@
                                 <!--Change the muted to Time-->
                                 <h5 class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Instructor']?></h5>
                                 <p class="card-text"><?php echo $subjects['subject_Desc']?></p>
+                            </div>
+                            <div class="card-footer text-right">
                                 <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-danger btn-sm">Delete</a>
-                                
+                                <a href="#updateSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-success btn-sm">Update</a>
                                 <!--It had to be put right here for some reason-->
                                 <?php include("subject_delete_modal.php"); ?>
                             </div>
