@@ -56,9 +56,7 @@
                                     <option>Sat</option>
                                     <option>Sun</option>
                                 </select>
-                            </div>
-                            
-                                                 
+                            </div>              
                     </div>
                     <!--Footer-->
                     <div class="modal-footer">
@@ -113,6 +111,9 @@
                     </div>
                     
     <?php
+
+                //We might need another way to arrange the cards, That would be a problem for another time
+                //maybe using card groups might work
                 if($inc == 4) echo "</div>";
                 //end of while
                 }

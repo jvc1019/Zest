@@ -12,6 +12,8 @@
     $sDay = $_POST ["subjectDay"];
     
 
+    //WIP part to check conflict on time with any existing subjects
+
     //checking
     // echo $sName;
     // echo $sType;
