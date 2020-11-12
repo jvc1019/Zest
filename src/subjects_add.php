@@ -28,5 +28,5 @@
 
     $conn->query($subjectsql);
 
-
+    header('location:subjects.php');
 ?>
