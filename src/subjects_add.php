@@ -9,10 +9,8 @@
     $sInstructor = $_POST ["subjectInstructor"];
     $sDesc = $_POST ["subjectDesc"];
     $sDay = $_POST ["subjectDay"];
-    
+    $uID = $_POST['user_ID'];
 
-
-    $uID = 003;
     $subjectsql = "INSERT INTO subject (subject_Name, subject_Type, subject_Instructor, subject_Desc, subject_Day, user_ID)
                     VALUES ('$sName', '$sType', '$sInstructor', '$sDesc', '$sDay', '$uID')";
 
