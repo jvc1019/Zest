@@ -112,6 +112,9 @@
             </div>
         </div>
         <br>
+
+                        
+
         <div class="shadow-none p-3 mb-8 bg-light rounded">
     <?php
         // Hi, this is a query to get subjects, change the user_ID to that of the logged in person
@@ -143,7 +146,10 @@
                                 <!--Change the muted to Time-->
                                 <h5 class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Instructor']?></h5>
                                 <p class="card-text"><?php echo $subjects['subject_Desc']?></p>
-
+                                <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-danger btn-sm">Delete</a>
+                                
+                                <!--It had to be put right here for some reason-->
+                                <?php include("subject_delete_modal.php"); ?>
                             </div>
                         
                         
