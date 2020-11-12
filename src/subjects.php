@@ -1,6 +1,9 @@
 <!--php file responsible for adding, editing, maintaining and deleting subjects-->
 <!--To be worked on by Mico and Jett-->
-
+<?php 
+        include("header.php");
+        // include("user_details.php");
+?>
 <body>
 
     <div class="container">
@@ -21,27 +24,30 @@
                         <form method="POST" action="subjects_add.php">
                             <div class="form-group">
                                 <label for="addSubjectName">Subject Name</label>
-                                <input type="text" class="form-control form-control-sm" id="addSubjectName" required>
+                                <input type="text" class="form-control form-control-sm" id="addSubjectName" name="subjectName" required>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="addSubjectType" id="addLecture" value="option1" checked>
+                                <input class="form-check-input" type="radio" name="subjectType" id="addLecture" value="Lecture" checked>
                                 <label class="form-check-label" for="addLecture">Lecture</label>
                             </div>
                             <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="addSubjectType" id="addLaboratory" value="option2">
+                            <input class="form-check-input" type="radio" name="subjectType" id="addLaboratory" value="Laboratory">
                                 <label class="form-check-label" for="addLaboratory">Laboratory</label>
+                            </div>
+                            <div style="height: 10px;">
+                            <!--space-->
                             </div>
                             <div class="form-group">
                                 <label for="addSubjectInstructor">Instructor</label>
-                                <input type="text" class="form-control form-control-sm" id="addSubjectInstructor">
+                                <input type="text" class="form-control form-control-sm" id="addSubjectInstructor" name="subjectInstructor">
                             </div>
                             <div class="form-group">
                                 <label for="addSubjectDesc">Description</label>
-                                <textarea class="form-control" id="addSubjectDesc" rows="2"></textarea>
+                                <textarea class="form-control" id="addSubjectDesc" rows="2" name="subjectDesc"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="addSubjectDay">Day of the Week</label>
-                                <select id="addSubjectDay" class="form-control form-control-sm">
+                                <select id="addSubjectDay" class="form-control form-control-sm" name="subjectDay">
                                     <option selected>Mon</option>
                                     <option>Tue</option>
                                     <option>Wed</option>
@@ -51,6 +57,7 @@
                                     <option>Sun</option>
                                 </select>
                             </div>
+                            
                                                  
                     </div>
                     <!--Footer-->
@@ -67,8 +74,6 @@
         <a href="#" data-toggle="modal" data-target="#addSubjectModal">Add Subject</a>
         <br>
     <?php
-        include("header.php");
-        // include("user_details.php");
         
         // Hi, this is a query to get subjects, change the user_ID to that of the logged in person
         $query = "SELECT * FROM `subject` WHERE `user_ID`=003 ORDER BY `subject_ID` ASC";
