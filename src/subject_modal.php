@@ -38,7 +38,7 @@
                     <input type="hidden" name="sID" value="<?php echo $subjects['subject_ID']; ?>">
                     <div class="form-group">
                         <label for="addSubjectName">Subject Name</label>
-                        <input type="text" class="form-control form-control-sm" id="addSubjectName" name="subjectName" required>
+                        <input type="text" class="form-control form-control-sm" id="addSubjectName" name="subjectName" value="<?php echo $subjects['subject_Name']; ?>" required>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="subjectType" id="addLecture" value="Lecture" checked>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="form-group">
                         <label for="addSubjectInstructor">Instructor</label>
-                        <input type="text" class="form-control form-control-sm" id="addSubjectInstructor" name="subjectInstructor">
+                        <input type="text" class="form-control form-control-sm" id="addSubjectInstructor" name="subjectInstructor" value="<?php echo $subjects['subject_Instructor']; ?>">
                     </div>
                     <div class="form-group">
                         <label for="addSubjectDesc">Description</label>
