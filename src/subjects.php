@@ -2,13 +2,57 @@
 <!--To be worked on by Mico and Jett-->
 <?php 
         include("header.php");
-        // include("user_details.php");
+        include("user_details.php");
 ?>
 <body>
 
+    <!-- navigation bar -->
+    <?php include('navbar.php'); ?>
     <div class="container">
-
-
+        <img class="banner" src="/cmsc128/resources/subjects-back.jpg" alt="subjects_banner" width="1110" height="100">
+        <div class="shadow-none p-3 mb-8 bg-light rounded">
+            <div class="row form-inline">
+                <div class="col-sm-2">
+                    <h3 class="text-primary text-center">Subjects</h3>
+                </div>
+                <h5 class="text-secondary text-center">Sort by:</h5>
+                <div class="col-sm-1">
+                    <select id="sortBy" class="btn btn-sm">
+                        <?php
+                        $value = isset($_GET['sortBy']) ? $_GET['sortBy'] : 0;
+                        if ($value == 0) {
+                        ?>
+                            <option selected value='0'>Type</option>
+                            <option value="1">Name</option>
+                            <option value="2">Day</option>
+                        <?php
+                        } elseif ($value == 1) {
+                        ?>
+                            <option value='0'>Type</option>
+                            <option selected value="1">Name</option>
+                            <option value="2">Day</option>
+                        <?php
+                        } elseif ($value == 2) {
+                        ?>
+                            <option value='0'>Type</option>
+                            <option value="1">Name</option>
+                            <option selected value="2">Day</option>
+                        <?php
+                        }
+                        ?>
+                    </select>
+                </div>
+                <!-- New Subject button -->
+                <div class="col-sm-2">
+                    <button href="#" data-toggle="modal" data-target="#addSubjectModal" class="btn btn-sm btn-outline-primary">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg>
+                        New Subject
+                    </button>
+                </div>
+            </div>    
+        </div>
         <!--Modal Area-->
 
         <!--Add subject modal-->
@@ -67,12 +111,9 @@
                 </div>
             </div>
         </div>
-
-        <!--This is only temporary--> 
-        <a href="#" data-toggle="modal" data-target="#addSubjectModal">Add Subject</a>
         <br>
+        <div class="shadow-none p-3 mb-8 bg-light rounded">
     <?php
-        
         // Hi, this is a query to get subjects, change the user_ID to that of the logged in person
         $query = "SELECT * FROM `subject` WHERE `user_ID`=003 ORDER BY `subject_ID` ASC";
         $result = mysqli_query($conn, $query);
@@ -94,7 +135,7 @@
                     <!--Cards Section-->
                     <div class="col-md-3">
                         <div class="card" style="width: 16rem;">
-                            <img class="card-img-top" src="img/something.jpg" alt="Image here/Maybe emoji">
+                        <img class="banner" src="/cmsc128/resources/subjects-card-img.jpg" alt="subjects_banner" width="254" height="150">
                             
                             <!--an overly long description can go past this height, so find a way to prevent that-->
                             <div class="card-body" style="height: 15rem;">
@@ -135,5 +176,6 @@
         }
 
     ?>
-
+        </div>
+    </div>    
 </body>
