@@ -100,7 +100,8 @@
                                     <option>Sat</option>
                                     <option>Sun</option>
                                 </select>
-                            </div>              
+                            </div>
+                            <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>              
                     </div>
                     <!--Footer-->
                     <div class="modal-footer">
