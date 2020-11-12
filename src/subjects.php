@@ -118,7 +118,10 @@
         <div class="shadow-none p-3 mb-8 bg-light rounded">
     <?php
         // Hi, this is a query to get subjects, change the user_ID to that of the logged in person
-        $query = "SELECT * FROM `subject` WHERE `user_ID`=003 ORDER BY `subject_ID` ASC";
+        $user_Name = $_SESSION['user_Name'];
+        $user = $conn->query("SELECT * FROM user WHERE user_Name='$user_Name'")->fetch_assoc();
+        $user_ID = $user['user_ID'];
+        $query = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
         $result = mysqli_query($conn, $query);
 
         if ($result){
