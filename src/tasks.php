@@ -27,7 +27,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 <div class="col-sm-3 form-inline">
                     <select id="sortBy" class="btn btn-sm">
                         <?php
-                        $value = isset($_GET['sortBy']) ? $_GET['sortBy'] : 0;
+                        $value = !empty($_GET['sortBy']) ? $_GET['sortBy'] : 0;
                         if ($value == 0) {
                         ?>
                             <option selected value='0'>Name</option>
@@ -43,7 +43,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                     </select>
                     <select id="sortDir" class="btn btn-sm">
                         <?php
-                        $value = isset($_GET['sortDir']) ? $_GET['sortDir'] : 0;
+                        $value = !empty($_GET['sortDir']) ? $_GET['sortDir'] : 0;
                         if ($value == 0) {
                         ?>
                             <option selected value="0">Ascending</option>
@@ -91,26 +91,29 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 
                 <?php
                 $sortBy = "task_Name";
-                if (isset($_GET['sortBy'])) {
+                if (!empty($_GET['sortBy'])) {
                     $sortBySet = $_GET['sortBy'];
                     $sortBy = ($sortBySet == 0) ? "task_Name" : "task_Due";
                 }
 
                 $sortDir = "ASC";
-                if (isset($_GET['sortDir'])) {
+                if (!empty($_GET['sortDir'])) {
                     $sortDirSet = $_GET['sortDir'];
                     $sortDir = ($sortDirSet == 0) ? "ASC" : "DESC";
                 }
 
                 $search = "";
                 $searchQuery = "";
-                if (isset($_GET['search'])) {
+                if (!empty($_GET['search'])) {
                     $searchQuery = $_GET['search'];
-                    if (!empty($searchQuery) && empty($_GET['search_by_tag'])) {
-                        $search = "WHERE task_Name LIKE '%" . $searchQuery . "%' AND task.user_ID=$user_ID";
-                    } else if (!empty($_GET['search_by_tag'])) {
-                        $search = "WHERE task_Tags LIKE '%" . $searchQuery . "%' AND task.user_ID=$user_ID";
-                    }
+                    $search = "WHERE task_Name LIKE '%" . $searchQuery . "%' AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
+                }
+
+
+                if (!empty($_GET['tag'])) {
+                    $tag = $_GET['tag'];
+                    $regex = preg_quote("\b$tag\b");
+                    $search = "WHERE task_Tags RLIKE '$regex' AND task.user_ID=$user_ID ORDER BY task_Name ASC";
                 }
                 ?>
             </div>
@@ -125,7 +128,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
         if (empty($search)) {
             include('tasks_list.php');
         } else {
-            include('tasks_search.php');
+            include('tasks_filter.php');
         } ?>
     </div>
     <script>
@@ -190,10 +193,10 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 
             // reload the browser every midnight to update the Due today section
             const c_Time = new Date();
-            const midnight = new Date(c_Time.getFullYear(),
+            const midnight = new Date((new Date(c_Time.getFullYear(),
                 c_Time.getMonth(),
                 c_Time.getDate(),
-                0, 0, 0, 0); // TODO: Verify other ways of updating the date
+                0, 0, 0, 0).getTime()) + 86400000);
 
             var duration = midnight.getTime() - c_Time.getTime();
 

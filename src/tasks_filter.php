@@ -3,20 +3,27 @@
     Derivatives of this code/markup are covered by https://opensource.org/licenses/CDDL-1.0
 -->
 
-<div id="search">
+<div id="filter">
     <ul class="list-group">
         <?php
-        $query = "SELECT * FROM task $search";
-        $search_tasks = $conn->query($query);
-        if (!($search_tasks->num_rows > 0)) {
+        $filter = !empty($search) ? $search : $tag;
+        $query = "SELECT * FROM task $filter";
+        $filter_tasks = $conn->query($query);
+        if (!($filter_tasks->num_rows > 0)) {
             echo "<h6 class='text-center'>（；´д｀）ゞ No results found.</h6>";
         } else {
-            if (!empty($_GET['search_by_tag'])) {
-                echo "<h6>Tasks tagged <span class='badge badge-primary'>$searchQuery</span></h6>";
+            if (!empty($tag)) {
+                echo "<h6>Tasks tagged <span class='badge badge-primary'>$tag</span></h6>";
+        ?>
+                <script>
+                    $("#sortBy").remove();
+                    $("#sortDir").remove();
+                </script>
+            <?php
             }
 
-            while ($row = $search_tasks->fetch_assoc()) {
-        ?>
+            while ($row = $filter_tasks->fetch_assoc()) {
+            ?>
                 <li class="list-group-item">
                     <!-- check box | task name and due | edit button | delete button -->
                     <!--     1     |         8        |             3                -->
