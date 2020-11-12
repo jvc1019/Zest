@@ -29,7 +29,6 @@ CREATE TABLE `task` (
   `task_Tags` varchar(250) DEFAULT NULL,
   `user_ID` int(3) ZEROFILL NOT NULL,
   PRIMARY KEY (`task_ID`),
-  UNIQUE KEY `task_Name` (`task_Name`),
   FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -50,7 +49,6 @@ CREATE TABLE `subject` (
   `subject_Time` time DEFAULT NULL,
   `user_ID` int(3) ZEROFILL NOT NULL,
   PRIMARY KEY (`subject_ID`),
-  UNIQUE KEY `subject_Name` (`subject_Name`),
   FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -67,7 +65,6 @@ CREATE TABLE `note` (
   `note_Tags` text DEFAULT NULL,
   `user_ID` int(3) ZEROFILL NOT NULL,
   PRIMARY KEY (`note_ID`),
-  UNIQUE KEY `note_Title` (`note_Title`),
   FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

@@ -13,12 +13,17 @@ $task_Reminder = !empty($_POST['task_Reminder']) ? "'" . $_POST['task_Reminder']
 $task_Tags = !empty($_POST['task_Tags']) ? "'" . $_POST['task_Tags'] . "'" : "NULL";
 $user_ID = is_numeric($_POST['user_ID']) ? $_POST['user_ID'] : "NULL";
 
-$query = "INSERT INTO `task` (`task_Name`, `task_Desc`, `task_Due`, `task_Reminder`, `task_Tags`, `user_ID`) VALUES ($task_Name, $task_Desc, $task_Due, $task_Reminder, $task_Tags, $user_ID)";
+$query = "SELECT task_Name FROM task WHERE task.user_ID=$userID";
 
-if (!$conn->query($query)) {
+if ($conn->query($query)->num_rows > 0) {
     $status = "Failed to add task " . $task_Name . " (possible duplicate).";
 } else {
-    $status = "Successfully added task " . $task_Name . ".";
+    $query = "INSERT INTO `task` (`task_Name`, `task_Desc`, `task_Due`, `task_Reminder`, `task_Tags`, `user_ID`) VALUES ($task_Name, $task_Desc, $task_Due, $task_Reminder, $task_Tags, $user_ID)";
+    if ($conn->query($query)) {
+        $status = "Successfully added task " . $task_Name . ".";
+    } else {
+        $status = "Failed to add task";
+    }
 }
 
 header('Location:tasks.php?status=' . $status . "&isNotif=true");

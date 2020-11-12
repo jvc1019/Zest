@@ -14,7 +14,12 @@ $task_Due = !empty($_POST['task_Due']) ? "'" . $_POST['task_Due'] . "'" : "NULL"
 $task_Reminder = !empty($_POST['task_Reminder']) ? "'" . $_POST['task_Reminder'] . "'" : "NULL";
 $task_Tags = !empty($_POST['task_Tags']) ? "'" . $_POST['task_Tags'] . "'" : "NULL";
 
-$query = "UPDATE `task` 
+$query = "SELECT task_Name FROM task WHERE task.user_ID=$userID";
+
+if ($conn->query($query)->num_rows > 0) {
+    $status = "Failed to edit task " . $task_Name . ".";
+} else {
+    $query = "UPDATE `task` 
           SET `task_Name`=$task_Name, 
               `task_Desc`=$task_Desc, 
               `task_Due`=$task_Due, 
@@ -22,10 +27,11 @@ $query = "UPDATE `task`
               `task_Tags`=$task_Tags
           WHERE `task_ID`=$task_ID";
 
-if (!$conn->query($query)) {
-    $status = "Failed to edit task " . $task_Name . ".";
-} else {
-    $status = "Successfully edited task " . $task_Name . ".";
+    if (!$conn->query($query)) {
+        $status = "Failed to edit task " . $task_Name . ".";
+    } else {
+        $status = "Successfully edited task " . $task_Name . ".";
+    }
 }
 
 header('Location:tasks.php?status=' . $status . "&isNotif=true");
