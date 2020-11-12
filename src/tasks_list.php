@@ -4,18 +4,41 @@
 -->
 
 <div id="task_list">
+    <h6>Tags:
+        <?php
+        $query = "SELECT task_Tags FROM task WHERE task.user_ID=$user_ID";
+        $all_tasks = $conn->query($query);
+
+        $task_Tags_Intersect = [];
+
+        while ($row = $all_tasks->fetch_assoc()) {
+            $_tag = !empty(explode(",", $row["task_Tags"])) ? explode(",", $row["task_Tags"]) : $row["task_Tags"];
+            $task_Tags_Intersect = array_merge($task_Tags_Intersect, $_tag);
+        }
+
+        $task_Tags_Intersect = array_unique($task_Tags_Intersect, SORT_STRING);
+
+        if (!empty($task_Tags_Intersect)) {
+            foreach ($task_Tags_Intersect as $key => $value) { ?>
+                <a class="badge badge-primary" href="tasks.php?sortBy=0&sortDir=0&search=<?php echo $value; ?>&search_by_tag=1"><?php echo $value; ?></a>
+        <?php
+            }
+        }
+        ?>
+    </h6>
     <?php
+
     // due today tasks
     $today = date("Y-m-d");
-    $query = "SELECT * FROM task LEFT JOIN user ON task.user_ID=user.user_ID WHERE task_Due='$today' AND task.user_ID=$user_ID ORDER BY task_Reminder ASC";
+    $query = "SELECT * FROM task WHERE task_Due='$today' AND task.user_ID=$user_ID ORDER BY task_Reminder ASC";
     $due_today_tasks = $conn->query($query);
 
     // incomplete tasks
-    $query = "SELECT * FROM task LEFT JOIN user ON task.user_ID=user.user_ID WHERE task_isDone=0 AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
+    $query = "SELECT * FROM task WHERE task_isDone=0 AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
     $incomplete_tasks = $conn->query($query);
 
     // complete tasks
-    $query = "SELECT * FROM task LEFT JOIN user ON task.user_ID=user.user_ID WHERE task_isDone=1 AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
+    $query = "SELECT * FROM task WHERE task_isDone=1 AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
     $complete_tasks = $conn->query($query);
     ?>
     <!-- DUE TODAY TASKS -->

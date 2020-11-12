@@ -60,12 +60,12 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 </div>
                 <!-- Search box -->
                 <div class="col-sm-5 input-group">
-                    <input type="text" class="form-control" id="search" placeholder="Search tasks..." value="<?php if (isset($_GET['search'])) {
-                                                                                                                    echo $_GET['search'];
-                                                                                                                } else {
-                                                                                                                    echo "";
-                                                                                                                }
-                                                                                                                ?>">
+                    <input type="text" class="form-control" id="search" placeholder="Search tasks by name..." value="<?php if (!empty($_GET['search']) && empty($_GET['search_by_tag'])) {
+                                                                                                                            echo $_GET['search'];
+                                                                                                                        } else {
+                                                                                                                            echo "";
+                                                                                                                        }
+                                                                                                                        ?>">
                     <button class="btn bg-transparent" id="search_clear" style="margin-left: -40px; z-index: 100;" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -106,8 +106,10 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 $searchQuery = "";
                 if (isset($_GET['search'])) {
                     $searchQuery = $_GET['search'];
-                    if (!empty($searchQuery)) {
-                        $search = "WHERE task_Name LIKE '%" . $searchQuery . "%' OR task_Tags LIKE '%" . $searchQuery . "%' AND task.user_ID=$user_ID";
+                    if (!empty($searchQuery) && empty($_GET['search_by_tag'])) {
+                        $search = "WHERE task_Name LIKE '%" . $searchQuery . "%' AND task.user_ID=$user_ID";
+                    } else if (!empty($_GET['search_by_tag'])) {
+                        $search = "WHERE task_Tags LIKE '%" . $searchQuery . "%' AND task.user_ID=$user_ID";
                     }
                 }
                 ?>
@@ -190,7 +192,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             const c_Time = new Date();
             const midnight = new Date(c_Time.getFullYear(),
                 c_Time.getMonth(),
-                c_Time.getDate() + 1,
+                c_Time.getDate(),
                 0, 0, 0, 0); // TODO: Verify other ways of updating the date
 
             var duration = midnight.getTime() - c_Time.getTime();

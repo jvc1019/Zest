@@ -6,12 +6,16 @@
 <div id="search">
     <ul class="list-group">
         <?php
-        $query = "SELECT * FROM task LEFT JOIN user ON task.user_ID=user.user_ID $search";
-        $search = $conn->query($query);
-        if (!($search->num_rows > 0)) {
+        $query = "SELECT * FROM task $search";
+        $search_tasks = $conn->query($query);
+        if (!($search_tasks->num_rows > 0)) {
             echo "<h6 class='text-center'>（；´д｀）ゞ No results found.</h6>";
         } else {
-            while ($row = $search->fetch_assoc()) {
+            if (!empty($_GET['search_by_tag'])) {
+                echo "<h6>Tasks tagged <span class='badge badge-primary'>$searchQuery</span></h6>";
+            }
+
+            while ($row = $search_tasks->fetch_assoc()) {
         ?>
                 <li class="list-group-item">
                     <!-- check box | task name and due | edit button | delete button -->
