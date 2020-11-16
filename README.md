@@ -32,13 +32,18 @@ Second sprint ends on November 12, 2020.
 
 ### 2. BACK END (Database)
 
-- Castaneda, Jayvee (Reminders)
+- Castañeda, Jayvee (Reminders)
 - Garcia, Mico (Subjects)
 - Jomoc, Gracielou (Notebook)
 - Luciano, Kirl (Notebook)
-- Molina, Janley (Tasks, Reminders, other backend modules)
+- Molina, Janley (Tasks, Reminders, and other backend modules)
 - Rabe, Jett Adriel (Subjects)
 - Zamudio, Kent (Login and Registration Pages)
+
+### 3. Quality Assurance
+
+- Castañeda, Jayvee (UX)
+- Molina, Janley (UI and UX)
 
 ## Quick Start Guide
 
