@@ -17,8 +17,7 @@
 	<!-- Favicon -->
 	<link rel="icon" href="../resources/favicon.jpg"> <!-- Replace this with the proper icon -->
 
-	<!-- Bootstrap JS, jQuery, and Popper -->
+	<!-- Bootstrap JS and jQuery-->
 	<script src="js/jquery-3.5.1.slim.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </head>
