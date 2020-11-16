@@ -5,8 +5,8 @@
 CREATE TABLE `user` (
   `user_ID` int(3) ZEROFILL NOT NULL AUTO_INCREMENT, -- supports up to 999 users
   `user_Name` varchar(30) NOT NULL,
-  `user_Email` varchar(200) NOT NULL,
-  `user_Password` varchar(100) NOT NULL, -- before placed here, the string is hashed via MD5
+  `user_Email` varchar(100) NOT NULL,
+  `user_Password` varchar(125) NOT NULL, -- before placed here, the string is hashed via MD5
   `user_Theme` varchar(50) NOT NULL DEFAULT "default", -- stores the theme name of the user
   PRIMARY KEY (`user_ID`),
   UNIQUE KEY `user_Name` (`user_Name`),
@@ -21,7 +21,7 @@ CREATE TABLE `user` (
 
 CREATE TABLE `task` (
   `task_ID` int(4) ZEROFILL NOT NULL AUTO_INCREMENT, -- supports up to 9999 tasks
-  `task_Name` varchar(250) DEFAULT NULL,
+  `task_Name` varchar(50) DEFAULT NULL,
   `task_Desc` mediumtext DEFAULT NULL,
   `task_Due` date DEFAULT NULL,
   `task_Reminder` datetime DEFAULT NULL, -- added support for the reminder feature
@@ -40,7 +40,7 @@ CREATE TABLE `task` (
 
 CREATE TABLE `subject` (
   `subject_ID` int(2) ZEROFILL NOT NULL AUTO_INCREMENT, -- up to 99 subjects
-  `subject_Icon` varchar(1) DEFAULT NULL, -- show an emoji picker when adding or editing a subject, serves as icon
+  `subject_Image` varchar(200) DEFAULT NULL,
   `subject_Name` varchar(150) DEFAULT NULL,
   `subject_Type` varchar(3) NOT NULL DEFAULT "LEC", -- just add a dropdown to select a subject type adding or editing a subject
   `subject_Instructor` varchar(100) DEFAULT NULL,
@@ -60,9 +60,9 @@ CREATE TABLE `subject` (
 
 CREATE TABLE `note` (
   `note_ID` int(2) ZEROFILL NOT NULL AUTO_INCREMENT, -- up to 99 notes
-  `note_Title` varchar(250) DEFAULT NULL,
+  `note_Title` varchar(150) DEFAULT NULL,
   `note_Content` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `note_Tags` text DEFAULT NULL,
+  `note_Tags` varchar(250) DEFAULT NULL,
   `user_ID` int(3) ZEROFILL NOT NULL,
   PRIMARY KEY (`note_ID`),
   FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`)
