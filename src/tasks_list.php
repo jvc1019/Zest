@@ -9,7 +9,7 @@
     $query = "SELECT task_Tags FROM task WHERE task.user_ID=$user_ID AND task_Tags IS NOT NULL";
     $all_tasks = $conn->query($query);
 
-    $task_Tags_Intersect = [];
+    $task_Tags_Intersect = array();
 
     if ($all_tasks->num_rows > 0) {
         while ($row = $all_tasks->fetch_assoc()) {
@@ -23,7 +23,7 @@
         <h6>Tags:
             <?php
             foreach ($task_Tags_Intersect as $key => $value) { ?>
-                <a class="badge badge-primary" href="tasks.php?tag=<?php echo $value; ?>"><?php echo $value; ?></a>
+                <a href="tasks.php?tag=<?php echo $value; ?>" class="badge badge-primary"><?php echo $value; ?></a>
             <?php
             }
             ?>
@@ -51,7 +51,7 @@
     <?php
     if (($due_today_tasks->num_rows > 0)) {
     ?>
-        <h5>Due today <small class="text-muted">sorted by reminder time</small></h5>
+        <h5 class="text-primary">Due today <small class="text-muted">sorted by reminder time</small></h5>
         <ul id="due_today_tasks" class="list-group">
             <?php
             while ($row = $due_today_tasks->fetch_assoc()) {
@@ -65,11 +65,11 @@
                             <?php
                             if ($row['task_isDone'] == 0) {
                             ?>
-                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?>>
+                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as complete">
                             <?php
                             } else {
                             ?>
-                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> checked>
+                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as incomplete" checked>
                             <?php
                             }
                             ?>
@@ -137,11 +137,10 @@
             } ?>
         </ul>
         <br>
-        <h5>More tasks</h5>
+        <h5 class="text-primary">More tasks</h5>
     <?php
     }
     ?>
-
 
     <!-- INCOMPLETE TASKS -->
     <?php
@@ -160,7 +159,7 @@
                     <div class="row form-inline">
                         <!-- check box -->
                         <div class="col-sm-1 form-check">
-                            <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?>>
+                            <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as complete">
                         </div>
                         <!-- task name and due -->
                         <div class="col-sm-8">
@@ -241,7 +240,7 @@
                         <div class="row form-inline">
                             <!-- check box -->
                             <div class="col-sm-1 form-check">
-                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> checked>
+                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as incomplete" checked>
                             </div>
                             <!-- task name and due -->
                             <div class="col-sm-8">

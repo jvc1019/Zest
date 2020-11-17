@@ -12,9 +12,9 @@
         if (!($filter_tasks->num_rows > 0)) {
             echo "<h6 class='text-center'>（；´д｀）ゞ No results found.</h6>";
         } else {
-            if (!empty($tag)) {
-                echo "<h6>Tasks tagged <span class='badge badge-primary'>$tag</span></h6>";
-        ?>
+            if (!empty($tag)) { ?>
+                <h6>Tasks tagged <span class="badge badge-primary"><?php echo $tag; ?></span></h6>
+
                 <script>
                     $("#sortBy").remove();
                     $("#sortDir").remove();
@@ -33,11 +33,11 @@
                             <?php
                             if ($row['task_isDone'] == 0) {
                             ?>
-                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?>>
+                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as complete">
                             <?php
                             } else {
                             ?>
-                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> checked>
+                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as incomplete" checked>
                             <?php
                             }
                             ?>

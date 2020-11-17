@@ -60,24 +60,15 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 </div>
                 <!-- Search box -->
                 <div class="col-sm-5 input-group">
-                    <input type="text" class="form-control" id="search" placeholder="Search tasks by name..." value="<?php if (!empty($_GET['search']) && empty($_GET['search_by_tag'])) {
-                                                                                                                            echo $_GET['search'];
-                                                                                                                        } else {
-                                                                                                                            echo "";
-                                                                                                                        }
-                                                                                                                        ?>">
-                    <button class="btn bg-transparent" id="search_clear" style="margin-left: -40px; z-index: 100;" aria-label="Close">
+                    <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" placeholder="Search tasks by name..." value="<?php if (!empty($_GET['search']) && empty($_GET['search_by_tag'])) {
+                                                                                                                                                                                                            echo $_GET['search'];
+                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                            echo "";
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                        ?>">
+                    <button class="btn" id="search_clear" style="margin-left: -40px; z-index: 100;" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <div class="input-group-append">
-                        <button id="search_button" class="btn btn-primary">
-                            <!-- TO UI people, just add a search icon here-->
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-                            </svg>
-                        </button>
-                    </div>
                 </div>
                 <!-- New task button -->
                 <div class="col-sm-2">
@@ -132,7 +123,18 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
         } ?>
     </div>
     <script>
+        // Enable all tooltips
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
         $(document).ready(function() {
+            // Switch focus to search box by default
+            $("#search").focus();
+            var tmpStr = $("#search").val();
+            $("#search").val("");
+            $("#search").val(tmpStr);
+
             // ALARM FEATURE
             // collect all the alarm times, call setAlarm for each
             for (const task_Name in alarms) {
@@ -164,7 +166,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             // Sorts the tasks list
             $("#sortBy").on('change', sort);
             $("#sortDir").on('change', sort);
-            $("#search_button").on('click', sort);
+            $("#search").on('input', sort);
 
             function sort() {
                 $sortBy = $("#sortBy").val();
@@ -176,9 +178,9 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 
             // Show completed tasks button
             $("#show_completed_tasks").click(function(e) {
-                if ($("#completed_tasks:hidden").length)
+                if ($("#completed_tasks:hidden").length) {
                     $(this).text("\u2191 Hide completed tasks");
-                else {
+                } else {
                     $(this).text("\u2193 Show completed tasks");
                 }
             });
@@ -203,6 +205,25 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             setTimeout(setInterval(function() {
                 window.location.reload;
             }, 86400000), duration);
+        });
+
+        // MODAL CONVENIENCE FUNCTIONS
+
+        // A. Remove due date
+        $(".remove_due_date").click(function(e) {
+            $(this).closest(".input-group").find('input').val("");
+        });
+
+        // B. Remove reminder
+        $(".remove_reminder").click(function(e) {
+            $(this).closest(".input-group").find('input').val("");
+        });
+
+        // C. Reset modal form values on cancel
+        $(".modal").on("hidden.bs.modal", function(e) {
+            $(this).find("form")[0].reset();
+            $(this).find(".invalid-feedback").hide();
+            $(this).find("[type='submit']").removeAttr("disabled");
         });
     </script>
 </body>

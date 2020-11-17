@@ -4,57 +4,88 @@
 -->
 
 <!-- View/Edit Task -->
-<div class="modal fade" id="taskdetails<?php echo $row['task_ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade" id="taskdetails<?php echo $row['task_ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="Task Details" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Task Details</h4>
+                <h5 class="modal-title text-primary">Task Details</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
                     <form method="POST" action="tasks_edit.php?task_ID=<?php echo $row['task_ID']; ?>" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="task_Name" value="<?php echo $row['task_Name']; ?>" placeholder="Task name" required>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" id="task_Name<?php echo $row['task_ID']; ?>" class="form-control text-truncate font-weight-bold border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="task_Name" value="<?php echo $row['task_Name']; ?>" placeholder="Task name" required>
+                                    <div id="task_Name_warning<?php echo $row['task_ID']; ?>" class="invalid-feedback">
+                                        <span class="text-danger">Task name is too long! (max 75 characters)</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="task_Desc<?php echo $row['task_ID']; ?>" class="form-control border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="task_Desc" placeholder="No description. Click to add one." rows="8"><?php echo $row['task_Desc']; ?></textarea>
+                                    <div id="task_Desc_warning<?php echo $row['task_ID']; ?>" class="invalid-feedback">
+                                        <span class="text-danger">┗|｀O′|┛ We're not writing novels here!</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="task_Due" class="form-label h6">
+                                        <!-- calendar icon -->
+                                        Due date:
+                                    </label>
+                                    <div class="input-group">
+                                        <input type="date" id="task_Due<?php echo $row['task_ID']; ?>" class="form-control border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="task_Due" value="<?php echo $row['task_Due']; ?>">
+                                        <div class="input-group-append">
+                                            <button type="button" class="btn remove_due_date" data-toggle="tooltip" title="Remove due date" aria-label="Remove due date">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="task_Reminder" class="form-label h6">
+                                        <!-- bell icon -->
+                                        Remind me:
+                                    </label>
+                                    <?php
+                                    // 2020-10-31T01:10:00
+                                    if (!empty($row['task_Reminder'])) {
+                                        $reminder = substr_replace($row['task_Reminder'], "T", 10, 1);
+                                    } else {
+                                        $reminder = null;
+                                    }
+                                    ?>
+                                    <div class="input-group">
+                                        <input type="datetime-local" id="task_Reminder<?php echo $row['task_ID']; ?>" class="form-control border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="task_Reminder" value="<?php echo $reminder; ?>">
+                                        <div class="input-group-append">
+                                            <button type="button" class="btn remove_reminder" data-toggle="tooltip" title="Remove reminder" aria-label="Remove reminder">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div id="task_Date_warning<?php echo $row['task_ID']; ?>" class="invalid-feedback">
+                                            <span class="text-warning">WARNING: Setting a reminder time later than the due date.</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="task_Tags" class="form-label h6">
+                                        <!-- tag icon -->
+                                        Tags:
+                                    </label>
+                                    <input type="text" id="task_Tags<?php echo $row['task_ID']; ?>" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="task_Tags" value="<?php echo $row['task_Tags']; ?>" placeholder="No tags. Click to add.">
+                                    <small id="task_Tags_tip<?php echo $row['task_ID']; ?>">Separate multiple tags with a comma, ex: schoolstuff, science</small>
+                                    <div id="task_Tags_warning<?php echo $row['task_ID']; ?>" class="invalid-feedback">
+                                        <span class="text-danger">Too many tags! (max 250 characters)</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <textarea class="form-control" name="task_Desc" placeholder="Task description (optional)" rows="3"><?php echo $row['task_Desc']; ?></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="task_Due" class="form-label">Due date: </label>
-                            <input type="date" id="task_Due<?php echo $row['task_ID']; ?>" class="form-control" name="task_Due" value="<?php echo $row['task_Due']; ?>">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Remind me: </label>
-                            <?php
-                            // 2020-10-31T01:10:00
-                            if (!empty($row['task_Reminder'])) {
-                                $reminder = str_replace(" ", "", (substr_replace($row['task_Reminder'], "T", 10, 0)));
-                            } else {
-                                $reminder = null;
-                            }
-                            ?>
-                            <input type="datetime-local" id="task_Reminder<?php echo $row['task_ID']; ?>" class="form-control" name="task_Reminder" value="<?php echo $reminder; ?>">
-                            <small id="date_warning<?php echo $row['task_ID']; ?>" class="text-white">WARNING: Setting a reminder time later than the due date.</small>
-                        </div>
-
-                        <script>
-                            $("#task_Reminder<?php echo $row['task_ID']; ?>").change(function(e) {
-                                var due = new Date($("#task_Due<?php echo $row['task_ID']; ?>").val());
-                                var reminder = new Date(($("#task_Reminder<?php echo $row['task_ID']; ?>").val()).substr(0, 10));
-
-                                if (reminder > due) {
-                                    $("#date_warning<?php echo $row['task_ID']; ?>").attr("class", "text-danger");
-                                } else {
-                                    $("#date_warning<?php echo $row['task_ID']; ?>").attr("class", "text-white");
-                                }
-                            });
-                        </script>
-
-                        <input type="text" class="form-control" name="task_Tags" value="<?php echo $row['task_Tags']; ?>" placeholder="Tags (separated by a comma)" rows="3">
                 </div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn text-secondary btn-sm" data-dismiss="modal">
@@ -63,32 +94,86 @@
                         <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                         <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                     </svg>
-                    Cancel</button>
-                <button type="submit" class="btn text-primary btn-sm">
+                    Cancel
+                </button>
+                <button type="submit" id="edit_submit<?php echo $row['task_ID']; ?>" class="btn text-primary btn-sm">
                     <!-- check icon -->
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                         <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z" />
                     </svg>
-                    Update</button>
+                    Update
+                </button>
+
+                <script>
+                    // VALIDATION
+                    $("#task_Name<?php echo $row['task_ID']; ?>").on("input", function(e) {
+                        if ($(this).val().length > 75) {
+                            $("#task_Name_warning<?php echo $row['task_ID']; ?>").show();
+                        } else {
+                            $("#task_Name_warning<?php echo $row['task_ID']; ?>").hide();
+                        }
+                        validate_all();
+                    });
+
+                    $("#task_Desc<?php echo $row['task_ID']; ?>").on("input", function(e) {
+                        if ($(this).val().length > 16777215) {
+                            $("#task_Desc_warning<?php echo $row['task_ID']; ?>").show();
+                        } else {
+                            $("#task_Desc_warning<?php echo $row['task_ID']; ?>").hide();
+                        }
+                        validate_all();
+                    });
+
+                    $("#task_Tags<?php echo $row['task_ID']; ?>").on("input", function(e) {
+                        if ($(this).val().length > 250) {
+                            $("#task_Tags_tip<?php echo $row['task_ID']; ?>").hide();
+                            $("#task_Tags_warning<?php echo $row['task_ID']; ?>").show();
+                        } else {
+                            $("#task_Tags_warning<?php echo $row['task_ID']; ?>").hide();
+                            $("#task_Tags_tip<?php echo $row['task_ID']; ?>").show();
+                        }
+                        validate_all();
+                    });
+
+                    $("#task_Due<?php echo $row['task_ID']; ?>").on("input", validate_date);
+                    $("#task_Reminder<?php echo $row['task_ID']; ?>").on("input", validate_date);
+
+                    function validate_date() {
+                        var due = new Date($("#task_Due<?php echo $row['task_ID']; ?>").val());
+                        var reminder = new Date(($("#task_Reminder<?php echo $row['task_ID']; ?>").val()).substr(0, 10));
+
+                        if (reminder > due) {
+                            $("#task_Date_warning<?php echo $row['task_ID']; ?>").show();
+                        } else {
+                            $("#task_Date_warning<?php echo $row['task_ID']; ?>").hide();
+                        }
+                    }
+
+                    function validate_all() {
+                        if ($("#taskdetails<?php echo $row['task_ID']; ?> .invalid-feedback").is(":visible")) {
+                            $("#edit_submit<?php echo $row['task_ID']; ?>").attr("disabled", "");
+                        } else {
+                            $("#edit_submit<?php echo $row['task_ID']; ?>").removeAttr("disabled");
+                        }
+                    }
+                </script>
                 </form>
             </div>
         </div>
     </div>
 </div>
 
-
-
 <!-- Delete Task -->
-<div class="modal fade" id="taskdelete<?php echo $row['task_ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="taskdelete<?php echo $row['task_ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="Delete task" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Delete task</h4>
+                <h5 class="modal-title text-danger">Delete task</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-                <h3 class="text-center"><?php echo $row['task_Name']; ?></h3>
+                <h4 class="text-center text-truncate"><?php echo $row['task_Name']; ?></h4>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-sm text-secondary" data-dismiss="modal">
@@ -104,7 +189,8 @@
                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
                         <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
                     </svg>
-                    Delete</a>
+                    Delete
+                </a>
             </div>
         </div>
     </div>

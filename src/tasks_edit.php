@@ -8,11 +8,13 @@ include('conn.php');
 
 $task_ID = $_GET['task_ID'];
 
-$task_Name = "'" . $_POST['task_Name'] . "'";
-$task_Desc = !empty($_POST['task_Desc']) ? "'" . $_POST['task_Desc'] . "'" : "NULL";
+$whitespace = array(" ", "\t", "\n", "\r", "\0", "\x0B");
+
+$task_Name = "'" . trim($_POST['task_Name']) . "'";
+$task_Desc = !empty($_POST['task_Desc']) ? "'" . trim($_POST['task_Desc']) . "'" : "NULL";
 $task_Due = !empty($_POST['task_Due']) ? "'" . $_POST['task_Due'] . "'" : "NULL";
 $task_Reminder = !empty($_POST['task_Reminder']) ? "'" . $_POST['task_Reminder'] . "'" : "NULL";
-$task_Tags = !empty($_POST['task_Tags']) ? "'" . $_POST['task_Tags'] . "'" : "NULL";
+$task_Tags = !empty($_POST['task_Tags']) ? "'" . str_replace($whitespace, "", $_POST['task_Tags']) . "'" : "NULL";
 
 $query = "SELECT task_Name FROM task WHERE task.user_ID=$userID";
 
