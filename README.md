@@ -44,6 +44,7 @@ Second sprint ends on November 12, 2020.
 
 - Castañeda, Jayvee (UX)
 - Molina, Janley (UI and UX)
+- Rabe, Jett Adriel (Bug Hunting)
 
 ## Quick Start Guide
 
