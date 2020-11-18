@@ -3,7 +3,7 @@
 --
 
 CREATE TABLE `user` (
-  `user_ID` int(3) ZEROFILL NOT NULL AUTO_INCREMENT, -- supports up to 999 users
+  `user_ID` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
   `user_Name` varchar(30) NOT NULL,
   `user_Email` varchar(100) NOT NULL,
   `user_Password` varchar(125) NOT NULL, -- before placed here, the string is hashed via MD5
@@ -20,14 +20,14 @@ CREATE TABLE `user` (
 --
 
 CREATE TABLE `task` (
-  `task_ID` int(4) ZEROFILL NOT NULL AUTO_INCREMENT, -- supports up to 9999 tasks
+  `task_ID` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
   `task_Name` varchar(75) DEFAULT NULL,
   `task_Desc` mediumtext DEFAULT NULL,
   `task_Due` date DEFAULT NULL,
   `task_Reminder` datetime DEFAULT NULL, -- added support for the reminder feature
   `task_isDone` tinyint(1) NOT NULL DEFAULT 0,
   `task_Tags` varchar(250) DEFAULT NULL,
-  `user_ID` int(3) ZEROFILL NOT NULL,
+  `user_ID` int(10) ZEROFILL NOT NULL,
   PRIMARY KEY (`task_ID`),
   FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -39,7 +39,7 @@ CREATE TABLE `task` (
 --
 
 CREATE TABLE `subject` (
-  `subject_ID` int(2) ZEROFILL NOT NULL AUTO_INCREMENT, -- up to 99 subjects
+  `subject_ID` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
   `subject_Image` varchar(200) DEFAULT NULL,
   `subject_Name` varchar(150) DEFAULT NULL,
   `subject_Type` varchar(3) NOT NULL DEFAULT "LEC", -- just add a dropdown to select a subject type adding or editing a subject
@@ -47,7 +47,7 @@ CREATE TABLE `subject` (
   `subject_Desc` mediumtext DEFAULT NULL,
   `subject_Day` varchar(9) DEFAULT NULL,
   `subject_Time` time DEFAULT NULL,
-  `user_ID` int(3) ZEROFILL NOT NULL,
+  `user_ID` int(10) ZEROFILL NOT NULL,
   PRIMARY KEY (`subject_ID`),
   FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -59,11 +59,11 @@ CREATE TABLE `subject` (
 --
 
 CREATE TABLE `note` (
-  `note_ID` int(2) ZEROFILL NOT NULL AUTO_INCREMENT, -- up to 99 notes
+  `note_ID` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
   `note_Title` varchar(150) DEFAULT NULL,
   `note_Content` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `note_Tags` varchar(250) DEFAULT NULL,
-  `user_ID` int(3) ZEROFILL NOT NULL,
+  `user_ID` int(10) ZEROFILL NOT NULL,
   PRIMARY KEY (`note_ID`),
   FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
