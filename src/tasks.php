@@ -67,7 +67,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                                                                                                                                                                                                         }
                                                                                                                                                                                                         ?>">
                     <div class="input-group-append">
-                        <button id="search_clear" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0" aria-label="Close">
+                        <button id="search_clear" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0" data-toggle="tooltip" title="Clear search" aria-label="Clear search">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -154,7 +154,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                     return;
                 }
 
-                var timer = setTimeout(function(e) {
+                var timer = setTimeout(function() {
                     window.location.search = "status_heading=Reminder" + "&status=" + task_Name + "&isAlarm=true";
                 }, duration);
             }
@@ -189,8 +189,18 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 }
             });
 
-            // Marks task as complete 
-            $(".checkbox").click(function(e) {
+            // CHECKBOX CONVENIENCE FUNCTIONS
+            // A. Show a different SVG on hover 
+            $(".checkbox").hover(
+                function() {
+                    $(this).html( /*SVG check icon*/ );
+                },
+                function() {
+                    $(this).html( /*empty SVG like in tasks_list.php lines 69-70*/ );
+                }
+            );
+            // B. Marks task as complete 
+            $(".checkbox").click(function() {
                 var $task_ID = $(this).val();
                 var $isChecked = ($(this).attr("checked") === undefined) ? "false" : "true";
 

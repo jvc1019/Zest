@@ -61,15 +61,20 @@
                     <!--     1     |         8        |             2                -->
                     <div class="row form-inline">
                         <!-- check box -->
-                        <div class="col-sm-1 form-check">
+                        <div class="col-sm-1">
                             <?php
                             if ($row['task_isDone'] == 0) {
                             ?>
-                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as complete">
+                                <button class="btn btn-sm btn-outline-secondary rounded-circle checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as complete">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    </svg>
+                                </button>
                             <?php
                             } else {
                             ?>
-                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as incomplete" checked>
+                                <button class="btn btn-sm btn-secondary rounded-circle checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as incomplete" checked>
+                                    <!-- check icon (no outline or anything) -->
+                                </button>
                             <?php
                             }
                             ?>
@@ -158,8 +163,11 @@
                     <!--     1     |         8        |             3                -->
                     <div class="row form-inline">
                         <!-- check box -->
-                        <div class="col-sm-1 form-check">
-                            <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as complete">
+                        <div class="col-sm-1">
+                            <button class="btn btn-sm btn-outline-secondary rounded-circle checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as complete">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                </svg>
+                            </button>
                         </div>
                         <!-- task name and due -->
                         <div class="col-sm-8">
@@ -178,13 +186,12 @@
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                                     </svg>
+                                    <script>
+                                        alarms["<?php echo $row['task_Name']; ?>"] = "<?php echo $row['task_Reminder']; ?>";
+                                    </script>
                                 <?php echo date("D, d M Y h:i A", strtotime($row['task_Reminder']));
                                 } ?>
                             </small>
-
-                            <script>
-                                alarms["<?php echo $row['task_Name']; ?>"] = "<?php echo $row['task_Reminder']; ?>";
-                            </script>
                         </div>
 
                         <!-- edit and delete button -->
@@ -239,8 +246,10 @@
                         <!--     1     |         8        |             3                -->
                         <div class="row form-inline">
                             <!-- check box -->
-                            <div class="col-sm-1 form-check">
-                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as incomplete" checked>
+                            <div class="col-sm-1">
+                                <button class="btn btn-sm btn-secondary rounded-circle checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as incomplete" checked>
+                                    <!-- check icon (no outline or anything) -->
+                                </button>
                             </div>
                             <!-- task name and due -->
                             <div class="col-sm-8">
@@ -259,13 +268,12 @@
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                                         </svg>
-                                        <?php echo date("D, d M Y h:i A", strtotime($row['task_Reminder'])); ?>
-                                    <?php } ?>
+                                        <script>
+                                            alarms["<?php echo $row['task_Name']; ?>"] = "<?php echo $row['task_Reminder']; ?>";
+                                        </script>
+                                    <?php echo date("D, d M Y h:i A", strtotime($row['task_Reminder']));
+                                    } ?>
                                 </small>
-
-                                <script>
-                                    alarms["<?php echo $row['task_Name']; ?>"] = "<?php echo $row['task_Reminder']; ?>";
-                                </script>
                             </div>
                             <!-- edit and delete button -->
                             <div class="col-sm-3">

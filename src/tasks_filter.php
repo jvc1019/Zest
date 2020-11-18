@@ -29,15 +29,20 @@
                     <!--     1     |         8        |             3                -->
                     <div class="row form-inline">
                         <!-- check box -->
-                        <div class="col-sm-1 form-check">
+                        <div class="col-sm-1">
                             <?php
                             if ($row['task_isDone'] == 0) {
                             ?>
-                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as complete">
+                                <button class="btn btn-sm btn-outline-secondary rounded-circle checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as complete">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    </svg>
+                                </button>
                             <?php
                             } else {
                             ?>
-                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as incomplete" checked>
+                                <button class="btn btn-sm btn-secondary rounded-circle checkbox" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as incomplete" checked>
+                                    <!-- check icon (no outline or anything) -->
+                                </button>
                             <?php
                             }
                             ?>

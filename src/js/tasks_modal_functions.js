@@ -19,7 +19,7 @@ $("[name='task_Desc']").on("input", function () {
 });
 
 $("[name='task_Tags']").on("input", function () {
-    if ($(this).val().length > 250 || validate_tags($(this).val())) {
+    if (validate_tags($(this).val())) {
         $(this).closest(".form-group").find("small").hide();
         $(this).closest(".form-group").find(".invalid-feedback").show();
     } else {
@@ -34,8 +34,8 @@ function validate_tags(source) {
     if (split.length > 3) {
         return true;
     } else {
-        for (let index = 0; index < split.length; index++) {
-            if (split[index].length > 12) {
+        for (let i = 0; i < split.length; i++) {
+            if (split[i].length > 12) {
                 return true;
             }
         }
