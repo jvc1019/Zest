@@ -55,7 +55,8 @@ Alarm:
             <?php
             }
             ?>
-            <button id="close_notification" type="button" class="close" data-dismiss="toast" aria-label="Close">
+            <small class="text-muted"><?php echo date("h:i A"); ?></small>
+            <button id="close_notification" type="button" class="btn border-0" data-dismiss="toast" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
@@ -91,7 +92,7 @@ Alarm:
                 sound.loop = true;
                 sound.play();
 
-                $("#close_notification").click(function() {
+                $("#notification .close").click(function() {
                     sound.pause();
                     sound.currentTime = 0;
                 });
