@@ -146,7 +146,7 @@
     <?php
     if (!($incomplete_tasks->num_rows > 0)) {
     ?>
-        <h6 class="text-center">☜(ﾟヮﾟ☜) There's nothing around here. You're all set!</h6>
+        <h6 class="text-center">（＾∀＾●）ﾉｼ There's nothing around here. You're all set!</h6>
     <?php
     } else { ?>
         <ul id="incomplete_tasks" class="list-group">

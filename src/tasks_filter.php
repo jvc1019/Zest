@@ -102,7 +102,7 @@
                             </a>
                         </div>
                     </div>
-                    <?php include('tasks_modal.php'); ?>
+                    <?php include("tasks_modal.php"); ?>
                 </li>
         <?php
             }

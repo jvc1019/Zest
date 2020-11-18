@@ -14,7 +14,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 
 <body>
     <!-- navigation bar -->
-    <?php include('navbar.php'); ?>
+    <?php include("navbar.php"); ?>
     <div class="container">
         <div class="alert alert-light shadow sticky-top">
             <!-- Tasks | sort by | sort direction | search box | add new task -->
@@ -30,7 +30,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                         $value = !empty($_GET['sortBy']) ? $_GET['sortBy'] : 0;
                         if ($value == 0) {
                         ?>
-                            <option selected value='0'>Name</option>
+                            <option selected value="0">Name</option>
                             <option value="1">Due date</option>
                         <?php
                         } elseif ($value == 1) {
@@ -47,7 +47,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                         if ($value == 0) {
                         ?>
                             <option selected value="0">Ascending</option>
-                            <option value='1'>Descending</option>
+                            <option value="1">Descending</option>
                         <?php
                         } elseif ($value == 1) {
                         ?>
@@ -60,15 +60,18 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 </div>
                 <!-- Search box -->
                 <div class="col-sm-5 input-group">
-                    <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" placeholder="Search tasks by name..." value="<?php if (!empty($_GET['search']) && empty($_GET['search_by_tag'])) {
+                    <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" placeholder="Search tasks by name..." value="<?php if (!empty($_GET['search']) && empty($_GET['tag'])) {
                                                                                                                                                                                                             echo $_GET['search'];
                                                                                                                                                                                                         } else {
                                                                                                                                                                                                             echo "";
                                                                                                                                                                                                         }
                                                                                                                                                                                                         ?>">
-                    <button class="btn" id="search_clear" style="margin-left: -40px; z-index: 100;" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <div class="input-group-append">
+                        <button id="search_clear" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
                 </div>
                 <!-- New task button -->
                 <div class="col-sm-2">
@@ -97,7 +100,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 $searchQuery = "";
                 if (!empty($_GET['search'])) {
                     $searchQuery = $_GET['search'];
-                    $search = "WHERE task_Name LIKE '%" . $searchQuery . "%' AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
+                    $search = "WHERE task_Name LIKE '%$searchQuery%' AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
                 }
 
 
@@ -122,10 +125,11 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             include('tasks_filter.php');
         } ?>
     </div>
+    <script src="js/tasks_modal_functions.js"></script>
     <script>
         // Enable all tooltips
         $(function() {
-            $('[data-toggle="tooltip"]').tooltip()
+            $("[data-toggle='tooltip']").tooltip()
         })
 
         $(document).ready(function() {
@@ -151,7 +155,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 }
 
                 var timer = setTimeout(function(e) {
-                    window.location.search = "status_heading=🔔 REMINDER: " + "&status=" + task_Name + "&isAlarm=true";
+                    window.location.search = "status_heading=Reminder" + "&status=" + task_Name + "&isAlarm=true";
                 }, duration);
             }
             // END OF ALARM FEATURE
@@ -178,7 +182,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 
             // Show completed tasks button
             $("#show_completed_tasks").click(function(e) {
-                if ($("#completed_tasks:hidden").length) {
+                if ($("#completed_tasks").is(":hidden")) {
                     $(this).text("\u2191 Hide completed tasks");
                 } else {
                     $(this).text("\u2193 Show completed tasks");
@@ -188,7 +192,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             // Marks task as complete 
             $(".checkbox").click(function(e) {
                 var $task_ID = $(this).val();
-                var $isChecked = ($(this).attr('checked') === undefined) ? "false" : "true";
+                var $isChecked = ($(this).attr("checked") === undefined) ? "false" : "true";
 
                 window.location = "tasks_update.php?task_ID=" + $task_ID + "&task_isChecked=" + $isChecked;
             });
@@ -205,25 +209,6 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             setTimeout(setInterval(function() {
                 window.location.reload;
             }, 86400000), duration);
-        });
-
-        // MODAL CONVENIENCE FUNCTIONS
-
-        // A. Remove due date
-        $(".remove_due_date").click(function(e) {
-            $(this).closest(".input-group").find('input').val("");
-        });
-
-        // B. Remove reminder
-        $(".remove_reminder").click(function(e) {
-            $(this).closest(".input-group").find('input').val("");
-        });
-
-        // C. Reset modal form values on cancel
-        $(".modal").on("hidden.bs.modal", function(e) {
-            $(this).find("form")[0].reset();
-            $(this).find(".invalid-feedback").hide();
-            $(this).find("[type='submit']").removeAttr("disabled");
         });
     </script>
 </body>
