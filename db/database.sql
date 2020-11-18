@@ -24,9 +24,9 @@ CREATE TABLE `task` (
   `task_Name` varchar(75) DEFAULT NULL,
   `task_Desc` mediumtext DEFAULT NULL,
   `task_Due` date DEFAULT NULL,
-  `task_Reminder` datetime DEFAULT NULL, -- added support for the reminder feature
+  `task_Reminder` datetime DEFAULT NULL,
   `task_isDone` tinyint(1) NOT NULL DEFAULT 0,
-  `task_Tags` varchar(250) DEFAULT NULL,
+  `task_Tags` varchar(40) DEFAULT NULL, -- up to 3 tags, max 12 chars per tag
   `user_ID` int(10) ZEROFILL NOT NULL,
   PRIMARY KEY (`task_ID`),
   FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`)
@@ -42,7 +42,7 @@ CREATE TABLE `subject` (
   `subject_ID` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
   `subject_Image` varchar(200) DEFAULT NULL,
   `subject_Name` varchar(150) DEFAULT NULL,
-  `subject_Type` varchar(3) NOT NULL DEFAULT "LEC", -- just add a dropdown to select a subject type adding or editing a subject
+  `subject_Type` varchar(3) NOT NULL DEFAULT "LEC",
   `subject_Instructor` varchar(100) DEFAULT NULL,
   `subject_Desc` mediumtext DEFAULT NULL,
   `subject_Day` varchar(9) DEFAULT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE `note` (
   `note_ID` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
   `note_Title` varchar(150) DEFAULT NULL,
   `note_Content` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `note_Tags` varchar(250) DEFAULT NULL,
+  `note_Tags` varchar(40) DEFAULT NULL, -- up to 3 tags, max 12 chars per tag
   `user_ID` int(10) ZEROFILL NOT NULL,
   PRIMARY KEY (`note_ID`),
   FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`)
@@ -80,5 +80,5 @@ INSERT INTO `task` (`task_ID`, `task_Name`, `task_Desc`, `task_Tags`, `user_ID`)
 INSERT INTO `subject` (`subject_ID`, `subject_Name`, `subject_Desc`, `user_ID`) VALUES
 (1, 'Dummy subject', 'Dummy subject for AUTO_INCREMENT, DO NOT DELETE!', 1);
 
-INSERT INTO `note` (`note_ID`, `note_Title`, `note_Content`, `user_ID`) VALUES
-(1, 'Dummy note', 'Dummy note for AUTO_INCREMENT, DO NOT DELETE!', 1);
+INSERT INTO `note` (`note_ID`, `note_Title`, `note_Content`, `note_Tags`, `user_ID`) VALUES
+(1, 'Dummy note', 'Dummy note for AUTO_INCREMENT, DO NOT DELETE!', 'dummytag1,dummytag2', 1);
