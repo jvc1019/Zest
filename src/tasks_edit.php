@@ -13,7 +13,7 @@ $task_Name = "'" . trim($_POST['task_Name']) . "'";
 $task_Desc = !empty($_POST['task_Desc']) ? "'" . trim($_POST['task_Desc']) . "'" : "NULL";
 $task_Due = !empty($_POST['task_Due']) ? "'" . $_POST['task_Due'] . "'" : "NULL";
 $task_Reminder = !empty($_POST['task_Reminder']) ? "'" . $_POST['task_Reminder'] . "'" : "NULL";
-$task_Tags = !empty($_POST['task_Tags']) ? "'" . implode(",", array_unique(explode(",", str_replace($whitespace, "", $_POST['task_Tags'])), SORT_STRING)) . "'" : "NULL";
+$task_Tags = !empty($_POST['task_Tags']) ? "'" . implode(",", array_unique(explode(",", str_replace($whitespace, "", $_POST['task_Tags'])))) . "'" : "NULL";
 $user_ID = is_numeric($_GET['user_ID']) ? $_GET['user_ID'] : "NULL";
 
 $query = "SELECT task_Name FROM task WHERE task_Name=$task_Name AND task.user_ID=$user_ID";

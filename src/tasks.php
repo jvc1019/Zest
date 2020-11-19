@@ -77,7 +77,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 </div>
                 <!-- New task button -->
                 <div class="col-sm-2">
-                    <button href="#addtask" data-toggle="modal" class="btn btn-sm btn-outline-primary">
+                    <button href="#addtask" data-toggle="modal" class="btn btn-sm btn-primary btn-block">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>
@@ -102,7 +102,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 $searchQuery = "";
                 if (!empty($_GET['search'])) {
                     $searchQuery = $_GET['search'];
-                    $search = "WHERE task_Name LIKE '%$searchQuery%' AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
+                    $search = "WHERE task_Name LIKE '$searchQuery%' AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
                 }
 
 
@@ -113,18 +113,21 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 }
                 ?>
             </div>
-
+            <?php include("tasks_tags.php"); ?>
         </div>
-        <?php include('tasks_modal_add.php'); ?>
+        <?php
+        include("tasks_modal_tags.php");
+        include("tasks_modal_add.php");
+        ?>
         <script>
             var alarms = {}; // stores the reminder timestamps of the tasks
         </script>
 
         <?php
         if (empty($search)) {
-            include('tasks_list.php');
+            include("tasks_list.php");
         } else {
-            include('tasks_filter.php');
+            include("tasks_filter.php");
         } ?>
     </div>
     <script src="js/tasks_modal_functions.js"></script>
@@ -156,7 +159,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                     return;
                 }
 
-                var timer = setTimeout(function() {
+                setTimeout(function() {
                     window.location.search = "status_heading=Reminder" + "&status=" + task_Name + "&isAlarm=true";
                 }, duration);
             }
