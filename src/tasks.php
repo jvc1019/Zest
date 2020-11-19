@@ -68,7 +68,9 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                                                                                                                                                                                                         ?>">
                     <div class="input-group-append">
                         <button id="search_clear" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0" data-toggle="tooltip" title="Clear search" aria-label="Clear search">
-                            <span aria-hidden="true">&times;</span>
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                            </svg>
                         </button>
                     </div>
 
@@ -191,20 +193,40 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 
             // CHECKBOX CONVENIENCE FUNCTIONS
             // A. Show a different SVG on hover 
-            $(".checkbox").hover(
+            $(".checkbox.unchecked").hover(
                 function() {
-                    $(this).html( /*SVG check icon*/ );
+                    $(this).html( /*SVG check icon*/
+                        "<svg width='1em' height='1em' viewBox='0 0 16 16' class='bi bi-check2' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z'/></svg>"
+                    );
                 },
                 function() {
-                    $(this).html( /*empty SVG like in tasks_list.php lines 69-70*/ );
+                    $(this).html( /*empty SVG like in tasks_list.php lines 69-70*/
+                        "<svg width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'></svg>"
+                    );
+                }
+            );
+            $(".checkbox.checked").hover(
+                function() {
+                    $(this).removeClass("btn-secondary");
+                    $(this).addClass("border-secondary");
+                    $(this).html( /*empty SVG like in tasks_list.php lines 69-70*/
+                        "<svg width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'></svg>"
+                    );
+                },
+                function() {
+                    $(this).removeClass("border-secondary");
+                    $(this).addClass("btn-secondary");
+                    $(this).html( /*SVG check icon*/
+                        "<svg width='1em' height='1em' viewBox='0 0 16 16' class='bi bi-check2' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z'/></svg>"
+                    );
                 }
             );
             // B. Marks task as complete 
             $(".checkbox").click(function() {
-                var $task_ID = $(this).val();
-                var $isChecked = ($(this).attr("checked") === undefined) ? "false" : "true";
+                var task_ID = $(this).val();
+                var task_isChecked = ($(this).hasClass("checked")) ? "true" : "false";
 
-                window.location = "tasks_update.php?task_ID=" + $task_ID + "&task_isChecked=" + $isChecked;
+                window.location = "tasks_update.php?task_ID=" + task_ID + "&task_isChecked=" + task_isChecked;
             });
 
             // reload the browser every midnight to update the Due today section
