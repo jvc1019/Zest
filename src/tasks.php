@@ -14,7 +14,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 
 <body>
     <!-- navigation bar -->
-    <?php include('navbar.php'); ?>
+    <?php include("navbar.php"); ?>
     <div class="container">
         <div class="alert alert-light shadow sticky-top">
             <!-- Tasks | sort by | sort direction | search box | add new task -->
@@ -30,7 +30,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                         $value = !empty($_GET['sortBy']) ? $_GET['sortBy'] : 0;
                         if ($value == 0) {
                         ?>
-                            <option selected value='0'>Name</option>
+                            <option selected value="0">Name</option>
                             <option value="1">Due date</option>
                         <?php
                         } elseif ($value == 1) {
@@ -47,7 +47,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                         if ($value == 0) {
                         ?>
                             <option selected value="0">Ascending</option>
-                            <option value='1'>Descending</option>
+                            <option value="1">Descending</option>
                         <?php
                         } elseif ($value == 1) {
                         ?>
@@ -60,32 +60,28 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 </div>
                 <!-- Search box -->
                 <div class="col-sm-5 input-group">
-                    <input type="text" class="form-control" id="search" placeholder="Search tasks by name..." value="<?php if (!empty($_GET['search']) && empty($_GET['search_by_tag'])) {
-                                                                                                                            echo $_GET['search'];
-                                                                                                                        } else {
-                                                                                                                            echo "";
-                                                                                                                        }
-                                                                                                                        ?>">
-                    <button class="btn bg-transparent" id="search_clear" style="margin-left: -40px; z-index: 100;" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" placeholder="Search tasks by name..." value="<?php if (!empty($_GET['search']) && empty($_GET['tag'])) {
+                                                                                                                                                                                                            echo $_GET['search'];
+                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                            echo "";
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                        ?>">
                     <div class="input-group-append">
-                        <button id="search_button" class="btn btn-primary">
-                            <!-- TO UI people, just add a search icon here-->
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                        <button id="search_clear" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0" data-toggle="tooltip" title="Clear search" aria-label="Clear search">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                             </svg>
                         </button>
                     </div>
+
                 </div>
                 <!-- New task button -->
                 <div class="col-sm-2">
-                    <button href="#addtask" data-toggle="modal" class="btn btn-sm btn-outline-primary">
+                    <button href="#addtask" data-toggle="modal" class="btn btn-sm btn-primary btn-block">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>
-                        New task
+                        New Task
                     </button>
                 </div>
 
@@ -106,7 +102,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 $searchQuery = "";
                 if (!empty($_GET['search'])) {
                     $searchQuery = $_GET['search'];
-                    $search = "WHERE task_Name LIKE '%" . $searchQuery . "%' AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
+                    $search = "WHERE task_Name LIKE '$searchQuery%' AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
                 }
 
 
@@ -117,22 +113,37 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 }
                 ?>
             </div>
-
+            <?php include("tasks_tags.php"); ?>
         </div>
-        <?php include('tasks_modal_add.php'); ?>
+        <?php
+        include("tasks_modal_tags.php");
+        include("tasks_modal_add.php");
+        ?>
         <script>
             var alarms = {}; // stores the reminder timestamps of the tasks
         </script>
 
         <?php
         if (empty($search)) {
-            include('tasks_list.php');
+            include("tasks_list.php");
         } else {
-            include('tasks_filter.php');
+            include("tasks_filter.php");
         } ?>
     </div>
+    <script src="js/tasks_modal_functions.js"></script>
     <script>
+        // Enable all tooltips
+        $(function() {
+            $("[data-toggle='tooltip']").tooltip()
+        })
+
         $(document).ready(function() {
+            // Switch focus to search box by default
+            $("#search").focus();
+            var tmpStr = $("#search").val();
+            $("#search").val("");
+            $("#search").val(tmpStr);
+
             // ALARM FEATURE
             // collect all the alarm times, call setAlarm for each
             for (const task_Name in alarms) {
@@ -148,8 +159,8 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                     return;
                 }
 
-                var timer = setTimeout(function(e) {
-                    window.location.search = "status_heading=🔔 REMINDER: " + "&status=" + task_Name + "&isAlarm=true";
+                setTimeout(function() {
+                    window.location.search = "status_heading=Reminder" + "&status=" + task_Name + "&isAlarm=true";
                 }, duration);
             }
             // END OF ALARM FEATURE
@@ -164,7 +175,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             // Sorts the tasks list
             $("#sortBy").on('change', sort);
             $("#sortDir").on('change', sort);
-            $("#search_button").on('click', sort);
+            $("#search").on('input', sort);
 
             function sort() {
                 $sortBy = $("#sortBy").val();
@@ -176,19 +187,49 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 
             // Show completed tasks button
             $("#show_completed_tasks").click(function(e) {
-                if ($("#completed_tasks:hidden").length)
+                if ($("#completed_tasks").is(":hidden")) {
                     $(this).text("\u2191 Hide completed tasks");
-                else {
+                } else {
                     $(this).text("\u2193 Show completed tasks");
                 }
             });
 
-            // Marks task as complete 
-            $(".checkbox").click(function(e) {
-                var $task_ID = $(this).val();
-                var $isChecked = ($(this).attr('checked') === undefined) ? "false" : "true";
+            // CHECKBOX CONVENIENCE FUNCTIONS
+            // A. Show a different SVG on hover 
+            $(".checkbox.unchecked").hover(
+                function() {
+                    $(this).html( /*SVG check icon*/
+                        "<svg width='1em' height='1em' viewBox='0 0 16 16' class='bi bi-check2' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z'/></svg>"
+                    );
+                },
+                function() {
+                    $(this).html( /*empty SVG like in tasks_list.php lines 69-70*/
+                        "<svg width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'></svg>"
+                    );
+                }
+            );
+            $(".checkbox.checked").hover(
+                function() {
+                    $(this).removeClass("btn-secondary");
+                    $(this).addClass("border-secondary");
+                    $(this).html( /*empty SVG like in tasks_list.php lines 69-70*/
+                        "<svg width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'></svg>"
+                    );
+                },
+                function() {
+                    $(this).removeClass("border-secondary");
+                    $(this).addClass("btn-secondary");
+                    $(this).html( /*SVG check icon*/
+                        "<svg width='1em' height='1em' viewBox='0 0 16 16' class='bi bi-check2' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z'/></svg>"
+                    );
+                }
+            );
+            // B. Marks task as complete 
+            $(".checkbox").click(function() {
+                var task_ID = $(this).val();
+                var task_isChecked = ($(this).hasClass("checked")) ? "true" : "false";
 
-                window.location = "tasks_update.php?task_ID=" + $task_ID + "&task_isChecked=" + $isChecked;
+                window.location = "tasks_update.php?task_ID=" + task_ID + "&task_isChecked=" + task_isChecked;
             });
 
             // reload the browser every midnight to update the Due today section
