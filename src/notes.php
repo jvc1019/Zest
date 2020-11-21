@@ -8,14 +8,14 @@ include('user_details.php');
     <?php include('navbar.php'); ?>
     <div class="container" id="main">
         <div class="alert alert-light shadow sticky-top" role="alert">
-            <!-- sort by | sort direction | search box | add new task -->
+            <!-- sort by | sort direction | search box | add new note -->
             <!--    2    |       2        |      5     |       3      -->
             <div class="row form-inline">
-                 <div class="col-sm-2">
-                    <h3 class="text-primary text-center">Notebook</h3>
+                <div class="col-sm-2">
+                    <h3 class="text-primary text-right">Notebook</h3>
                 </div>
                 <!-- Sort by and sort direction -->
-                <div class="col-sm-2">
+                <div class="col-sm-3" align="center">
                     <select id="sortDir" class="btn btn-sm">
                         <?php
                         $value = isset($_GET['sortDir']) ? $_GET['sortDir'] : 0;
@@ -35,33 +35,28 @@ include('user_details.php');
                 </div>
                 <!-- Search box -->
                 <div class="col-sm-5 input-group">
-                    <input type="text" class="form-control" id="search" placeholder="Search tasks..." value="<?php if (isset($_GET['search'])) {
-                                                                                                                    echo $_GET['search'];
-                                                                                                                } else {
-                                                                                                                    echo "";
-                                                                                                                }
-                                                                                                                ?>">
+                    <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" placeholder="Search notes by name..." value="<?php if (isset($_GET['search'])) {
+                                                                                                                                                                                                            echo $_GET['search'];
+                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                            echo "";
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                        ?>">
                     <div class="input-group-append">
-                        <button id="search_clear" class="btn btn-outline-danger">
-                           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                            </svg>
-                        </button>
-                        <button id="search_button" class="btn btn-primary">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                        <button id="search_clear" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0" data-toggle="tooltip" title="Clear search">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                             </svg>
                         </button>
                     </div>
                 </div>
                 <!-- New Note button -->
-                <div class="col-sm-3">
-                <a href="notes_full.php" class="btn btn-sm btn-outline-primary" role="button" aria-pressed="true">
+                <div class="col-sm-2">
+                    <a href="notes_full.php" class="btn btn-sm btn-primary btn-block" role="button" aria-pressed="true">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>
-                         New Note</a>
+                        New Note
+                    </a>
                 </div>
 
                 <?php
@@ -97,6 +92,11 @@ include('user_details.php');
         } ?>
     </div>
     <script>
+        // Enable all tooltips
+        $(function() {
+            $("[data-toggle='tooltip']").tooltip()
+        })
+
         $(document).ready(function() {
             // clears the search box 
             $("#search_clear").on('click', function(e) {

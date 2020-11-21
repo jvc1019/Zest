@@ -51,6 +51,7 @@ UPCOMING: November 23, 2020
 
 - Castañeda, Jayvee (UX)
 - Molina, Janley (UI and UX)
+- Rabe, Jett Adriel (Bug Hunting)
 
 ## Quick Start Guide
 

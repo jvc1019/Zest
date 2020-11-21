@@ -13,26 +13,26 @@ $task_isChecked = $_GET['task_isChecked'];
 // else it is set as completed, task_isDone = 1
 
 if ($task_isChecked === "true") {
-        $query = "UPDATE task SET task_isDone=0 WHERE task_ID='$task_ID'";
+    $query = "UPDATE task SET task_isDone=0 WHERE task_ID='$task_ID'";
 } else {
-        $query = "UPDATE task SET task_isDone=1 WHERE task_ID='$task_ID'";
+    $query = "UPDATE task SET task_isDone=1 WHERE task_ID='$task_ID'";
 }
 
 if (!$conn->query($query)) {
-        if ($task_isChecked === "true") {
-                $status = "Failed to mark task as incomplete.";
-        } else {
-                $status = "Failed to mark task as complete.";
-        }
+    if ($task_isChecked === "true") {
+        $status = "Failed to mark task as incomplete.";
+    } else {
+        $status = "Failed to mark task as complete.";
+    }
 } else {
-        $query = "SELECT * FROM task WHERE task_ID='$task_ID'";
-        $task_Name = ($conn->query($query)->fetch_assoc())['task_Name'];
+    $query = "SELECT * FROM task WHERE task_ID='$task_ID'";
+    $task_Name = "'" . ($conn->query($query)->fetch_assoc())['task_Name'] . "'";
 
-        if ($task_isChecked === "true") {
-                $status = " has been marked as incomplete.";
-        } else {
-                $status = " has been marked as completed.";
-        }
+    if ($task_isChecked === "true") {
+        $status = "$task_Name has been marked as incomplete.";
+    } else {
+        $status = "$task_Name has been marked as completed.";
+    }
 }
 
-header("Location:tasks.php?status_heading=\"" . $task_Name . "\"&status=" . $status . "&isNotif=true");
+header("Location:tasks.php?status_heading=Tasks&status=$status&isNotif=true");

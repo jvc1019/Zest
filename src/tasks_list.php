@@ -4,36 +4,7 @@
 -->
 
 <div id="task_list">
-
     <?php
-    $query = "SELECT task_Tags FROM task WHERE task.user_ID=$user_ID AND task_Tags IS NOT NULL";
-    $all_tasks = $conn->query($query);
-
-    $task_Tags_Intersect = [];
-
-    if ($all_tasks->num_rows > 0) {
-        while ($row = $all_tasks->fetch_assoc()) {
-            $_tag = !empty(explode(",", $row["task_Tags"])) ? explode(",", $row["task_Tags"]) : $row["task_Tags"];
-            $task_Tags_Intersect = array_merge($task_Tags_Intersect, $_tag);
-        }
-
-        $task_Tags_Intersect = array_unique($task_Tags_Intersect, SORT_STRING);
-
-    ?>
-        <h6>Tags:
-            <?php
-            foreach ($task_Tags_Intersect as $key => $value) { ?>
-                <a class="badge badge-primary" href="tasks.php?tag=<?php echo $value; ?>"><?php echo $value; ?></a>
-            <?php
-            }
-            ?>
-        </h6>
-    <?php
-    }
-    ?>
-
-    <?php
-
     // due today tasks
     $today = date("Y-m-d");
     $query = "SELECT * FROM task WHERE task_Due='$today' AND task.user_ID=$user_ID ORDER BY task_Reminder ASC";
@@ -51,7 +22,7 @@
     <?php
     if (($due_today_tasks->num_rows > 0)) {
     ?>
-        <h5>Due today <small class="text-muted">sorted by reminder time</small></h5>
+        <h5 class="text-primary">Due today <small class="text-muted">sorted by reminder time</small></h5>
         <ul id="due_today_tasks" class="list-group">
             <?php
             while ($row = $due_today_tasks->fetch_assoc()) {
@@ -61,15 +32,23 @@
                     <!--     1     |         8        |             2                -->
                     <div class="row form-inline">
                         <!-- check box -->
-                        <div class="col-sm-1 form-check">
+                        <div class="col-sm-1 text-center">
                             <?php
                             if ($row['task_isDone'] == 0) {
                             ?>
-                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?>>
+                                <button class="btn btn-sm btn-outline-secondary rounded-circle checkbox unchecked" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as complete">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    </svg>
+                                </button>
                             <?php
                             } else {
                             ?>
-                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> checked>
+                                <button class="btn btn-sm btn-secondary rounded-circle checkbox checked" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as incomplete">
+                                    <!-- check icon (no outline or anything) -->
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                                    </svg>
+                                </button>
                             <?php
                             }
                             ?>
@@ -90,12 +69,19 @@
                             <small>
                                 <?php if (!empty($row['task_Due'])) { ?>
                                     <!-- calendar icon -->
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-date" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                                        <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
                                     </svg>
                                 <?php echo date("D, d M Y", strtotime($row['task_Due']));
-                                };
+                                }
+                                if (!empty($row['task_Due']) && !empty($row['task_Reminder'])) { ?>
+                                    <!-- dot/divider icon -->
+
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                    </svg>
+                                <?php
+                                }
                                 if (!empty($row['task_Reminder'])) { ?>
                                     <!-- reminder/bell icon -->
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -137,17 +123,16 @@
             } ?>
         </ul>
         <br>
-        <h5>More tasks</h5>
+        <h5 class="text-primary">More tasks</h5>
     <?php
     }
     ?>
-
 
     <!-- INCOMPLETE TASKS -->
     <?php
     if (!($incomplete_tasks->num_rows > 0)) {
     ?>
-        <h6 class="text-center">☜(ﾟヮﾟ☜) There's nothing around here. You're all set!</h6>
+        <h6 class="text-center">（＾∀＾●）ﾉｼ There's nothing around here. You're all set!</h6>
     <?php
     } else { ?>
         <ul id="incomplete_tasks" class="list-group">
@@ -159,8 +144,11 @@
                     <!--     1     |         8        |             3                -->
                     <div class="row form-inline">
                         <!-- check box -->
-                        <div class="col-sm-1 form-check">
-                            <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?>>
+                        <div class="col-sm-1 text-center">
+                            <button class="btn btn-sm btn-outline-secondary rounded-circle checkbox unchecked" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as complete">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                </svg>
+                            </button>
                         </div>
                         <!-- task name and due -->
                         <div class="col-sm-8">
@@ -168,24 +156,30 @@
                             <small>
                                 <?php if (!empty($row['task_Due'])) { ?>
                                     <!-- calendar icon -->
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-date" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                                        <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
                                     </svg>
                                 <?php echo date("D, d M Y", strtotime($row['task_Due']));
-                                };
+                                }
+                                if (!empty($row['task_Due']) && !empty($row['task_Reminder'])) { ?>
+                                    <!-- dot/divider icon -->
+
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                    </svg>
+                                <?php
+                                }
                                 if (!empty($row['task_Reminder'])) { ?>
                                     <!-- reminder/bell icon -->
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                                     </svg>
+                                    <script>
+                                        alarms["<?php echo $row['task_Name']; ?>"] = "<?php echo $row['task_Reminder']; ?>";
+                                    </script>
                                 <?php echo date("D, d M Y h:i A", strtotime($row['task_Reminder']));
                                 } ?>
                             </small>
-
-                            <script>
-                                alarms["<?php echo $row['task_Name']; ?>"] = "<?php echo $row['task_Reminder']; ?>";
-                            </script>
                         </div>
 
                         <!-- edit and delete button -->
@@ -240,8 +234,13 @@
                         <!--     1     |         8        |             3                -->
                         <div class="row form-inline">
                             <!-- check box -->
-                            <div class="col-sm-1 form-check">
-                                <input class="checkbox form-check-input" type="checkbox" value=<?php echo $row['task_ID']; ?> checked>
+                            <div class="col-sm-1 text-center">
+                                <button class="btn btn-sm btn-secondary rounded-circle checkbox checked" value=<?php echo $row['task_ID']; ?> data-toggle="tooltip" title="Mark as incomplete">
+                                    <!-- check icon (no outline or anything) -->
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                                    </svg>
+                                </button>
                             </div>
                             <!-- task name and due -->
                             <div class="col-sm-8">
@@ -249,24 +248,29 @@
                                 <small>
                                     <?php if (!empty($row['task_Due'])) { ?>
                                         <!-- calendar icon -->
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-date" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                                            <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
                                         </svg>
                                     <?php echo date("D, d M Y", strtotime($row['task_Due']));
-                                    };
+                                    }
+                                    if (!empty($row['task_Due']) && !empty($row['task_Reminder'])) { ?>
+                                        <!-- dot/divider icon -->
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                        </svg>
+                                    <?php
+                                    }
                                     if (!empty($row['task_Reminder'])) { ?>
                                         <!-- reminder/bell icon -->
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                                         </svg>
-                                        <?php echo date("D, d M Y h:i A", strtotime($row['task_Reminder'])); ?>
-                                    <?php } ?>
+                                        <script>
+                                            alarms["<?php echo $row['task_Name']; ?>"] = "<?php echo $row['task_Reminder']; ?>";
+                                        </script>
+                                    <?php echo date("D, d M Y h:i A", strtotime($row['task_Reminder']));
+                                    } ?>
                                 </small>
-
-                                <script>
-                                    alarms["<?php echo $row['task_Name']; ?>"] = "<?php echo $row['task_Reminder']; ?>";
-                                </script>
                             </div>
                             <!-- edit and delete button -->
                             <div class="col-sm-3">
