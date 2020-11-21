@@ -10,15 +10,22 @@ This will be the repository for CMSC 128 - Section 3. Files included would be fo
 
 ## Sprints
 
-Second sprint ends on November 12, 2020.
+Third sprint ends on November 26, 2020.
 
 ### 1. First sprint (October 22, 2020)
 
 - The first sprint included the mockup designs for our project.
 - It also included the relational model of the database.
 
+### 1. Second sprint (November 12, 2020)
+
+- Project now includes the basic Php files.
+- Initial design and UI are working
+- Fixed bugs
+
 ## Consultations
 
+UPCOMING: November 23, 2020
 - November 4, 2020 (Wireframe Consultation)
 
 ## Members:
@@ -44,6 +51,7 @@ Second sprint ends on November 12, 2020.
 
 - Castañeda, Jayvee (UX)
 - Molina, Janley (UI and UX)
+- Rabe, Jett Adriel (Bug Hunting)
 
 ## Quick Start Guide
 
