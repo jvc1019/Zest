@@ -10,7 +10,7 @@
         ?>
                 <li class="list-group-item">
                     <!-- note title and content | edit button | delete button -->
-                    <!--              9          |     1       |      1        -->
+                    <!--             9          |     1       |      1        -->
                     <div class="row col-12 form-inline">
                         <!-- note title and content -->
                         <div class="col-sm-9">
