@@ -15,8 +15,7 @@
                 ?>
 
 
-                    <div class="col-sm">
-                        <div class="card" style="width: 18rem; height: 11rem;">
+                        <div class="card" style="width: 16rem; height: 11rem; margin-left: 20px; margin-bottom: 20px">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row['note_Title']; ?></h5>
                                 <h6 class="card-subtitle mb-2 text-muted"><?php echo $row['note_Tags']; ?></h6>
@@ -46,7 +45,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <?php include('notes_modal.php'); ?>
 
 
