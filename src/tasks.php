@@ -61,11 +61,11 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 <!-- Search box -->
                 <div class="col-sm-5 input-group">
                     <input type="text" class="form-control" id="search" placeholder="Search tasks by name..." value="<?php if (!empty($_GET['search']) && empty($_GET['search_by_tag'])) {
-                                                                                                                            echo $_GET['search'];
-                                                                                                                        } else {
-                                                                                                                            echo "";
-                                                                                                                        }
-                                                                                                                        ?>">
+                            echo $_GET['search'];
+                        } else {
+                            echo "";
+                        }
+                        ?>">
                     <button class="btn bg-transparent" id="search_clear" style="margin-left: -40px; z-index: 100;" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

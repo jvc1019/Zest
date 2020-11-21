@@ -1,7 +1,6 @@
 <?php include('header.php'); ?>
 <?php include('notification.php'); ?>
 
-
 <body class="index-bg">
 	<!-- navigation bar -->
 	<?php include('navbar.php'); ?>
@@ -12,7 +11,13 @@
 				<div id="time"></div>
 				<div id="date"></div>
 				<script src="js/clock.js"></script>
-				<br><br>
+				<br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12" id="reminderHeader">
+				<?php include("reminders.php"); ?>
+				<br>
 			</div>
 		</div>
 		<div class="row">
