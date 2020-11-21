@@ -8,7 +8,7 @@ include('user_details.php');
     <?php include('navbar.php'); ?>
     <div class="container" id="main">
         <div class="alert alert-light shadow sticky-top" role="alert">
-            <!-- sort by | sort direction | search box | add new task -->
+            <!-- sort by | sort direction | search box | add new note -->
             <!--    2    |       2        |      5     |       3      -->
             <div class="row form-inline">
                 <div class="col-sm-2">
@@ -42,7 +42,7 @@ include('user_details.php');
                                                                                                                                                                                                         }
                                                                                                                                                                                                         ?>">
                     <div class="input-group-append">
-                        <button id="search_clear" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0" data-toggle="tooltip" title="Clear search" aria-label="Clear search">
+                        <button id="search_clear" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0" data-toggle="tooltip" title="Clear search">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                             </svg>
@@ -92,6 +92,11 @@ include('user_details.php');
         } ?>
     </div>
     <script>
+        // Enable all tooltips
+        $(function() {
+            $("[data-toggle='tooltip']").tooltip()
+        })
+
         $(document).ready(function() {
             // clears the search box 
             $("#search_clear").on('click', function(e) {

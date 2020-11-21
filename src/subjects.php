@@ -190,4 +190,10 @@ include("notification.php");
             ?>
         </div>
     </div>
+    <script>
+        // Enable all tooltips
+        $(function() {
+            $("[data-toggle='tooltip']").tooltip()
+        })
+    </script>
 </body>

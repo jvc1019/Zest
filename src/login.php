@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="row page-center">
 			<div class="col-lg"></div>
-			<div class="col-md-8" >
+			<div class="col-md-8">
 				<div class="row rounded-bottom rounded-top form-box shadow p-3">
 					<div class="col-md login-cover rounded-left"></div>
 					<div class="col-md-7 text-center">
@@ -63,4 +63,5 @@
 		</div>
 	</div>
 </body>
+
 </html>
