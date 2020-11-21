@@ -12,10 +12,6 @@
 				<div id="date"></div>
 				<script src="js/clock.js"></script>
 				<br>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12" id="reminderHeader">
 				<?php include("reminders.php"); ?>
 				<br>
 			</div>
