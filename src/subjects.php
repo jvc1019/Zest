@@ -139,8 +139,6 @@ include("notification.php");
                     //store to array named subjects
                     $inc = 4;
                     while ($subjects = mysqli_fetch_assoc($result)) {
-                        //just to check what we are dealing with
-                        // print_r($subjects);
 
                         //this portion of the code was similar to the activity last semester
                         $inc = ($inc == 4) ? 1 : $inc + 1;
@@ -150,8 +148,9 @@ include("notification.php");
 
                             <!--
                                 Adriel here, through trial and error 16.8rem is the precise approximate amount so as the card 
-                                doesn't overflow its size in width whilst maintaining its position relative to the center while 
-                                the card is in a full group of 4. If you have a better number to be more precise, be my guest
+                                doesn't overflow its size in width whilst maintaining its position relative to the center of 
+                                the screen while they are in a full group of 4. If you have a better number to be more precise,
+                                then be my guest
                             -->
                             <div class="card" style="max-width: 16.8rem;">
                                 <img class="banner" src="/cmsc128/resources/subjects-card-img.jpg" alt="subjects_banner" height="150">
