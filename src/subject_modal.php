@@ -57,18 +57,18 @@
                     </div>
                     <div class="form-group">
                         <label for="addSubjectDesc">Description</label>
-                        <textarea class="form-control" id="addSubjectDesc" rows="2" name="subjectDesc"></textarea>
+                        <textarea class="form-control" id="addSubjectDesc" rows="2" name="subjectDesc"><?php echo $subjects['subject_Desc']; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label for="addSubjectDay">Day of the Week</label>
                         <select id="addSubjectDay" class="form-control form-control-sm" name="subjectDay">
-                            <option selected>Mon</option>
-                            <option>Tue</option>
-                            <option>Wed</option>
-                            <option>Thu</option>
-                            <option>Fri</option>
-                            <option>Sat</option>
-                            <option>Sun</option>
+                            <option selected>Monday</option>
+                            <option>Tuesday</option>
+                            <option>Wednesday</option>
+                            <option>Thursday</option>
+                            <option>Friday</option>
+                            <option>Saturday</option>
+                            <option>Sunday</option>
                         </select>
                     </div> 
                     <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden> 
