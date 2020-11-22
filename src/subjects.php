@@ -118,12 +118,19 @@ include("notification.php");
 
         <div class="shadow-none p-3 mb-8 bg-light rounded">
             <?php
-            // Hi, this is a query to get subjects, change the user_ID to that of the logged in person
+            // Hi, this is a query to get subjects
             $user_Name = $_SESSION['user_Name'];
             $user = $conn->query("SELECT * FROM user WHERE user_Name='$user_Name'")->fetch_assoc();
-            $user_ID = $user['user_ID'];
-            $query = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
-            $result = mysqli_query($conn, $query);
+            
+            //fix this line, there is already something for this @ user_details
+            $user_ID = $user['user_ID']; 
+            
+            // $subjects = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
+            // $result = mysqli_query($conn, $query);
+
+            //The one you see above is an old version, delete that soon
+            $subjects = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
+            $result = $conn->query($subjects);
 
             if ($result) {
                 //if there are results,
@@ -135,16 +142,16 @@ include("notification.php");
                         //just to check what we are dealing with
                         // print_r($subjects);
 
-                        //this portion of the code was taken from a previous activity last semester
+                        //this portion of the code was similar to the activity last semester
                         $inc = ($inc == 4) ? 1 : $inc + 1;
                         if ($inc == 1) echo "<div class='card-group'>";
             ?>
                         <!--Cards Section-->
 
                             <!--
-                                Adriel here, 16.8 is the precise approximate amount so as the card doesn't overflow its size
-                                whilst maintaining its position relative to the center while the card is in a full group of 4. 
-                                If you have a better number to be more precise, be my guest
+                                Adriel here, through trial and error 16.8rem is the precise approximate amount so as the card 
+                                doesn't overflow its size in width whilst maintaining its position relative to the center while 
+                                the card is in a full group of 4. If you have a better number to be more precise, be my guest
                             -->
                             <div class="card" style="max-width: 16.8rem;">
                                 <img class="banner" src="/cmsc128/resources/subjects-card-img.jpg" alt="subjects_banner" height="150">
@@ -166,8 +173,8 @@ include("notification.php");
 
 
             <?php
-                        //closes card group if a row gets full
-                        if ($inc == 4) echo "</div>";
+                        //closes card group if a row gets full, also adds some space, remove <br> if need be
+                        if ($inc == 4) echo "</div><br>";
                         //end of while
                     }
 
