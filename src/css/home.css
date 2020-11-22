@@ -73,6 +73,7 @@
 	text-shadow: -3px 3px 7px rgba(0,0,0,0.9);
 	color: white!important;
 }
+
 #time h1
 {
 	font-size: 60px;
@@ -117,6 +118,45 @@
 	margin-top: 10vh;
 	text-align: center;
 	margin-bottom: 10vh;
+}
+
+/* reminder box */
+#reminderHeader
+{
+	margin-top: 10vh;
+	text-align: left;
+	margin-bottom: 10vh;
+}
+
+.reminderholder
+{
+	background-color: rgb(255,255,255,0.8);
+	font-family: Arial;
+	width: 400px;
+	margin-left: 10px;
+	text-align: center;
+	min-height: 15vh;
+	min-width: 15vh;
+	padding: 15px 15px 15px 15px;
+}
+
+.remindTitle
+{	
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.notasksdue
+{
+	font-size: 16px;
+	color: gray;
+	font-style: italic;
+}
+
+.remindText
+{
+	font-size: 16px;
+	text-align: center;
 }
 
 /* login, signup css */
