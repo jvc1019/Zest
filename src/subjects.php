@@ -94,13 +94,13 @@ include("notification.php");
                             <div class="form-group">
                                 <label for="addSubjectDay">Day of the Week</label>
                                 <select id="addSubjectDay" class="form-control form-control-sm" name="subjectDay">
-                                    <option selected>Mon</option>
-                                    <option>Tue</option>
-                                    <option>Wed</option>
-                                    <option>Thu</option>
-                                    <option>Fri</option>
-                                    <option>Sat</option>
-                                    <option>Sun</option>
+                                    <option selected>Monday</option>
+                                    <option>Tuesday</option>
+                                    <option>Wednesday</option>
+                                    <option>Thursday</option>
+                                    <option>Friday</option>
+                                    <option>Saturday</option>
+                                    <option>Sunday</option>
                                 </select>
                             </div>
                             <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
@@ -163,8 +163,8 @@ include("notification.php");
                                     <p class="card-text"><?php echo $subjects['subject_Desc'] ?></p>
                                 </div>
                                 <div class="card-footer text-right">
-                                    <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-danger btn-sm">Delete</a>
-                                    <a href="#updateSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-success btn-sm">Update</a>
+                                    <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="text-danger margin-left">Delete</a>
+                                    <a href="#updateSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="text-primary">Update</a>
                                 </div>
                                 <!--It had to be put right here for some reason-->
                                 <?php include("subject_modal.php"); ?>
