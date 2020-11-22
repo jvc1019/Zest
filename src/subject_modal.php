@@ -62,13 +62,14 @@
                     <div class="form-group">
                         <label for="addSubjectDay">Day of the Week</label>
                         <select id="addSubjectDay" class="form-control form-control-sm" name="subjectDay">
-                            <option selected>Monday</option>
-                            <option>Tuesday</option>
-                            <option>Wednesday</option>
-                            <option>Thursday</option>
-                            <option>Friday</option>
-                            <option>Saturday</option>
-                            <option>Sunday</option>
+                            <option selected><?php echo $subjects['subject_Day']; ?></option>
+                            <?php if ($subjects['subject_Day'] != "Monday") echo"<option>Monday</option>" ?>
+                            <?php if ($subjects['subject_Day'] != "Tuesday") echo"<option>Tuesday</option>" ?>
+                            <?php if ($subjects['subject_Day'] != "Wednesday") echo"<option>Wednesday</option>" ?>
+                            <?php if ($subjects['subject_Day'] != "Thursday") echo"<option>Thursday</option>" ?>
+                            <?php if ($subjects['subject_Day'] != "Friday") echo"<option>Friday</option>" ?>
+                            <?php if ($subjects['subject_Day'] != "Saturday") echo"<option>Saturday</option>" ?>
+                            <?php if ($subjects['subject_Day'] != "Sunday") echo"<option>Sunday</option>" ?>
                         </select>
                     </div> 
                     <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden> 
