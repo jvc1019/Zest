@@ -2,18 +2,15 @@
     <ul id="complete_notes" class="list-group">
         <div class="row">
             <?php
-            $query = "SELECT * FROM note LEFT JOIN user ON note.user_ID=user.user_ID WHERE note.user_ID=$user_ID";
-            $result = $conn->query($query);
-            if (!($result->num_rows > 0)) {
+                $query = "SELECT * FROM note LEFT JOIN user ON note.user_ID=user.user_ID WHERE note.user_ID=$user_ID";
+                $result = $conn->query($query);
+                if (!($result->num_rows > 0)) {
             ?>
                 <h6 class="text-center">☜(ﾟヮﾟ☜) There's nothing around here. You're all set!</h6>
-
-
                 <?php
-            } else {
-                while ($row = $result->fetch_assoc()) {
-                ?>
-
+                    } else {
+                        while ($row = $result->fetch_assoc()) {
+                        ?>
 
                         <div class="card" style="width: 16rem; height: 11rem; margin-left: 20px; margin-bottom: 20px">
                             <div class="card-body">
@@ -21,7 +18,7 @@
                                 <h6 class="card-subtitle mb-2 text-muted"><?php echo $row['note_Tags']; ?></h6>
                                 <p class="card-text"><?php echo $row['note_Content']; ?></p>
                                 <div align="right">
-                                    <a href="notes_editor.php" method="post" id="#editnote" class="btn text-primary btn-sm">
+                                    <a href="notes_editor.php?note_ID=<?php echo $row['note_ID']; ?>" id="#editnote" class="btn text-primary btn-sm">
                                         <!-- info icon?-->
                                         <span>
                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
