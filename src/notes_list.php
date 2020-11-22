@@ -16,7 +16,9 @@
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row['note_Title']; ?></h5>
                                 <h6 class="card-subtitle mb-2 text-muted"><?php echo $row['note_Tags']; ?></h6>
+                                <div class="scrollable" style="overflow-y: auto;max-height: 60px;">
                                 <p class="card-text"><?php echo $row['note_Content']; ?></p>
+                                </div>
                                 <div align="right">
                                     <a href="notes_editor.php?note_ID=<?php echo $row['note_ID']; ?>" id="#editnote" class="btn text-primary btn-sm">
                                         <!-- info icon?-->
@@ -39,6 +41,7 @@
                                         </span>
                                         Delete
                                     </a>
+
                                 </div>
                             </div>
                         </div>
