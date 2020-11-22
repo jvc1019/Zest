@@ -25,7 +25,7 @@ Third sprint ends on November 26, 2020.
 
 ## Consultations
 
-UPCOMING: November 23, 2020 (tentative)
+UPCOMING: November 26, 2020, 1:00 PM (Thursday)
 - November 4, 2020 (Wireframe Consultation)
 
 ## Members:
