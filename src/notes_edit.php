@@ -1,7 +1,7 @@
 <?php
 include('conn.php');
 
-$note_ID = $_GET['note_ID'];
+$note_ID = $_POST['note_ID'];
 
 $note_Title = "'" . $_POST['note_Title'] . "'";
 $note_Content = !empty($_POST['note_Content']) ? "'" . $_POST['note_Content'] . "'" : "NULL";
