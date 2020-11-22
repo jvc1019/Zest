@@ -60,24 +60,12 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 </div>
                 <!-- Search box -->
                 <div class="col-sm-5 input-group">
-<<<<<<< HEAD
-                    <input type="text" class="form-control" id="search" placeholder="Search tasks by name..." value="<?php if (!empty($_GET['search']) && empty($_GET['search_by_tag'])) {
-                            echo $_GET['search'];
-                        } else {
-                            echo "";
-                        }
-                        ?>">
-                    <button class="btn bg-transparent" id="search_clear" style="margin-left: -40px; z-index: 100;" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-=======
                     <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" placeholder="Search tasks by name..." value="<?php if (!empty($_GET['search']) && empty($_GET['tag'])) {
                                                                                                                                                                                                             echo $_GET['search'];
                                                                                                                                                                                                         } else {
                                                                                                                                                                                                             echo "";
                                                                                                                                                                                                         }
                                                                                                                                                                                                         ?>">
->>>>>>> origin/main
                     <div class="input-group-append">
                         <button id="search_clear" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0" data-toggle="tooltip" title="Clear search">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
