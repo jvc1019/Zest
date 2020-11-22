@@ -11,7 +11,8 @@
 	        	} else {
 	        		while ($row = $result->fetch_assoc()) {
 	        	?>
-	        			<tr class="remindText"><td><a href=""> - <?php echo $row['task_Name'];?></a></td></tr><?php
+	        		<tr><td><a href="tasks.php"><pre class="remindText"> - <?php echo $row['task_Name'];?>	<?php echo $row['task_Due'];?></pre></a></td></tr>
+	        		<?php
 	        		}
 	        	}
 	        ?>
@@ -30,7 +31,8 @@
 	        	} else {
 	        		while ($row = $result->fetch_assoc()) {
 	        	?>
-	        			<tr class="remindText"><td><a href=""> - <?php echo $row['task_Name'];?></a></td></tr><?php
+	        		<tr><td><a href="tasks.php"><pre class="remindText"> - <?php echo $row['task_Name'];?>	<?php echo $row['task_Due'];?></pre></a></td></tr>
+	        		<?php
 	        		}
 	        	}
 	        ?>
