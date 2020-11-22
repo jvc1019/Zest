@@ -123,7 +123,7 @@
             } ?>
         </ul>
         <br>
-        <h5 class="text-primary">More tasks</h5>
+        <h5 class="text-primary">All tasks</h5>
     <?php
     }
     ?>
