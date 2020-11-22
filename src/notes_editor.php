@@ -19,7 +19,7 @@
 
 		<div class="container" id="editnote">
 			<form method="POST" action="notes_edit.php" enctype="multipart/form-data">
-				<input type="text" name="note_ID" value="<?php echo $row['note_ID']?>" />
+				<input type="hidden" name="note_ID" value="<?php echo $row['note_ID']?>" />
 				<!-- TITLE AND TAG TEXTBOXES -->
 				<div class="row mx-5 px-4 justify-content-center">
 					<input class="mr-2" type="text" name="note_Title" value="<?php echo $row['note_Title']?>">  
