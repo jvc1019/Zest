@@ -79,7 +79,6 @@ include('user_details.php');
             </div>
 
         </div>
-        <?php include('notes_modal_add.php'); ?>
         <!-- show last status message as a Boostrap alert -->
         <?php include('notification.php'); ?>
         <!-- Show last status as a bootstrap alert -->
