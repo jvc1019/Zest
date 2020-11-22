@@ -23,7 +23,7 @@ CREATE TABLE `task` (
   `task_ID` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
   `task_Name` varchar(75) DEFAULT NULL,
   `task_Desc` mediumtext DEFAULT NULL,
-  `task_Due` date DEFAULT NULL,
+  `task_Due` datetime DEFAULT NULL,
   `task_Reminder` datetime DEFAULT NULL,
   `task_isDone` tinyint(1) NOT NULL DEFAULT 0,
   `task_Tags` varchar(40) DEFAULT NULL, -- up to 3 tags, max 12 chars per tag

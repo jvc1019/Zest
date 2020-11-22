@@ -7,7 +7,7 @@
     <?php
     // due today tasks
     $today = date("Y-m-d");
-    $query = "SELECT * FROM task WHERE task_Due='$today' AND task.user_ID=$user_ID ORDER BY task_Reminder ASC";
+    $query = "SELECT * FROM task WHERE task_Due LIKE '$today%' AND task.user_ID=$user_ID ORDER BY task_Due ASC";
     $due_today_tasks = $conn->query($query);
 
     // incomplete tasks
@@ -22,7 +22,7 @@
     <?php
     if (($due_today_tasks->num_rows > 0)) {
     ?>
-        <h5 class="text-primary">Due today <small class="text-muted">sorted by reminder time</small></h5>
+        <h5 class="text-primary">Due today <small class="text-muted">sorted by time</small></h5>
         <ul id="due_today_tasks" class="list-group">
             <?php
             while ($row = $due_today_tasks->fetch_assoc()) {
@@ -62,7 +62,7 @@
                             <?php
                             } else {
                             ?>
-                                <h6><del><?php echo $row['task_Name']; ?></del></h6>
+                                <h6><s><?php echo $row['task_Name']; ?></s></h6>
                             <?php
                             }
                             ?>
@@ -72,11 +72,10 @@
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                                     </svg>
-                                <?php echo date("D, d M Y", strtotime($row['task_Due']));
+                                <?php echo date("D, d M Y h:i A", strtotime($row['task_Due']));
                                 }
                                 if (!empty($row['task_Due']) && !empty($row['task_Reminder'])) { ?>
                                     <!-- dot/divider icon -->
-
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
                                     </svg>
@@ -159,11 +158,10 @@
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                                     </svg>
-                                <?php echo date("D, d M Y", strtotime($row['task_Due']));
+                                <?php echo date("D, d M Y h:i A", strtotime($row['task_Due']));
                                 }
                                 if (!empty($row['task_Due']) && !empty($row['task_Reminder'])) { ?>
                                     <!-- dot/divider icon -->
-
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
                                     </svg>
@@ -251,7 +249,7 @@
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                                         </svg>
-                                    <?php echo date("D, d M Y", strtotime($row['task_Due']));
+                                    <?php echo date("D, d M Y h:i A", strtotime($row['task_Due']));
                                     }
                                     if (!empty($row['task_Due']) && !empty($row['task_Reminder'])) { ?>
                                         <!-- dot/divider icon -->

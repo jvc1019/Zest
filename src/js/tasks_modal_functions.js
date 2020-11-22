@@ -80,7 +80,7 @@ function validate_date(source) {
             .closest(".task_Date")
             .find("[name='task_Reminder']")
             .val()
-            .substr(0, 10)
+            .replace("T", " ")
     );
 
     return reminder > due;
