@@ -102,6 +102,7 @@
 .iconholder
 {
 	background-color: rgb(255,255,255,0.8);
+	color: black;
 	text-align: center;
 	min-height: 15vh;
 	min-width: 15vh;
@@ -134,7 +135,6 @@
 	font-family: Arial;
 	width: 400px;
 	margin-left: 10px;
-	text-align: center;
 	min-height: 15vh;
 	min-width: 15vh;
 	padding: 15px 15px 15px 15px;
@@ -144,6 +144,7 @@
 {	
 	font-size: 20px;
 	font-weight: bold;
+	text-align: center;
 }
 
 .notasksdue
@@ -151,12 +152,13 @@
 	font-size: 16px;
 	color: gray;
 	font-style: italic;
+	text-align: center;
 }
 
 .remindText
 {
-	font-size: 16px;
-	text-align: center;
+	font-size: 18px;
+	text-align: left;
 }
 
 /* login, signup css */
