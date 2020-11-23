@@ -103,6 +103,7 @@ $(".editor_textarea").click(function () {
     findCurrentTags(this);
 });
 
+<<<<<<< HEAD
 $(".editor_textarea").focusin(function () {
     findCurrentTags(this);
 });
@@ -111,6 +112,8 @@ $(".editor_textarea").focusout(function () {
     findCurrentTags(this);
 });
 
+=======
+>>>>>>> 7109225... Replaced CKeditor with custom-made text editor on:
 $(".editor_textarea").on("dragstart", function (e) {
     e.preventDefault();
 });
