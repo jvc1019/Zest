@@ -46,7 +46,8 @@ CREATE TABLE `subject` (
   `subject_Instructor` varchar(100) DEFAULT NULL,
   `subject_Desc` mediumtext DEFAULT NULL,
   `subject_Day` varchar(9) DEFAULT NULL,
-  `subject_Time` time DEFAULT NULL,
+  `subject_Time_Start` time DEFAULT NULL,
+  `subject_Time_End` time DEFAULT NULL,
   `user_ID` int(10) ZEROFILL NOT NULL,
   PRIMARY KEY (`subject_ID`),
   FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`)
