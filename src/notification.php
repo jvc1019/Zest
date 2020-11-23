@@ -64,15 +64,11 @@ Alarm:
             <?php echo $_GET['status']; ?>
         </div>
     </div>
-<?php
-}
-?>
 
-<script>
-    $(document).ready(function() {
-        $("#notification").toast("show");
+    <script>
+        $(document).ready(function() {
+            $("#notification").toast("show");
 
-        if (!($("#notification>.toast").is(":hidden"))) {
             const isNotif = "<?php
                                 if (!empty($_GET['isNotif'])) {
                                     echo $_GET['isNotif'];
@@ -113,6 +109,8 @@ Alarm:
                 // hides the GET value of notifications
                 window.history.replaceState(null, "", window.location.href.split(/[?#]/)[0]);
             }
-        }
-    });
-</script>
+        });
+    </script>
+<?php
+}
+?>

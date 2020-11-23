@@ -39,7 +39,7 @@
                                         Due date:
                                     </label>
                                     <div class="input-group">
-                                        <input type="date" class="form-control border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="task_Due">
+                                        <input type="datetime-local" class="form-control border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="task_Due">
                                         <div class="input-group-append">
                                             <button type="button" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0 remove_due_date" data-toggle="tooltip" title="Remove due date" aria-label="Remove due date">
                                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

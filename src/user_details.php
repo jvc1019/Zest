@@ -1,5 +1,4 @@
 <?php
-date_default_timezone_set("Asia/Manila");
 session_start();
 
 // Stores the user_Name and user_ID
