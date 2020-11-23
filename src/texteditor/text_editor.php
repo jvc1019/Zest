@@ -4,9 +4,9 @@
     https://opensource.org/licenses/CDDL-1.0
 -->
 
-<div class="editor">
+<div class="form-group editor">
 
-    <div contenteditable="true" class="form-control overflow-hidden border-primary border-top-0 border-left-0 border-right-0 rounded-0 d-inline-block editor_textarea" data-placeholder="Placeholder text here"><?php if (!empty($row["note_Content"])) {
+    <div contenteditable="true" class="form-control overflow-auto border-primary border-top-0 border-left-0 border-right-0 rounded-0 d-inline-block editor_textarea" data-placeholder="Placeholder text here"><?php if (!empty($row["note_Content"])) {
                                                                                                                                                                                                                     echo $row["note_Content"];
                                                                                                                                                                                                                 } ?></div>
 
@@ -95,8 +95,9 @@
             </button>
         </div>
     </div>
-</div>
-<input type="hidden" name="note_Content" value="">
+    <input type="hidden" name="note_Content" value="<?php if (!empty($row["note_Content"])) {
+                                                        echo $row["note_Content"];
+                                                    } ?>">
 </div>
 
 <style>

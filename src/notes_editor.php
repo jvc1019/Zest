@@ -35,7 +35,7 @@
 			</div>
 
 			<div class="row justify-content-center my-1">
-				<button type="button" class="btn btn-sm text-secondary" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-sm text-secondary" name="cancel" value="cancel" onClick="window.location.href='notes.php';">Cancel</button>
 				<button type="submit" name="submit" class="btn btn-sm text-primary">Save</button>
 			</div>
 
