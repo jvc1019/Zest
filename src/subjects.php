@@ -180,7 +180,7 @@ include("notification.php");
                                 </div>
                                 <div class="card-footer text-right">
                                     <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-sm text-danger margin-left">Delete</a>
-                                    <a href="#updateSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-sm text-primary">Update</a>
+                                    <a href="#detailsSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-sm text-primary">Details</a>
                                 </div>
                                 <!--It had to be put right here for some reason-->
                                 <?php include("subject_modal.php"); ?>

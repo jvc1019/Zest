@@ -25,7 +25,7 @@
 
 
 <!--Update Modal-->               
-<div id="updateSubjectModal<?php echo $subjects['subject_ID']; ?>" class="modal fade" role="dialog">
+<div id="detailsSubjectModal<?php echo $subjects['subject_ID']; ?>" class="modal fade" role="dialog">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
             <!--Header-->
@@ -41,11 +41,11 @@
                         <input type="text" class="form-control form-control-sm" id="addSubjectName" name="subjectName" value="<?php echo $subjects['subject_Name']; ?>" required>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="subjectType" id="addLecture" value="Lecture" checked>
+                        <input class="form-check-input" type="radio" name="subjectType" id="addLecture" value="Lecture" <?php if ($subjects['subject_Type'] == "Lec") echo "checked" ?>>
                         <label class="form-check-label" for="addLecture">Lecture</label>
                     </div>
                     <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="subjectType" id="addLaboratory" value="Laboratory">
+                    <input class="form-check-input" type="radio" name="subjectType" id="addLaboratory" value="Laboratory" <?php if ($subjects['subject_Type'] == "Lab") echo "checked" ?>>
                         <label class="form-check-label" for="addLaboratory">Laboratory</label>
                     </div>
                     <div style="height: 10px;">
