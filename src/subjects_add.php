@@ -10,10 +10,13 @@
     $sInstructor = $_POST ["subjectInstructor"];
     $sDesc = $_POST ["subjectDesc"];
     $sDay = $_POST ["subjectDay"];
+    $sTimeStart = $_POST ["subjectTimeStart"];
+    $sTimeEnd = $_POST ["subjectTimeEnd"];
     $uID = $_POST['user_ID'];
 
-    $subjectsql = "INSERT INTO subject (subject_Name, subject_Type, subject_Instructor, subject_Desc, subject_Day, user_ID)
-                    VALUES ('$sName', '$sType', '$sInstructor', '$sDesc', '$sDay', '$uID')";
+    $subjectsql = "INSERT INTO subject (subject_Name, subject_Type, subject_Instructor, subject_Desc, 
+                    subject_Day, subject_Time_Start, subject_Time_End, user_ID)
+                    VALUES ('$sName', '$sType', '$sInstructor', '$sDesc', '$sDay', '$sTimeStart', '$sTimeEnd', '$uID')";
 
     if (!$conn->query($subjectsql)) {
         $status = "Subject addition failed. " . $sName . " has already been made.";

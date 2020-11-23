@@ -71,6 +71,16 @@
                             <?php if ($subjects['subject_Day'] != "Saturday") echo"<option>Saturday</option>" ?>
                             <?php if ($subjects['subject_Day'] != "Sunday") echo"<option>Sunday</option>" ?>
                         </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="addSubjectTimeStart">Time Start:</label>
+                            <input id="addSubjectTimeStart" type="time" value="<?php echo $subjects['subject_Time_Start'];?>" name="subjectTimeStart">
+                        </div>
+                        <div class="col">
+                            <label for="addSubjectTimeEnd">Time End:</label>
+                            <input id="addSubjectTimeEnd" type="time" value="<?php echo $subjects['subject_Time_End'];?>" name="subjectTimeEnd">
+                        </div>
                     </div> 
                     <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden> 
 

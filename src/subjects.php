@@ -103,7 +103,18 @@ include("notification.php");
                                     <option>Sunday</option>
                                 </select>
                             </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <label for="addSubjectTimeStart">Time Start:</label>
+                                    <input id="addSubjectTimeStart" type="time" name="subjectTimeStart">
+                                </div>
+                                <div class="col">
+                                    <label for="addSubjectTimeEnd">Time End:</label>
+                                    <input id="addSubjectTimeEnd" type="time" name="subjectTimeEnd">
+                                </div>
+                            </div>
                             <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
+                            
                     </div>
                     <!--Footer-->
                     <div class="modal-footer">
@@ -153,13 +164,18 @@ include("notification.php");
                                 then be my guest
                             -->
                             <div class="card" style="max-width: 16.8rem;">
-                                <img class="banner" src="/cmsc128/resources/subjects-card-img.jpg" alt="subjects_banner" height="150">
+                            
+                            <!--
+                                Replaced it for a little while, change it back
+                                Will provide different alternative pics to choose from
+                             -->
+                                <img class="banner" src="/cmsc128/resources/subjects-back.jpg" alt="subjects_banner" height="150">
 
                                 <!--an overly long description can go past this height, so find a way to prevent that-->
                                 <div class="card-body">
-                                    <h4 class="card-title"><?php echo $subjects['subject_Name'] ?></h4>
+                                    <h3 class="card-title"><?php echo $subjects['subject_Name'] ?></h3>
                                     <!--Change the muted to Time-->
-                                    <h5 class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Instructor'] ?></h5>
+                                    <p class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Instructor'] ?></p>
                                     <p class="card-text"><?php echo $subjects['subject_Desc'] ?></p>
                                 </div>
                                 <div class="card-footer text-right">

@@ -5,7 +5,7 @@
 
     include("conn.php");
     
-    //Store ID here
+    //Store subject ID here
     $sID = $_POST["sID"];
 
     $sName = $_POST ["subjectName"];
@@ -13,6 +13,8 @@
     $sInstructor = $_POST ["subjectInstructor"];
     $sDesc = $_POST ["subjectDesc"];
     $sDay = $_POST ["subjectDay"];
+    $sTimeStart = $_POST ["subjectTimeStart"];
+    $sTimeEnd = $_POST ["subjectTimeEnd"];
     $uID = $_POST['user_ID'];
 
     echo $sID;
@@ -22,8 +24,9 @@
     echo $sDay;
     echo $uID;
 
-    $sqlUpdate = "UPDATE subject SET subject_Name='$sName', subject_Type='$sType', 
-                    subject_Instructor='$sInstructor', subject_Desc='$sDesc', subject_Day='$sDay' WHERE subject_ID='$sID'";
+    $sqlUpdate = "UPDATE subject SET subject_Name='$sName', subject_Type='$sType', subject_Instructor='$sInstructor', 
+                    subject_Desc='$sDesc', subject_Day='$sDay', subject_Time_Start='$sTimeStart', subject_Time_End='$sTimeEnd' 
+                    WHERE subject_ID='$sID'";
     $conn->query($sqlUpdate);
 
     header('location:subjects.php');
