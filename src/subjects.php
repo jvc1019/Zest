@@ -106,11 +106,11 @@ include("notification.php");
                             <div class="form-row">
                                 <div class="col">
                                     <label for="addSubjectTimeStart">Time Start:</label>
-                                    <input id="addSubjectTimeStart" type="time" name="subjectTimeStart">
+                                    <input class="form-control form-control-sm" id="addSubjectTimeStart" type="time" name="subjectTimeStart">
                                 </div>
                                 <div class="col">
                                     <label for="addSubjectTimeEnd">Time End:</label>
-                                    <input id="addSubjectTimeEnd" type="time" name="subjectTimeEnd">
+                                    <input class="form-control form-control-sm" id="addSubjectTimeEnd" type="time" name="subjectTimeEnd">
                                 </div>
                             </div>
                             <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
@@ -179,8 +179,8 @@ include("notification.php");
                                     <p class="card-text"><?php echo $subjects['subject_Desc'] ?></p>
                                 </div>
                                 <div class="card-footer text-right">
-                                    <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="text-danger margin-left">Delete</a>
-                                    <a href="#updateSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="text-primary">Update</a>
+                                    <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-sm text-danger margin-left">Delete</a>
+                                    <a href="#updateSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-sm text-primary">Update</a>
                                 </div>
                                 <!--It had to be put right here for some reason-->
                                 <?php include("subject_modal.php"); ?>
