@@ -2,7 +2,7 @@
 <!--To be worked on by Mico and Jett-->
 
 <?php
-    include("header.php");
+    include("conn.php");
     include("notification.php");
 
     $sName = $_POST ["subjectName"];

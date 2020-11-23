@@ -25,17 +25,17 @@ Third sprint ends on November 26, 2020.
 
 ## Consultations
 
-UPCOMING: November 23, 2020
+UPCOMING: November 26, 2020, 1:00 PM (Thursday)
 - November 4, 2020 (Wireframe Consultation)
 
 ## Members:
 
 ### 1. FRONT END (User Interface)
 
-- Carpio, Eman
-- Faeldonea, Ken
-- Jinon, Robien
-- Visto, Ronald
+- Carpio, Eman (Notebook)
+- Faeldonea, Ken (Home and other Pages)
+- Jinon, Robien (Notebook)
+- Visto, Ronald (Subjects)
 
 ### 2. BACK END (Database)
 
@@ -49,9 +49,10 @@ UPCOMING: November 23, 2020
 
 ### 3. Quality Assurance
 
-- Castañeda, Jayvee (UX)
+- Castañeda, Jayvee (UI and UX)
 - Molina, Janley (UI and UX)
-- Rabe, Jett Adriel (Bug Hunting)
+- Rabe, Jett Adriel (Bug Hunter)
+- Faeldonea, Ken (Bug Hunter)
 
 ## Quick Start Guide
 

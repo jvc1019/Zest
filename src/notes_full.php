@@ -16,7 +16,7 @@ include('user_details.php');?>
 			<form method="post" action="notes_add.php" id="#addnote" enctype="multipart/form-data">
 
 				<!-- TITLE AND TAG TEXTBOXES -->
-				<div class="row mx-5 px-4 justify-content-left">
+				<div class="row mx-5 px-4 justify-content-center">
 					<input class="mr-2" type="text" name="note_Title" placeholder="Note Title" required>  
             		<input class="ml-0" type=" text" name="note_Tags" placeholder="Tags (separated by a comma)">
 				</div>

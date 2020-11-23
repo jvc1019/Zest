@@ -94,13 +94,13 @@ include("notification.php");
                             <div class="form-group">
                                 <label for="addSubjectDay">Day of the Week</label>
                                 <select id="addSubjectDay" class="form-control form-control-sm" name="subjectDay">
-                                    <option selected>Mon</option>
-                                    <option>Tue</option>
-                                    <option>Wed</option>
-                                    <option>Thu</option>
-                                    <option>Fri</option>
-                                    <option>Sat</option>
-                                    <option>Sun</option>
+                                    <option selected>Monday</option>
+                                    <option>Tuesday</option>
+                                    <option>Wednesday</option>
+                                    <option>Thursday</option>
+                                    <option>Friday</option>
+                                    <option>Saturday</option>
+                                    <option>Sunday</option>
                                 </select>
                             </div>
                             <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
@@ -116,16 +116,21 @@ include("notification.php");
         </div>
         <br>
 
-
-
         <div class="shadow-none p-3 mb-8 bg-light rounded">
             <?php
-            // Hi, this is a query to get subjects, change the user_ID to that of the logged in person
+            // Hi, this is a query to get subjects
             $user_Name = $_SESSION['user_Name'];
             $user = $conn->query("SELECT * FROM user WHERE user_Name='$user_Name'")->fetch_assoc();
-            $user_ID = $user['user_ID'];
-            $query = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
-            $result = mysqli_query($conn, $query);
+            
+            //fix this line, there is already something for this @ user_details
+            $user_ID = $user['user_ID']; 
+            
+            // $subjects = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
+            // $result = mysqli_query($conn, $query);
+
+            //The one you see above is an old version, delete that soon
+            $subjects = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
+            $result = $conn->query($subjects);
 
             if ($result) {
                 //if there are results,
@@ -134,52 +139,51 @@ include("notification.php");
                     //store to array named subjects
                     $inc = 4;
                     while ($subjects = mysqli_fetch_assoc($result)) {
-                        //just to check what we are dealing with
-                        // print_r($subjects);
 
-                        //this portion of the code was taken from a previous activity last semester
+                        //this portion of the code was similar to the activity last semester
                         $inc = ($inc == 4) ? 1 : $inc + 1;
-                        if ($inc == 1) echo "<div class='row'>";
+                        if ($inc == 1) echo "<div class='card-group'>";
             ?>
                         <!--Cards Section-->
-                        <div class="col-md-3">
-                            <div class="card" style="width: 16rem;">
-                                <img class="banner" src="/cmsc128/resources/subjects-card-img.jpg" alt="subjects_banner" width="254" height="150">
+
+                            <!--
+                                Adriel here, through trial and error 16.8rem is the precise approximate amount so as the card 
+                                doesn't overflow its size in width whilst maintaining its position relative to the center of 
+                                the screen while they are in a full group of 4. If you have a better number to be more precise,
+                                then be my guest
+                            -->
+                            <div class="card" style="max-width: 16.8rem;">
+                                <img class="banner" src="/cmsc128/resources/subjects-card-img.jpg" alt="subjects_banner" height="150">
 
                                 <!--an overly long description can go past this height, so find a way to prevent that-->
-                                <div class="card-body" style="height: 15rem;">
+                                <div class="card-body">
                                     <h4 class="card-title"><?php echo $subjects['subject_Name'] ?></h4>
                                     <!--Change the muted to Time-->
                                     <h5 class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Instructor'] ?></h5>
                                     <p class="card-text"><?php echo $subjects['subject_Desc'] ?></p>
                                 </div>
                                 <div class="card-footer text-right">
-                                    <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-danger btn-sm">Delete</a>
-                                    <a href="#updateSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-success btn-sm">Update</a>
-
+                                    <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="text-danger margin-left">Delete</a>
+                                    <a href="#updateSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="text-primary">Update</a>
                                 </div>
                                 <!--It had to be put right here for some reason-->
                                 <?php include("subject_modal.php"); ?>
-
                             </div>
 
-                        </div>
 
             <?php
-
-                        //We might need another way to arrange the cards, That would be a problem for another time
-                        //maybe using card groups might work
-                        if ($inc == 4) echo "</div>";
+                        //closes card group if a row gets full, also adds some space, remove <br> if need be
+                        if ($inc == 4) echo "</div><br>";
                         //end of while
                     }
 
-                    //aligns the cards together by creating empty divs that take up space
-                    if ($inc == 1) echo "<div class='col-md-3'></div><div class='col-md-3'></div><div class='col-md-3'></div></div>";
-                    if ($inc == 2) echo "<div class='col-md-3'></div><div class='col-md-3'></div></div>";
-                    if ($inc == 3) echo "<div class='col-md-3'></div></div>";
+                    //since the card group doesn't close at all if it doesn't get full, we have this if statemenet on the ready
+                    //this is positioned right after the end of while since that's the point where subjects are done being displayed
+                    if ($inc != 4) echo "</div>";
 
                     //end of if (mysqli_num_rows($result)>0){
                 } else {
+                    
                     //format this in a pleasing way, for now its is like this for functionality
                     echo "No subjects to diplsay";
                 }
@@ -190,4 +194,10 @@ include("notification.php");
             ?>
         </div>
     </div>
+    <script>
+        // Enable all tooltips
+        $(function() {
+            $("[data-toggle='tooltip']").tooltip()
+        })
+    </script>
 </body>

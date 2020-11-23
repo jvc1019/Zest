@@ -3,7 +3,7 @@
 -->
 <?php
 
-    include("header.php");
+    include("conn.php");
     
     //Store ID here
     $sID = $_POST["sID"];
