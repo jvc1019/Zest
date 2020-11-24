@@ -11,7 +11,6 @@ include("notification.php");
     <!-- navigation bar -->
     <?php include('navbar.php'); ?>
     <div class="container">
-        <img class="banner" src="/cmsc128/resources/subjects-back.jpg" alt="subjects_banner" width="1110" height="100">
         <div class="alert alert-light shadow sticky-top">
             <div class="row form-inline">
                 <div class="col-sm-2">
@@ -173,14 +172,20 @@ include("notification.php");
 
                                 <!--an overly long description can go past this height, so find a way to prevent that-->
                                 <div class="card-body">
-                                    <h3 class="card-title"><?php echo $subjects['subject_Name'] ?></h3>
+                                    <h3 class="card-title"><?php echo $subjects['subject_Name'] ?>: <?php echo $subjects['subject_Type'] ?></h3>
                                     <!--Change the muted to Time-->
                                     <p class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Instructor'] ?></p>
                                     <p class="card-text"><?php echo $subjects['subject_Desc'] ?></p>
+                                    <p class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Time_Start'] ?>-<?php echo $subjects['subject_Time_End'] ?></p>
                                 </div>
-                                <div class="card-footer text-right">
-                                    <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-sm text-danger margin-left">Delete</a>
-                                    <a href="#detailsSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-sm text-primary">Details</a>
+                                <div class="card-footer">
+                                	<div class="row form-inline">
+                                		<div class="col-sm-6">
+	                                		<h7 class="text-secondary text-center"><?php echo $subjects['subject_Day'] ?></h7>
+	                                	</div>
+	                                    <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-sm text-danger margin-left">Delete</a>
+	                                    <a href="#detailsSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-sm text-primary">Details</a>
+                                    </div>
                                 </div>
                                 <!--It had to be put right here for some reason-->
                                 <?php include("subject_modal.php"); ?>
