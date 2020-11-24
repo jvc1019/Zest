@@ -19,7 +19,7 @@
 					<div class="col-md-1 col-lg hidden-md-down"></div>
 					<div class="col-md-9 col-lg-9">
 						<div class="row">
-							<div class="col-md-3" data-toggle="tooltip" title="Orginize your Subjects">
+							<div class="col-md-3" data-toggle="tooltip" title="Organize your Subjects">
 								<a href="subjects.php">
 									<div class="iconholder">
 										<img class="appIcon" src="/cmsc128/resources/icons/book-half.svg"><br>

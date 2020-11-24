@@ -11,7 +11,6 @@ include("notification.php");
     <!-- navigation bar -->
     <?php include('navbar.php'); ?>
     <div class="container">
-        <img class="banner" src="/cmsc128/resources/subjects-back.jpg" alt="subjects_banner" width="1110" height="100">
         <div class="alert alert-light shadow sticky-top">
             <div class="row form-inline">
                 <div class="col-sm-2">
