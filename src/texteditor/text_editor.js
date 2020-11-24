@@ -50,6 +50,25 @@ $(".editor_strikethrough").click(function () {
     pushCurrentState(this);
 });
 
+$(".editor_font").change(function () {
+    document.execCommand("fontName", false, $(this).val());
+
+    pushCurrentState(this);
+});
+
+$(".editor_fontSize").change(function () {
+    document.execCommand("fontSize", false, "7");
+    $(this)
+        .closest(".form-group")
+        .find(".editor_fontSize_indicator")
+        .text($(this).val());
+    var fontElements = window.getSelection().anchorNode.parentNode;
+    fontElements.removeAttribute("size");
+    fontElements.style.fontSize = $(this).val() + "pt";
+
+    pushCurrentState(this);
+});
+
 $(".editor_bullet").click(function () {
     document.execCommand("insertUnorderedList");
 
@@ -81,6 +100,14 @@ $(".editor_textarea").on("input", function () {
 });
 
 $(".editor_textarea").click(function () {
+    findCurrentTags(this);
+});
+
+$(".editor_textarea").focusin(function () {
+    findCurrentTags(this);
+});
+
+$(".editor_textarea").focusout(function () {
     findCurrentTags(this);
 });
 
