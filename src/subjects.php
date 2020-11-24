@@ -176,7 +176,9 @@ include("notification.php");
                                     <!--Change the muted to Time-->
                                     <p class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Instructor'] ?></p>
                                     <p class="card-text"><?php echo $subjects['subject_Desc'] ?></p>
-                                    <p class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Time_Start'] ?>-<?php echo $subjects['subject_Time_End'] ?></p>
+                                    <!--This formats the time into AM and PM and also removes the seconds-->
+                                    <p class="card-subtitle mb-2 text-muted"><?php echo date('g:ia', strtotime($subjects['subject_Time_Start'])); ?> - <?php echo date('g:ia', strtotime($subjects['subject_Time_End']));?></p>
+                                    
                                 </div>
                                 <div class="card-footer">
                                 	<div class="row form-inline">
