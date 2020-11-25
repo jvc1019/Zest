@@ -4,6 +4,8 @@
  * @license https://opensource.org/licenses/CDDL-1.0
  */
 
+$(".editor").find("[data-toggle='tooltip']").tooltip();
+
 function getHTML(source) {
     return $(source).closest(".form-group").find(".editor_textarea").html();
 }
@@ -71,10 +73,6 @@ $(".editor_font").change(function () {
 
 $(".editor_fontSize").change(function () {
     document.execCommand("fontSize", false, "7");
-    $(this)
-        .closest(".form-group")
-        .find(".editor_fontSize_indicator")
-        .text($(this).val());
     var fontElements = window.getSelection().anchorNode.parentNode;
     fontElements.removeAttribute("size");
     fontElements.style.fontSize = $(this).val() + "pt";
@@ -114,7 +112,6 @@ $(".editor_textarea").on("input", function () {
         setHTML(this, "");
     }
 
-    findCurrentTags(this);
     pushCurrentState(this);
 });
 
@@ -122,11 +119,7 @@ $(".editor_textarea").click(function () {
     findCurrentTags(this);
 });
 
-$(".editor_textarea").focusin(function () {
-    findCurrentTags(this);
-});
-
-$(".editor_textarea").focusout(function () {
+$(".editor_textarea").keyup(function () {
     findCurrentTags(this);
 });
 
@@ -150,6 +143,19 @@ function findCurrentTags(source) {
 
     var range_parent_tags = [];
 
+    var fontElement = selection.anchorNode.parentNode;
+
+    while (
+        fontElement.nodeName !== "FONT" &&
+        fontElement.parentNode.nodeName !== "DIV"
+    ) {
+        fontElement = fontElement.parentNode;
+    }
+
+    var fontFace = fontElement.getAttribute("face");
+    var fontSize = fontElement.style.fontSize;
+    var fontColor = fontElement.getAttribute("color");
+
     if (start_element.isEqualNode(end_element)) {
         var cur_element = start_element.parentNode;
 
@@ -157,6 +163,34 @@ function findCurrentTags(source) {
             range_parent_tags.push(cur_element.nodeName);
             cur_element = cur_element.parentNode;
         }
+    }
+
+    if (fontFace !== null && fontFace.length > 0) {
+        $(".editor_font option:contains('" + fontFace + "')").prop(
+            "selected",
+            true
+        );
+    } else {
+        $(".editor_font option:contains('Arial')").prop("selected", true);
+    }
+
+    if (fontSize !== null && fontSize.length > 0) {
+        $(".editor_fontSize option:contains('" + fontSize + "')").prop(
+            "selected",
+            true
+        );
+    } else {
+        $(".editor_fontSize option:contains('12pt')").prop("selected", true);
+    }
+
+    if (fontColor !== null && fontColor.length > 0) {
+        $(".editor_fontColor option")
+            .filter(function () {
+                return $(this).val() == fontColor;
+            })
+            .prop("selected", true);
+    } else {
+        $(".editor_fontColor option:contains('black')").prop("selected", true);
     }
 
     if (range_parent_tags.indexOf("B") != -1) {

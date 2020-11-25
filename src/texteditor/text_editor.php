@@ -15,41 +15,42 @@
     <div class="alert alert-light shadow">
         <div class="row form-inline">
             <select class="custom-select border-0 rounded-0 editor_font" data-toggle="tooltip" title="Change font">
-                <option class="editor_font_sans-serif" value="sans-serif">
-                    sans-serif
+                <option class="editor_font_sans-serif" value="Arial">
+                    Arial
                 </option>
-                <option class="editor_font_serif" value="serif">
-                    serif
+                <option class="editor_font_serif" value="Times New Roman">
+                    Times New Roman
                 </option>
-                <option class="editor_font_monospace" value="monospace">
-                    monospace
+                <option class="editor_font_monospace" value="Courier">
+                    Courier
                 </option>
-                <option class="editor_font_cursive" value="cursive">
-                    cursive
+                <option class="editor_font_cursive" value="Comic Sans MS">
+                    Comic Sans MS
                 </option>
             </select>
 
             <select class="custom-select border-0 rounded-0 editor_fontSize m-1" data-toggle="tooltip" title="Change font size">
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="14">14</option>
-                <option value="16">16</option>
-                <option value="18">18</option>
-                <option value="20">20</option>
-                <option value="22">22</option>
-                <option value="24">24</option>
-                <option value="26">26</option>
-                <option value="28">28</option>
-                <option value="36">36</option>
-                <option value="48">48</option>
-                <option value="72">72</option>
+                <option value="8">8pt</option>
+                <option value="9">9pt</option>
+                <option value="10">10pt</option>
+                <option value="11">11pt</option>
+                <option value="12" selected>12pt</option>
+                <option value="14">14pt</option>
+                <option value="16">16pt</option>
+                <option value="18">18pt</option>
+                <option value="20">20pt</option>
+                <option value="22">22pt</option>
+                <option value="24">24pt</option>
+                <option value="26">26pt</option>
+                <option value="28">28pt</option>
+                <option value="36">36pt</option>
+                <option value="48">48pt</option>
+                <option value="72">72pt</option>
             </select>
 
             <select class="custom-select border-0 rounded-0 editor_fontColor m-1" data-toggle="tooltip" title="Change font color">
-                <option class="editor_fontColor_black" value="#000000">black</option>
+                <option value="#000000" selected>black</option>
+                <option class="editor_fontColor_gray" value="#808080">gray</option>
                 <option class="editor_fontColor_red" value="#ff0000">red</option>
                 <option class="editor_fontColor_green" value="#008000">green</option>
                 <option class="editor_fontColor_blue" value="#0000ff">blue</option>
@@ -103,27 +104,27 @@
 
 <style>
     .editor {
-        width: 38em;
+        width: 42em;
     }
 
     .editor_font_sans-serif {
-        font-family: sans-serif;
+        font-family: Arial;
     }
 
     .editor_font_serif {
-        font-family: serif;
+        font-family: 'Times New Roman';
     }
 
     .editor_font_monospace {
-        font-family: monospace;
+        font-family: 'Courier New';
     }
 
     .editor_font_cursive {
-        font-family: cursive;
+        font-family: 'Comic Sans MS';
     }
 
-    .editor_fontColor_black {
-        color: black;
+    .editor_fontColor_gray {
+        color: gray;
     }
 
     .editor_fontColor_red {
@@ -139,6 +140,8 @@
     }
 
     .editor_textarea {
+        color: black;
+        font-family: Arial;
         resize: vertical;
         height: 18em;
     }
@@ -150,4 +153,5 @@
     }
 </style>
 
-<script src=" texteditor/text_editor.js"> </script>
+<script src=" texteditor/text_editor.js">
+</script>
