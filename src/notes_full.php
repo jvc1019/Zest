@@ -19,8 +19,14 @@ include('user_details.php'); ?>
 
 			<!-- TITLE AND TAG TEXTBOXES -->
 			<div class="row mx-5 px-4 justify-content-center">
-				<input class="mr-2" type="text" name="note_Title" placeholder="Note Title" required>
-				<input class="ml-0" type=" text" name="note_Tags" placeholder="Tags (separated by a comma)">
+				<div class="form-row">
+					<div class="col">
+						<input class="mr-2 form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" type="text" name="note_Title" placeholder="Note Title" required>
+					</div>
+					<div class="col">
+						<input class="ml-0 form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" type=" text" name="note_Tags" placeholder="Tags (separated by a comma)">
+					</div>
+				</div>
 			</div>
 
 			<!-- RICHTEXT EDITOR -->
