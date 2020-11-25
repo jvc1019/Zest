@@ -136,7 +136,7 @@ include("notification.php");
                                                     <path fill-rule="evenodd" d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
                                                 </svg>
 
-                                                Banner Color:
+                                                Banner Image:
                                             </label>
                                             <div class="input-group">
                                                 <select id="addSubjectBanner" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectBanner">
@@ -273,7 +273,8 @@ include("notification.php");
                         <!--List (Kitchen Sink)-->
                         <ul class="list-group list-group-flush">
                             <?php if (!empty ($subjects['subject_Day'])) echo "<li class='list-group-item small'>".$subjects['subject_Day']."</li>";?>
-                            <li class="list-group-item small"><?php echo date('g:i A', strtotime($subjects['subject_Time_Start'])); ?> - <?php echo date('g:i A', strtotime($subjects['subject_Time_End'])); ?></li>
+                            <?php if (!empty ($subjects['subject_Time_Start']) and !empty($subjects['subject_Time_End'])) 
+                                echo "<li class='list-group-item small'>".date('g:i A', strtotime($subjects['subject_Time_Start']))." - ".date('g:i A', strtotime($subjects['subject_Time_End']))."</li>";?>
                         </ul>
 
                         <!--Card Footer-->
