@@ -237,7 +237,7 @@ include("notification.php");
                        <!--Cards Section-->
                         <div class="card">
                             <!--Card Banner-->
-                            <img class="banner" src="/cmsc128/resources/subjects-back.jpg" alt="subjects_banner" height="150">
+                            <img class="banner card-img-top" src="/cmsc128/resources/subjects-back.jpg" alt="subjects_banner" height="150">
                                    
                             <!--Card Body-->
                             <div class="card-body overflow-hidden" style="height:10em">

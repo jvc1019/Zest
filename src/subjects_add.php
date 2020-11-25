@@ -3,7 +3,6 @@
 
 <?php
     include("conn.php");
-    include("notification.php");
 
     $sName = $_POST ["subjectName"];
     $sType = $_POST ["subjectType"];
