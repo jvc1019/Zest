@@ -138,7 +138,7 @@ include("notification.php");
                                                 Banner Color:
                                             </label>
                                             <div class="input-group">
-                                                <select id="addSubjectDay" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectDay">
+                                                <select id="addSubjectBanner" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectDay">
                                                     <option selected>Blue</option>
                                                     <option>Gold</option>
                                                     <option>Color 3</option>
@@ -172,6 +172,7 @@ include("notification.php");
                                                 </div>
                                             </div>
                                         </div>
+                                        <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
                                     </div>
                                 </div>
                         </div>
@@ -253,7 +254,7 @@ include("notification.php");
                             </ul>
 
                             <!--Card Footer-->
-                            <div class="card-footer">
+                            <div class="card-footer text-center">
                                 <a href="#detailsSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn text-primary btn-sm">
                                     <span>
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
