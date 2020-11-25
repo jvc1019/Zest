@@ -30,15 +30,19 @@ $("[name='task_Tags']").on("input", function () {
 });
 
 function validate_tags(source) {
-    var split = source.split(",");
-    if (split.length > 3) {
-        return true;
-    } else {
-        for (let i = 0; i < split.length; i++) {
-            if (split[i].length > 12) {
-                return true;
+    if (source.length > 0) {
+        var split = source.split(",");
+        if (split.length > 3) {
+            return true;
+        } else {
+            for (let i = 0; i < split.length; i++) {
+                if (split[i].length > 12 || !/^[a-zA-Z0-9]+$/.test(split[i])) {
+                    return true;
+                }
             }
+            return false;
         }
+    } else {
         return false;
     }
 }

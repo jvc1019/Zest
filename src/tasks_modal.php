@@ -102,7 +102,7 @@
                                     <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="task_Tags" value="<?php echo $row['task_Tags']; ?>" placeholder="No tags. Click to add." data-toggle="tooltip" title="Multiple tags with the same name will be automatically combined into one on save">
                                     <small>Separate multiple tags with a comma, ex: schoolstuff, science</small>
                                     <div class="invalid-feedback">
-                                        <span class="text-danger">Too many tags! (up to 3 tags, max 12 characters per tag)</span>
+                                        <span class="text-danger">Too many tags! (up to 3 tags, max 12 characters per tag, letters only)</span>
                                     </div>
                                 </div>
                             </div>
