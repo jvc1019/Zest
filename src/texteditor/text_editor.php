@@ -5,14 +5,7 @@
 -->
 
 <div class="form-group editor">
-
-    <div contenteditable="true" class="form-control overflow-auto border-primary border-top-0 border-left-0 border-right-0 rounded-0 d-inline-block editor_textarea" data-placeholder="Placeholder text here"><?php if (!empty($row["note_Content"])) {
-                                                                                                                                                                                                                    echo $row["note_Content"];
-                                                                                                                                                                                                                } ?></div>
-
-    <br>
-
-    <div class="alert alert-light shadow">
+    <div class="alert alert-light shadow sticky-top">
         <div class="row form-inline">
             <select class="custom-select border-0 rounded-0 editor_font" data-toggle="tooltip" title="Change font">
                 <option class="editor_font_sans-serif" value="Arial">
@@ -97,6 +90,11 @@
             </button>
         </div>
     </div>
+    <div contenteditable="true" class="form-control overflow-auto border-primary border-top-0 border-left-0 border-right-0 rounded-0 d-inline-block editor_textarea" data-placeholder="Click here to add something..."><?php if (!empty($row["note_Content"])) {
+                                                                                                                                                                                                                            echo $row["note_Content"];
+                                                                                                                                                                                                                        } ?></div>
+
+
     <input type="hidden" name="note_Content" value="<?php if (!empty($row["note_Content"])) {
                                                         echo htmlentities($row["note_Content"], ENT_COMPAT);
                                                     } ?>">
