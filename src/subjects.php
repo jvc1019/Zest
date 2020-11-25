@@ -139,7 +139,7 @@ include("notification.php");
             // $subjects = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
             // $result = mysqli_query($conn, $query);
 
-            $subjects = "SELECT * F ROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
+            $subjects = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
             $result = $conn->query($subjects);
 
             if (!($result->num_rows > 0)) { ?>
