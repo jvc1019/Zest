@@ -77,11 +77,11 @@ include("notification.php");
                                         <div class="form-group">
                                             <div class="form-control font-weight-bold border-primary border-top-0 border-left-0 border-right-0 rounded-0">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="subjectType" id="addLecture" value="Lecture" checked>
+                                                    <input class="form-check-input" type="radio" name="subjectType" id="addLecture" value="LEC" checked>
                                                     <label class="form-check-label" for="addLecture">Lecture</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="subjectType" id="addLaboratory" value="Laboratory">
+                                                    <input class="form-check-input" type="radio" name="subjectType" id="addLaboratory" value="LAB">
                                                     <label class="form-check-label" for="addLaboratory">Laboratory</label>
                                                 </div>
                                             </div>
