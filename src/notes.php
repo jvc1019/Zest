@@ -15,7 +15,7 @@ include('user_details.php');
                     <h3 class="text-primary text-right">Notebook</h3>
                 </div>
                 <!-- Sort by and sort direction -->
-                <div class="col-sm-3" align="center">
+                <div class="col-sm-3">
                     <select id="sortDir" class="btn btn-sm">
                         <?php
                         $value = isset($_GET['sortDir']) ? $_GET['sortDir'] : 0;
