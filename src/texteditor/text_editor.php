@@ -144,6 +144,10 @@
         height: 18em;
     }
 
+    .editor_textarea:focus {
+        color: black;
+    }
+
     .editor_textarea:empty:before {
         content: attr(data-placeholder);
         color: #6c757d;
