@@ -1,0 +1,12 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.card-deck.fourcolumns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+}
+
+.card-deck.fourcolumns > .card {
+    margin-bottom: 1em;
+}
