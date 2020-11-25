@@ -247,6 +247,7 @@ include("notification.php");
                             </div>
                             <!--End of Card Body-->
 
+                            
                             <!--List (Kitchen Sink)-->
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item small"><?php echo $subjects['subject_Day']; ?></li>
