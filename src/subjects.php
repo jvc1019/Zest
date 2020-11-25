@@ -91,7 +91,7 @@ include("notification.php");
                                             <textarea class="form-control border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectDesc" name="subjectDesc" placeholder="Subject description (optional)" rows="9"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 task_Date">
+                                    <div class="col-sm-6">
                                         <!-- Instructor -->
                                         <div class="form-group">
                                             <label for="addSubjectInstructor" class="form-label h6">
@@ -127,7 +127,29 @@ include("notification.php");
                                                 </select>
                                             </div>
                                         </div>
-                                        <!-- Time Start and End -->
+
+                                        <div class="form-group">
+                                            <label for="addSubjectBanner" class="form-label h6">
+                                                <!--  Image/Banner Icon -->
+                                                <svg width="1.0625em" height="1em" viewBox="0 0 17 16" class="bi bi-image-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                                </svg>
+
+                                                Banner Color:
+                                            </label>
+                                            <div class="input-group">
+                                                <select id="addSubjectBanner" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectBanner">
+                                                    <option selected>Image 1</option>
+                                                    <option>Image 2</option>
+                                                    <option>Image 3</option>
+                                                    <option>Image 4</option>
+                                                    <!-- <option>Friday</option>
+                                                    <option>Saturday</option>
+                                                    <option>Sunday</option> -->
+                                                </select>
+                                            </div>
+                                        </div>
+
                                         <div class="form-group">
                                             <div class="form-row">
                                                 <div class="col">
@@ -266,11 +288,10 @@ include("notification.php");
                             </a>
                             <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn text-danger btn-sm">
                                 <span>
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
-                                        <circle cx="8" cy="4.5" r="1" />
-                                    </svg>
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                </svg>
                                 </span>Delete
                             </a>
                         </div>
