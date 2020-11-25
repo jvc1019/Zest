@@ -1,5 +1,5 @@
     <!--Delete Modal-->
-    <div id="deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" class="modal fade" role="dialog" aria-labelledby="Delete task" aria-hidden="true">
+    <div id="deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" class="modal fade" role="dialog" aria-labelledby="Delete Subject" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <!--Header-->
@@ -76,14 +76,13 @@
                         <div class="form-group">
                             <label for="addSubjectDay">Day of the Week</label>
                             <select id="addSubjectDay" class="form-control form-control-sm" name="subjectDay">
-                                <option selected><?php echo $subjects['subject_Day']; ?></option>
-                                <?php if ($subjects['subject_Day'] != "Monday") echo "<option>Monday</option>" ?>
-                                <?php if ($subjects['subject_Day'] != "Tuesday") echo "<option>Tuesday</option>" ?>
-                                <?php if ($subjects['subject_Day'] != "Wednesday") echo "<option>Wednesday</option>" ?>
-                                <?php if ($subjects['subject_Day'] != "Thursday") echo "<option>Thursday</option>" ?>
-                                <?php if ($subjects['subject_Day'] != "Friday") echo "<option>Friday</option>" ?>
-                                <?php if ($subjects['subject_Day'] != "Saturday") echo "<option>Saturday</option>" ?>
-                                <?php if ($subjects['subject_Day'] != "Sunday") echo "<option>Sunday</option>" ?>
+                                <option <?php if ($subjects['subject_Day'] == "Monday") echo "selected"?>>Monday</option>
+                                <option <?php if ($subjects['subject_Day'] == "Tuesday") echo "selected"?>>Tuesday</option>
+                                <option <?php if ($subjects['subject_Day'] == "Wednesday") echo "selected"?>>Wednesday</option>
+                                <option <?php if ($subjects['subject_Day'] == "Thursday") echo "selected"?>>Thursday</option> 
+                                <option <?php if ($subjects['subject_Day'] == "Friday") echo "selected"?>>Friday</option>
+                                <option <?php if ($subjects['subject_Day'] == "Saturday") echo "selected"?>>Saturday</option>
+                                <option <?php if ($subjects['subject_Day'] == "Sunday") echo "selected"?>>Sunday</option>
                             </select>
                         </div>
                         <div class="form-row">
