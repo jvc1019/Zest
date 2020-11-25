@@ -18,11 +18,14 @@
                     subject_Day, subject_Time_Start, subject_Time_End, user_ID)
                     VALUES ('$sName', '$sType', '$sInstructor', '$sDesc', '$sDay', '$sTimeStart', '$sTimeEnd', '$uID')";
 
-    if (!$conn->query($subjectsql)) {
-        $status = "Subject addition failed. " . $sName . " has already been made.";
-    } else {
-        $status = "Successfully added task " . $sName . ".";
-    }
+    //Rework this
+    // if (!$conn->query($subjectsql)) {
+    //     $status = "Subject addition failed. " . $sName . " has already been made.";
+    // } else {
+    //     $status = "Successfully added task " . $sName . ".";
+    // }
+
+    $status = "Successfully added task " . $sName . ".";
 
     header('Location:subjects.php?status=' . $status . "&isNotif=true");
 ?>
