@@ -24,7 +24,7 @@
     // } else {
     //     $status = "Successfully added task " . $sName . ".";
     // }
-
+    $conn->query($subjectsql);
     $status = "Successfully added task " . $sName . ".";
 
     header('Location:subjects.php?status=' . $status . "&isNotif=true");
