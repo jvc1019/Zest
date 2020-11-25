@@ -126,7 +126,8 @@ include("notification.php");
         </div>
         <br>
 
-        <div class="shadow-none p-3 mb-8 bg-light rounded">
+        <!-- <div class="shadow-none p-3 mb-8 bg-light rounded"> -->
+        <div class="card-deck fourcolumns">
             <?php
             // Hi, this is a query to get subjects
             $user_Name = $_SESSION['user_Name'];
@@ -138,97 +139,62 @@ include("notification.php");
             // $subjects = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
             // $result = mysqli_query($conn, $query);
 
-            //The one you see above is an old version, delete that soon
-            $subjects = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
+            $subjects = "SELECT * F ROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
             $result = $conn->query($subjects);
 
-            if ($result) {
-                //if there are results,
-                if (mysqli_num_rows($result) > 0) {
-
-                    //store to array named subjects
-                    $inc = 4;
-                    while ($subjects = mysqli_fetch_assoc($result)) {
-
-                        //this portion of the code was similar to the activity last semester
-                        $inc = ($inc == 4) ? 1 : $inc + 1;
-                        if ($inc == 1) echo "<div class='card-group'>";
-            ?>
-                        <!--Cards Section-->
-
-                        <!--
-                                Adriel here, through trial and error 16.8rem is the precise approximate amount so as the card 
-                                doesn't overflow its size in width whilst maintaining its position relative to the center of 
-                                the screen while they are in a full group of 4. If you have a better number to be more precise,
-                                then be my guest
-                            -->
-                        <div class="card" style="max-width: 16.8rem;">
-
-                            <!--
-                                Replaced it for a little while, change it back
-                                Will provide different alternative pics to choose from
-                             -->
+            if (!($result->num_rows > 0)) { ?>
+                <h6>No subjects</h6>
+                <?php
+            }
+            else{
+                while ($subjects = $result->fetch_assoc()) { ?>
+                       
+                       <!--Cards Section-->
+                        <div class="card">
+                            <!--Card Banner-->
                             <img class="banner" src="/cmsc128/resources/subjects-back.jpg" alt="subjects_banner" height="150">
-
-                            <!--an overly long description can go past this height, so find a way to prevent that-->
-                            <div class="card-body">
-                                <h3 class="card-title"><?php echo $subjects['subject_Name'] ?>: <?php echo $subjects['subject_Type'] ?></h3>
-                                <!--Change the muted to Time-->
+                                   
+                            <!--Card Body-->
+                            <div class="card-body overflow-hidden" style="height:10em">
+                                <h5 class="card-title"><?php echo $subjects['subject_Name'] ?>: <?php echo $subjects['subject_Type'] ?></h5>
                                 <p class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Instructor'] ?></p>
-                                <p class="card-text"><?php echo $subjects['subject_Desc'] ?></p>
-                                <!--This formats the time into AM and PM and also removes the seconds-->
-                                <p class="card-subtitle mb-2 text-muted"><?php echo date('g:ia', strtotime($subjects['subject_Time_Start'])); ?> - <?php echo date('g:ia', strtotime($subjects['subject_Time_End'])); ?></p>
+                                <?php echo $subjects['subject_Desc']; ?>
+                            </div>
+                            <!--End of Card Body-->
 
-                            </div>
+                            <!--List (Kitchen Sink)-->
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><?php echo date('g:i A', strtotime($subjects['subject_Time_Start'])); ?> - <?php echo date('g:i A', strtotime($subjects['subject_Time_End']));?></li>
+                            </ul>
+
+                            <!--Card Footer-->
                             <div class="card-footer">
-                                <div class="row form-inline">
-                                    <div class="col-sm-4">
-                                        <h7 class="text-secondary text-center"><?php echo $subjects['subject_Day'] ?></h7>
-                                    </div>
-                                    <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-sm text-danger margin-left">
-                                        <span>
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
-                                                <circle cx="8" cy="4.5" r="1" />
-                                            </svg>
-                                        </span>
-                                        Delete
-                                    </a>
-                                    <a href="#detailsSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn btn-sm text-primary">
-                                        <span>
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                                            </svg>
-                                        </span>
-                                        Details
-                                    </a>
-                                </div>
+                                <a href="#detailsSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn text-primary btn-sm">
+                                    <span>
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                            <circle cx="8" cy="4.5" r="1" />
+                                        </svg>
+                                    </span>Details
+                                </a>
+                                <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn text-danger btn-sm">
+                                    <span>
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                            <circle cx="8" cy="4.5" r="1" />
+                                        </svg>
+                                    </span>Delete
+                                </a>
                             </div>
-                            <!--It had to be put right here for some reason-->
-                            <?php include("subject_modal.php"); ?>
+                             <!--End of Card Footer-->
                         </div>
+                             <?php include("subject_modal.php"); ?>
 
 
             <?php
-                        //closes card group if a row gets full, also adds some space, remove <br> if need be
-                        if ($inc == 4) echo "</div><br>";
-                        //end of while
-                    }
-
-                    //since the card group doesn't close at all if it doesn't get full, we have this if statemenet on the ready
-                    //this is positioned right after the end of while since that's the point where subjects are done being displayed
-                    if ($inc != 4) echo "</div>";
-
-                    //end of if (mysqli_num_rows($result)>0){
-                } else {
-
-                    //format this in a pleasing way, for now its is like this for functionality
-                    echo "No subjects to diplsay";
-                }
-
-                //end of if ($result){
+                }  
             }
 
             ?>
