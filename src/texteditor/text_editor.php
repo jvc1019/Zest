@@ -48,11 +48,12 @@
                 <option value="72">72</option>
             </select>
 
-            <!-- <select class="custom-select border-0 rounded-0 editor_fontSize m-1" data-toggle="tooltip" title="Change font size">
-                <option value="red" style="color:red">red</option>
-                <option value="green" style="color:green">green</option>
-                <option value="blue" style="color:blue">blue</option>
-            </select> -->
+            <select class="custom-select border-0 rounded-0 editor_fontColor m-1" data-toggle="tooltip" title="Change font color">
+                <option class="editor_fontColor_black" value="#000000">black</option>
+                <option class="editor_fontColor_red" value="#ff0000">red</option>
+                <option class="editor_fontColor_green" value="#008000">green</option>
+                <option class="editor_fontColor_blue" value="#0000ff">blue</option>
+            </select>
 
             <button type="button" class="btn rounded-0 editor_bold" data-toggle="tooltip" title="Bold">
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-type-bold" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -96,13 +97,13 @@
         </div>
     </div>
     <input type="hidden" name="note_Content" value="<?php if (!empty($row["note_Content"])) {
-                                                        echo $row["note_Content"];
+                                                        echo htmlentities($row["note_Content"], ENT_COMPAT);
                                                     } ?>">
 </div>
 
 <style>
     .editor {
-        width: 36em;
+        width: 38em;
     }
 
     .editor_font_sans-serif {
@@ -121,9 +122,25 @@
         font-family: cursive;
     }
 
+    .editor_fontColor_black {
+        color: black;
+    }
+
+    .editor_fontColor_red {
+        color: red;
+    }
+
+    .editor_fontColor_green {
+        color: green;
+    }
+
+    .editor_fontColor_blue {
+        color: blue;
+    }
+
     .editor_textarea {
         resize: vertical;
-        height: 16em;
+        height: 18em;
     }
 
     .editor_textarea:empty:before {
@@ -133,5 +150,4 @@
     }
 </style>
 
-<script src="texteditor/text_editor.js">
-</script>
+<script src=" texteditor/text_editor.js"> </script>

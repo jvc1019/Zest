@@ -20,8 +20,21 @@ function setText(source, value) {
     $(source).closest(".form-group").find(".editor_textarea").text(value);
 }
 
+function addSlashes(string) {
+    return string
+        .replace(/\\/g, "\\\\")
+        .replace(/\u0008/g, "\\b")
+        .replace(/\t/g, "\\t")
+        .replace(/\n/g, "\\n")
+        .replace(/\f/g, "\\f")
+        .replace(/\r/g, "\\r")
+        .replace(/'/g, "\\'")
+        .replace(/"/g, '\\"');
+}
+
 function pushCurrentState(source) {
     var value = getHTML(source);
+    value = addSlashes(value);
 
     $(source).closest(".form-group").find("[name='note_Content']").val(value);
 }
@@ -65,6 +78,12 @@ $(".editor_fontSize").change(function () {
     var fontElements = window.getSelection().anchorNode.parentNode;
     fontElements.removeAttribute("size");
     fontElements.style.fontSize = $(this).val() + "pt";
+
+    pushCurrentState(this);
+});
+
+$(".editor_fontColor").change(function () {
+    document.execCommand("foreColor", false, $(this).val());
 
     pushCurrentState(this);
 });
