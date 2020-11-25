@@ -76,6 +76,7 @@
                         <div class="form-group">
                             <label for="addSubjectDay">Day of the Week</label>
                             <select id="addSubjectDay" class="form-control form-control-sm" name="subjectDay">
+                                <option <?php if ($subjects['subject_Day'] == "") echo "selected"?>></option>
                                 <option <?php if ($subjects['subject_Day'] == "Monday") echo "selected"?>>Monday</option>
                                 <option <?php if ($subjects['subject_Day'] == "Tuesday") echo "selected"?>>Tuesday</option>
                                 <option <?php if ($subjects['subject_Day'] == "Wednesday") echo "selected"?>>Wednesday</option>

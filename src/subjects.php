@@ -117,7 +117,8 @@ include("notification.php");
                                             </label>
                                             <div class="input-group">
                                                 <select id="addSubjectDay" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectDay">
-                                                    <option selected>Monday</option>
+                                                    <option></option>
+                                                    <option>Monday</option>
                                                     <option>Tuesday</option>
                                                     <option>Wednesday</option>
                                                     <option>Thursday</option>
@@ -250,7 +251,7 @@ include("notification.php");
             $result = $conn->query($subjects);
 
             if (!($result->num_rows > 0)) { ?>
-                <h6>No subjects</h6>
+                <h6>No subjects to display ( ˘･з･)</h6>
                 <?php
             } else {
                 while ($subjects = $result->fetch_assoc()) { ?>
@@ -271,7 +272,7 @@ include("notification.php");
 
                         <!--List (Kitchen Sink)-->
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item small"><?php echo $subjects['subject_Day']; ?></li>
+                            <?php if (!empty ($subjects['subject_Day'])) echo "<li class='list-group-item small'>".$subjects['subject_Day']."</li>";?>
                             <li class="list-group-item small"><?php echo date('g:i A', strtotime($subjects['subject_Time_Start'])); ?> - <?php echo date('g:i A', strtotime($subjects['subject_Time_End'])); ?></li>
                         </ul>
 
