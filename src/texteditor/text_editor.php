@@ -90,9 +90,9 @@
             </button>
         </div>
     </div>
-    <div contenteditable="true" class="form-control overflow-auto border-primary rounded-0 d-inline-block editor_textarea" data-placeholder=""><?php if (!empty($row["note_Content"])) {
-                                                                                                                                                    echo $row["note_Content"];
-                                                                                                                                                } ?></div>
+    <div contenteditable="true" class="form-control overflow-auto border-primary border-top-0 border-left-0 border-right-0 rounded-0 d-inline-block editor_textarea" data-placeholder="Click here to add something..."><?php if (!empty($row["note_Content"])) {
+                                                                                                                                                                                                                            echo $row["note_Content"];
+                                                                                                                                                                                                                        } ?></div>
 
 
     <input type="hidden" name="note_Content" value="<?php if (!empty($row["note_Content"])) {
