@@ -72,10 +72,6 @@ include("notification.php");
                                         <!-- Subject Name -->
                                         <div class="form-group">
                                             <input type="text" class="form-control font-weight-bold border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectName" name="subjectName" placeholder="Subject name" required>
-                                            <!-- For Backend people checkout tasks_modal_functions.js on how this works -->
-                                            <div class="invalid-feedback">
-                                                <span class="text-danger">Task name is too long! (max 75 characters)</span>
-                                            </div>
                                         </div>
                                         <!-- Subject Type -->
                                         <div class="form-group">
@@ -92,11 +88,7 @@ include("notification.php");
                                         </div>
                                         <!-- Subject Description -->
                                         <div class="form-group">
-                                            <textarea class="form-control border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectDesc" name="subjectDesc" placeholder="Subject description (optional)" rows="6"></textarea>
-                                            <!-- For Backend people checkout tasks_modal_functions.js on how this works -->
-                                            <div class="invalid-feedback">
-                                                <span class="text-danger">┗|｀O′|┛ We're not writing novels here!</span>
-                                            </div>
+                                            <textarea class="form-control border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectDesc" name="subjectDesc" placeholder="Subject description (optional)" rows="8"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 task_Date">
@@ -116,7 +108,7 @@ include("notification.php");
                                         <!-- Schedule/Day of the Week -->
                                         <div class="form-group">
                                             <label for="addSubjectDay" class="form-label h6">
-                                                <!-- calendar icon -->
+                                                <!-- Calendar icon -->
                                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-day" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                                                     <path d="M4.684 11.523v-2.3h2.261v-.61H4.684V6.801h2.464v-.61H4v5.332h.684zm3.296 0h.676V8.98c0-.554.227-1.007.953-1.007.125 0 .258.004.329.015v-.613a1.806 1.806 0 0 0-.254-.02c-.582 0-.891.32-1.012.567h-.02v-.504H7.98v4.105zm2.805-5.093c0 .238.192.425.43.425a.428.428 0 1 0 0-.855.426.426 0 0 0-.43.43zm.094 5.093h.672V7.418h-.672v4.105z" />
@@ -132,6 +124,28 @@ include("notification.php");
                                                     <option>Friday</option>
                                                     <option>Saturday</option>
                                                     <option>Sunday</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="addSubjectDay" class="form-label h6">
+                                                <!--  Image/Banner Icon -->
+                                                <svg width="1.0625em" height="1em" viewBox="0 0 17 16" class="bi bi-image-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                                </svg>
+
+                                                Banner Color:
+                                            </label>
+                                            <div class="input-group">
+                                                <select id="addSubjectDay" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectDay">
+                                                    <option selected>Blue</option>
+                                                    <option>Gold</option>
+                                                    <option>Color 3</option>
+                                                    <option>Color 4</option>
+                                                    <!-- <option>Friday</option>
+                                                    <option>Saturday</option>
+                                                    <option>Sunday</option> -->
                                                 </select>
                                             </div>
                                         </div>
@@ -215,54 +229,57 @@ include("notification.php");
             if (!($result->num_rows > 0)) { ?>
                 <h6>No subjects</h6>
                 <?php
-            } else {
+            }
+            else{
                 while ($subjects = $result->fetch_assoc()) { ?>
+                       
+                       <!--Cards Section-->
+                        <div class="card">
+                            <!--Card Banner-->
+                            <img class="banner" src="/cmsc128/resources/subjects-back.jpg" alt="subjects_banner" height="150">
+                                   
+                            <!--Card Body-->
+                            <div class="card-body overflow-hidden" style="height:10em">
+                                <h5 class="card-title"><?php echo $subjects['subject_Name'] ?>: <?php echo $subjects['subject_Type'] ?></h5>
+                                <p class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Instructor'] ?></p>
+                                <p class="small"><?php echo $subjects['subject_Desc']; ?></p>
+                            </div>
+                            <!--End of Card Body-->
 
-                    <!--Cards Section-->
-                    <div class="card">
-                        <!--Card Banner-->
-                        <img class="banner" src="/cmsc128/resources/subjects-back.jpg" alt="subjects_banner" height="150">
+                            <!--List (Kitchen Sink)-->
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item small"><?php echo $subjects['subject_Day']; ?></li>
+                                <li class="list-group-item small"><?php echo date('g:i A', strtotime($subjects['subject_Time_Start'])); ?> - <?php echo date('g:i A', strtotime($subjects['subject_Time_End']));?></li>
+                            </ul>
 
-                        <!--Card Body-->
-                        <div class="card-body overflow-hidden" style="height:10em">
-                            <h5 class="card-title"><?php echo $subjects['subject_Name'] ?>: <?php echo $subjects['subject_Type'] ?></h5>
-                            <p class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Instructor'] ?></p>
-                            <?php echo $subjects['subject_Desc']; ?>
+                            <!--Card Footer-->
+                            <div class="card-footer">
+                                <a href="#detailsSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn text-primary btn-sm">
+                                    <span>
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                            <circle cx="8" cy="4.5" r="1" />
+                                        </svg>
+                                    </span>Details
+                                </a>
+                                <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn text-danger btn-sm">
+                                    <span>
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                            <circle cx="8" cy="4.5" r="1" />
+                                        </svg>
+                                    </span>Delete
+                                </a>
+                            </div>
+                             <!--End of Card Footer-->
                         </div>
-                        <!--End of Card Body-->
-
-                        <!--List (Kitchen Sink)-->
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><?php echo date('g:i A', strtotime($subjects['subject_Time_Start'])); ?> - <?php echo date('g:i A', strtotime($subjects['subject_Time_End'])); ?></li>
-                        </ul>
-
-                        <!--Card Footer-->
-                        <div class="card-footer text-center">
-                            <a href="#detailsSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn text-primary btn-sm">
-                                <span>
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
-                                        <circle cx="8" cy="4.5" r="1" />
-                                    </svg>
-                                </span>Details
-                            </a>
-                            <a href="#deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" data-toggle="modal" class="btn text-danger btn-sm">
-                                <span>
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                                    </svg>
-                                </span>Delete
-                            </a>
-                        </div>
-                        <!--End of Card Footer-->
-                    </div>
-                    <?php include("subject_modal.php"); ?>
+                             <?php include("subject_modal.php"); ?>
 
 
             <?php
-                }
+                }  
             }
 
             ?>
