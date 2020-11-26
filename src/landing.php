@@ -3,10 +3,8 @@
 <link href="css/home.css" rel="stylesheet">
 
 <body class="index-bg">
-    <!-- navigation bar -->
-    <?php include('navbar.php'); ?>
-
     <div class="container" id="main">
+        <br><br>
         <div class="row">
             <div class="col-md " id="leftbox">
                 <div class="innerLeft">
