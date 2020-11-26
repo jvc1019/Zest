@@ -8,6 +8,7 @@
     //Store subject ID here
     $sID = $_POST["sID"];
 
+    $sImg = $_POST ['subjectBanner'];
     $sName = $_POST ["subjectName"];
     $sType = $_POST ["subjectType"];
     $sInstructor = $_POST ["subjectInstructor"];
@@ -18,14 +19,14 @@
     $uID = $_POST['user_ID'];
 
     echo $sID;
+    echo $sImg;
     echo $sType;
     echo $sInstructor;
     echo $sDesc;
     echo $sDay;
     echo $uID;
 
-    $sqlUpdate = "UPDATE subject SET subject_Name='$sName', subject_Type='$sType', subject_Instructor='$sInstructor', 
-                    subject_Desc='$sDesc', subject_Day='$sDay', subject_Time_Start='$sTimeStart', subject_Time_End='$sTimeEnd' 
+    $sqlUpdate = "UPDATE subject SET subject_Image='$sImg', subject_Name='$sName', subject_Type='$sType', subject_Instructor='$sInstructor'            , subject_Desc='$sDesc', subject_Day='$sDay', subject_Time_Start='$sTimeStart', subject_Time_End='$sTimeEnd' 
                     WHERE subject_ID='$sID'";
     $conn->query($sqlUpdate);
 

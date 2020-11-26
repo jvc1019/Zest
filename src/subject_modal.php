@@ -100,7 +100,7 @@
                                             </label>
                                             <div class="input-group">
                                                 <select id="addSubjectDay" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectDay">
-                                                    <option <?php if ($subjects['subject_Day'] == "") echo "selected"?> value="">Click to select a day</option>
+                                                    <option <?php if ($subjects['subject_Day'] == "") echo "selected"?> hidden value="">Click to select a day</option>
                                                     <option <?php if ($subjects['subject_Day'] == "Monday") echo "selected"?>>Monday</option>
                                                     <option <?php if ($subjects['subject_Day'] == "Tuesday") echo "selected"?>>Tuesday</option>
                                                     <option <?php if ($subjects['subject_Day'] == "Wednesday") echo "selected"?>>Wednesday</option>
@@ -147,10 +147,10 @@
                                             </label>
                                             <div class="input-group">
                                                 <select id="addSubjectBanner" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectBanner">
-                                                    <option <?php if ($subjects['subject_Image'] == "Image 1") echo "selected"?> value="">Image 1</option>
-                                                    <option <?php if ($subjects['subject_Image'] == "Image 2") echo "selected"?>>Image 2</option>
-                                                    <option <?php if ($subjects['subject_Image'] == "Image 3") echo "selected"?>>Image 3</option>
-                                                    <option <?php if ($subjects['subject_Image'] == "Image 4") echo "selected"?>>Image 4</option>
+                                                    <option <?php if ($subjects['subject_Image'] == "img_breakfast.jpg") echo "selected"?> value="img_breakfast.jpg">Image 1</option>
+                                                    <option <?php if ($subjects['subject_Image'] == "img_graduation.jpg") echo "selected"?> value="img_graduation.jpg">Image 2</option>
+                                                    <option <?php if ($subjects['subject_Image'] == "img_honors.jpg") echo "selected"?> value="img_honors.jpg">Image 3</option>
+                                                    <option <?php if ($subjects['subject_Image'] == "img_math.jpg") echo "selected"?> value="img_math.jpg">Image 4</option>
                                                 </select>
                                             </div>
                                         </div>
