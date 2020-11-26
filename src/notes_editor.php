@@ -27,10 +27,10 @@
 			<div class="row mx-5 px-4 justify-content-center">
 				<div class="form-row">
 					<div class="col">
-						<input class="mr-2 form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" type="text" name="note_Title" placeholder="Note Title" required>
+						<input class="mr-2 form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" type="text" name="note_Title" value="<?php echo $row['note_Title'] ?>">
 					</div>
 					<div class="col">
-						<input class="ml-0 form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" type=" text" name="note_Tags" placeholder="Tags (separated by a comma)">
+						<input class="ml-0 form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" type=" text" name="note_Tags" value="<?php echo $row['note_Tags'] ?>">
 					</div>
 				</div>
 			</div>
