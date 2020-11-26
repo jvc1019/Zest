@@ -240,7 +240,7 @@ include("notification.php");
 
                         <!--Card Body-->
                         <div class="card-body overflow-hidden" style="height:9em">
-                            <h5 class="card-title"><?php echo $subjects['subject_Name'] ?>: <?php echo $subjects['subject_Type'] ?></h5>
+                            <h5 class="card-title"><?php echo $subjects['subject_Name'] ?> <span class="badge badge-secondary"><?php echo $subjects['subject_Type'] ?></span></h5>
                             <p class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Instructor'] ?></p>
                             <p class="small"><?php echo $subjects['subject_Desc']; ?></p>
                         </div>
