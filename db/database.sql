@@ -6,6 +6,7 @@ CREATE TABLE `user` (
   `user_ID` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
   `user_Name` varchar(30) NOT NULL,
   `user_Email` varchar(100) NOT NULL,
+  `user_Desc` varchar(400) NOT NULL,
   `user_Password` varchar(125) NOT NULL, -- before placed here, the string is hashed via MD5
   `user_Theme` varchar(50) NOT NULL DEFAULT "default", -- stores the theme name of the user
   PRIMARY KEY (`user_ID`),
@@ -72,8 +73,8 @@ CREATE TABLE `note` (
 
 -- These are dummy values to prevent errors with AUTO_INCREMENT,
 -- therefore the lowest possible ID for user-generated entries is 2
-INSERT INTO `user` (`user_ID`, `user_Name`, `user_Password`) VALUES
-(1, 'superuser', 'password');
+INSERT INTO `user` (`user_ID`, `user_Name`, `user_Email`, `user_Desc`, `user_Password`) VALUES
+(1, 'superuser', 'deafult@email.com', 'Dummy Description', 'password');
 
 INSERT INTO `task` (`task_ID`, `task_Name`, `task_Desc`, `task_Tags`, `user_ID`) VALUES
 (1, 'Dummy task', 'Dummy task for AUTO_INCREMENT, DO NOT DELETE!', 'dummytag1,dummytag2', 1);
