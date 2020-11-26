@@ -164,10 +164,10 @@ include("notification.php");
                                             </label>
                                             <div class="input-group">
                                                 <select id="addSubjectBanner" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectBanner">
-                                                    <option value="img_breakfast.jpg" selected>Image 1</option>
-                                                    <option value="img_graduation.jpg">Image 2</option>
-                                                    <option value="img_honors.jpg">Image 3</option>
-                                                    <option value="img_math.jpg">Image 4</option>
+                                                    <option value="img_breakfast.jpg" selected>Breakfast</option>
+                                                    <option value="img_graduation.jpg">Graduation</option>
+                                                    <option value="img_honors.jpg">Honors</option>
+                                                    <option value="img_math.jpg">Math</option>
                                                 </select>
                                             </div>
                                         </div>

@@ -147,10 +147,10 @@
                                             </label>
                                             <div class="input-group">
                                                 <select id="addSubjectBanner" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectBanner">
-                                                    <option <?php if ($subjects['subject_Image'] == "img_breakfast.jpg") echo "selected"?> value="img_breakfast.jpg">Image 1</option>
-                                                    <option <?php if ($subjects['subject_Image'] == "img_graduation.jpg") echo "selected"?> value="img_graduation.jpg">Image 2</option>
-                                                    <option <?php if ($subjects['subject_Image'] == "img_honors.jpg") echo "selected"?> value="img_honors.jpg">Image 3</option>
-                                                    <option <?php if ($subjects['subject_Image'] == "img_math.jpg") echo "selected"?> value="img_math.jpg">Image 4</option>
+                                                    <option <?php if ($subjects['subject_Image'] == "img_breakfast.jpg") echo "selected"?> value="img_breakfast.jpg">Breakfast</option>
+                                                    <option <?php if ($subjects['subject_Image'] == "img_graduation.jpg") echo "selected"?> value="img_graduation.jpg">Graduation</option>
+                                                    <option <?php if ($subjects['subject_Image'] == "img_honors.jpg") echo "selected"?> value="img_honors.jpg">Honors</option>
+                                                    <option <?php if ($subjects['subject_Image'] == "img_math.jpg") echo "selected"?> value="img_math.jpg">Math</option>
                                                 </select>
                                             </div>
                                         </div>
