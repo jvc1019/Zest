@@ -1,10 +1,19 @@
+var mini = true;
 
-function openNav() {
-  	document.getElementById("mySidebar").style.width = "250px";
-  	document.getElementById("clicker").setAttribute('onclick','closeNav()');
+function toggleSidebar() {
+  if (mini) {
+    console.log("opening sidebar");
+    document.getElementById("mySidebar").style.width = "250px";
+/*    document.getElementById("main").style.marginLeft = "250px";*/
+    this.mini = false;
+  } else {
+    console.log("closing sidebar");
+    document.getElementById("mySidebar").style.width = "90px";
+/*    document.getElementById("main").style.marginLeft = "85px";*/
+    this.mini = true;
+  }
 }
-
-function closeNav() {
-  	document.getElementById("mySidebar").style.width = "0";
-  	document.getElementById("clicker").setAttribute('onclick','openNav()')
+function adjustContainer(){
+	console.log("adjust container");
+	document.getElementsByClassName('container').style.marginLeft = "90px";
 }

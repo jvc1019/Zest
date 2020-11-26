@@ -7,15 +7,16 @@
 
 .sidebar {
   height: 100%;
-  width: 0;
+  width: 90px;
   position: fixed;
   z-index: 10000;
   top: 0;
   left: 0;
-  background-color: rgb(1,1,1,0.95);
-  overflow-x: hidden;
+  background-color: #111;
   transition: 0.5s;
+  overflow-x: hidden;
   padding-top: 60px;
+  white-space: nowrap;
 }
 
 .sidebar a {
@@ -31,35 +32,23 @@
   color: #f1f1f1;
 }
 
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+.nav-icon,
+.icon-text {
+  vertical-align: middle;
 }
 
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px 15px;
-  border: none;
+.icon-text{
+	margin-left: 30px;
 }
 
-.openbtn:hover {
-  background-color: #444;
-}
 
-#main {
-  transition: margin-left 1s;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
 }
 
 /* index, landing css */
