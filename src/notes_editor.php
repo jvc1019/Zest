@@ -38,7 +38,7 @@
 			<!-- RICHTEXT EDITOR -->
 			<br>
 			<div class="row justify-content-center my-1">
-				<?php include("texteditor/text_editor.php"); ?>
+				<?php include("texteditor/text_editor.php"); $note_Content = $row['note_Content'];?>
 			</div>
 
 			<div class="row justify-content-center my-1">
