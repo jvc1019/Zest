@@ -9,18 +9,17 @@
 				if (!($result->num_rows > 0)) {
 					echo "<div class='notasksdue'>No tasks due today.</div>";
 				} else {
-					while ($row = $result->fetch_assoc()) {
-						if (strlen($row['task_Name']) > 25){
-	        				$name = substr($row['task_Name'], 0, 25) . "...";
-	        			}else{
-	        				$name = $row['task_Name'];
+	        		while ($row = $result->fetch_assoc()) {
+	        			$name = html_entity_decode($row['task_Name'], ENT_QUOTES);
+	        			if (strlen($name)> 25){
+	        				$name = substr($name, 0, 25) . "...";
 	        			}
 					?>
 					<tr class="remindText">
-						<td class="col-md-3">
+						<td class="col-md-8">
 							📝 <a href="tasks.php"><?php echo $name;?></a>
 						</td>
-						<td class="col-md-1">
+						<td class="col-md-4">
 							<?php echo date("h:iA", strtotime($row['task_Due']));?></div>
 						</td>
 					</tr>
@@ -42,10 +41,9 @@
 	            	echo "<div class='notasksdue'>No tasks due tomorrow.</div>";
 	        	} else {
 	        		while ($row = $result->fetch_assoc()) {
-	        			if (strlen($row['task_Name'])> 25){
-	        				$name = substr($row['task_Name'], 0, 25) . "...";
-	        			}else{
-	        				$name = $row['task_Name'];
+	        			$name = html_entity_decode($row['task_Name'], ENT_QUOTES);
+	        			if (strlen($name)> 25){
+	        				$name = substr($name, 0, 25) . "...";
 	        			}
 					?>
 					<tr class="remindText">
