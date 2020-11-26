@@ -117,7 +117,7 @@ include("notification.php");
                                             </label>
                                             <div class="input-group">
                                                 <select id="addSubjectDay" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectDay">
-                                                    <option value="">Click to select a day</option>
+                                                    <option hidden value="">Click to select a day</option>
                                                     <option>Monday</option>
                                                     <option>Tuesday</option>
                                                     <option>Wednesday</option>

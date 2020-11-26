@@ -100,7 +100,7 @@
                                             </label>
                                             <div class="input-group">
                                                 <select id="addSubjectDay" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectDay">
-                                                    <option <?php if ($subjects['subject_Day'] == "") echo "selected"?> value="">Click to select a day</option>
+                                                    <option <?php if ($subjects['subject_Day'] == "") echo "selected"?> hidden value="">Click to select a day</option>
                                                     <option <?php if ($subjects['subject_Day'] == "Monday") echo "selected"?>>Monday</option>
                                                     <option <?php if ($subjects['subject_Day'] == "Tuesday") echo "selected"?>>Tuesday</option>
                                                     <option <?php if ($subjects['subject_Day'] == "Wednesday") echo "selected"?>>Wednesday</option>
