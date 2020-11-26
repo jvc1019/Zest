@@ -62,7 +62,7 @@ CREATE TABLE `subject` (
 CREATE TABLE `note` (
   `note_ID` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
   `note_Title` varchar(150) DEFAULT NULL,
-  `note_Content` mediumtext COLLATE utf8_unicode_ci NOT NULL,
+  `note_Content` mediumtext COLLATE utf8_unicode_ci DEFAULT NULL,
   `note_Tags` varchar(40) DEFAULT NULL, -- up to 3 tags, max 12 chars per tag
   `user_ID` int(10) ZEROFILL NOT NULL,
   PRIMARY KEY (`note_ID`),
