@@ -6,8 +6,7 @@
 <div id="task_list">
     <?php
     // due today tasks
-    $today = date("Y-m-d");
-    $query = "SELECT * FROM task WHERE task_Due LIKE '$today%' AND task.user_ID=$user_ID ORDER BY task_Due ASC";
+    $query = "SELECT * FROM task WHERE DATE(task_Due) = CURDATE() AND task.user_ID=$user_ID ORDER BY task_Due ASC";
     $due_today_tasks = $conn->query($query);
 
     // incomplete tasks
