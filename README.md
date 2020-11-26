@@ -1,5 +1,7 @@
 # CMSC128
 
+NOTICE: ALWAYS UPDATE DATABASE!!! ALWAYS "GIT PULL/FETCH" BEFORE "GIT PUSH".
+
 This will be the repository for CMSC 128 - Section 3. Files included would be for the prototype system we will create in the scrum process through series of sprints.
 
 ## Zoom Meeting Details:
