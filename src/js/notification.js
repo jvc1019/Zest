@@ -1,4 +1,9 @@
 /**
+ * notification.php engine
+ * @author Janley Molina
+ */
+
+/**
  * Spawn a notification/alarm via GET value
  */
 function spawnNotification() {

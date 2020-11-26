@@ -6,7 +6,7 @@
 <?php
 include("header.php");
 include("user_details.php");
-include("notification_beta.php");
+include("notification.php");
 ?>
 <!-- Upon page load, the task list, grouped if "completed" or "not completed", will show. 
 If the user presses the check button, the task_isDone of the tasks item is marked as true. The page will then be refreshed. 
