@@ -117,7 +117,7 @@ include("notification.php");
                                             </label>
                                             <div class="input-group">
                                                 <select id="addSubjectDay" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectDay">
-                                                    <option></option>
+                                                    <option value="">Click to select a day</option>
                                                     <option>Monday</option>
                                                     <option>Tuesday</option>
                                                     <option>Wednesday</option>
@@ -144,9 +144,6 @@ include("notification.php");
                                                     <option>Image 2</option>
                                                     <option>Image 3</option>
                                                     <option>Image 4</option>
-                                                    <!-- <option>Friday</option>
-                                                    <option>Saturday</option>
-                                                    <option>Sunday</option> -->
                                                 </select>
                                             </div>
                                         </div>
@@ -173,28 +170,8 @@ include("notification.php");
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Banner -->
-                                        <div class="form-group">
-                                            <label for="addSubjectBanner" class="form-label h6">
-                                                <!--  Image/Banner Icon -->
-                                                <svg width="1.0625em" height="1em" viewBox="0 0 17 16" class="bi bi-image-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                                                </svg>
 
-                                                Banner Color:
-                                            </label>
-                                            <div class="input-group">
-                                                <select id="addSubjectBanner" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectBanner">
-                                                    <option selected>Blue</option>
-                                                    <option>Gold</option>
-                                                    <option>Color 3</option>
-                                                    <option>Color 4</option>
-                                                    <!-- <option>Friday</option>
-                                                    <option>Saturday</option>
-                                                    <option>Sunday</option> -->
-                                                </select>
-                                            </div>
-                                        </div>
+                                        
                                         <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
                                     </div>
                                 </div>
@@ -262,7 +239,7 @@ include("notification.php");
                         <img class="card-img-top" src="/cmsc128/resources/subjects-back.jpg" alt="subjects_banner" height="150">
 
                         <!--Card Body-->
-                        <div class="card-body overflow-hidden" style="height:10em">
+                        <div class="card-body overflow-hidden" style="height:9em">
                             <h5 class="card-title"><?php echo $subjects['subject_Name'] ?>: <?php echo $subjects['subject_Type'] ?></h5>
                             <p class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Instructor'] ?></p>
                             <p class="small"><?php echo $subjects['subject_Desc']; ?></p>
