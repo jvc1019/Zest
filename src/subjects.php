@@ -168,6 +168,9 @@ include("notification.php");
                                                     <option value="img_graduation.jpg">Graduation</option>
                                                     <option value="img_honors.jpg">Honors</option>
                                                     <option value="img_math.jpg">Math</option>
+                                                    <option value="img_chemistry.jpg">Chemistry</option>
+                                                    <option value="img_music.jpg">Music</option>
+                                                    <option value="img_sports.jpg">Sports</option>
                                                 </select>
                                             </div>
                                         </div>

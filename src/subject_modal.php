@@ -151,6 +151,9 @@
                                                     <option <?php if ($subjects['subject_Image'] == "img_graduation.jpg") echo "selected"?> value="img_graduation.jpg">Graduation</option>
                                                     <option <?php if ($subjects['subject_Image'] == "img_honors.jpg") echo "selected"?> value="img_honors.jpg">Honors</option>
                                                     <option <?php if ($subjects['subject_Image'] == "img_math.jpg") echo "selected"?> value="img_math.jpg">Math</option>
+                                                    <option <?php if ($subjects['subject_Image'] == "img_chemistry.jpg") echo "selected"?> value="img_chemistry.jpg">Chemistry</option>
+                                                    <option <?php if ($subjects['subject_Image'] == "img_music.jpg") echo "selected"?> value="img_music.jpg">Music</option>
+                                                    <option <?php if ($subjects['subject_Image'] == "img_sports.jpg") echo "selected"?> value="img_sports.jpg">Sports</option>
                                                 </select>
                                             </div>
                                         </div>
