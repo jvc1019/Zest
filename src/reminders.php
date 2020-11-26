@@ -1,5 +1,5 @@
 <div>
-	<fieldset class="reminderholder">
+	<fieldset class="reminderholder rounded-top rounded-bottom">
 		<h5 class="remindTitle">DUE TODAY<h5>
 		<table>
 			<?php
@@ -29,7 +29,7 @@
 							$time = substr($row['task_Due'], 11, 5) . " A.M.";
 						}
 	        		?>
-	        		<tr><td><a href="tasks.php"><div class="remindText"> - <?php echo $row['task_Name'];?></div></a></td><td><div class="remindText"><?php echo $time?></div></td></tr>
+	        		<tr><td><a href="tasks.php"><div class="remindText"> 📝 <?php echo $row['task_Name'];?></div></a></td><td><div class="remindText"><?php echo $time?></div></td></tr>
 	        		<?php
 	        		}
 	        	}       	
@@ -37,7 +37,7 @@
 		</table>
 	</fieldset>
 	<br>
-	<fieldset class="reminderholder">
+	<fieldset class="reminderholder rounded-top rounded-bottom">
 		<h5 class="remindTitle">DUE TOMORROW<h5>
 		<table>
 			<?php
@@ -67,7 +67,11 @@
 							$time = substr($row['task_Due'], 11, 5) . " A.M.";
 						}
 	        		?>
-	        		<tr><td><a href="tasks.php"><div class="remindText"> - <?php echo $row['task_Name'];?></div></a></td><td><div class="remindText"><?php echo $time?></div></td></tr>
+	        		<tr class="center">
+	        			<td>
+	        				<a href="tasks.php"><div class="remindText"> 📝 <?php echo $row['task_Name'];?></div></a></td><td><div class="remindText text-secondary">   <?php echo $time?></div>
+	        			</td>
+	        		</tr>
 	        		<?php
 	        		}
 	        	}       	
