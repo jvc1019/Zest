@@ -3,7 +3,7 @@
 		<h5 class="remindTitle">DUE TODAY<h5>
 		<table>
 			<?php
-				$query = "SELECT * FROM task where DATE(task_Due) = CURDATE()";
+				$query = "SELECT * FROM task where user_ID = $user_ID and DATE(task_Due) = CURDATE()";
 				$result = $conn->query($query);
 
 				if (!($result->num_rows > 0)) {
@@ -31,7 +31,7 @@
 	        		?>
 	        		<tr class="center">
 	        			<td>
-	        				<pre> 📝 <a href="tasks.php" class="remindText"><?php echo $row['task_Name'];?></a></pre></td><td><pre class="remindText">   	<?php echo $time?></pre>
+	        				<pre class="remindText"> 📝 <a href="tasks.php"><?php echo $row['task_Name'];?></a></pre></td><td><pre class="remindText">   	<?php echo $time?></pre>
 	        			</td>
 	        		</tr>
 	        		<?php
@@ -45,7 +45,7 @@
 		<h5 class="remindTitle">DUE TOMORROW<h5>
 		<table>
 			<?php
-				$query = "SELECT * FROM task where DATE(task_Due) = CURDATE() + INTERVAL 1 DAY";
+				$query = "SELECT * FROM task where user_ID = $user_ID and DATE(task_Due) = CURDATE() + INTERVAL 1 DAY";
 				$result = $conn->query($query);
 
 				if (!($result->num_rows > 0)) {
@@ -73,7 +73,7 @@
 	        		?>
 	        		<tr class="center">
 	        			<td>
-	        				<pre> 📝 <a href="tasks.php" class="remindText"><?php echo $row['task_Name'];?></a></pre></td><td><pre class="remindText">   	<?php echo $time?></pre>
+	        				<pre class="remindText"> 📝 <a href="tasks.php"><?php echo $row['task_Name'];?></a></pre></td><td><pre class="remindText">   	<?php echo $time?></pre>
 	        			</td>
 	        		</tr>
 	        		<?php
