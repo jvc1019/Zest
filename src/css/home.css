@@ -102,6 +102,8 @@
 .iconholder
 {
 	background-color: rgb(255,255,255,0.8);
+	font-family: Arial;
+	font-weight: bold;
 	color: black;
 	text-align: center;
 	min-height: 15vh;
@@ -132,7 +134,6 @@
 .reminderholder
 {
 	background-color: rgb(255,255,255,0.8);
-	font-family: Arial;
 	width: 400px;
 	margin-left: 10px;
 	min-height: 15vh;
@@ -142,6 +143,7 @@
 
 .remindTitle
 {	
+	font-family: Arial;
 	font-size: 20px;
 	font-weight: bold;
 	text-align: center;
@@ -149,6 +151,7 @@
 
 .notasksdue
 {
+	font-family: Arial;
 	font-size: 16px;
 	color: gray;
 	font-style: italic;
@@ -157,6 +160,7 @@
 
 .remindText
 {
+	font-family: Arial;
 	font-size: 18px;
 	text-align: left;
 }
