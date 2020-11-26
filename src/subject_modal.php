@@ -39,71 +39,155 @@
 
 
     <!--Update Modal-->
-    <div id="detailsSubjectModal<?php echo $subjects['subject_ID']; ?>" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <!--Header-->
-                <div class="modal-header">
-                    <h4>Update Subject</h4>
-                </div>
-                <!--Body-->
-                <div class="modal-body">
-                    <form method="POST" action="subjects_update.php">
-                        <input type="hidden" name="sID" value="<?php echo $subjects['subject_ID']; ?>">
-                        <div class="form-group">
-                            <label for="addSubjectName">Subject Name</label>
-                            <input type="text" class="form-control form-control-sm" id="addSubjectName" name="subjectName" value="<?php echo $subjects['subject_Name']; ?>" required>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="subjectType" id="addLecture" value="LEC" <?php if ($subjects['subject_Type'] == "LEC") echo "checked" ?>>
-                            <label class="form-check-label" for="addLecture">Lecture</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="subjectType" id="addLaboratory" value="LAB" <?php if ($subjects['subject_Type'] == "LAB") echo "checked" ?>>
-                            <label class="form-check-label" for="addLaboratory">Laboratory</label>
-                        </div>
-                        <div style="height: 10px;">
-                            <!--space-->
-                        </div>
-                        <div class="form-group">
-                            <label for="addSubjectInstructor">Instructor</label>
-                            <input type="text" class="form-control form-control-sm" id="addSubjectInstructor" name="subjectInstructor" value="<?php echo $subjects['subject_Instructor']; ?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="addSubjectDesc">Description</label>
-                            <textarea class="form-control" id="addSubjectDesc" rows="2" name="subjectDesc"><?php echo $subjects['subject_Desc']; ?></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="addSubjectDay">Day of the Week</label>
-                            <select id="addSubjectDay" class="form-control form-control-sm" name="subjectDay">
-                                <option <?php if ($subjects['subject_Day'] == "") echo "selected"?>></option>
-                                <option <?php if ($subjects['subject_Day'] == "Monday") echo "selected"?>>Monday</option>
-                                <option <?php if ($subjects['subject_Day'] == "Tuesday") echo "selected"?>>Tuesday</option>
-                                <option <?php if ($subjects['subject_Day'] == "Wednesday") echo "selected"?>>Wednesday</option>
-                                <option <?php if ($subjects['subject_Day'] == "Thursday") echo "selected"?>>Thursday</option> 
-                                <option <?php if ($subjects['subject_Day'] == "Friday") echo "selected"?>>Friday</option>
-                                <option <?php if ($subjects['subject_Day'] == "Saturday") echo "selected"?>>Saturday</option>
-                                <option <?php if ($subjects['subject_Day'] == "Sunday") echo "selected"?>>Sunday</option>
-                            </select>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <label for="addSubjectTimeStart">Time Start:</label>
-                                <input class="form-control form-control-sm" id="addSubjectTimeStart" type="time" value="<?php echo $subjects['subject_Time_Start']; ?>" name="subjectTimeStart">
-                            </div>
-                            <div class="col">
-                                <label for="addSubjectTimeEnd">Time End:</label>
-                                <input class="form-control form-control-sm" id="addSubjectTimeEnd" type="time" value="<?php echo $subjects['subject_Time_End']; ?>" name="subjectTimeEnd">
-                            </div>
-                        </div>
-                        <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
+    <div class="modal fade" id="detailsSubjectModal<?php echo $subjects['subject_ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="Subject Details" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-primary">Subject Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <form method="POST" action="subjects_update.php?user_ID=<?php echo $user_ID; ?>" enctype="multipart/form-data">
+                                <input type="hidden" name="sID" value="<?php echo $subjects['subject_ID']; ?>">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!-- Subject Name -->
+                                        <div class="form-group">
+                                            <input type="text" class="form-control font-weight-bold border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectName" name="subjectName" value="<?php echo $subjects['subject_Name']; ?>" required>
+                                        </div>
+                                        <!-- Subject Type -->
+                                        <div class="form-group">
+                                            <!-- <div class="form-control font-weight-bold border-primary border-top-0 border-left-0 border-right-0 rounded-0"> -->
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="subjectType" id="addLecture" value="LEC" <?php if ($subjects['subject_Type'] == "LEC") echo "checked" ?>>
+                                                <label class="form-check-label" for="addLecture">Lecture</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="subjectType" id="addLaboratory" value="LAB" <?php if ($subjects['subject_Type'] == "LAB") echo "checked" ?>>
+                                                <label class="form-check-label" for="addLaboratory">Laboratory</label>
+                                            </div>
+                                            <!-- </div> -->
+                                        </div>
+                                        <!-- Subject Description -->
+                                        <div class="form-group">
+                                            <textarea class="form-control border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectDesc" name="subjectDesc" placeholder="Subject description (optional)" rows="9"><?php echo $subjects['subject_Desc']; ?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <!-- Instructor -->
+                                        <div class="form-group">
+                                            <label for="addSubjectInstructor" class="form-label h6">
+                                                <!-- profile icon -->
+                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                                                </svg>
+                                                Instructor:
+                                            </label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectInstructor" name="subjectInstructor" value="<?php echo $subjects['subject_Instructor']; ?>">
+                                            </div>
+                                        </div>
+                                        <!-- Schedule/Day of the Week -->
+                                        <div class="form-group">
+                                            <label for="addSubjectDay" class="form-label h6">
+                                                <!-- Calendar icon -->
+                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-day" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                                    <path d="M4.684 11.523v-2.3h2.261v-.61H4.684V6.801h2.464v-.61H4v5.332h.684zm3.296 0h.676V8.98c0-.554.227-1.007.953-1.007.125 0 .258.004.329.015v-.613a1.806 1.806 0 0 0-.254-.02c-.582 0-.891.32-1.012.567h-.02v-.504H7.98v4.105zm2.805-5.093c0 .238.192.425.43.425a.428.428 0 1 0 0-.855.426.426 0 0 0-.43.43zm.094 5.093h.672V7.418h-.672v4.105z" />
+                                                </svg>
+                                                Schedule:
+                                            </label>
+                                            <div class="input-group">
+                                                <select id="addSubjectDay" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectDay">
+                                                    <option <?php if ($subjects['subject_Day'] == "") echo "selected"?> hidden value="">Click to select a day</option>
+                                                    <option <?php if ($subjects['subject_Day'] == "Monday") echo "selected"?>>Monday</option>
+                                                    <option <?php if ($subjects['subject_Day'] == "Tuesday") echo "selected"?>>Tuesday</option>
+                                                    <option <?php if ($subjects['subject_Day'] == "Wednesday") echo "selected"?>>Wednesday</option>
+                                                    <option <?php if ($subjects['subject_Day'] == "Thursday") echo "selected"?>>Thursday</option> 
+                                                    <option <?php if ($subjects['subject_Day'] == "Friday") echo "selected"?>>Friday</option>
+                                                    <option <?php if ($subjects['subject_Day'] == "Saturday") echo "selected"?>>Saturday</option>
+                                                    <option <?php if ($subjects['subject_Day'] == "Sunday") echo "selected"?>>Sunday</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="form-group">
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <label for="addSubjectTimeStart" class="form-label h6">
+                                                    <!--Reverse Hourglass Icon-->
+                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hourglass-top" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" d="M2 14.5a.5.5 0 0 0 .5.5h11a.5.5 0 1 0 0-1h-1v-1a4.5 4.5 0 0 0-2.557-4.06c-.29-.139-.443-.377-.443-.59v-.7c0-.213.154-.451.443-.59A4.5 4.5 0 0 0 12.5 3V2h1a.5.5 0 0 0 0-1h-11a.5.5 0 0 0 0 1h1v1a4.5 4.5 0 0 0 2.557 4.06c.29.139.443.377.443.59v.7c0 .213-.154.451-.443.59A4.5 4.5 0 0 0 3.5 13v1h-1a.5.5 0 0 0-.5.5zm2.5-.5v-1a3.5 3.5 0 0 1 1.989-3.158c.533-.256 1.011-.79 1.011-1.491v-.702s.18.101.5.101.5-.1.5-.1v.7c0 .701.478 1.236 1.011 1.492A3.5 3.5 0 0 1 11.5 13v1h-7z" />
+                                                        </svg>
+                                                        Time Start:
+                                                    </label>
+                                                    <input class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectTimeStart" type="time" value="<?php echo $subjects['subject_Time_Start']; ?>" name="subjectTimeStart">
+                                                </div>
+                                                <div class="col">
+                                                    <label for="addSubjectTimeEnd" class="form-label h6">
+                                                    <!--Hourglass Icon-->
+                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hourglass-bottom" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" d="M2 1.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1-.5-.5zm2.5.5v1a3.5 3.5 0 0 0 1.989 3.158c.533.256 1.011.791 1.011 1.491v.702s.18.149.5.149.5-.15.5-.15v-.7c0-.701.478-1.236 1.011-1.492A3.5 3.5 0 0 0 11.5 3V2h-7z" />
+                                                        </svg>
+                                                        Time End:
+                                                    </label>
+                                                    <input class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectTimeEnd" type="time" value="<?php echo $subjects['subject_Time_End']; ?>" name="subjectTimeEnd">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="addSubjectBanner" class="form-label h6">
+                                                <!--  Image/Banner Icon -->
+                                                <svg width="1.0625em" height="1em" viewBox="0 0 17 16" class="bi bi-image-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                                </svg>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Update</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    </form>
+                                                Banner Image:
+                                            </label>
+                                            <div class="input-group">
+                                                <select id="addSubjectBanner" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectBanner">
+                                                    <option <?php if ($subjects['subject_Image'] == "img_breakfast.jpg") echo "selected"?> value="img_breakfast.jpg">Image 1</option>
+                                                    <option <?php if ($subjects['subject_Image'] == "img_graduation.jpg") echo "selected"?> value="img_graduation.jpg">Image 2</option>
+                                                    <option <?php if ($subjects['subject_Image'] == "img_honors.jpg") echo "selected"?> value="img_honors.jpg">Image 3</option>
+                                                    <option <?php if ($subjects['subject_Image'] == "img_math.jpg") echo "selected"?> value="img_math.jpg">Image 4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-sm text-secondary">
+                            <!-- reset icon -->
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-counterclockwise" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z" />
+                                <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z" />
+                            </svg>
+                            Clear
+                        </button>
+                        <button type="button" class="btn btn-sm text-secondary" data-dismiss="modal">
+                            <!-- x icon -->
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-sm text-primary">
+                            <!-- check/floppy icon -->
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-arrow-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
+                                <path d="M9.5 3V0L14 4.5h-3A1.5 1.5 0 0 1 9.5 3z" />
+                                <path fill-rule="evenodd" d="M8 6a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 10.293V6.5A.5.5 0 0 1 8 6z" />
+                            </svg>
+                            Save
+                        </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>

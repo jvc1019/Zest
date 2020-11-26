@@ -117,7 +117,7 @@ include("notification.php");
                                             </label>
                                             <div class="input-group">
                                                 <select id="addSubjectDay" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectDay">
-                                                    <option></option>
+                                                    <option hidden value="">Click to select a day</option>
                                                     <option>Monday</option>
                                                     <option>Tuesday</option>
                                                     <option>Wednesday</option>
@@ -130,6 +130,30 @@ include("notification.php");
                                         </div>
 
                                         <div class="form-group">
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <label for="addSubjectTimeStart" class="form-label h6">
+                                                    <!--Hourglass Icon-->
+                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hourglass-top" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" d="M2 14.5a.5.5 0 0 0 .5.5h11a.5.5 0 1 0 0-1h-1v-1a4.5 4.5 0 0 0-2.557-4.06c-.29-.139-.443-.377-.443-.59v-.7c0-.213.154-.451.443-.59A4.5 4.5 0 0 0 12.5 3V2h1a.5.5 0 0 0 0-1h-11a.5.5 0 0 0 0 1h1v1a4.5 4.5 0 0 0 2.557 4.06c.29.139.443.377.443.59v.7c0 .213-.154.451-.443.59A4.5 4.5 0 0 0 3.5 13v1h-1a.5.5 0 0 0-.5.5zm2.5-.5v-1a3.5 3.5 0 0 1 1.989-3.158c.533-.256 1.011-.79 1.011-1.491v-.702s.18.101.5.101.5-.1.5-.1v.7c0 .701.478 1.236 1.011 1.492A3.5 3.5 0 0 1 11.5 13v1h-7z" />
+                                                        </svg>
+                                                        Time Start:
+                                                    </label>
+                                                    <input class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectTimeStart" type="time" name="subjectTimeStart">
+                                                </div>
+                                                <div class="col">
+                                                    <label for="addSubjectTimeEnd" class="form-label h6">
+                                                    <!-- Reverse Hourglass Icon-->
+                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hourglass-bottom" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" d="M2 1.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1-.5-.5zm2.5.5v1a3.5 3.5 0 0 0 1.989 3.158c.533.256 1.011.791 1.011 1.491v.702s.18.149.5.149.5-.15.5-.15v-.7c0-.701.478-1.236 1.011-1.492A3.5 3.5 0 0 0 11.5 3V2h-7z" />
+                                                        </svg>
+                                                        Time End:
+                                                    </label>
+                                                    <input class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectTimeEnd" type="time" name="subjectTimeEnd">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="addSubjectBanner" class="form-label h6">
                                                 <!--  Image/Banner Icon -->
                                                 <svg width="1.0625em" height="1em" viewBox="0 0 17 16" class="bi bi-image-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -140,61 +164,14 @@ include("notification.php");
                                             </label>
                                             <div class="input-group">
                                                 <select id="addSubjectBanner" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectBanner">
-                                                    <option selected>Image 1</option>
-                                                    <option>Image 2</option>
-                                                    <option>Image 3</option>
-                                                    <option>Image 4</option>
-                                                    <!-- <option>Friday</option>
-                                                    <option>Saturday</option>
-                                                    <option>Sunday</option> -->
+                                                    <option value="img_breakfast.jpg" selected>Image 1</option>
+                                                    <option value="img_graduation.jpg">Image 2</option>
+                                                    <option value="img_honors.jpg">Image 3</option>
+                                                    <option value="img_math.jpg">Image 4</option>
                                                 </select>
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <div class="form-row">
-                                                <div class="col">
-                                                    <label for="addSubjectTimeStart" class="form-label h6">
-                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hourglass-top" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" d="M2 14.5a.5.5 0 0 0 .5.5h11a.5.5 0 1 0 0-1h-1v-1a4.5 4.5 0 0 0-2.557-4.06c-.29-.139-.443-.377-.443-.59v-.7c0-.213.154-.451.443-.59A4.5 4.5 0 0 0 12.5 3V2h1a.5.5 0 0 0 0-1h-11a.5.5 0 0 0 0 1h1v1a4.5 4.5 0 0 0 2.557 4.06c.29.139.443.377.443.59v.7c0 .213-.154.451-.443.59A4.5 4.5 0 0 0 3.5 13v1h-1a.5.5 0 0 0-.5.5zm2.5-.5v-1a3.5 3.5 0 0 1 1.989-3.158c.533-.256 1.011-.79 1.011-1.491v-.702s.18.101.5.101.5-.1.5-.1v.7c0 .701.478 1.236 1.011 1.492A3.5 3.5 0 0 1 11.5 13v1h-7z" />
-                                                        </svg>
-                                                        Time Start:
-                                                    </label>
-                                                    <input class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectTimeStart" type="time" name="subjectTimeStart">
-                                                </div>
-                                                <div class="col">
-                                                    <label for="addSubjectTimeEnd" class="form-label h6">
-                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hourglass-bottom" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd" d="M2 1.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1-.5-.5zm2.5.5v1a3.5 3.5 0 0 0 1.989 3.158c.533.256 1.011.791 1.011 1.491v.702s.18.149.5.149.5-.15.5-.15v-.7c0-.701.478-1.236 1.011-1.492A3.5 3.5 0 0 0 11.5 3V2h-7z" />
-                                                        </svg>
-                                                        Time End:
-                                                    </label>
-                                                    <input class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectTimeEnd" type="time" name="subjectTimeEnd">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Banner -->
-                                        <div class="form-group">
-                                            <label for="addSubjectBanner" class="form-label h6">
-                                                <!--  Image/Banner Icon -->
-                                                <svg width="1.0625em" height="1em" viewBox="0 0 17 16" class="bi bi-image-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                                                </svg>
-
-                                                Banner Color:
-                                            </label>
-                                            <div class="input-group">
-                                                <select id="addSubjectBanner" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectBanner">
-                                                    <option selected>Blue</option>
-                                                    <option>Gold</option>
-                                                    <option>Color 3</option>
-                                                    <option>Color 4</option>
-                                                    <!-- <option>Friday</option>
-                                                    <option>Saturday</option>
-                                                    <option>Sunday</option> -->
-                                                </select>
-                                            </div>
-                                        </div>
                                         <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
                                     </div>
                                 </div>
@@ -259,11 +236,11 @@ include("notification.php");
                     <!--Cards Section-->
                     <div class="card">
                         <!--Card Banner-->
-                        <img class="card-img-top" src="/cmsc128/resources/subjects-back.jpg" alt="subjects_banner" height="150">
+                        <img class="card-img-top" src="/cmsc128/resources/<?php echo $subjects['subject_Image'];?>">
 
                         <!--Card Body-->
-                        <div class="card-body overflow-hidden" style="height:10em">
-                            <h5 class="card-title"><?php echo $subjects['subject_Name'] ?>: <?php echo $subjects['subject_Type'] ?></h5>
+                        <div class="card-body overflow-hidden" style="height:9em">
+                            <h5 class="card-title"><?php echo $subjects['subject_Name'] ?> <span class="badge badge-secondary"><?php echo $subjects['subject_Type'] ?></span></h5>
                             <p class="card-subtitle mb-2 text-muted"><?php echo $subjects['subject_Instructor'] ?></p>
                             <p class="small"><?php echo $subjects['subject_Desc']; ?></p>
                         </div>

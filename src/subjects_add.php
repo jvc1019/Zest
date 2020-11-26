@@ -4,6 +4,7 @@
 <?php
     include("conn.php");
 
+    $sImg = $_POST ['subjectBanner'];
     $sName = $_POST ["subjectName"];
     $sType = $_POST ["subjectType"];
     $sInstructor = $_POST ["subjectInstructor"];
@@ -13,9 +14,9 @@
     $sTimeEnd = $_POST ["subjectTimeEnd"];
     $uID = $_POST['user_ID'];
 
-    $subjectsql = "INSERT INTO subject (subject_Name, subject_Type, subject_Instructor, subject_Desc, 
+    $subjectsql = "INSERT INTO subject (subject_Image, subject_Name, subject_Type, subject_Instructor, subject_Desc, 
                     subject_Day, subject_Time_Start, subject_Time_End, user_ID)
-                    VALUES ('$sName', '$sType', '$sInstructor', '$sDesc', '$sDay', '$sTimeStart', '$sTimeEnd', '$uID')";
+                    VALUES ('$sImg', '$sName', '$sType', '$sInstructor', '$sDesc', '$sDay', '$sTimeStart', '$sTimeEnd', '$uID')";
 
     //Rework this
     // if (!$conn->query($subjectsql)) {
@@ -24,7 +25,7 @@
     //     $status = "Successfully added task " . $sName . ".";
     // }
     $conn->query($subjectsql);
-    $status = "Successfully added task " . $sName . ".";
+    $status = "Successfully added subject " . $sName . ".";
 
     header('Location:subjects.php?status=' . $status . "&isNotif=true");
 ?>
