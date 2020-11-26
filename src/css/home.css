@@ -1,4 +1,8 @@
 /* sidebar css */
+body{
+	font-family: Arial;
+}
+
 .container
 {
 	width: auto;
@@ -137,7 +141,6 @@
 
 .remindTitle
 {	
-	font-family: Arial;
 	font-size: 20px;
 	font-weight: bold;
 	text-align: center;
@@ -145,7 +148,6 @@
 
 .notasksdue
 {
-	font-family: Arial;
 	font-size: 16px;
 	color: gray;
 	font-style: italic;
@@ -154,7 +156,6 @@
 
 .remindText
 {
-	font-family: Arial;
 	font-size: 18px;
 	text-align: left;
 }
