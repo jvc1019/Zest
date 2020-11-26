@@ -20,6 +20,7 @@
 
 	<!-- Scripts -->
 	<script src="js/sidebar.js"></script>
+	<script src="js/moment.js"></script>
 
 	<!-- Setting the default timezone for all PHP date() calls -->
 	<?php date_default_timezone_set("Asia/Manila"); ?>

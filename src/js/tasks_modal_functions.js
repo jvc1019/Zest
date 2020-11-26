@@ -9,6 +9,7 @@ $("[name='task_Name']").on("input", function () {
     validate_form(this);
 });
 
+// B. Validate description field
 $("[name='task_Desc']").on("input", function () {
     if ($(this).val().length > 16777215) {
         $(this).closest(".form-group").find(".invalid-feedback").show();
@@ -18,6 +19,7 @@ $("[name='task_Desc']").on("input", function () {
     validate_form(this);
 });
 
+// C. Validate tags field
 $("[name='task_Tags']").on("input", function () {
     if (validate_tags($(this).val())) {
         $(this).closest(".form-group").find("small").hide();
@@ -47,6 +49,7 @@ function validate_tags(source) {
     }
 }
 
+// D. Compare dates
 $("[name='task_Due']").on("input", function () {
     if (validate_date(this)) {
         $(this)
@@ -90,6 +93,7 @@ function validate_date(source) {
     return reminder > due;
 }
 
+// E. Validate whole form
 function validate_form(source) {
     if (
         $(source)
