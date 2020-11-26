@@ -23,6 +23,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 <div class="col-sm-2">
                     <h3 class="text-primary text-center">Tasks</h3>
                 </div>
+                <h5 class="text-secondary text-center">Sort by:</h5>
                 <!-- Sort by and sort direction -->
                 <div class="col-sm-3 form-inline">
                     <select id="sortBy" class="btn btn-sm">
