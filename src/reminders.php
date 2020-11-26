@@ -19,7 +19,7 @@
 						else if (intval(substr($row['task_Due'], 11, 2)) > 12){
 	        				$time = (intval(substr($row['task_Due'], 11, 2)) - 12);
 	        				if ($time < 10){
-	        					$time = " " . substr($time, 1) . substr($row['task_Due'], 13, 3) . " P.M.";
+	        					$time = " " . substr($time, 0) . substr($row['task_Due'], 13, 3) . " P.M.";
 	        				}
 	        				else{
 	        					$time = (string)$time . substr($row['task_Due'], 13, 3) . " P.M.";
@@ -29,7 +29,11 @@
 							$time = substr($row['task_Due'], 11, 5) . " A.M.";
 						}
 	        		?>
-	        		<tr><td><a href="tasks.php"><div class="remindText"> 📝 <?php echo $row['task_Name'];?></div></a></td><td><div class="remindText"><?php echo $time?></div></td></tr>
+	        		<tr class="center">
+	        			<td>
+	        				<pre> 📝 <a href="tasks.php" class="remindText"><?php echo $row['task_Name'];?></a></pre></td><td><pre class="remindText">   	<?php echo $time?></pre>
+	        			</td>
+	        		</tr>
 	        		<?php
 	        		}
 	        	}       	
@@ -57,7 +61,7 @@
 						else if (intval(substr($row['task_Due'], 11, 2)) > 12){
 	        				$time = (intval(substr($row['task_Due'], 11, 2)) - 12);
 	        				if ($time < 10){
-	        					$time = " " . substr($time, 1) . substr($row['task_Due'], 13, 3) . " P.M.";
+	        					$time = " " . substr($time, 0) . substr($row['task_Due'], 13, 3) . " P.M.";
 	        				}
 	        				else{
 	        					$time = (string)$time . substr($row['task_Due'], 13, 3) . " P.M.";
@@ -69,7 +73,7 @@
 	        		?>
 	        		<tr class="center">
 	        			<td>
-	        				<a href="tasks.php"><div class="remindText"> 📝 <?php echo $row['task_Name'];?></div></a></td><td><div class="remindText text-secondary">   <?php echo $time?></div>
+	        				<pre> 📝 <a href="tasks.php" class="remindText"><?php echo $row['task_Name'];?></a></pre></td><td><pre class="remindText">   	<?php echo $time?></pre>
 	        			</td>
 	        		</tr>
 	        		<?php
