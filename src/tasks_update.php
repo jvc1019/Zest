@@ -35,4 +35,4 @@ if (!$conn->query($query)) {
     }
 }
 
-header("Location:tasks.php?status_heading=Tasks&status=$status&isNotif=true");
+header("Location:tasks.php?status_heading=Tasks&status=$status&type=notif");

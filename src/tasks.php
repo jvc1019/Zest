@@ -138,6 +138,9 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
         })
 
         $(document).ready(function() {
+            // Spawn notification if GET value is set
+            spawnNotification();
+
             // Switch focus to search box by default
             $("#search").focus();
             var tmpStr = $("#search").val();
@@ -159,9 +162,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                     return;
                 }
 
-                setTimeout(function() {
-                    window.location.search = "status_heading=Reminder" + "&status=" + task_Name + "&isAlarm=true";
-                }, duration);
+                spawnNotificationBase("Reminder", task_Name, "alarm", duration);
             }
             // END OF ALARM FEATURE
 
@@ -173,9 +174,9 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 
             // SORTING HANDLER
             // Sorts the tasks list
-            $("#sortBy").on('change', sort);
-            $("#sortDir").on('change', sort);
-            $("#search").on('input', sort);
+            $("#sortBy").on("change", sort);
+            $("#sortDir").on("change", sort);
+            $("#search").on("input", sort);
 
             function sort() {
                 $sortBy = $("#sortBy").val();
@@ -234,10 +235,8 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 
             // reload the browser every midnight to update the Due today section
             const c_Time = new Date();
-            const midnight = new Date((new Date(c_Time.getFullYear(),
-                c_Time.getMonth(),
-                c_Time.getDate(),
-                0, 0, 0, 0).getTime()) + 86400000);
+            var midnight = new Date(c_Time);
+            midnight.setDate(midnight.getDate() + 1);
 
             var duration = midnight.getTime() - c_Time.getTime();
 
