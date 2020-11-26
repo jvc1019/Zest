@@ -53,14 +53,16 @@ function spawnNotificationBase(status_heading, status, type, delay) {
                 .text(moment().fromNow());
             $("#notification").append(toast);
             toast.toast("show");
+
             if (type === "notif") {
                 setTimeout(function () {
                     toast.toast("dispose");
-                    toast.on("hidden.bs.toast", function () {
-                        toast.remove();
-                    });
                 }, 4500);
             }
+
+            toast.on("hidden.bs.toast", function () {
+                toast.remove();
+            });
 
             sound.play();
 
