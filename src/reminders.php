@@ -1,5 +1,5 @@
 <div>
-	<fieldset class="reminderholder rounded-top rounded-bottom">
+	<div class="reminderholder rounded-top rounded-bottom">
 		<h5 class="remindTitle">DUE TODAY<h5>
 		<table>
 			<?php
@@ -31,7 +31,7 @@
 	        		?>
 	        		<tr class="center">
 	        			<td>
-	        				<pre class="remindText"> 📝 <a href="tasks.php"><?php echo $row['task_Name'];?></a></pre></td><td><pre class="remindText">   	<?php echo $time?></pre>
+	        				<div class="remindText"> 📝 <a href="tasks.php"><?php echo $row['task_Name'];?></a></div></td><td><div class="remindText"><pre>		</pre><?php echo $time?></div>
 	        			</td>
 	        		</tr>
 	        		<?php
@@ -39,9 +39,9 @@
 	        	}       	
 	        ?>
 		</table>
-	</fieldset>
+	</div>
 	<br>
-	<fieldset class="reminderholder rounded-top rounded-bottom">
+	<div class="reminderholder rounded-top rounded-bottom">
 		<h5 class="remindTitle">DUE TOMORROW<h5>
 		<table>
 			<?php
@@ -73,7 +73,7 @@
 	        		?>
 	        		<tr class="center">
 	        			<td>
-	        				<pre class="remindText"> 📝 <a href="tasks.php"><?php echo $row['task_Name'];?></a></pre></td><td><pre class="remindText">   	<?php echo $time?></pre>
+	        				<div class="remindText"> 📝 <a href="tasks.php"><?php echo $row['task_Name'];?></a></div></td><td><div class="remindText"><pre>		</pre><?php echo $time?></div>
 	        			</td>
 	        		</tr>
 	        		<?php
@@ -81,5 +81,5 @@
 	        	}       	
 	        ?>
 		</table>
-	</fieldset>
+	</div>
 </div>
