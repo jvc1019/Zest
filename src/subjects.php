@@ -164,17 +164,14 @@ include("notification.php");
                                             </label>
                                             <div class="input-group">
                                                 <select id="addSubjectBanner" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectBanner">
-                                                    <option selected>Image 1</option>
-                                                    <option>Image 2</option>
-                                                    <option>Image 3</option>
-                                                    <option>Image 4</option>
+                                                    <option value="img_breakfast.jpg" selected>Image 1</option>
+                                                    <option value="img_graduation.jpg">Image 2</option>
+                                                    <option value="img_honors.jpg">Image 3</option>
+                                                    <option value="img_math.jpg">Image 4</option>
                                                 </select>
                                             </div>
                                         </div>
 
-
-
-                                        
                                         <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
                                     </div>
                                 </div>
@@ -239,7 +236,7 @@ include("notification.php");
                     <!--Cards Section-->
                     <div class="card">
                         <!--Card Banner-->
-                        <img class="card-img-top" src="/cmsc128/resources/subjects-back.jpg" alt="subjects_banner" height="150">
+                        <img class="card-img-top" src="/cmsc128/resources/<?php echo $subjects['subject_Image'];?>">
 
                         <!--Card Body-->
                         <div class="card-body overflow-hidden" style="height:9em">
