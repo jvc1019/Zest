@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>[Dev] Productivity App</title>
+	<title>[Dev] PRAPP - The Productivity App</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Stylesheets -->
