@@ -11,8 +11,8 @@
 			<div class="col-md-3"></div>
 			<div class="col-md-4 profileHolder">
 				<h3>USER PROFILE</h3>
-				<!-- <button class="edit" data-toggle="tooltip" title="Edit your User Profile">Edit</button>
-				<br><br> -->
+				<button href="#" data-toggle="modal" data-target="#updateProfileModal<?php echo $user['user_ID']; ?>" class="btn btn-sm btn-primary btn-block">Edit Profile</button>
+				<br>
 				<img class="profilePic" src="/cmsc128/resources/profile.jpg">
 				<br><br>
 				<div class="profileTitle"> Username:</div>
@@ -30,6 +30,7 @@
 			</div>
 			<div class="col-md-3"></div>
 		</div>
+		<?php include("profile_modal.php"); ?>
 	</div>
 	<script>
 		// Enable all tooltips
