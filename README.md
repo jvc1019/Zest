@@ -48,10 +48,11 @@ Fourth sprint ends on December 10, 2020.
 -   Faeldonea, Ken (Home and other Pages)
 -   Jinon, Robien (Notebook)
 -   Visto, Ronald (Subjects)
+-   Castañeda, Jayvee (Profile, Themes)
 
 ### 2. BACK END (Database)
 
--   Castañeda, Jayvee (Reminders, Help)
+-   Castañeda, Jayvee (Reminders, Profile, Help/Support)
 -   Garcia, Mico (Subjects)
 -   Jomoc, Gracielou (Notebook)
 -   Luciano, Kirl (Notebook)
