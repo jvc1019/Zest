@@ -15,7 +15,7 @@
                 <div class="card" style="height: 16em;">
                     <div class="card-body overflow-hidden">
                         <h5><?php echo $row['note_Title']; ?></h5>
-                        <p class="text-muted"><?php echo $row['note_Tags']; ?></p>
+                        <p class="text-muted"><?php echo '🏷 '.$row['note_Tags']; ?></p>
                         <?php echo $row['note_Content']; ?>
                     </div>
                     <div class="card-footer text-center">

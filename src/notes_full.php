@@ -1,5 +1,6 @@
 <?php include('header.php');
-include('user_details.php'); ?>
+include('user_details.php');
+include('navbar.php'); ?>
 
 <!-- <!DOCTYPE html>
 <html lang="en">

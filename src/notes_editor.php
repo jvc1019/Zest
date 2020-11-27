@@ -1,4 +1,6 @@
-<?php include('header.php'); ?>
+<?php include('header.php'); 
+include('user_details.php');
+include('navbar.php');?>
 
 <!-- <!DOCTYPE html> -->
 
