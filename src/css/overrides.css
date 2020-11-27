@@ -2,6 +2,19 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-family: Arial;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+}
+
 .card-deck.fourcolumns {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16em, 0.25fr));

@@ -1,4 +1,9 @@
 /* sidebar css */
+.container
+{
+	width: auto;
+  	padding-left: 130px;
+}
 .nav-icon
 {
   height: 1.5em;
@@ -20,7 +25,7 @@
 }
 
 .sidebar a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 24px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
@@ -91,6 +96,7 @@
 .iconholder
 {
 	background-color: rgb(255,255,255,0.8);
+	font-weight: bold;
 	color: black;
 	text-align: center;
 	min-height: 15vh;
@@ -110,7 +116,7 @@
 	margin-bottom: 10vh;
 }
 
-/* reminder box */
+/* reminder box css*/
 #reminderHeader
 {
 	margin-top: 10vh;
@@ -121,9 +127,7 @@
 .reminderholder
 {
 	background-color: rgb(255,255,255,0.8);
-	font-family: Arial;
-	width: 400px;
-	margin-left: 10px;
+	width: 450px;
 	min-height: 15vh;
 	min-width: 15vh;
 	padding: 15px 15px 15px 15px;
@@ -196,4 +200,51 @@
 .signup-links
 {
 	margin: 20px 20px 40px 20px;
+}
+
+/*profile css*/
+
+.profileHolder
+{
+	background-color: rgb(255,255,255,0.8);
+	font-weight: bold;
+	color: black;
+	text-align: center;
+	min-height: 100px;
+	min-width: 100px;
+	padding: 15px 15px 15px 15px;
+}
+
+.profilePic
+{
+	max-width: 50%;
+	max-height: 50%;
+	border: 5px solid;
+	border-color: black;
+}
+
+.profileTitle
+{
+	font-size: 22px;
+	text-align: left;
+}
+
+.profileText
+{
+	font-size: 18px;
+	font-style: italic;
+	font-weight: normal;
+	text-align: left;
+}
+
+.description
+{
+	text-align: center;
+}
+
+button.edit
+{
+	background-color: black;
+	color: white;
+	font-size: 12px;
 }

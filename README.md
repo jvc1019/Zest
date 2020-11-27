@@ -1,76 +1,89 @@
 # CMSC128
 
+NOTICE: ALWAYS UPDATE DATABASE!!! ALWAYS "GIT PULL/FETCH" BEFORE "GIT PUSH".
+
 This will be the repository for CMSC 128 - Section 3. Files included would be for the prototype system we will create in the scrum process through series of sprints.
 
 ## Zoom Meeting Details:
 
-- Link: https://up-edu.zoom.us/j/89346774676
-- Meeting ID: 893 4677 4676
-- Passcode: Cmsc128-3
+-   Link: https://up-edu.zoom.us/j/89346774676
+-   Meeting ID: 893 4677 4676
+-   Passcode: Cmsc128-3
 
 ## Sprints
 
-Third sprint ends on November 26, 2020.
+Fourth sprint ends on December 10, 2020.
 
 ### 1. First sprint (October 22, 2020)
 
-- The first sprint included the mockup designs for our project.
-- It also included the relational model of the database.
+-   The first sprint included the mockup designs for our project.
+-   It also included the relational model of the database.
 
-### 1. Second sprint (November 12, 2020)
+### 2. Second sprint (November 12, 2020)
 
-- Project now includes the basic Php files.
-- Initial design and UI are working
-- Fixed bugs
+-   Project now includes the basic Php files.
+-   Initial design and UI are working.
+-   Fixed bugs and issues.
+
+### 3. Third sprint (November 26, 2020)
+
+-   Project now has a good working UI.
+-   There is uniformity on different pages.
+-   Tasks are interactive.
+-   Subjects are interactive.
+-   Notes are interactive.
+-   Reminders shown on home page.
+-   Fixed bugs and issues.
 
 ## Consultations
 
-UPCOMING: November 26, 2020, 1:00 PM (Thursday)
-- November 4, 2020 (Wireframe Consultation)
+-   November 26, 2020 (Overall UI Consultation #1)
+-   November 4, 2020 (Wireframe Consultation)
 
 ## Members:
 
 ### 1. FRONT END (User Interface)
 
-- Carpio, Eman (Notebook)
-- Faeldonea, Ken (Home and other Pages)
-- Jinon, Robien (Notebook)
-- Visto, Ronald (Subjects)
+-   Carpio, Eman (Notebook)
+-   Faeldonea, Ken (Home and other Pages)
+-   Jinon, Robien (Notebook)
+-   Visto, Ronald (Subjects)
+-   Castañeda, Jayvee (Profile, Themes)
 
 ### 2. BACK END (Database)
 
-- Castañeda, Jayvee (Reminders)
-- Garcia, Mico (Subjects)
-- Jomoc, Gracielou (Notebook)
-- Luciano, Kirl (Notebook)
-- Molina, Janley (Tasks, Reminders, and other backend modules)
-- Rabe, Jett Adriel (Subjects)
-- Zamudio, Kent (Login and Registration Pages)
+-   Castañeda, Jayvee (Reminders, Profile, Help/Support)
+-   Garcia, Mico (Subjects)
+-   Jomoc, Gracielou (Notebook)
+-   Luciano, Kirl (Notebook)
+-   Molina, Janley (Tasks, Reminders, Notebook (text editor) and other backend modules)
+-   Rabe, Jett Adriel (Subjects)
+-   Zamudio, Kent (Login and Registration Pages)
 
 ### 3. Quality Assurance
 
-- Castañeda, Jayvee (UI and UX)
-- Molina, Janley (UI and UX)
-- Rabe, Jett Adriel (Bug Hunter)
-- Faeldonea, Ken (Bug Hunter)
+-   Castañeda, Jayvee (UI and UX)
+-   Molina, Janley (UI and UX)
+-   Rabe, Jett Adriel (Bug Hunter)
+-   Faeldonea, Ken (Bug Hunter)
 
 ## Quick Start Guide
 
 ### A. Prerequisites
 
 1. To clone the repository on your machine (on Windows, using WSL)
-   1. Make sure XAMPP is running Apache and MySQL
-   2. Navigate to `xampp\htdocs`
-   3. On the navigation bar, type `wsl`
-   4. Run the following command:
+    1. Make sure XAMPP is running Apache and MySQL
+    2. Navigate to `xampp\htdocs`
+    3. On the navigation bar, type `wsl`
+    4. Run the following command:
 
 ```
 git clone https://github.com/jvc1019/CMSC128.git
 ```
 
 2. Open `phpMyAdmin`: http://localhost/phpmyadmin/server_databases.php
-   1. Create a new database named `database` with `utf8mb4_general_ci` as encoding
-   2. Import `database.sql` from `db/database.sql`. **It will generate dummy entries which should not be deleted.**
+    1. Create a new database named `database` with `utf8mb4_general_ci` as encoding
+    2. Import `database.sql` from `db/database.sql`. **It will generate dummy entries which should not be deleted.**
 
 ### B. Quality-of-Life (QoL) Guide
 
@@ -78,72 +91,72 @@ git clone https://github.com/jvc1019/CMSC128.git
 
 ```html
 <div class="container">
-  <!-- stuff goes here -->
+    <!-- stuff goes here -->
 </div>
 ```
 
 #### For the UI people
 
-- Stylesheets will affect the basic colors of the the elements inside the `container` class. For example, under a theme called **"Blue Marine"** located in `src/css`:
+-   Stylesheets will affect the basic colors of the the elements inside the `container` class. For example, under a theme called **"Blue Marine"** located in `src/css`:
 
-  ```css
-  html {
-    scroll-behavior: smooth;
-  }
+    ```css
+    html {
+        scroll-behavior: smooth;
+    }
 
-  body {
-    background-image: url("../resources/somethingBlue.jpg"); /* theme image also applies to the tasks, subjects, and notes" */
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+    body {
+        background-image: url("../resources/somethingBlue.jpg"); /* theme image also applies to the tasks, subjects, and notes" */
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
-  .navbar {
-    background-color: blue;
-  }
+    .navbar {
+        background-color: blue;
+    }
 
-  .container .list-group-item {
-    /* affects Bootstrap lists */
-    background-color: lightblue; /* something lighter than the bg color of the navbar*/
-  }
+    .container .list-group-item {
+        /* affects Bootstrap lists */
+        background-color: lightblue; /* something lighter than the bg color of the navbar*/
+    }
 
-  .container .card-item {
-    /* affects Bootstrap cards */
-    background-color: lightblue; /* something lighter than the bg color of the navbar*/
-  }
-  ```
+    .container .card-item {
+        /* affects Bootstrap cards */
+        background-color: lightblue; /* something lighter than the bg color of the navbar*/
+    }
+    ```
 
-- While a CSS called **"Green Sapphire"** may look like this:
+-   While a CSS called **"Green Sapphire"** may look like this:
 
-  ```css
-  html {
-    scroll-behavior: smooth;
-  }
+    ```css
+    html {
+        scroll-behavior: smooth;
+    }
 
-  body {
-    background-image: url("../resources/somethingGreen.jpg"); /* theme image also applies to the tasks, subjects, and notes" */
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+    body {
+        background-image: url("../resources/somethingGreen.jpg"); /* theme image also applies to the tasks, subjects, and notes" */
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
-  .navbar {
-    background-color: green;
-  }
+    .navbar {
+        background-color: green;
+    }
 
-  .container .list-group-item {
-    /* affects Bootstrap lists */
-    background-color: lightgreen; /* something lighter than the bg color of the navbar */
-  }
+    .container .list-group-item {
+        /* affects Bootstrap lists */
+        background-color: lightgreen; /* something lighter than the bg color of the navbar */
+    }
 
-  .container .card-item {
-    /* affects Bootstrap cards */
-    background-color: lightgreen; /* something lighter than the bg color of the navbar*/
-  }
-  ```
+    .container .card-item {
+        /* affects Bootstrap cards */
+        background-color: lightgreen; /* something lighter than the bg color of the navbar*/
+    }
+    ```
 
-- As much as possible, **follow the Bootstrap 4 convention and its built-in classes for layouting elements** to avoid huge amounts of CSS and JS files for every page, and to make the UI **more consistent**.
-  - If you need a **box**, you probably need a **Bootstrap Card**.
-  - If you need to center your text, you probably need to use the class `text-center`.
-  - More on: https://getbootstrap.com/docs/4.0/components/
+-   As much as possible, **follow the Bootstrap 4 convention and its built-in classes for layouting elements** to avoid huge amounts of CSS and JS files for every page, and to make the UI **more consistent**.
+    -   If you need a **box**, you probably need a **Bootstrap Card**.
+    -   If you need to center your text, you probably need to use the class `text-center`.
+    -   More on: https://getbootstrap.com/docs/4.0/components/
 
 2. Most components (navbar, tasks, notebook, subjects) should include the `header.php` file at the top. The `header.php` file contains the `<head>`, with the necessary CSS and JS files for cleaner and consistent code.
 
@@ -151,21 +164,21 @@ git clone https://github.com/jvc1019/CMSC128.git
 <?php include("header.php"); ?>
 ```
 
-- If you want to access user details, you can include `user_details.php`.
+-   If you want to access user details, you can include `user_details.php`.
 
 ```php
 <?php include("user_details.php"); ?>
 ```
 
-- After including `header.php`, **only the `<body>`, or additionally, the `<footer>` needs to be defined**. Notice how the `<div>` with the `container` class is nested inside the body as described in #1. Check out `tasks.php` to see how it works.
+-   After including `header.php`, **only the `<body>`, or additionally, the `<footer>` needs to be defined**. Notice how the `<div>` with the `container` class is nested inside the body as described in #1. Check out `tasks.php` to see how it works.
 
-  ```html
-  <body>
-    <div class="container">
-      <!-- stuff goes here -->
-    </div>
-  </body>
-  ```
+    ```html
+    <body>
+        <div class="container">
+            <!-- stuff goes here -->
+        </div>
+    </body>
+    ```
 
 3. For subcomponents that need database access, you can include `conn.php`. Check out `tasks_add.php` to see how it works.
 
@@ -173,24 +186,28 @@ git clone https://github.com/jvc1019/CMSC128.git
 include("conn.php");
 ```
 
-4. To implement notifications, you may use `notification.php`. Check out `notification.php` to see how to use it, and around lines 114-135 on `tasks.php` to see a sample implementation. **UPDATE: Notifications will now appear at the bottom right of the screen for consistency.**
+4. To implement notifications, you may use `notification.php`. Check out `notification.php` to see how to use it, and around line 142 on `tasks.php` to see a sample implementation. **UPDATE: Notifications will now appear at the bottom right of the screen for consistency.**
 
 ```php
 <?php include("notification.php") ?>
 ```
 
+```javascript
+spawnNotification();
+```
+
 5. There are some useful functions provided by **jQuery** to shorten your Javascript code, such as
-   1. Selectors by class and id
-      1. `$("#id_of_element")` -> selects an element by ID, shorter than the `document.getElementById("id_of_element")` command.
-      2. `$(".class_of_element")` -> selects element(s) by class
-   2. `$("#id_of_element").click(function)` -> Calls a function when the element is clicked.
-   3. `$("#id_of_element").val()` -> a setter and a getter, when a string argument is inside `val()`, the element's value tag is set to the string. If there is no argument, then the value of the element is retrieved.
-   4. `$("#id_of_element").text()` a setter and getter, when an argument is specified, it replaces the text inside the element. Useful for buttons that change text when clicked, for instance
-   ```javascript
-   $("#my_Button").click(function (e) {
-     $(this).text("My text is changed");
-   });
-   ```
+    1. Selectors by class and id
+        1. `$("#id_of_element")` -> selects an element by ID, shorter than the `document.getElementById("id_of_element")` command.
+        2. `$(".class_of_element")` -> selects element(s) by class
+    2. `$("#id_of_element").click(function)` -> Calls a function when the element is clicked.
+    3. `$("#id_of_element").val()` -> a setter and a getter, when a string argument is inside `val()`, the element's value tag is set to the string. If there is no argument, then the value of the element is retrieved.
+    4. `$("#id_of_element").text()` a setter and getter, when an argument is specified, it replaces the text inside the element. Useful for buttons that change text when clicked, for instance
+    ```javascript
+    $("#my_Button").click(function (e) {
+        $(this).text("My text is changed");
+    });
+    ```
 
 ### C. Using GitHub (on Windows, using WSL)
 

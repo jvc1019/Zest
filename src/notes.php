@@ -14,6 +14,7 @@ include('user_details.php');
                 <div class="col-sm-2">
                     <h3 class="text-primary text-right">Notebook</h3>
                 </div>
+                <h5 class="text-secondary text-center">Sort by:</h5>
                 <!-- Sort by and sort direction -->
                 <div class="col-sm-3">
                     <select id="sortDir" class="btn btn-sm">

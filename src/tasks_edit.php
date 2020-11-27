@@ -36,4 +36,4 @@ if ($conn->query($query)->num_rows > 1) {
     }
 }
 
-header("Location:tasks.php?status_heading=Tasks&status=$status&isNotif=true");
+header("Location:tasks.php?status_heading=Tasks&status=$status&type=notif");
