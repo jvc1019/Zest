@@ -56,6 +56,12 @@
   }
 }
 
+/* no-nav  utilized by signup, login*/
+#no-navbar{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
 /* index, landing css */
 .index-bg{
 	background-image: url("/cmsc128/resources/ricardo-gomez-angel-5OxgiLq33KM-unsplash.jpg");
@@ -70,7 +76,7 @@
 
 #time h1
 {
-	font-size: 70px;
+	font-size: 65px;
 	
 }
 

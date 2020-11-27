@@ -3,7 +3,7 @@
 <link href="css/home.css" rel="stylesheet">
 
 <body class="index-bg">
-    <div class="container" id="main">
+    <div class="container" id="no-navbar">
         <br><br>
         <div class="row">
             <div class="col-md " id="leftbox">

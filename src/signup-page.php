@@ -5,7 +5,7 @@ include('notification.php');
 
 <body class="index-bg">
 	<!-- navbar goes here -->
-	<div class="container">
+	<div class="container" id="no-navbar">
 		<!-- processor for signup form -->
 		<?php include('signup.php'); ?>
 		<div class="row page-center">
@@ -41,9 +41,9 @@ include('notification.php');
 							</form>
 						</div>
 						<div class="signup-links">
-							<div class="text-gray-dark">Have an account??</div>
-							<a class="text-light" href="login.php">Login</a>
-						</div>
+                            <div class="text-gray-dark">Have an account?</div>
+                            <a class="text-light" href="login.php">Login</a>
+                        </div>
 					</div>
 				</div>
 			</div>

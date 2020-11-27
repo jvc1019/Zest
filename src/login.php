@@ -4,7 +4,7 @@
 
 <body class="index-bg">
 	<!-- navbar goes here -->
-	<div class="container">
+	<div class="container" id="no-navbar">
 		<div class="row page-center">
 			<div class="col-lg"></div>
 			<div class="col-md-8">
