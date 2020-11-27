@@ -15,7 +15,8 @@ if (!isset($_SESSION['user_Name'])) {
     $user_Theme = $user['user_Theme'];
 
     // Custom CSS user theme overriding the default ones.
-    if (file_exists("css/" . $user_Theme)) {
-        echo "<link href='$user_Theme.css' rel='stylesheet'>";
+    if (file_exists("css/" . $user_Theme . ".css")) {
+        echo "<link href='css/" . $user_Theme . ".css' rel='stylesheet'>";
     }
 }
+?>
