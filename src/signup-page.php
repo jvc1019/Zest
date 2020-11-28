@@ -1,6 +1,5 @@
-<?php include('header.php');
-include('notification.php');
-?>
+<?php include('header.php');?>
+<?php include('notification.php');?>
 
 <body class="default-bg">
 	<!-- navbar goes here -->
@@ -14,7 +13,7 @@ include('notification.php');
 					<div class="col-md login-cover rounded-left"></div>
 					<div class="col-md-7 text-center">
 						<div class="form-group rounded-top signup-head shadow p-3 sticky-top">
-							<div class="text-right">Need help?</div>
+							<div class="text-right"><a href="help.php?help=need">Need help?</a></div>
 						</div>
 						<div class="rounded-top rounded-bottom form-inner shadow p-3">
 							<br>
@@ -48,10 +47,6 @@ include('notification.php');
 			</div>
 			<div class="col-lg"></div>
 		</div>
-
-
-
-
 
 		<!-- modal -->
 		<div class="modal fade" id="errorSignupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

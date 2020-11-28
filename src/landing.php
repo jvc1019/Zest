@@ -22,7 +22,7 @@
                     <div class="row rounded-bottom rounded-top form-box shadow p-3">
                         <div class="col-md text-center">
                             <div class="form-group rounded-top form-head shadow p-3 sticky-top">
-                                <div class="text-right"><a href="help.php">Need help?</a></div>
+                                <div class="text-right"><a href="help.php?help=need">Need help?</a></div>
                             </div>
                             <div class="rounded-top rounded-bottom form-inner shadow p-3">
                                 <br>
@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control form-rounded" name="password" placeholder="Enter password" required="">
-                                        <a class="forgot" href="help.php">Forgot your password?</a>
+                                        <a class="forgot" href="help.php?help=forgot">Forgot your password?</a>
                                     </div>
                                     <div class="form-group">
                                         <button class="btn btn-primary btn-block" type="submit">Log In</button>

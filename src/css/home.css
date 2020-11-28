@@ -295,3 +295,37 @@ a.remind:hover{
 	text-align: justify;
 	padding: 5px 20px 5px 20px;
 }
+
+.tab {
+	overflow: hidden;
+}
+
+.tab button
+{
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+}
+
+.tab button:hover,
+.tab button:focus,
+.tab button.default
+{
+	background-color: black;
+	color: white;
+}
+
+.tabcontent {
+	display: none;
+	padding: 6px 12px;
+	animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
