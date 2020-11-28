@@ -1,75 +1,80 @@
 <div>
-	<div class="reminderholder rounded-top rounded-bottom">
-		<h5 class="remindTitle">DUE TODAY<h5>
-		<table>
-			<?php
-				$query = "SELECT * FROM task WHERE user_ID = $user_ID AND DATE(task_Due) = CURDATE() ORDER BY task_Due";
-				$result = $conn->query($query);
+	<div class="reminderHolder">
+		<h4 class="text-light border-light border-bottom">Due today</h4>
 
-				if (!($result->num_rows > 0)) {
-					echo "<div class='notasksdue'>No tasks due today.</div>";
-				} else {
-	        		while ($row = $result->fetch_assoc()) {
-	        			$name = html_entity_decode($row['task_Name'], ENT_QUOTES);
-	        			if (strlen($name)> 25){
-	        				$name = substr($name, 0, 25) . "...";
-	        			}
-					?>
-					<tr class="remindText">
-						<td class="col-md-8">
-							📝 <a class="remind" href="tasks.php"><?php echo $name;?></a>
-						</td>
-						<td class="col-md-4">
-							<?php
-								$time = date("h:iA", strtotime($row['task_Due']));
-								if ($time[0] == "0"){
-									$time = " " . substr($time, 1);
-								}
-								echo $time;
-							?>
-						</td>
-					</tr>
-					<?php
+		<ul class="list-group">
+			<?php
+			$query = "SELECT * FROM task WHERE user_ID = $user_ID AND DATE(task_Due) = CURDATE() ORDER BY task_Due";
+			$result = $conn->query($query);
+			$count = 0;
+
+			if (!($result->num_rows > 0)) {
+				echo "<div class='text-light'>No tasks due today.</div>";
+			} else {
+				while ($row = $result->fetch_assoc()) {
+					$name = html_entity_decode($row['task_Name'], ENT_QUOTES);
+			?>
+					<li class="list-group-item">
+						<h6 class="text-truncate"><?php echo $name; ?></h6>
+						<?php echo date("g:i A", strtotime($row['task_Due'])); ?>
+						<!-- dot/divider icon -->
+						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+						</svg>
+						<script>
+							var time = "<?php echo date("g:i A", strtotime($row['task_Due'])); ?>";
+							document.write(moment(time, "h:mm A").fromNow());
+						</script>
+					</li>
+			<?php
+					$count++;
+
+					if ($count >= 3) {
+						break;
 					}
 				}
+			}
 			?>
-		</table>
+		</ul>
 	</div>
 	<br>
-	<div class="reminderholder rounded-top rounded-bottom">
-		<h5 class="remindTitle">DUE TOMORROW<h5>
-		<table>
-			<?php
-				$query = "SELECT * FROM task WHERE user_ID = $user_ID AND DATE(task_Due) = CURDATE() + INTERVAL 1 DAY ORDER BY task_Due";
-				$result = $conn->query($query);
+	<div class="reminderHolder">
+		<h4 class="text-light border-light border-bottom">Due tomorrow</h4>
 
-				if (!($result->num_rows > 0)) {
-	            	echo "<div class='notasksdue'>No tasks due tomorrow.</div>";
-	        	} else {
-	        		while ($row = $result->fetch_assoc()) {
-	        			$name = html_entity_decode($row['task_Name'], ENT_QUOTES);
-	        			if (strlen($name)> 25){
-	        				$name = substr($name, 0, 25) . "...";
-	        			}
-					?>
-					<tr class="remindText">
-						<td class="col-md-8">
-							📝 <a class="remind" href="tasks.php"><?php echo $name;?></a>
-						</td>
-						<td class="col-md-4">
-							<?php
-								$time = date("h:iA", strtotime($row['task_Due']));
-								if ($time[0] == "0"){
-									$time = " " . substr($time, 1);
-								}
-								echo $time;
-							?>
-						</td>
-					</tr>
-					<?php
-	        		}
-	        	}       	
-	        ?>
-		</table>
+		<ul class="list-group">
+			<?php
+			$query = "SELECT * FROM task WHERE user_ID = $user_ID AND DATE(task_Due) = CURDATE() + INTERVAL 1 DAY ORDER BY task_Due";
+			$result = $conn->query($query);
+			$count = 0;
+
+			if (!($result->num_rows > 0)) {
+				echo "<div class='text-light'>No tasks due tomorrow.</div>";
+			} else {
+				while ($row = $result->fetch_assoc() && $count <= 3) {
+					$name = html_entity_decode($row['task_Name'], ENT_QUOTES);
+			?>
+					<li class="list-group-item">
+						<h6 class="text-truncate"><?php echo $name; ?></h6>
+						<?php echo date("g:i A", strtotime($row['task_Due'])); ?>
+						<!-- dot/divider icon -->
+						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+						</svg>
+						<script>
+							var time = "<?php echo date("g:i A", strtotime($row['task_Due'])); ?>";
+							document.write(moment(time, "h:mm A").fromNow());
+						</script>
+					</li>
+			<?php
+					$count++;
+
+					if ($count >= 3) {
+						break;
+					}
+				}
+			}
+			?>
+
+		</ul>
 	</div>
 </div>

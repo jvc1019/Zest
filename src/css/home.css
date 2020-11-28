@@ -1,331 +1,107 @@
-/* sidebar css */
-.container
-{
-	width: auto;
-  	padding-left: 130px;
-}
-.nav-icon
-{
-  height: 1.5em;
-  fill: white;
-}
-
-.sidebar {
-  height: 100%;
-  width: 90px;
-  position: fixed;
-  z-index: 10000;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  transition: 0.5s;
-  overflow-x: hidden;
-  padding-top: 60px;
-  white-space: nowrap;
-}
-
-.sidebar a {
-  padding: 8px 8px 8px 24px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidebar a:hover {
-  color: #f1f1f1;
-}
-
-.nav-icon,
-.icon-text {
-  vertical-align: middle;
-}
-
-.icon-text{
-	margin-left: 30px;
-}
-
-
-@media screen and (max-height: 450px) {
-  .sidebar {
-    padding-top: 15px;
-  }
-  .sidebar a {
-    font-size: 18px;
-  }
-}
-
-/* no-nav  utilized by signup, login*/
-#no-navbar{
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
-/* index, landing css */
-.default-bg{
-	background-image: url("/cmsc128/resources/bg/ricardo-gomez-angel.jpg");
-	background-size: cover; 
-	background-repeat: no-repeat;
-}
-
-.index-bg{
-	background-image: url("/cmsc128/resources/bg/home-default.png");
-	background-size: cover; 
-	background-repeat: no-repeat;
-}
-
-#time, #date{
-	text-shadow: -3px 3px 7px rgba(0,0,0,0.9);
-	color: white!important;
-}
-
-#time h1
-{
-	font-size: 60px;
-	
-}
-
-#leftbox
-{
-	display: flex;
-	min-height: 90vh;
-	align-items: center;
-}
-
-.innerLeft
-{
-	text-align: center;
-	padding: 50px 50px 50px 50px;
-
-}
-
-.logo
-{
-	width: 30vh;
-}
-
-.iconholder
-{
-	background-color: rgb(255,255,255,0.8);
-	font-weight: bold;
-	color: black;
-	text-align: center;
-	min-height: 15vh;
-	min-width: 15vh;
-	padding: 15px 15px 15px 15px;
-}
-
-.appIcon
-{
-	width: 10vh;
-}
-
-#clockHeader
-{
-	margin-top: 10vh;
-	text-align: center;
-	margin-bottom: 10vh;
-}
-
-/* reminder box css*/
-#reminderHeader
-{
-	margin-top: 10vh;
-	text-align: left;
-	margin-bottom: 10vh;
-}
-
-.reminderholder
-{
-	background-color: rgb(255,255,255,0.8);
-	width: 450px;
-	min-height: 15vh;
-	min-width: 15vh;
-	padding: 15px 15px 15px 15px;
-}
-
-.remindTitle
-{	
-	font-size: 20px;
-	font-weight: bold;
-	text-align: center;
-}
-
-.notasksdue
-{
-	font-size: 16px;
-	color: gray;
-	font-style: italic;
-	text-align: center;
-}
-
-.remindText
-{
-	font-size: 18px;
-	text-align: left;
-}
-
-a.remind{
-	color: black;
-}
-
-a.remind:hover{
-	color: gray;
-}
-
 /* login, signup css */
-.page-center
-{
-	height: 100vh;
-	align-items: center;
+.page-center {
+    height: 100vh;
+    align-items: center;
 }
-.login-cover
-{
-	background-image: url("/cmsc128/resources/erik-eastman-7jSRJZJSvy4-unsplash.jpg");
-	background-size: cover; 
-	background-repeat: no-repeat;
+.login-cover {
+    background-image: url("/cmsc128/resources/erik-eastman-7jSRJZJSvy4-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.form-box
-{
-	background-color: #FFBA33;
-	padding: 0px 0px 0px 0px !important;
+.form-box {
+    background-color: #ffba33;
+    padding: 0px 0px 0px 0px !important;
 }
-.signup-head
-{
-	background-color: white;
-	padding: 20px 20px 20px 20px;
-	margin: 40px 20px 0px 20px;
+.signup-head {
+    background-color: white;
+    padding: 20px 20px 20px 20px;
+    margin: 40px 20px 0px 20px;
 }
 
-.form-head
-{
-	background-color: white;
-	padding: 20px 20px 20px 20px;
-	margin: 70px 20px 0px 20px;
+.form-head {
+    background-color: white;
+    padding: 20px 20px 20px 20px;
+    margin: 70px 20px 0px 20px;
 }
-.form-inner
-{
-	background-color: white;
-	padding: 30px 50px 30px 50px !important;
-	margin: -5px 20px 20px 20px;
+.form-inner {
+    background-color: white;
+    padding: 30px 50px 30px 50px !important;
+    margin: -5px 20px 20px 20px;
 }
 
-.form-links
-{
-	margin: 20px 20px 60px 20px;
+.form-links {
+    margin: 20px 20px 60px 20px;
 }
 
-.signup-links
-{
-	margin: 20px 20px 40px 20px;
+.signup-links {
+    margin: 20px 20px 40px 20px;
 }
 
 /*profile css*/
 
-.profileHolder
-{
-	background-color: rgb(255,255,255,0.8);
-	font-weight: bold;
-	color: black;
-	text-align: center;
-	min-height: 100px;
-	min-width: 100px;
-	padding: 15px 15px 15px 15px;
-}
-
-.profilePic
-{
-	max-width: 50%;
-	max-height: 50%;
-	border: 5px solid;
-	border-color: black;
-}
-
-.profileTitle
-{
-	font-size: 22px;
-	text-align: left;
-}
-
-.profileText
-{
-	font-size: 18px;
-	font-style: italic;
-	font-weight: normal;
-	text-align: left;
-}
-
-.description
-{
-	text-align: center;
-}
-
 /*help css*/
 
-.helpHolder
-{
-	background-color: rgb(255,255,255,0.8);
-	font-weight: bold;
-	color: black;
-	text-align: center;
-	min-height: 100px;
-	min-width: 100px;
-	padding: 20px 20px 20px 20px;
+.helpHolder {
+    background-color: rgb(255, 255, 255, 0.8);
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    min-height: 100px;
+    min-width: 100px;
+    padding: 20px 20px 20px 20px;
 }
 
-.helpPic
-{
-	max-width: 100%;
-	max-height: 100%;
+.helpPic {
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.helpTitle
-{
-	font-size: 22px;
-	text-align: left;
-	padding: 5px 20px 5px 20px;
+.helpTitle {
+    font-size: 22px;
+    text-align: left;
+    padding: 5px 20px 5px 20px;
 }
 
-.helpText
-{
-	font-size: 16px;
-	font-weight: normal;
-	text-align: justify;
-	padding: 5px 20px 5px 20px;
+.helpText {
+    font-size: 16px;
+    font-weight: normal;
+    text-align: justify;
+    padding: 5px 20px 5px 20px;
 }
 
 .tab {
-	overflow: hidden;
+    overflow: hidden;
 }
 
-.tab button
-{
-	background-color: inherit;
-	float: left;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	padding: 14px 16px;
-	transition: 0.3s;
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
 }
 
 .tab button:hover,
 .tab button:focus,
-.tab button.default
-{
-	background-color: black;
-	color: white;
+.tab button.default {
+    background-color: black;
+    color: white;
 }
 
 .tabcontent {
-	display: none;
-	padding: 6px 12px;
-	animation: fadeEffect 1s;
+    display: none;
+    padding: 6px 12px;
+    animation: fadeEffect 1s;
 }
 
 @keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

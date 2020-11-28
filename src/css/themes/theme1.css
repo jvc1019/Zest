@@ -1,0 +1,20 @@
+.index-bg {
+    background-image: url("/cmsc128/resources/bg/study.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.applink {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f8f9fa;
+}
+
+.reminderHolder li {
+    background-color: rgb(0, 0, 0, 0.8);
+    color: #f8f9fa;
+}
+
+.profileHolder {
+    background-color: rgb(0, 0, 0, 0.8);
+    color: #f8f9fa;
+}

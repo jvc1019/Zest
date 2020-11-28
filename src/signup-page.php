@@ -1,9 +1,9 @@
-<?php include('header.php');?>
-<?php include('notification.php');?>
+<?php include('header.php'); ?>
+<?php include('notification.php'); ?>
 
 <body class="default-bg">
 	<!-- navbar goes here -->
-	<div class="container" id="no-navbar">
+	<div class="container-fluid fullpage index-bg">
 		<!-- processor for signup form -->
 		<?php include('signup.php'); ?>
 		<div class="row page-center">
@@ -39,9 +39,9 @@
 							</form>
 						</div>
 						<div class="signup-links">
-                            <div class="text-gray-dark">Have an account?</div>
-                            <a class="text-light" href="login.php">Login</a>
-                        </div>
+							<div class="text-gray-dark">Have an account?</div>
+							<a class="text-light" href="login.php">Login</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -68,12 +68,6 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		// Enable all tooltips
-		$(function() {
-			$("[data-toggle='tooltip']").tooltip()
-		})
-	</script>
 </body>
 
 </html>

@@ -1,0 +1,20 @@
+.index-bg {
+    background-image: url("/cmsc128/resources/bg/sunset.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.applink {
+    background-color: rgba(89, 38, 19, 0.8);
+    color: #f8f9fa;
+}
+
+.reminderHolder ul > li {
+    background-color: rgba(89, 38, 19, 0.8);
+    color: #f8f9fa;
+}
+
+.profileHolder {
+    background-color: rgba(89, 38, 19, 0.8);
+    color: #f8f9fa;
+}

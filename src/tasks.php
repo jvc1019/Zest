@@ -14,8 +14,8 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
 
 <body>
     <!-- navigation bar -->
-    <?php include("navbar.php"); ?>
-    <div class="container">
+    <?php include("sidebar.php"); ?>
+    <div class="container-fluid with-sidebar">
         <div class="alert alert-light shadow sticky-top">
             <!-- Tasks | sort by | sort direction | search box | add new task -->
             <!--   2   |          3               |      5     |       2      -->
@@ -23,7 +23,6 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 <div class="col-sm-2">
                     <h3 class="text-primary text-center">Tasks</h3>
                 </div>
-                <h5 class="text-secondary text-center">Sort by:</h5>
                 <!-- Sort by and sort direction -->
                 <div class="col-sm-3 form-inline">
                     <select id="sortBy" class="btn btn-sm">
@@ -133,11 +132,6 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
     </div>
     <script src="js/tasks_modal_functions.js"></script>
     <script>
-        // Enable all tooltips
-        $(function() {
-            $("[data-toggle='tooltip']").tooltip()
-        })
-
         $(document).ready(function() {
             // Spawn notification if GET value is set
             spawnNotification();

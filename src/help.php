@@ -8,7 +8,7 @@
 
 <body class="default-bg">
 	<!-- navbar goes here -->
-	<div class="container" id="no-navbar">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-10 helpHolder">

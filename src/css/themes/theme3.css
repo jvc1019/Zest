@@ -1,0 +1,6 @@
+.index-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),
+        url("/cmsc128/resources/bg/wallhaven-2eg5ky.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}

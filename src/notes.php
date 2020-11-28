@@ -3,10 +3,11 @@ include('header.php');
 include('user_details.php');
 ?>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
 <body>
     <!-- navigation bar -->
-    <?php include('navbar.php'); ?>
-    <div class="container" id="main">
+    <?php include('sidebar.php'); ?>
+    <div class="container-fluid with-sidebar" id="main">
         <div class="alert alert-light shadow sticky-top" role="alert">
             <!-- sort by | sort direction | search box | add new note -->
             <!--    2    |       2        |      5     |       3      -->
@@ -14,7 +15,6 @@ include('user_details.php');
                 <div class="col-sm-2">
                     <h3 class="text-primary text-right">Notebook</h3>
                 </div>
-                <h5 class="text-secondary text-center">Sort by:</h5>
                 <!-- Sort by and sort direction -->
                 <div class="col-sm-3">
                     <select id="sortDir" class="btn btn-sm">
@@ -59,7 +59,7 @@ include('user_details.php');
         <!-- show last status message as a Boostrap alert -->
         <?php include('notification.php'); ?>
         <!-- Show last status as a bootstrap alert -->
-        
+
         <div id="output"></div>
         <?php
         if (empty($search)) {
@@ -69,11 +69,6 @@ include('user_details.php');
         } ?>
     </div>
     <script>
-        // Enable all tooltips
-        $(function() {
-            $("[data-toggle='tooltip']").tooltip()
-        })
-
         $(document).ready(function() {
             // clears the search box 
             $("#search_clear").on('click', function(e) {
@@ -84,31 +79,33 @@ include('user_details.php');
 
     <!-- Live search -->
     <script type="text/javascript">
-        $(document).ready(function(){
-        $("#search").keyup(function(){
-            var query = $(this).val();
-            if (query != "") {
-                $.ajax({
-                url: 'notes_search.php',
-                method: 'POST',
-                data: {query:query},
-                success: function(data){
-    
-                    $('#output').html(data);
-                    $('#output').css('display', 'block');
-    
-                    $("#search").focusout(function(){
-                        $('#output').css('display', 'none');
+        $(document).ready(function() {
+            $("#search").keyup(function() {
+                var query = $(this).val();
+                if (query != "") {
+                    $.ajax({
+                        url: 'notes_search.php',
+                        method: 'POST',
+                        data: {
+                            query: query
+                        },
+                        success: function(data) {
+
+                            $('#output').html(data);
+                            $('#output').css('display', 'block');
+
+                            $("#search").focusout(function() {
+                                $('#output').css('display', 'none');
+                            });
+                            $("#search").focusin(function() {
+                                $('#output').css('display', 'block');
+                            });
+                        }
                     });
-                    $("#search").focusin(function(){
-                        $('#output').css('display', 'block');
-                    });
+                } else {
+                    $('#output').css('display', 'none');
                 }
-                });
-            } else {
-            $('#output').css('display', 'none');
-            }
-        });
+            });
         });
     </script>
 </body>

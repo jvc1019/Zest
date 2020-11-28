@@ -1,6 +1,6 @@
 <?php include("conn.php"); ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<title>Prapp - The Productivity App</title>
@@ -8,7 +8,10 @@
 
 	<!-- Stylesheets -->
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/global.css" rel="stylesheet">
 	<link href="css/home.css" rel="stylesheet">
+	<link href="css/profile.css" rel="stylesheet">
+	<link href="css/sidebar.css" rel="stylesheet">
 	<link href="css/overrides.css" rel="stylesheet">
 
 	<!-- Favicon -->
@@ -20,7 +23,12 @@
 
 	<!-- Scripts -->
 	<script src="js/sidebar.js"></script>
-	<script src="js/moment.js"></script>
+	<script src="js/moment.min.js"></script>
+	<script>
+		$(function() {
+			$("[data-toggle='tooltip']").tooltip()
+		})
+	</script>
 
 	<!-- Setting the default timezone for all PHP date() calls -->
 	<?php date_default_timezone_set("Asia/Manila"); ?>
