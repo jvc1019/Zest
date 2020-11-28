@@ -9,6 +9,7 @@ CREATE TABLE `user` (
   `user_Desc` varchar(400) NOT NULL,
   `user_Password` varchar(125) NOT NULL, -- before placed here, the string is hashed via MD5
   `user_Theme` varchar(50) NOT NULL DEFAULT "default", -- stores the theme name of the user
+  `user_Avatar` varchar(50) NOT NULL DEFAULT "default", -- stores the avatar of the user
   PRIMARY KEY (`user_ID`),
   UNIQUE KEY `user_Name` (`user_Name`),
   UNIQUE KEY `user_Email` (`user_Email`)

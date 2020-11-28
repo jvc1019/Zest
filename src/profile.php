@@ -13,7 +13,7 @@
 				<h3>USER PROFILE</h3>
 				<button href="#" data-toggle="modal" data-target="#updateProfileModal<?php echo $user['user_ID']; ?>" class="btn btn-sm btn-primary btn-block">Edit Profile</button>
 				<br>
-				<img class="profilePic" src="/cmsc128/resources/profile.jpg">
+				<?php echo "<img class='profilePic' src='/cmsc128/resources/avatars/" . $user_Avatar . ".jpg'>"?>
 				<br><br>
 				<div class="profileTitle"> Username:</div>
 				<div class="profileText"><?php echo $user_Name ?></div>

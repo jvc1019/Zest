@@ -13,6 +13,7 @@ if (!isset($_SESSION['user_Name'])) {
     $user_Email = $user['user_Email'];
     $user_Desc = $user['user_Desc'];
     $user_Theme = $user['user_Theme'];
+    $user_Avatar = $user['user_Avatar'];
 
     // Custom CSS user theme overriding the default ones.
     if (file_exists("css/" . $user_Theme . ".css")) {

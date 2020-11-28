@@ -21,7 +21,13 @@
                             <div class="input-group">
                                 <select id="addUserAvatar" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="userAvatar">
                                     <option <?php if ($user['user_Avatar'] == "default") echo "selected"?> value="default">Default</option>
-                                    <option <?php if ($user['user_Avatar'] == "theme1") echo "selected"?> value="theme1">Avatar 1</option>
+                                    <option <?php if ($user['user_Avatar'] == "avatar1") echo "selected"?> value="avatar1">Avatar 1</option>
+                                    <option <?php if ($user['user_Avatar'] == "avatar2") echo "selected"?> value="avatar2">Avatar 2</option>
+                                    <option <?php if ($user['user_Avatar'] == "avatar3") echo "selected"?> value="avatar3">Avatar 3</option>
+                                    <option <?php if ($user['user_Avatar'] == "avatar4") echo "selected"?> value="avatar4">Avatar 4</option>
+                                    <option <?php if ($user['user_Avatar'] == "avatar5") echo "selected"?> value="avatar5">Avatar 5</option>
+                                    <option <?php if ($user['user_Avatar'] == "avatar6") echo "selected"?> value="avatar6">Avatar 6</option>
+                                    <option <?php if ($user['user_Avatar'] == "avatar7") echo "selected"?> value="avatar7">Avatar 7</option>
                                 </select>
                             </div>
                         </div>
