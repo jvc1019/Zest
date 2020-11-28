@@ -1,12 +1,12 @@
 .index-bg{
-	background-image: url("/cmsc128/resources/bg/study.jpg");
+	background-image: url("/cmsc128/resources/bg/sunset.jpg");
 	background-size: cover; 
 	background-repeat: no-repeat;
 }
 
 .iconholder
 {
-	background-color: rgb(0,0,0,0.8);
+	background-color: rgb(77,31,8,0.8);
 	font-weight: bold;
 	color: white;
 	text-align: center;
@@ -23,7 +23,7 @@
 
 .reminderholder
 {
-	background-color: rgb(0,0,0,0.8);
+	background-color: rgb(77,31,8,0.8);
 	color: white;
 	width: 450px;
 	min-height: 15vh;
@@ -34,7 +34,7 @@
 .notasksdue
 {
 	font-size: 16px;
-	color: brown;
+	color: black;
 	font-style: italic;
 	text-align: center;
 }
@@ -44,12 +44,12 @@ a.remind{
 }
 
 a.remind:hover{
-	color: brown;
+	color: black;
 }
 
 .profileHolder
 {
-	background-color: rgb(0,0,0,0.8);
+	background-color: rgb(77,31,8,0.8);
 	font-weight: bold;
 	color: white;
 	text-align: center;
@@ -68,15 +68,15 @@ a.remind:hover{
 
 .edit, .edit:active, .edit:focus
 {
-	background-color: white;
-	border-color: white;
-	color: black;
+	background-color: rgb(38,25,9);
+	border-color: rgb(38,25,9);
+	color: white;
 	box-shadow: none;
 }
 
 .edit:hover
 {
-	background-color: gray;
-	border-color: gray;
-	color: white;
+	background-color: rgb(255,204,51);
+	border-color: rgb(255,204,51);
+	color: black;
 }
