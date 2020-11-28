@@ -11,7 +11,7 @@
 			<div class="col-md-3"></div>
 			<div class="col-md-4 profileHolder">
 				<h3>USER PROFILE</h3>
-				<button href="#" data-toggle="modal" data-target="#updateProfileModal<?php echo $user['user_ID']; ?>" class="btn btn-sm btn-primary btn-block">Edit Profile</button>
+				<button href="#" data-toggle="modal" data-target="#updateProfileModal<?php echo $user['user_ID']; ?>" class="btn btn-sm btn-block <?php if ($user_Theme == 'default'){ echo "btn-primary";} ?> edit">Edit Profile</button>
 				<br>
 				<?php echo "<img class='profilePic' src='/cmsc128/resources/avatars/" . $user_Avatar . ".jpg'>"?>
 				<br><br>

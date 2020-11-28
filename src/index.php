@@ -22,7 +22,7 @@
 					<div class="col-md-12">
 						<div class="row">
 							<div class="col-md-4" data-toggle="tooltip" title="Organize your Subjects">
-								<a href="subjects.php">
+								<a class="" href="subjects.php">
 									<div class="iconholder rounded-top rounded-bottom">
 										<img class="appIcon" src="/cmsc128/resources/icons/book-half.svg"><br>
 										<h6>Subjects</h6>

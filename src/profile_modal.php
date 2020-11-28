@@ -56,6 +56,7 @@
                                 <select id="addUserTheme" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="userTheme">
                                     <option <?php if ($user['user_Theme'] == "default") echo "selected"?> value="default">Default</option>
                                     <option <?php if ($user['user_Theme'] == "theme1") echo "selected"?> value="theme1">Study</option>
+                                    <option <?php if ($user['user_Theme'] == "theme2") echo "selected"?> value="theme2">Sunset</option>
                                 </select>
                             </div>
                         </div>

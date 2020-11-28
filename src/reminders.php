@@ -17,10 +17,16 @@
 					?>
 					<tr class="remindText">
 						<td class="col-md-8">
-							📝 <a href="tasks.php"><?php echo $name;?></a>
+							📝 <a class="remind" href="tasks.php"><?php echo $name;?></a>
 						</td>
 						<td class="col-md-4">
-							<?php echo date("h:iA", strtotime($row['task_Due']));?></div>
+							<?php
+								$time = date("h:iA", strtotime($row['task_Due']));
+								if ($time[0] == "0"){
+									$time = " " . substr($time, 1);
+								}
+								echo $time;
+							?>
 						</td>
 					</tr>
 					<?php
@@ -48,10 +54,16 @@
 					?>
 					<tr class="remindText">
 						<td class="col-md-8">
-							📝 <a href="tasks.php"><?php echo $name;?></a>
+							📝 <a class="remind" href="tasks.php"><?php echo $name;?></a>
 						</td>
 						<td class="col-md-4">
-							<?php echo date("h:iA", strtotime($row['task_Due']));?></div>
+							<?php
+								$time = date("h:iA", strtotime($row['task_Due']));
+								if ($time[0] == "0"){
+									$time = " " . substr($time, 1);
+								}
+								echo $time;
+							?>
 						</td>
 					</tr>
 					<?php

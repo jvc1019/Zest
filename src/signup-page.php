@@ -2,8 +2,7 @@
 include('notification.php');
 ?>
 
-
-<body class="index-bg">
+<body class="default-bg">
 	<!-- navbar goes here -->
 	<div class="container" id="no-navbar">
 		<!-- processor for signup form -->

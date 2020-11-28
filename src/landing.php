@@ -2,7 +2,7 @@
 
 <link href="css/home.css" rel="stylesheet">
 
-<body class="index-bg">
+<body class="default-bg">
     <div class="container" id="no-navbar">
         <br><br>
         <div class="row">
