@@ -2,7 +2,7 @@
 include('header.php');
 include('user_details.php');
 ?>
-
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <body>
     <!-- navigation bar -->
     <?php include('navbar.php'); ?>
@@ -36,12 +36,7 @@ include('user_details.php');
                 </div>
                 <!-- Search box -->
                 <div class="col-sm-5 input-group">
-                    <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" placeholder="Search notes by name..." value="<?php if (isset($_GET['search'])) {
-                                                                                                                                                                                                            echo $_GET['search'];
-                                                                                                                                                                                                        } else {
-                                                                                                                                                                                                            echo "";
-                                                                                                                                                                                                        }
-                                                                                                                                                                                                        ?>">
+                    <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" autocomplete="off" placeholder="Search notes by name...">
                     <div class="input-group-append">
                         <button id="search_clear" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0" data-toggle="tooltip" title="Clear search">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -59,31 +54,13 @@ include('user_details.php');
                         New Note
                     </a>
                 </div>
-
-                <?php
-
-                $sortDir = "ASC";
-                if (isset($_GET['sortDir'])) {
-                    $sortDirSet = $_GET['sortDir'];
-                    $sortDir = ($sortDirSet == 0) ? "ASC" : "DESC";
-                }
-
-                $search = "";
-                $searchQuery = "";
-                if (isset($_GET['search'])) {
-                    $searchQuery = $_GET['search'];
-                    if (!empty($searchQuery)) {
-                        $search = "WHERE note_Title LIKE '%" . $searchQuery . "%' AND note.user_ID=$user_ID";
-                    }
-                }
-                ?>
             </div>
-
         </div>
         <!-- show last status message as a Boostrap alert -->
         <?php include('notification.php'); ?>
         <!-- Show last status as a bootstrap alert -->
-
+        
+        <div id="output"></div>
         <?php
         if (empty($search)) {
             include('notes_list.php');
@@ -102,20 +79,36 @@ include('user_details.php');
             $("#search_clear").on('click', function(e) {
                 $("#search").val("");
             });
+        });
+    </script>
 
-            // SORTING HANDLER
-            // Sorts the notes list
-            $("#sortBy").on('change', sort);
-            $("#sortDir").on('change', sort);
-            $("#search_button").on('click', sort);
-
-            function sort() {
-                $sortBy = $("#sortBy").val();
-                $sortDir = $("#sortDir").val();
-                $searchQuery = $("#search").val();
-                window.location.search = "sortBy=" + $sortBy + "&sortDir=" + $sortDir + "&search=" + $searchQuery;
+    <!-- Live search -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+        $("#search").keyup(function(){
+            var query = $(this).val();
+            if (query != "") {
+                $.ajax({
+                url: 'notes_search.php',
+                method: 'POST',
+                data: {query:query},
+                success: function(data){
+    
+                    $('#output').html(data);
+                    $('#output').css('display', 'block');
+    
+                    $("#search").focusout(function(){
+                        $('#output').css('display', 'none');
+                    });
+                    $("#search").focusin(function(){
+                        $('#output').css('display', 'block');
+                    });
+                }
+                });
+            } else {
+            $('#output').css('display', 'none');
             }
-            // END OF SORTING HANDLER
+        });
         });
     </script>
 </body>
