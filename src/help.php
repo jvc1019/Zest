@@ -6,7 +6,7 @@
 	<div class="container" id="no-navbar">
 		<div class="row">
 			<div class="col-md-1"></div>
-			<div class="col-md-10 profileHolder">
+			<div class="col-md-10 helpHolder">
 				<h3>HELP & SUPPORT</h3>
 				<img class="helpPic" src="/cmsc128/resources/help-banner.jpg">
 				<br><br>

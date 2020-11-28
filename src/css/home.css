@@ -272,7 +272,7 @@ a.remind:hover{
 	text-align: center;
 	min-height: 100px;
 	min-width: 100px;
-	padding: 15px 15px 15px 15px;
+	padding: 20px 20px 20px 20px;
 }
 
 .helpPic
@@ -285,6 +285,7 @@ a.remind:hover{
 {
 	font-size: 22px;
 	text-align: left;
+	padding: 5px 20px 5px 20px;
 }
 
 .helpText
@@ -292,4 +293,5 @@ a.remind:hover{
 	font-size: 16px;
 	font-weight: normal;
 	text-align: justify;
+	padding: 5px 20px 5px 20px;
 }
