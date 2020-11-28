@@ -1,6 +1,6 @@
 <!--Update Modal-->
 <div class="modal fade" id="updateProfileModal<?php echo $user['user_ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="User Details" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title text-primary">User Details</h5>
@@ -10,49 +10,47 @@
                     <div class="container-fluid">
                         <form method="POST" action="profile_update.php?user_ID=<?php echo $user_ID; ?>" enctype="multipart/form-data">
                         <input type="hidden" name="userID" value="<?php echo $user['user_ID']; ?>">
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="addUserAvatar" class="form-label h6">
-                                    <!--  Profile Avatar -->
-                                    <svg width="1.0625em" height="1em" viewBox="0 0 17 16" class="bi bi-image-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-                                    </svg>
-                                    Avatar:
-                                </label>
-                                <div class="input-group">
-                                    <select id="addUserAvatar" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="userAvatar">
-                                        <option <?php if ($user['user_Avatar'] == "default") echo "selected"?> value="default">Default</option>
-                                        <option <?php if ($user['user_Avatar'] == "theme1") echo "selected"?> value="theme1">Avatar 1</option>
-                                    </select>
-                                </div>
+                        <div class="form-group">
+                            <label for="addUserAvatar" class="form-label h6">
+                                <!--  Profile Avatar -->
+                                <svg width="1.0625em" height="1em" viewBox="0 0 17 16" class="bi bi-image-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                </svg>
+                                Avatar:
+                            </label>
+                            <div class="input-group">
+                                <select id="addUserAvatar" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="userAvatar">
+                                    <option <?php if ($user['user_Avatar'] == "default") echo "selected"?> value="default">Default</option>
+                                    <option <?php if ($user['user_Avatar'] == "theme1") echo "selected"?> value="theme1">Avatar 1</option>
+                                </select>
                             </div>
-                            <!-- Profile Username -->
-                            <div class="form-group">
-                                Username: <input type="text" class="form-control font-weight-bold border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addUserName" name="userName" value="<?php echo $user['user_Name']; ?>" required>
-                            </div>
-                            <!-- Profile Email -->
-                            <div class="form-group">
-                                Email: <input type="text" class="form-control font-weight-bold border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addUserEmail" name="userEmail" value="<?php echo $user['user_Email']; ?>" required>
-                            </div>
-                            <!-- Profile Description -->
-                            <div class="form-group">
-                                Description: 
-                                <textarea class="form-control border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addUserDesc" name="userDesc" placeholder="User description (optional)" rows="9"><?php echo $user['user_Desc']; ?></textarea>
-                            </div>
-                            <!--  User Theme -->
-                            <div class="form-group">
-                                <label for="addUserTheme" class="form-label h6">
-                                    <svg width="1.0625em" height="1em" viewBox="0 0 17 16" class="bi bi-image-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-                                    </svg>
-                                    Theme:
-                                </label>
-                                <div class="input-group">
-                                    <select id="addUserTheme" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="userTheme">
-                                        <option <?php if ($user['user_Theme'] == "default") echo "selected"?> value="default">Default</option>
-                                        <option <?php if ($user['user_Theme'] == "theme1") echo "selected"?> value="theme1">Study</option>
-                                    </select>
-                                </div>
+                        </div>
+                        <!-- Profile Username -->
+                        <div class="form-group">
+                            Username: <input type="text" class="form-control font-weight-bold border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addUserName" name="userName" value="<?php echo $user['user_Name']; ?>" required>
+                        </div>
+                        <!-- Profile Email -->
+                        <div class="form-group">
+                            Email: <input type="text" class="form-control font-weight-bold border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addUserEmail" name="userEmail" value="<?php echo $user['user_Email']; ?>" required>
+                        </div>
+                        <!-- Profile Description -->
+                        <div class="form-group">
+                            Description: 
+                            <textarea class="form-control border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addUserDesc" name="userDesc" placeholder="User description (optional)" rows="9"><?php echo $user['user_Desc']; ?></textarea>
+                        </div>
+                        <!--  User Theme -->
+                        <div class="form-group">
+                            <label for="addUserTheme" class="form-label h6">
+                                <svg width="1.0625em" height="1em" viewBox="0 0 17 16" class="bi bi-image-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V13a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1v-1zm5-6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                </svg>
+                                Theme:
+                            </label>
+                            <div class="input-group">
+                                <select id="addUserTheme" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="userTheme">
+                                    <option <?php if ($user['user_Theme'] == "default") echo "selected"?> value="default">Default</option>
+                                    <option <?php if ($user['user_Theme'] == "theme1") echo "selected"?> value="theme1">Study</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -63,7 +61,7 @@
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-counterclockwise" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z" />
                             <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z" />
-                        </svg> Clear
+                        </svg> Reset
                     </button>
                     <button type="button" class="btn btn-sm text-secondary" data-dismiss="modal">
                         <!-- x icon -->
