@@ -61,7 +61,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 <!-- Search box -->
                 <div class="col-sm-5 input-group">
                     <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" placeholder="Search tasks by name..." value="<?php if (!empty($_GET['search']) && empty($_GET['tag'])) {
-                                                                                                                                                                                                            echo $_GET['search'];
+                                                                                                                                                                                                            echo html_entity_decode($_GET['search'], ENT_COMPAT);
                                                                                                                                                                                                         } else {
                                                                                                                                                                                                             echo "";
                                                                                                                                                                                                         }
@@ -101,7 +101,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 $search = "";
                 $searchQuery = "";
                 if (!empty($_GET['search'])) {
-                    $searchQuery = $_GET['search'];
+                    $searchQuery = htmlentities($_GET['search'], ENT_QUOTES);
                     $search = "WHERE task_Name LIKE '$searchQuery%' AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
                 }
 
@@ -176,8 +176,12 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             function sort() {
                 $sortBy = $("#sortBy").val();
                 $sortDir = $("#sortDir").val();
-                $searchQuery = $("#search").val();
+                $searchQuery = htmlEntities($("#search").val());
                 window.location.search = "sortBy=" + $sortBy + "&sortDir=" + $sortDir + "&search=" + $searchQuery;
+            }
+
+            function htmlEntities(str) {
+                return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
             }
             // END OF SORTING HANDLER
 
