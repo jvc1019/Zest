@@ -2,11 +2,11 @@
 <?php include("user_details.php") ?>
 <?php include('notification.php'); ?>
 
-<body class="index-bg">
+<body>
 	<!-- navigation bar -->
 	<?php include('sidebar.php'); ?>
 
-	<div class="container-fluid fullpage with-sidebar">
+	<div class="container-fluid fullpage with-sidebar index-bg">
 		<div class="row py-5">
 			<div class="card profileHolder mx-auto">
 				<?php echo "<img class='card-img-top' src='/cmsc128/resources/avatars/$user_Avatar.jpg'>" ?>

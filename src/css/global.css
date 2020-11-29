@@ -1,5 +1,12 @@
-/* index, landing css */
+/* index bg */
 .index-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),
+        url("/cmsc128/resources/bg/home-default.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.landing-bg {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),
         url("/cmsc128/resources/bg/ricardo-gomez-angel.jpg");
     background-size: cover;

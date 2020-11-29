@@ -1,9 +1,9 @@
 <?php include('header.php'); ?>
 <?php include('notification.php'); ?>
 
-<body class="default-bg">
+<body>
 	<!-- navbar goes here -->
-	<div class="container-fluid fullpage index-bg">
+	<div class="container-fluid fullpage landing-bg">
 		<!-- processor for signup form -->
 		<?php include('signup.php'); ?>
 		<div class="row page-center">

@@ -1,9 +1,9 @@
 <?php include('header.php'); ?>
 <?php include('notification.php') ?>
 
-<body class="default-bg">
+<body>
 	<!-- navbar goes here -->
-	<div class="container" id="no-navbar">
+	<div class="container landing-bg">
 		<div class="row page-center">
 			<div class="col-lg"></div>
 			<div class="col-md-8">

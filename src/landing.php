@@ -1,7 +1,7 @@
 <?php include('header.php'); ?>
 
-<body class="index-bg">
-    <div class="container-fluid fullpage">
+<body>
+    <div class="container-fluid fullpage landing-bg">
         <br><br>
         <div class="row">
             <div class="col-md " id="leftbox">
