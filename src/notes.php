@@ -13,7 +13,7 @@ include('user_details.php');
             <!--    2    |       2        |      5     |       3      -->
             <div class="row form-inline">
                 <div class="col-sm-2">
-                    <h3 class="text-primary text-right">Notebook</h3>
+                    <h3 class="text-primary text-center">Notebook</h3>
                 </div>
                 <!-- Sort by and sort direction -->
                 <div class="col-sm-3">

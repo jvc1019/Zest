@@ -12,7 +12,7 @@ include('user_details.php');
 
 <body>
 	<center>
-		<h1 style="padding: 20px"> Notes <h1>
+		<h1 style="padding: 20px"> Add Note <h1>
 	</center>
 
 	<div class="container">

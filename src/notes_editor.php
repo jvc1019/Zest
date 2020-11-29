@@ -1,6 +1,6 @@
 <?php include('header.php'); 
-include('user_details.php');
-?>
+include('user_details.php');?>
+
 
 <!-- <!DOCTYPE html> -->
 
