@@ -1,15 +1,16 @@
 <div id="notes_search">
     <div class="card-deck fourcolumns">
 <?php
-  require_once "conn.php";
- 
-  if (isset($_POST['query'])) {
+    require_once "conn.php";
+    include('user_details.php');
+
+    if (isset($_POST['query'])) {
      
-    $query = "SELECT * FROM note WHERE note_Title LIKE '{$_POST['query']}%' LIMIT 100";
+    $query = "SELECT * FROM note LEFT JOIN user ON note.user_ID=user.user_ID WHERE note.user_ID=$user_ID AND note_Title LIKE '{$_POST['query']}%' LIMIT 100";
     $result = mysqli_query($conn, $query);
- 
-  if (mysqli_num_rows($result) > 0) {
-     while ($row = mysqli_fetch_array($result)) {?>
+    
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_array($result)) {?>
                 <div class="card" style="height: 16em;">
                     <div class="card-body overflow-hidden">
                         <h5><?php echo $row['note_Title']; ?></h5>
