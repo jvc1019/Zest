@@ -18,19 +18,19 @@
 				<br><br>
 				<ul class="nav nav-tabs nav-pills with-arrow flex-sm-row">
 					<li class="nav-item flex-sm-fill text-center helpTitle">
-						<a class="nav-link<?php if ($default == "help"){echo " active";} ?>" data-toggle="tab" href="#help">Problems</a>
+						<a class="nav-link<?php if ($default == "help"){echo " active";} ?>" data-toggle="pill" href="#help">Problems</a>
 					</li>
 					<li class="nav-item flex-sm-fill text-center helpTitle">
-						<a class="nav-link<?php if ($default == "need"){echo " active";} ?>" data-toggle="tab" href="#need">Need Help?</a>
+						<a class="nav-link<?php if ($default == "need"){echo " active";} ?>" data-toggle="pill" href="#need">Need Help?</a>
 					</li>
 					<li class="nav-item flex-sm-fill text-center helpTitle">
-						<a class="nav-link<?php if ($default == "forgot"){echo " active";} ?>" data-toggle="tab" href="#forgot">Forgot Your Password?</a>
+						<a class="nav-link<?php if ($default == "forgot"){echo " active";} ?>" data-toggle="pill" href="#forgot">Forgot Your Password?</a>
 					</li>
 					<li class="nav-item flex-sm-fill text-center helpTitle">
-						<a class="nav-link<?php if ($default == "about"){echo " active";} ?>" data-toggle="tab" href="#about">About Us</a>
+						<a class="nav-link<?php if ($default == "about"){echo " active";} ?>" data-toggle="pill" href="#about">About Us</a>
 					</li>
 					<li class="nav-item flex-sm-fill text-center helpTitle">
-						<a class="nav-link<?php if ($default == "contact"){echo " active";} ?>" data-toggle="tab" href="#contact">Contact Us</a>
+						<a class="nav-link<?php if ($default == "contact"){echo " active";} ?>" data-toggle="pill" href="#contact">Contact Us</a>
 					</li>
 				</ul>
 				<div class="tab-content">
