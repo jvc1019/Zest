@@ -6,7 +6,8 @@
     background-repeat: no-repeat;
 }
 
-.landing-bg {
+.landing-bg,
+.help-bg {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),
         url("/cmsc128/resources/bg/ricardo-gomez-angel.jpg");
     background-size: cover;
