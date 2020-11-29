@@ -1,6 +1,11 @@
 <?php include('header.php'); 
+<<<<<<< HEAD
 include('user_details.php');?>
 <!--include('navbar.php');?>-->
+=======
+include('user_details.php');
+?>
+>>>>>>> origin/main
 
 <!-- <!DOCTYPE html> -->
 
