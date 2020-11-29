@@ -68,6 +68,11 @@
     transition: 0.3s;
 }
 
+.helpTitle a:hover {
+  background-color: white;
+  color: rgb(2, 117, 216);
+}
+
 .helpText {
     font-size: 16px;
     background-color: inherit;

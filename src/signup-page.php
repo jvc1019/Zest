@@ -13,7 +13,7 @@
 					<div class="col-md login-cover rounded-left"></div>
 					<div class="col-md-7 text-center">
 						<div class="form-group rounded-top signup-head shadow p-3 sticky-top">
-							<div class="text-right"><a href="help.php?help=need">Need help?</a></div>
+							<div class="text-right"><a href="help.php?help=need" target="_blank">Need help?</a></div>
 						</div>
 						<div class="rounded-top rounded-bottom form-inner shadow p-3">
 							<br>
@@ -38,7 +38,7 @@
 								</div>
 							</form>
 						</div>
-						<div class="signup-links">
+						<div class="form-links">
 							<div class="text-gray-dark">Have an account?</div>
 							<a class="text-light" href="login.php">Login</a>
 						</div>

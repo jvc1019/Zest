@@ -10,8 +10,8 @@
 }
 
 .reminderHolder ul > li {
-    background-color: rgba(89, 38, 19, 0.8);
-    color: #f8f9fa;
+    background-color: rgba(255, 204, 51, 0.8);
+    color: black;
 }
 
 .profileHolder {

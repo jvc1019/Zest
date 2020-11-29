@@ -10,6 +10,10 @@ if (isset($_POST['register'])) {
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 	$re_password = $_POST['re_password'];
+	$desc = "";
+	$theme = "default";
+	$avatar = "default";
+
 
 	//check if password and re-entered password are the same
 	if ($password !== $re_password) {
@@ -23,7 +27,7 @@ if (isset($_POST['register'])) {
 		<?php
 	} else {
 
-		$sql = "INSERT INTO user(`user_Name`, `user_Email`, `user_Password`) VALUES ('$username', '$email', '$password');";
+		$sql = "INSERT INTO user(`user_Name`, `user_Email`, `user_Password`, `user_Desc`, `user_Theme`, `user_Avatar`) VALUES ('$username', '$email', '$password', '$desc', '$theme', '$avatar');";
 
 		//if username is nonexistent
 		if ($conn->query($sql)) { 

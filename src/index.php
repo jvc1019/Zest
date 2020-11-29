@@ -60,19 +60,21 @@ include("notification.php");
 				</div>
 			</div>
 			<div class="col-sm-6 px-5 py-3">
-				<h1 class="text-light" id="time"></h1>
-				<p class="text-light" id="date"></p>
-				<script>
-					function setTime() {
-						$("#time").text(moment().format("h:mm A"));
-						$("#date").text(moment().format("dddd, MMMM DD YYYY"));
-					}
+				<div class="card-body applink">
+					<h1 class="text-light" id="time"></h1>
+					<p class="text-light" id="date"></p>
+					<script>
+						function setTime() {
+							$("#time").text(moment().format("h:mm A"));
+							$("#date").text(moment().format("dddd, MMMM DD YYYY"));
+						}
 
-					setTime();
-					setInterval(setTime, 1000);
-				</script>
-
-				<?php include("reminders.php"); ?>
+						setTime();
+						setInterval(setTime, 1000);
+					</script>
+					<br>
+					<?php include("reminders.php"); ?>
+				</div>
 			</div>
 
 		</div>
