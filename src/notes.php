@@ -10,11 +10,12 @@ include('user_details.php');
     <div class="container-fluid with-sidebar" id="main">
         <div class="alert alert-light shadow sticky-top" role="alert">
             <!-- sort by | sort direction | search box | add new note -->
-            <!--    2    |       2        |      5     |       3      -->
+            <!--    2    |       4        |      4     |       2      -->
             <div class="row form-inline">
                 <div class="col-sm-2">
                     <h3 class="text-primary text-center">Notebook</h3>
                 </div>
+                <div class="col-sm-1 text-center">Sort by: </div>
                 <!-- Sort by and sort direction -->
                 <div class="col-sm-3">
                     <select id="sortDir" class="btn btn-sm">
@@ -35,7 +36,7 @@ include('user_details.php');
                     </select>
                 </div>
                 <!-- Search box -->
-                <div class="col-sm-5 input-group">
+                <div class="col-sm-4 input-group">
                     <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" autocomplete="off" placeholder="Search notes by name...">
                     <div class="input-group-append">
                         <button id="search_clear" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0" data-toggle="tooltip" title="Clear search">

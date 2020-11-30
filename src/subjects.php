@@ -16,7 +16,8 @@ include("notification.php");
                 <div class="col-sm-2">
                     <h3 class="text-primary text-center">Subjects</h3>
                 </div>
-                <div class="col-sm-7">
+                <div class="col-sm-1 text-center">Sort by: </div>
+                <div class="col-sm-6">
                     <select id="sortBy" class="btn btn-sm">
                         <?php
                         $value = isset($_GET['sortBy']) ? $_GET['sortBy'] : 0;

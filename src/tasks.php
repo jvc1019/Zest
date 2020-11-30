@@ -23,6 +23,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 <div class="col-sm-2">
                     <h3 class="text-primary text-center">Tasks</h3>
                 </div>
+                <div class="col-sm-1 text-center">Sort by: </div>
                 <!-- Sort by and sort direction -->
                 <div class="col-sm-3 form-inline">
                     <select id="sortBy" class="btn btn-sm">
@@ -59,7 +60,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                     </select>
                 </div>
                 <!-- Search box -->
-                <div class="col-sm-5 input-group">
+                <div class="col-sm-4 input-group">
                     <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" placeholder="Search tasks by name..." value="<?php if (!empty($_GET['search']) && empty($_GET['tag'])) {
                                                                                                                                                                                                             echo html_entity_decode($_GET['search'], ENT_COMPAT);
                                                                                                                                                                                                         } else {
