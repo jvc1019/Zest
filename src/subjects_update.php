@@ -18,6 +18,7 @@
     $sTimeEnd = $_POST ["subjectTimeEnd"];
     $uID = $_POST['user_ID'];
 
+    // Hi Adriel, I want to ask what is the use for echoing all of these here?
     echo $sID;
     echo $sImg;
     echo $sType;
@@ -26,7 +27,7 @@
     echo $sDay;
     echo $uID;
 
-    $sqlUpdate = "UPDATE subject SET subject_Image='$sImg', subject_Name='$sName', subject_Type='$sType', subject_Instructor='$sInstructor'            , subject_Desc='$sDesc', subject_Day='$sDay', subject_Time_Start='$sTimeStart', subject_Time_End='$sTimeEnd' 
+    $sqlUpdate = "UPDATE subject SET subject_Image='$sImg', subject_Name='$sName', subject_Type='$sType', subject_Instructor='$sInstructor', subject_Desc='$sDesc', subject_Day='$sDay', subject_Time_Start='$sTimeStart', subject_Time_End='$sTimeEnd' 
                     WHERE subject_ID='$sID'";
     $conn->query($sqlUpdate);
 
