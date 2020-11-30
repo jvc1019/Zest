@@ -2,6 +2,7 @@
     background-image: url("/cmsc128/resources/bg/study.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .applink {

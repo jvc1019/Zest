@@ -50,19 +50,19 @@
 			if (!($result->num_rows > 0)) {
 				echo "<div class='text-light'>No tasks due tomorrow.</div>";
 			} else {
-				while ($row = $result->fetch_assoc() && $count <= 3) {
+				while ($row = $result->fetch_assoc()) {
 					$name = html_entity_decode($row['task_Name'], ENT_QUOTES);
 			?>
 					<li class="list-group-item">
 						<h6 class="text-truncate"><?php echo $name; ?></h6>
 						<?php echo date("g:i A", strtotime($row['task_Due'])); ?>
 						<!-- dot/divider icon -->
-						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<!-- <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-						</svg>
+						</svg> -->
 						<script>
 							var time = "<?php echo date("g:i A", strtotime($row['task_Due'])); ?>";
-							document.write(moment(time, "h:mm A").fromNow());
+							// document.write(moment(time, "(h:mm A").fromNow());
 						</script>
 					</li>
 			<?php
@@ -74,7 +74,6 @@
 				}
 			}
 			?>
-
 		</ul>
 	</div>
 </div>

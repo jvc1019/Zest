@@ -3,6 +3,7 @@
         url("/cmsc128/resources/bg/wallhaven-2eg5ky.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .reminderHolder ul > li {
