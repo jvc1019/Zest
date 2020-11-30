@@ -18,10 +18,10 @@
 				<br><br>
 				<ul class="nav nav-tabs nav-pills with-arrow flex-sm-row">
 					<li class="nav-item flex-sm-fill text-center helpTitle">
-						<a class="nav-link<?php if ($default == "help"){echo " active";} ?>" data-toggle="pill" href="#help">Problems</a>
+						<a class="nav-link<?php if ($default == "help"){echo " active";} ?>" data-toggle="pill" href="#help">Getting Started</a>
 					</li>
 					<li class="nav-item flex-sm-fill text-center helpTitle">
-						<a class="nav-link<?php if ($default == "need"){echo " active";} ?>" data-toggle="pill" href="#need">Need Help?</a>
+						<a class="nav-link<?php if ($default == "features"){echo " active";} ?>" data-toggle="pill" href="#need">Features</a>
 					</li>
 					<li class="nav-item flex-sm-fill text-center helpTitle">
 						<a class="nav-link<?php if ($default == "forgot"){echo " active";} ?>" data-toggle="pill" href="#forgot">Forgot Your Password?</a>
@@ -35,7 +35,7 @@
 				</ul>
 				<div class="tab-content">
 					<div id="help" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "help"){echo " active";} else {echo " fade";}?>">
-						<h3>Problems</h3>
+						<h3>Getting Started</h3>
 						<br>
 						<div class="helpText">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam tempor orci eu lobortis elementum nibh. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Vitae suscipit tellus mauris a diam maecenas. Lobortis elementum nibh tellus molestie nunc non blandit. Malesuada fames ac turpis egestas maecenas pharetra. Massa id neque aliquam vestibulum morbi blandit cursus risus at. Ac auctor augue mauris augue neque gravida in. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Malesuada nunc vel risus commodo viverra maecenas. Placerat orci nulla pellentesque dignissim enim sit amet venenatis urna.
@@ -49,8 +49,8 @@
 							Odio facilisis mauris sit amet. At auctor urna nunc id. Turpis cursus in hac habitasse platea dictumst quisque. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing. Vel pretium lectus quam id leo in vitae turpis. Gravida arcu ac tortor dignissim convallis aenean et. Donec ac odio tempor orci dapibus ultrices in. Aliquam sem et tortor consequat id porta nibh venenatis cras. Hendrerit gravida rutrum quisque non tellus orci ac auctor augue. Risus quis varius quam quisque. Sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus. In hac habitasse platea dictumst vestibulum rhoncus est.
 						</div>
 					</div>
-					<div id="need" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "need"){echo " active";} else {echo " fade";}?>">
-						<h3>Need Help?</h3>
+					<div id="features" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "features"){echo " active";} else {echo " fade";}?>">
+						<h3>Features</h3>
 						<br>
 						<div class="helpText">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam tempor orci eu lobortis elementum nibh. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Vitae suscipit tellus mauris a diam maecenas. Lobortis elementum nibh tellus molestie nunc non blandit. Malesuada fames ac turpis egestas maecenas pharetra. Massa id neque aliquam vestibulum morbi blandit cursus risus at. Ac auctor augue mauris augue neque gravida in. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Malesuada nunc vel risus commodo viverra maecenas. Placerat orci nulla pellentesque dignissim enim sit amet venenatis urna.

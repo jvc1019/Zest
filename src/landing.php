@@ -16,7 +16,7 @@
                     <div class="row rounded-bottom rounded-top form-box shadow p-3">
                         <div class="col-md text-center">
                             <div class="form-group rounded-top form-head shadow p-3 sticky-top">
-                                <div class="text-right"><a href="help.php?help=need" target="_blank">Need help?</a></div>
+                                <div class="text-right"><a href="help.php?help=help" target="_blank">Need help?</a></div>
                             </div>
                             <div class="rounded-top rounded-bottom form-inner shadow p-3">
                                 <br>
