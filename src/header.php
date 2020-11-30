@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-	<title>Prapp - The Productivity App</title>
+	<title>Zest - Work with Productivity</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Stylesheets -->
@@ -15,7 +15,7 @@
 	<link href="css/overrides.css" rel="stylesheet">
 
 	<!-- Favicon -->
-	<link rel="icon" href="../resources/favicon.jpg"> <!-- Replace this with the proper icon -->
+	<link rel="icon" href="../resources/icons/zest.png">
 
 	<!-- Bootstrap JS and jQuery-->
 	<script src="js/jquery-3.5.1.slim.min.js"></script>
