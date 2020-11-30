@@ -4,9 +4,9 @@ include("user_details.php");
 include("notification.php");
 ?>
 
-<body>
+<body class="index-bg">
 	<?php include("sidebar.php") ?>
-	<div class="container-fluid py-5 fullpage with-sidebar index-bg">
+	<div class="container-fluid py-5 fullpage with-sidebar">
 		<div class="row">
 			<div class="col-sm-6 px-5 py-4">
 

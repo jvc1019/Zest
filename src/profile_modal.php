@@ -70,6 +70,7 @@
                                 <option <?php if ($user['user_Theme'] == "theme1") echo "selected" ?> value="theme1">Study</option>
                                 <option <?php if ($user['user_Theme'] == "theme2") echo "selected" ?> value="theme2">Sunset</option>
                                 <option <?php if ($user['user_Theme'] == "theme3") echo "selected" ?> value="theme3">Street</option>
+                                <option <?php if ($user['user_Theme'] == "theme4") echo "selected" ?> value="theme4">Seashore</option>
                             </select>
                         </div>
                     </div>

@@ -1,0 +1,25 @@
+.index-bg {
+    background-image: url("/cmsc128/resources/bg/beach.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.applink {
+    background-color: rgba(0, 204, 255, 0.8);
+    color: black;
+}
+
+.text-light {
+    color: rgb(0, 51, 0) !important;
+}
+
+.reminderHolder ul > li {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+.profileHolder {
+    background-color: rgba(0, 204, 255, 0.8);
+    color: black;
+}
