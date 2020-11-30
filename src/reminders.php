@@ -30,6 +30,7 @@
 					$count++;
 
 					if ($count >= 3) {
+						echo "<a class='text-light text-center' href='tasks.php'>See More...</a>";
 						break;
 					}
 				}
@@ -57,18 +58,19 @@
 						<h6 class="text-truncate"><?php echo $name; ?></h6>
 						<?php echo date("g:i A", strtotime($row['task_Due'])); ?>
 						<!-- dot/divider icon -->
-						<!-- <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-						</svg> -->
+						</svg>
+						Tomorrow
 						<script>
 							var time = "<?php echo date("g:i A", strtotime($row['task_Due'])); ?>";
-							// document.write(moment(time, "(h:mm A").fromNow());
 						</script>
 					</li>
 			<?php
 					$count++;
 
 					if ($count >= 3) {
+						echo "<a class='text-light text-center' href='tasks.php'>See More...</a>";
 						break;
 					}
 				}
