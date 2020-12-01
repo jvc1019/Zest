@@ -2,7 +2,6 @@
 include('header.php');
 include('user_details.php');
 ?>
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
 <body>
     <!-- navigation bar -->
