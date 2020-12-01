@@ -1,7 +1,9 @@
 <div id="notes_list">
-    <div class="card-deck fourcolumns mt-5">
+    <div class="card-deck fourcolumns mt-3">
         <!-- <div class="row"> -->
         <?php
+        require_once("conn.php");
+        include_once('user_details.php');
         $query = "SELECT * FROM note LEFT JOIN user ON note.user_ID=user.user_ID WHERE note.user_ID=$user_ID";
         $result = $conn->query($query);
         if (!($result->num_rows > 0)) { ?>
