@@ -183,7 +183,7 @@ git clone https://github.com/jvc1019/CMSC128.git
 3. For subcomponents that need database access, you can include `conn.php`. Check out `tasks_add.php` to see how it works.
 
 ```php
-include("conn.php");
+require_once("conn.php");
 ```
 
 4. To implement notifications, you may use `notification.php`. Check out `notification.php` to see how to use it, and around line 142 on `tasks.php` to see a sample implementation. **UPDATE: Notifications will now appear at the bottom right of the screen for consistency.**
