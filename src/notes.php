@@ -62,12 +62,8 @@ include('user_details.php');
         <!-- Show last status as a bootstrap alert -->
 
         <div id="output"></div>
-        <?php
-        if (empty($search)) {
-            include('notes_list.php');
-        } else {
-            include('notes_search.php');
-        } ?>
+        <div id="display"> <?php include('notes_list.php'); ?> </div>
+
     </div>
 
     <!-- MODAL -->
@@ -80,35 +76,37 @@ include('user_details.php');
                 $("#search").val("");
             });
         });
-    </script>
 
-    <!-- Live search -->
-    <script type="text/javascript">
+        function fill(Value) {
+            $('#search').val(Value);
+            $('#display').hide();
+        }
         $(document).ready(function() {
+            //On pressing a key on search box. This function will be called.
             $("#search").keyup(function() {
-                var query = $(this).val();
-                if (query != "") {
+                var name = $('#search').val();
+                if (name == "") {
                     $.ajax({
-                        url: 'notes_search.php',
-                        method: 'POST',
+                        type: "POST",
+                        url: "notes_list.php",
                         data: {
-                            query: query
+                            search: name
                         },
-                        success: function(data) {
-
-                            $('#output').html(data);
-                            $('#output').css('display', 'block');
-
-                            $("#search").focusout(function() {
-                                $('#output').css('display', 'none');
-                            });
-                            $("#search").focusin(function() {
-                                $('#output').css('display', 'block');
-                            });
+                        success: function(html) {
+                            $("#display").html(html).show();
                         }
                     });
                 } else {
-                    $('#output').css('display', 'none');
+                    $.ajax({
+                        type: "POST",
+                        url: "notes_search.php",
+                        data: {
+                            search: name
+                        },
+                        success: function(html) {
+                            $("#display").html(html).show();
+                        }
+                    });
                 }
             });
         });
