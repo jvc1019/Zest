@@ -4,10 +4,10 @@
     require_once "conn.php";
     include('user_details.php');
 
-    if (isset($_POST['query'])) {
+    if (isset($_POST['search'])) {
      
-    $query = "SELECT * FROM note LEFT JOIN user ON note.user_ID=user.user_ID WHERE note.user_ID=$user_ID AND note_Title LIKE '{$_POST['query']}%' LIMIT 100";
-    $result = mysqli_query($conn, $query);
+    $search = "SELECT * FROM note LEFT JOIN user ON note.user_ID=user.user_ID WHERE note.user_ID=$user_ID AND note_Title LIKE '{$_POST['search']}%' LIMIT 100";
+    $result = mysqli_query($conn, $search);
     
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_array($result)) {?>
