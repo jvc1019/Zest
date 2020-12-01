@@ -4,7 +4,7 @@
 -->
 
 <?php
-include('conn.php');
+require_once("conn.php");
 
 $whitespace = array(" ", "\t", "\n", "\r", "\0", "\x0B");
 
