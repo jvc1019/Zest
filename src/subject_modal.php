@@ -99,7 +99,7 @@
                                         Schedule:
                                     </label>
                                     <div class="input-group">
-                                        <select id="addSubjectDay" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectDay">
+                                        <select id="addSubjectDay" class="custom-select text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectDay">
                                             <option <?php if ($subjects['subject_Day'] == "") echo "selected" ?> hidden value="">Click to select a day</option>
                                             <option <?php if ($subjects['subject_Day'] == "Monday") echo "selected" ?>>Monday</option>
                                             <option <?php if ($subjects['subject_Day'] == "Tuesday") echo "selected" ?>>Tuesday</option>
@@ -122,7 +122,16 @@
                                                 </svg>
                                                 Time Start:
                                             </label>
-                                            <input class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectTimeStart" type="time" value="<?php echo $subjects['subject_Time_Start']; ?>" name="subjectTimeStart">
+                                            <div class="input-group">
+                                                <input class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectTimeStart" type="time" value="<?php echo $subjects['subject_Time_Start']; ?>" name="subjectTimeStart">
+                                                <div class="input-group-append">
+                                                    <button type="button" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0 remove_reminder" onclick="document.getElementById('addSubjectTimeStart').value = ''" data-toggle="tooltip" title="Remove start time" aria-label="Remove start time">
+                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col">
                                             <label for="addSubjectTimeEnd" class="form-label h6">
@@ -132,7 +141,16 @@
                                                 </svg>
                                                 Time End:
                                             </label>
-                                            <input class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectTimeEnd" type="time" value="<?php echo $subjects['subject_Time_End']; ?>" name="subjectTimeEnd">
+                                            <div class="input-group">
+                                                <input class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addSubjectTimeEnd" type="time" value="<?php echo $subjects['subject_Time_End']; ?>" name="subjectTimeEnd">
+                                                <div class="input-group-append">
+                                                    <button type="button" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0 remove_reminder" onclick="document.getElementById('addSubjectTimeEnd').value = ''" data-toggle="tooltip" title="Remove end time" aria-label="Remove end time">
+                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -146,7 +164,7 @@
                                         Banner Image:
                                     </label>
                                     <div class="input-group">
-                                        <select id="addSubjectBanner" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectBanner">
+                                        <select id="addSubjectBanner" class="custom-select text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectBanner">
                                             <option <?php if ($subjects['subject_Image'] == "img_breakfast.jpg") echo "selected" ?> value="img_breakfast.jpg">Breakfast</option>
                                             <option <?php if ($subjects['subject_Image'] == "img_graduation.jpg") echo "selected" ?> value="img_graduation.jpg">Graduation</option>
                                             <option <?php if ($subjects['subject_Image'] == "img_honors.jpg") echo "selected" ?> value="img_honors.jpg">Honors</option>
