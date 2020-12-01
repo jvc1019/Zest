@@ -33,7 +33,7 @@ spawnNotification();
 -->
 
 <!-- A Bootstrap Toast -->
-<div id="notification" style="position:absolute; bottom:1em; right:1em; min-width: 350px; z-index:1080;">
+<div id="notification" style="position:fixed; bottom:1em; right:1em; min-width: 350px; z-index:1080;">
     <div class="toast toast-template" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
         <div class="toast-header">
             <div class="toast-title mr-auto font-weight-bold text-primary">
