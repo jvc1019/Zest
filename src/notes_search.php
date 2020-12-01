@@ -5,8 +5,8 @@
         include('user_details.php');
 
         if (isset($_POST['search'])) {
-
-            $search = "SELECT * FROM note LEFT JOIN user ON note.user_ID=user.user_ID WHERE note.user_ID=$user_ID AND note_Title LIKE '{$_POST['search']}%' LIMIT 100";
+            $searchQuery = htmlentities($_POST['search'], ENT_QUOTES);
+            $search = "SELECT * FROM note LEFT JOIN user ON note.user_ID=user.user_ID WHERE note.user_ID=$user_ID AND note_Title LIKE '$searchQuery%' LIMIT 100";
             $result = $conn->query($search);
 
             if ($result->num_rows > 0) {
