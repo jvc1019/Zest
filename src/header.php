@@ -15,7 +15,7 @@
 	<link href="css/overrides.css" rel="stylesheet">
 
 	<!-- Favicon -->
-	<link rel="icon" href="../resources/icons/zest.png">
+	<link rel="icon" href="../resources/icons/lemon-icon.png">
 
 	<!-- Bootstrap JS and jQuery-->
 	<script src="js/jquery-3.5.1.slim.min.js"></script>
