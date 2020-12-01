@@ -74,15 +74,9 @@ include('user_details.php');
             $("#search_clear").on('click', function(e) {
                 $("#search").val("");
             });
-        });
 
-        function fill(Value) {
-            $('#search').val(Value);
-            $('#display').hide();
-        }
-        $(document).ready(function() {
             //On pressing a key on search box. This function will be called.
-            $("#search").keyup(function() {
+            $("#search").on("input", function() {
                 var name = $('#search').val();
                 if (name == "") {
                     $.ajax({
@@ -109,6 +103,11 @@ include('user_details.php');
                 }
             });
         });
+
+        function fill(Value) {
+            $('#search').val(Value);
+            $('#display').hide();
+        }
     </script>
 </body>
 
