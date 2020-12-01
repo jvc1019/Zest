@@ -177,13 +177,10 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             function sort() {
                 $sortBy = $("#sortBy").val();
                 $sortDir = $("#sortDir").val();
-                $searchQuery = htmlEntities($("#search").val());
+                $searchQuery = $("#search").val();
                 window.location.search = "sortBy=" + $sortBy + "&sortDir=" + $sortDir + "&search=" + $searchQuery;
             }
 
-            function htmlEntities(str) {
-                return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-            }
             // END OF SORTING HANDLER
 
             // Show completed tasks button
