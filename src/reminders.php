@@ -29,7 +29,7 @@
 			<?php
 					$count++;
 
-					if ($count >= 3) {
+					if ($count > 3) {
 						echo "<a class='text-light text-center' href='tasks.php'>See More...</a>";
 						break;
 					}
@@ -69,7 +69,7 @@
 			<?php
 					$count++;
 
-					if ($count >= 3) {
+					if ($count > 3) {
 						echo "<a class='text-light text-center' href='tasks.php'>See More...</a>";
 						break;
 					}
