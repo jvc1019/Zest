@@ -3,9 +3,9 @@ include('conn.php');
 
 $note_ID = $_POST['note_ID'];
 
-$note_Title = "'" . $_POST['note_Title'] . "'";
+$note_Title = "'" . trim(htmlentities($_POST['note_Title'], ENT_QUOTES)) . "'";
 $note_Content = !empty($_POST['note_Content']) ? "'" . $_POST['note_Content'] . "'" : "NULL";
-$note_Tags = !empty($_POST['note_Tags']) ? "'" . $_POST['note_Tags'] . "'" : "NULL";
+$note_Tags = !empty(trim(htmlentities($_POST['note_Tags'], ENT_QUOTES))) ? "'" . implode(",", array_unique(explode(",", str_replace($whitespace, "", trim(htmlentities($_POST['note_Tags'], ENT_QUOTES)))))) . "'" : "NULL";
 
 $query = "UPDATE `note` 
           SET `note_Title`=$note_Title, 
