@@ -46,7 +46,7 @@ include('user_details.php');
 					</svg>
 					Cancel
 				</button>
-				<button type="submit" name="submit" class="btn btn-sm text-primary">
+				<button type="submit" class="btn btn-sm text-primary">
 					<!-- check/floppy icon -->
 					<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-arrow-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 						<path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
