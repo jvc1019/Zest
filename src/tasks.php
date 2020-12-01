@@ -34,7 +34,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                             <option selected value="0">Name</option>
                             <option value="1">Due date</option>
                         <?php
-                        } elseif ($value == 1) {
+                        } else if ($value == 1) {
                         ?>
                             <option value="0">Name</option>
                             <option selected value="1">Due date</option>
@@ -50,7 +50,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                             <option selected value="0">Ascending</option>
                             <option value="1">Descending</option>
                         <?php
-                        } elseif ($value == 1) {
+                        } else if ($value == 1) {
                         ?>
                             <option value="0">Ascending</option>
                             <option selected value="1">Descending</option>
