@@ -193,6 +193,7 @@ include("notification.php");
                                     </div>
 
                                     <input type="text" name="user_ID" value=<?php echo $user_ID; ?> hidden>
+                                   
                                 </div>
                             </div>
 
@@ -225,6 +226,7 @@ include("notification.php");
                             Save
                         </button>
                         </form>
+                        
                     </div>
                 </div>
             </div>
@@ -306,4 +308,7 @@ include("notification.php");
             ?>
         </div>
     </div>
+    <script>
+        spawnNotification()
+    </script>
 </body>
