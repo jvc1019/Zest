@@ -26,6 +26,8 @@
     // }
     $conn->query($subjectsql);
     $status = "Successfully added subject " . $sName . ".";
+    $status_heading = "Add Subject";
 
-    header('Location:subjects.php?status=' . $status . "&isNotif=true");
+
+    header("Location:subjects.php?status_heading=Subjects&status=". $status. "&type=notif");
 ?>
