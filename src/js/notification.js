@@ -36,8 +36,12 @@ function spawnNotificationBase(status_heading, status, type, delay) {
     if (status.length) {
         var toast = $(".toast-template").clone();
         toast.removeClass("toast-template");
+        toast.prop("hidden", false);
         toast.find(".toast-header>.toast-title").text(status_heading);
         toast.find(".toast-body").text(status);
+        toast.find(".close_notification").click(function () {
+            toast.toast("hide");
+        });
 
         var sound;
 
@@ -56,8 +60,12 @@ function spawnNotificationBase(status_heading, status, type, delay) {
 
             if (type === "notif") {
                 setTimeout(function () {
-                    toast.toast("dispose");
+                    toast.toast("hide");
                 }, 4500);
+            } else if (type === "alarm") {
+                setTimeout(function () {
+                    toast.toast("hide");
+                }, 60000);
             }
 
             toast.on("hidden.bs.toast", function () {
