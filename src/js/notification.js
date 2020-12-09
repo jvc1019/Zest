@@ -25,13 +25,14 @@ function spawnNotification() {
 
 /**
  * Spawn a custom notification
- * @param status_heading a string containing the heading of the notification, preferably the feature name (shown in boldface)
- * @param status a string containing the notification message
- * @param type either "notif" or "alarm"
+ * @param {String} status_heading a string containing the heading of the notification, preferably the feature name (shown in boldface)
+ * @param {String} status a string containing the notification message
+ * @param {String} type either "notif" or "alarm"
+ * @param {number} delay in milliseconds
  */
 
 function spawnNotificationBase(status_heading, status, type, delay) {
-    if (status === undefined) return;
+    if (status === undefined || type != "notif" || type != "alarm" || isNaN(delay)) return;
 
     if (status.length) {
         var toast = $(".toast-template").clone();
