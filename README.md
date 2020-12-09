@@ -13,8 +13,6 @@ This will be the repository for CMSC 128 - Section 3. Files included would be fo
 
 ## Sprints
 
-Fourth sprint ends on December 10, 2020.
-
 ### 1. First sprint (ended October 22, 2020)
 
 -   The first sprint included the mockup designs for our project.
