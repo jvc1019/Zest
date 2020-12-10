@@ -38,7 +38,7 @@
 						<h3>Getting Started</h3>
 						<br>
 						<div class="helpText">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam tempor orci eu lobortis elementum nibh. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Vitae suscipit tellus mauris a diam maecenas. Lobortis elementum nibh tellus molestie nunc non blandit. Malesuada fames ac turpis egestas maecenas pharetra. Massa id neque aliquam vestibulum morbi blandit cursus risus at. Ac auctor augue mauris augue neque gravida in. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Malesuada nunc vel risus commodo viverra maecenas. Placerat orci nulla pellentesque dignissim enim sit amet venenatis urna.
+							Welcome to ZEST, a developing productivity web application designed for your work/study needs.
 						</div>
 						<br>
 						<div class="helpText">
@@ -53,19 +53,19 @@
 						<h4 class="">Subjects</h4>
 						<br>
 						<div class="helpText">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam tempor orci eu lobortis elementum nibh. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Vitae suscipit tellus mauris a diam maecenas. Lobortis elementum nibh tellus molestie nunc non blandit. Malesuada fames ac turpis egestas maecenas pharetra. Massa id neque aliquam vestibulum morbi blandit cursus risus at. Ac auctor augue mauris augue neque gravida in. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Malesuada nunc vel risus commodo viverra maecenas. Placerat orci nulla pellentesque dignissim enim sit amet venenatis urna.
+							The "Subjects" section allows you to organize, edit and personalize your subjects.
 						</div>
 						<br>
 						<h4>Tasks</h4>
 						<br>
 						<div class="helpText">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam tempor orci eu lobortis elementum nibh. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Vitae suscipit tellus mauris a diam maecenas. Lobortis elementum nibh tellus molestie nunc non blandit. Malesuada fames ac turpis egestas maecenas pharetra. Massa id neque aliquam vestibulum morbi blandit cursus risus at. Ac auctor augue mauris augue neque gravida in. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Malesuada nunc vel risus commodo viverra maecenas. Placerat orci nulla pellentesque dignissim enim sit amet venenatis urna.
+							The "Tasks" section allows you to arrange and organize your tasks in a form of a To-Do list.
 						</div>
 						<br>
 						<h4>Notebook</h4>
 						<br>
 						<div class="helpText">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam tempor orci eu lobortis elementum nibh. Viverra adipiscing at in tellus integer feugiat scelerisque varius. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Vitae suscipit tellus mauris a diam maecenas. Lobortis elementum nibh tellus molestie nunc non blandit. Malesuada fames ac turpis egestas maecenas pharetra. Massa id neque aliquam vestibulum morbi blandit cursus risus at. Ac auctor augue mauris augue neque gravida in. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Malesuada nunc vel risus commodo viverra maecenas. Placerat orci nulla pellentesque dignissim enim sit amet venenatis urna.
+							The "Notebook" section allows you to create notes for different uses.
 						</div>
 					</div>
 					<div id="forgot" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "forgot"){echo " active";} else {echo " fade";}?>">
@@ -80,31 +80,31 @@
 						</div>
 						<br>
 						<div class="helpText">
-							<form type="POST" action="landing.php">
+							<form type="GET" action="forgot.php">
 								<ol>
 									<li>
-										<div>Please input your username and email here:</div>
+										<div>We will send a message to your email for verification.<br>
+										Please input your username and email here:</div>
 										<br>
 										<div class="form-group">
-											Username: <input type="text" name="username">
+											Username: <input type="text" name="userName" placeholder="ex: Username123" required="">
 										</div>
 										<div class="form-group">
-											Email: <input type="email" name="email">
+											Email: <input type="email" name="userEmail" placeholder="ex: jdcruz@email.com" required="">
 										</div>
 									</li>
 									<li>
 										<div>We must know that you are human. Please enter the code in the picture:</div>
-										<img src="">
+										<img src="../resources/fake-captcha.png" style="width: 300px">
 										<div class="form-group">
-											Code: <input type="text" name="code">
+											Code: <input type="text" name="code" placeholder="Enter code" required="">
 										</div>
 									</li>
 									<li>
-										<div>Lastly, check the box to ensure that you agree with our terms of service.</div>
-										<div>You are not allowed to change your password after 60 days.</div>
-										<br>
+										<div>Lastly, check the box to ensure that you agree with our terms of service.<br>
+										You are not allowed to change your password after 60 days.</div><br>
 										<div class="form-group">
-											<input type="checkbox" name="agree"> I will not change my password again for the next 60 days or I will recieve proper disciplinary action.
+											<input type="checkbox" name="agree" required=""> I will not change my password again for the next 60 days or I will recieve proper disciplinary action.
 										</div>
 									</li>
 									<button type="submit">Submit</button>
@@ -115,8 +115,10 @@
 					<div id="about" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "about"){echo " active";} else {echo " fade";}?>">
 						<h3>About Us</h3>
 						<br>
+						<img src="../resources/icons/lemon-icon.png">
+						<br><br>
 						<div class="helpText">
-							(*insert app name) is an application designed to help you in your work, school, or office with absolute productivity. It is created by 11 aspiring software developers from the University of the Philippines Visayas, located in Miag-ao, Iloilo, Philippines. We provide hand on features and services to your important work needs at the comfort of your own laptop in your own home during this pandemic.
+							ZEST is an application designed to help you in your work, school, or office with absolute productivity. It is created by 11 aspiring software developers from the University of the Philippines Visayas, located in Miag-ao, Iloilo, Philippines. We provide hand on features and services to your important work needs at the comfort of your own laptop in your own home during this pandemic.
 						</div>
 						<br>
 						<div class="helpText">
@@ -124,11 +126,11 @@
 						</div>
 						<br>
 						<div class="helpText">
-							Have no fear for (*insert app name) is here!
+							Have no fear for ZEST is here!
 						</div>
 						<br>
 						<div class="helpText">
-							We at (*insert app name) have a strong network of software developers who provide frequent updates to cater to your productivity needs. With our flexible time slots, on-time service guarantee and quality assurance, you can be assured of getting tasks done at your convenience.
+							We at ZEST have a strong network of software developers who provide frequent updates to cater to your productivity needs. With our flexible time slots, on-time service guarantee and quality assurance, you can be assured of getting tasks done at your convenience.
 						</div>
 						<br>
 					</div>
