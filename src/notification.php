@@ -27,9 +27,10 @@ Notification:
 Alarm: 
     tasks.php?status_heading=This is a status heading&status=This is a status text&type=alarm
 
-On tasks.php
-
+On tasks.php:
+<script>
 spawnNotification();
+</script>
 -->
 
 <!-- A Bootstrap Toast -->
