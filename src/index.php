@@ -9,19 +9,22 @@ include("notification.php");
 	<div class="container-fluid py-5 fullpage with-sidebar">
 		<div class="row">
 			<div class="col-sm-6 px-5 py-4">
-				<h2 class="text-light">Hey there, <?php echo $user_Name; ?>!</h2>
-				<a href="profile.php" class="btn btn-sm btn-light mr-1">
-					<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-					</svg>
-					My profile
-				</a>
-				<a href="logout.php" class="btn btn-sm btn-danger">
-					<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-door-closed-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" d="M4 1a1 1 0 0 0-1 1v13H1.5a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2a1 1 0 0 0-1-1H4zm2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-					</svg>
-					Logout
-				</a>
+				<h2 class="text-light text-center">Hey there, <?php echo $user_Name; ?>!</h2>
+				<h5 class="text-light text-center">What do you want to do today?</h5><br>
+				<h5 class="text-center">
+					<a href="profile.php" class="btn btn-sm btn-light mr-1">
+						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+						</svg>
+						My Profile
+					</a>
+					<a href="logout.php" class="btn btn-sm btn-danger">
+						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-door-closed-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M4 1a1 1 0 0 0-1 1v13H1.5a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2a1 1 0 0 0-1-1H4zm2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+						</svg>
+						Logout
+					</a>
+				</h5>
 
 				<div class="card-deck mt-5">
 					<div class="card shadow text-center applink" data-toggle="tooltip" title="Organize your subjects">
