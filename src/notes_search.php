@@ -14,7 +14,12 @@
                     <div class="card" style="height: 16em;">
                         <div class="card-body overflow-hidden">
                             <h5><?php echo $row['note_Title']; ?></h5>
-                            <p class="text-muted"><?php echo '🏷 ' . $row['note_Tags']; ?></p>
+                            <p class="text-muted" style="font-size:1.1vw;"><?php echo '
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-tag" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M2 2v4.586l7 7L13.586 9l-7-7H2zM1 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 1 6.586V2z"/>
+                                <path fill-rule="evenodd" d="M4.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                            </svg>
+                            ' . $row['note_Tags']; ?></p>
                             <?php echo $row['note_Content']; ?>
                         </div>
                         <div class="card-footer text-center">
@@ -78,7 +83,7 @@
                     </div>
                 <?php    }
             } else { ?>
-                <h6 class="text-center">No results found. Add some notes!</h6>
+                <h6 class="text-center">（；´д｀）ゞ No results found.</h6>
         <?php  }
         } ?>
     </div>
