@@ -61,33 +61,33 @@
 						<h3>Registration</h3>
 						<br>
 						<div class="helpText text-center">
-							When creating a new Account, you will be asked to enter a Username, an existing e-mail and your desired password.
+							Creating an account in Zest is simple, you will be asked to enter a Username, an existing e-mail and your desired password. Registration for Zest is completely free. When you register for Zest you will not be asked sensitive information like bank card or credit card information. When choosing a password for Zest make sure to use a strong password for added security!
 
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
+							
 						</div>
 						<br>
 						<h3>Logging In</h3>
 						<br>
 						<div class="helpText text-center">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
+							To log-in to your existing Zest account, you will be asked to enter your username and password. We guarantee that this will take less than a few seconds and that there are no extra steps. Once logged-in, you will be able to fully access the features that Zest has to offer.
 						</div>
 						<br>
 						<h3>Home Page</h3>
 						<br>
 						<div class="helpText text-center">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
-						</div>
+ 							The Home Page is where the productivity starts. We want this experience to be welcoming and informative, wasting absolutely no time. Upon landing in the home page, you will be greeted with upcoming tasks or tasks that are due for the day and due for the following day. The home page is where you can access all the features such as the notebook, subjects, and tasks.						
+	 					</div>
 						<br>
 						<h3>Profile Page</h3>
 						<br>
 						<div class="helpText text-center">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
+							The Profile Page allows you to give additional information such as your profile description or bio, edit your existing information such as your email address and username, setup your themes and avatars.
 						</div>
 						<br>
 						<h3>Avatars and Themes</h3>
 						<br>
 						<div class="helpText text-center">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
+							Introducing Avatar and Theme support in Zest. This allows you to change your profile avatar or icon and choose from a variety of themes that will give your workspace more vibrance and personality depending on the preferences of the user. 
 						</div>
 						<br>
 						<h3>Quick Links</h3>
