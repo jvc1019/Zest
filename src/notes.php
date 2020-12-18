@@ -9,10 +9,10 @@ include('user_details.php');
     <div class="container-fluid with-sidebar" id="main">
         <div class="alert alert-light shadow sticky-top" role="alert">
             <div class="row form-inline">
-                <div class="col-sm-2">
+                <div class="col-sm-1">
                     <h3 class="text-primary text-center">Notebook</h3>
                 </div>
-                <div class="col-sm-1 text-center">Sort by: </div>
+                <div class="col-sm-2 text-right">Sort by title:</div>
 
                 <!-- Sort by and sort direction -->
                 <div class="col-sm-3">
@@ -36,7 +36,7 @@ include('user_details.php');
 
                 <!-- search box -->
                 <div class="col-sm-4 input-group">
-                    <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" autocomplete="off" placeholder="Search notes by name...">
+                    <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" autocomplete="off" placeholder="Search notes by title...">
                     <div class="input-group-append">
                         <button id="search_clear" class="btn border-primary border-top-0 border-left-0 border-right-0 rounded-0" data-toggle="tooltip" title="Clear search">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
