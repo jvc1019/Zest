@@ -14,7 +14,7 @@
 			<div class="col-md-10 helpHolder">
 				<h2>HELP & SUPPORT</h2>
 				<br>
-				<img class="helpPic" src="/cmsc128/resources/help-banner.jpg">
+				<img class="helpPic" src="/cmsc128/resources/help/help-banner.jpg">
 				<br><br>
 				<ul class="nav nav-tabs nav-pills with-arrow flex-sm-row">
 					<li class="nav-item flex-sm-fill text-center helpTitle">
@@ -46,7 +46,7 @@
 						<div class="helpText text-center">
 							ZEST is a Productivity App, an application created by a group of aspiring software developers designed to help you in your school work with absolute productivity. It has different features and services that will surely help you in your important work needs.
 							<br>...<br>
-							Learn more in the <a href="help.php?help=about">ABOUT</a> section.
+							Learn more about us in the <a href="help.php?help=about">ABOUT</a> section.
 						</div>
 						<br>
 						<h3>What do we offer?</h3>
@@ -61,33 +61,48 @@
 						<h3>Registration</h3>
 						<br>
 						<div class="helpText text-center">
-							Creating an account in Zest is simple, you will be asked to enter a Username, an existing e-mail and your desired password. Registration for Zest is completely free. When you register for Zest you will not be asked sensitive information like bank card or credit card information. When choosing a password for Zest make sure to use a strong password for added security!
-
-							
+							Creating an account in Zest is simple, you will be asked to enter a Username, an existing e-mail and your desired password. Registration for Zest is completely free. When you register for Zest you will not be asked sensitive information like your bank account or credit card information. When choosing a password for Zest make sure to use a strong password for maximum security!
+							<br><br>
+							<img class="helpPic" src="/cmsc128/resources/help/help-register.jpg">
+							<br><br>
 						</div>
 						<br>
 						<h3>Logging In</h3>
 						<br>
 						<div class="helpText text-center">
 							To log-in to your existing Zest account, you will be asked to enter your username and password. We guarantee that this will take less than a few seconds and that there are no extra steps. Once logged-in, you will be able to fully access the features that Zest has to offer.
+							<br><br>
+							<img class="helpPic" src="/cmsc128/resources/help/help-login.jpg">
+							<br><br>
 						</div>
 						<br>
 						<h3>Home Page</h3>
 						<br>
 						<div class="helpText text-center">
- 							The Home Page is where the productivity starts. We want this experience to be welcoming and informative, wasting absolutely no time. Upon landing in the home page, you will be greeted with upcoming tasks or tasks that are due for the day and due for the following day. The home page is where you can access all the features such as the notebook, subjects, and tasks.						
+ 							The Home Page is where the productivity starts. We want this experience to be welcoming and informative, wasting absolutely no time. Upon landing in the home page, you will be greeted with upcoming tasks or tasks that are due for the day and due for the following day. The home page is where you can access all the features such as the Subjects, Tasks, and Notebook.						
+	 						<br><br>
+							<img class="helpPic" src="/cmsc128/resources/help/help-home.jpg">
+							<br><br>
 	 					</div>
 						<br>
 						<h3>Profile Page</h3>
 						<br>
 						<div class="helpText text-center">
-							The Profile Page allows you to give additional information such as your profile description or bio, edit your existing information such as your email address and username, setup your themes and avatars.
+							The Profile Page allows you to give additional information such as your profile description or bio, as well as update/edit your existing information such as your username and email address. You can also select from various avatars and themes that satisfy to your liking.
+							<br><br>
+							<img class="helpPic" src="/cmsc128/resources/help/help-profile.jpg">
+							<br><br>
 						</div>
 						<br>
 						<h3>Avatars and Themes</h3>
 						<br>
 						<div class="helpText text-center">
-							Introducing Avatar and Theme support in Zest. This allows you to change your profile avatar or icon and choose from a variety of themes that will give your workspace more vibrance and personality depending on the preferences of the user. 
+							Introducing Avatar and Theme support in Zest. This allows you to change your profile avatar or icon and choose from a variety of themes that will give your workspace more vibrance and personality depending on your personal preferences.
+							<br><br>
+							<img class="helpPic" src="/cmsc128/resources/help/help-avatars.jpg">
+							<br><br>
+							<img class="helpPic" src="/cmsc128/resources/help/help-themes.jpg">
+							<br><br>
 						</div>
 						<br>
 						<h3>Quick Links</h3>
@@ -104,7 +119,9 @@
 						<br>
 						<div class="helpText text-center">
 							The "Subjects" section allows you to organize, edit and personalize your subjects.
-
+							<br><br>
+							<img class="helpPic" src="/cmsc128/resources/help/help-subjects.jpg">
+							<br><br>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
 						</div>
 						<br>
@@ -112,7 +129,9 @@
 						<br>
 						<div class="helpText text-center">
 							The "Tasks" section allows you to arrange and organize your tasks in a form of a To-Do list.
-
+							<br><br>
+							<img class="helpPic" src="/cmsc128/resources/help/help-tasks.jpg">
+							<br><br>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
 						</div>
 						<br>
@@ -120,8 +139,29 @@
 						<br>
 						<div class="helpText text-center">
 							The "Notebook" section allows you to create notes for different uses.
-
+							<br><br>
+							<img class="helpPic" src="/cmsc128/resources/help/help-notes.jpg">
+							<br><br>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
+						</div>
+						<br>
+						<h4>Upcoming Features?</h4>
+						<br>
+						<div class="helpText text-center">
+							We will probably have more features in our web app when the time comes. For now, just enjoy the existing ones that will surely catch your attention and help you on your daily needs.
+							<br><br>
+							<img class="helpPic" src="/cmsc128/resources/help/help-more.jpg">
+							<br><br>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
+						</div>
+						<br><br>
+						<h3>Quick Links</h3>
+						<br>
+						<div class="helpText text-center">
+							<a href="help.php?help=help">Let's get started!!!</a><br>
+							<a href="help.php?help=forgot">Did you forget your password?</a><br>
+							<a href="help.php?help=about">Want to know more about us?</a><br>
+							<a href="help.php?help=contact">Do you want to contact the developers?</a>
 						</div>
 					</div>
 					<div id="forgot" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "forgot"){echo " active";} else {echo " fade";}?>">
@@ -201,7 +241,15 @@
 						<div class="helpText text-center">
 							We at ZEST have a strong network of software developers who provide frequent updates to cater to your productivity needs. With our flexible time slots, on-time service guarantee and quality assurance, you can be assured of getting tasks done at your convenience.
 						</div>
+						<br><br>
+						<h3>Quick Links</h3>
 						<br>
+						<div class="helpText text-center">
+							<a href="help.php?help=help">Let's get started!!!</a><br>
+							<a href="help.php?help=features">Check out our features...</a><br>
+							<a href="help.php?help=forgot">Did you forget your password?</a><br>
+							<a href="help.php?help=contact">Do you want to contact the developers?</a>
+						</div>
 					</div>
 					<div id="contact" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "contact"){echo " active";} else {echo " fade";}?>">
 						<h3>Contact Us</h3>
@@ -234,6 +282,15 @@
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
   							<path fill-rule="evenodd" d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.122C.002 7.343.01 6.6.064 5.78l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
 							</svg> Zest Official
+						</div>
+						<br><br>
+						<h3>Quick Links</h3>
+						<br>
+						<div class="helpText text-center">
+							<a href="help.php?help=help">Let's get started!!!</a><br>
+							<a href="help.php?help=features">Check out our features...</a><br>
+							<a href="help.php?help=forgot">Did you forget your password?</a><br>
+							<a href="help.php?help=about">Want to know more about us?</a><br>
 						</div>
 					</div>
 				</div>
