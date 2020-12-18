@@ -6,7 +6,7 @@
 
         if (isset($_POST['search'])) {
             $searchQuery = htmlentities($_POST['search'], ENT_QUOTES);
-            $search = "SELECT * FROM note LEFT JOIN user ON note.user_ID=user.user_ID WHERE note.user_ID=$user_ID AND ((note_Title LIKE '$searchQuery%') OR (note_Tags LIKE '$searchQuery%')) LIMIT 100";
+            $search = "SELECT * FROM note LEFT JOIN user ON note.user_ID=user.user_ID WHERE note.user_ID=$user_ID AND note_Title LIKE '$searchQuery%' LIMIT 100";
             $result = $conn->query($search);
 
             if ($result->num_rows > 0) {
@@ -45,7 +45,7 @@
                         </div>
                     </div>
 
-                    <!-- Delete Note -->
+                    <!-- delete note -->
                     <div class="modal fade" id="notedelete<?php echo $row['note_ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
