@@ -6,11 +6,7 @@
         while ($row = $result->fetch_assoc()) {
             $tags = !empty(explode(",", $row["note_Tags"])) ? explode(",", $row["note_Tags"]) : $row["note_Tags"];
             $note_Tags = array_merge($note_Tags, $tags);
-        }
-        $count = array_count_values($note_Tags);
-        usort($note_Tags, function ($a, $b) use ($count) {
-        return $count[$b] - $count[$a];
-    }); ?><hr>
+        }?><hr>
 
 <!-- all tags display -->
 <div class="row">
