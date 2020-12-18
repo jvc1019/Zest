@@ -19,4 +19,4 @@ if (!$conn->query($query)) {
     $status = "Successfully edited note " . $note_Title . ".";
 }
 
-header('Location:notes.php?status=' . $status . "&isNotif=true");
+header("Location:notes.php?status_heading=Notes&status=$status&type=notif");
