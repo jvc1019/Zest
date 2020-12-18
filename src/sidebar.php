@@ -47,11 +47,12 @@
                 <span class='icon-text'><?php echo $user_Name; ?></span>
             </a>
 
-            <a href='logout.php'>
+            <a href="#logoutModal" data-toggle="modal">
                 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' class='bi nav-icon' width='1.5em'>
                 </svg>
                 <span class='icon-text'> Logout</span>
             </a>
+            <?php include("logout_modal.php");?>
         <?php } else { ?>
             <a href='login.php'>
                 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' class='bi bi-person-circle nav-icon' width='1.5em'>
