@@ -8,13 +8,12 @@ include('user_details.php');
     <?php include('sidebar.php'); ?>
     <div class="container-fluid with-sidebar" id="main">
         <div class="alert alert-light shadow sticky-top" role="alert">
-            <!-- sort by | sort direction | search box | add new note -->
-            <!--    2    |       4        |      4     |       2      -->
             <div class="row form-inline">
                 <div class="col-sm-2">
                     <h3 class="text-primary text-center">Notebook</h3>
                 </div>
                 <div class="col-sm-1 text-center">Sort by: </div>
+
                 <!-- Sort by and sort direction -->
                 <div class="col-sm-3">
                     <select id="sortDir" class="btn btn-sm">
@@ -34,7 +33,8 @@ include('user_details.php');
                         ?>
                     </select>
                 </div>
-                <!-- Search box -->
+
+                <!-- search box -->
                 <div class="col-sm-4 input-group">
                     <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" autocomplete="off" placeholder="Search notes by name...">
                     <div class="input-group-append">
@@ -45,7 +45,8 @@ include('user_details.php');
                         </button>
                     </div>
                 </div>
-                <!-- New Note button -->
+
+                <!-- new note button -->
                 <div class="col-sm-2">
                     <a href="#" data-toggle="modal" data-target="#addNoteModal" class="btn btn-sm btn-primary btn-block">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -55,17 +56,23 @@ include('user_details.php');
                     </a>
                 </div>
             </div>
+            <?php include('notes_tags.php'); ?>
         </div>
-        <!-- show last status message as a Boostrap alert -->
         <?php include('notification.php'); ?>
-        <!-- Show last status as a bootstrap alert -->
-
-        <div id="output"></div>
-        <div id="display"> <?php include('notes_list.php'); ?> </div>
-
+        <div id="display"> 
+            <?php
+            if (!empty($_GET['tag'])) {
+                $keyword = $_GET['tag'];
+                $pattern = preg_quote("\b$keyword\b");
+                $search_tag = "WHERE note_Tags RLIKE '$pattern' AND note.user_ID=$user_ID ORDER BY note_Title";
+                include("notes_tags_search.php");
+            } else {
+                include("notes_list.php");
+            } ?>
+        </div>
     </div>
 
-    <!-- MODAL -->
+    <!-- view note modal -->
     <?php include("notes_modal.php"); ?>
 
     <script>
@@ -75,7 +82,7 @@ include('user_details.php');
                 $("#search").val("");
             });
 
-            //On pressing a key on search box. This function will be called.
+            // on pressing a key on search box
             $("#search").on("input", function() {
                 var name = $('#search').val();
                 if (name == "") {
