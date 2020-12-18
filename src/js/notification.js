@@ -19,7 +19,6 @@ function spawnNotification() {
             ),
             {}
         );
-
     spawnNotificationBase(GET["status_heading"], GET["status"], GET["type"], 0);
 }
 
@@ -32,7 +31,7 @@ function spawnNotification() {
  */
 
 function spawnNotificationBase(status_heading, status, type, delay) {
-    if (status === undefined || type != "notif" || type != "alarm" || isNaN(delay)) return;
+    if (status === undefined || ((type != "notif") && (type != "alarm")) || isNaN(delay)) return;
 
     if (status.length) {
         var toast = $(".toast-template").clone();
