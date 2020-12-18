@@ -1,6 +1,7 @@
 <?php
 include('header.php');
 include('user_details.php');
+include('notification.php');
 ?>
 
 <body>
@@ -57,8 +58,7 @@ include('user_details.php');
             </div>
             <?php include('notes_tags.php'); ?>
         </div>
-        <?php include('notification.php'); ?>
-        <div id="display"> 
+        <div id="display">
             <?php
             if (!empty($_GET['tag'])) {
                 $keyword = $_GET['tag'];
@@ -76,6 +76,9 @@ include('user_details.php');
 
     <script>
         $(document).ready(function() {
+            // Spawn notification if GET value is set
+            spawnNotification();
+
             // clears the search box 
             $("#search_clear").on('click', function(e) {
                 $("#search").val("");
