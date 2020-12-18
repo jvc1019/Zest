@@ -45,7 +45,6 @@ include('user_details.php');
                         </button>
                     </div>
                 </div>
-
                 <!-- new note button -->
                 <div class="col-sm-2">
                     <a href="#" data-toggle="modal" data-target="#addNoteModal" class="btn btn-sm btn-primary btn-block">
@@ -80,6 +79,7 @@ include('user_details.php');
             // clears the search box 
             $("#search_clear").on('click', function(e) {
                 $("#search").val("");
+                window.location.href = 'notes.php';
             });
 
             // on pressing a key on search box
