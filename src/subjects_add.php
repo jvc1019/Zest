@@ -25,13 +25,24 @@
 
     #Check if subject has duplicate name
     if ($result->num_rows > 0){
-        $status = "Failed to add subject " . $sName . ". Subject naame already exists";
+        $status = "Failed to add subject " . $sName . ". Subject name already exists";
     }
     else{
         $status = "Successfully added subject " . $sName . ".";
         $conn->query($subjectsql);
+        
+
+        #Case for if user decides not to select a time
+        #apparently mysql doesn't like empty values so after thorough research, it had to be forced into NULL
+        if (strlen($sTimeStart) == 0 && strlen($sTimeEnd) == 0){
+            echo "hello";
+
+            $nullsql = "UPDATE subject SET subject_Time_Start=null, subject_Time_End=null WHERE `subject_name`='$sName'";
+            $conn->query($nullsql);
+        }
     }
     
+
     //tasks.php?status_heading=This is a status heading&status=This is a status text&type=notif
     header("Location:subjects.php?status_heading=".$status_heading."&status=". $status. "&type=notif");
 ?>
