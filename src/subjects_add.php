@@ -18,16 +18,20 @@
                     subject_Day, subject_Time_Start, subject_Time_End, user_ID)
                     VALUES ('$sImg', '$sName', '$sType', '$sInstructor', '$sDesc', '$sDay', '$sTimeStart', '$sTimeEnd', '$uID')";
 
-    //Rework this
-    // if (!$conn->query($subjectsql)) {
-    //     $status = "Subject addition failed. " . $sName . " has already been made.";
-    // } else {
-    //     $status = "Successfully added task " . $sName . ".";
-    // }
-    $conn->query($subjectsql);
-    $status = "Successfully added subject " . $sName . ".";
+
     $status_heading = "Add Subject";
+    $subjectlist = "SELECT `subject_Name` FROM `subject` where `subject_name`='$sName'";
+    $result = $conn->query($subjectlist);
 
-
-    header("Location:subjects.php?status_heading=Subjects&status=". $status. "&type=notif");
+    #Check if subject has duplicate name
+    if ($result->num_rows > 0){
+        $status = "Failed to add subject " . $sName . ". Subject naame already exists";
+    }
+    else{
+        $status = "Successfully added subject " . $sName . ".";
+        $conn->query($subjectsql);
+    }
+    
+    //tasks.php?status_heading=This is a status heading&status=This is a status text&type=notif
+    header("Location:subjects.php?status_heading=".$status_heading."&status=". $status. "&type=notif");
 ?>

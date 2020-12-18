@@ -309,6 +309,6 @@ include("notification.php");
         </div>
     </div>
     <script>
-        spawnNotification()
+        spawnNotification();
     </script>
 </body>
