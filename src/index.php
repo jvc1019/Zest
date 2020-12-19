@@ -5,6 +5,7 @@ include("notification.php");
 ?>
 
 <body class="index-bg">
+	<?php include("logout_modal.php");?>
 	<?php include("sidebar.php") ?>
 	<div class="container-fluid py-5 fullpage with-sidebar">
 		<div class="row">
@@ -60,7 +61,6 @@ include("notification.php");
 					</div>
 				</div>
 			</div>
-			<?php include("logout_modal.php");?>
 			<div class="col-sm-6 px-5 py-3">
 				<div class="card-body applink">
 					<h1 class="text-light" id="time"></h1>

@@ -12,10 +12,11 @@
 			<div class="col-md-1"></div>
 			<div class="col-md-10 helpHolder">
 				<br>
-				<h2>HELP & SUPPORT</h2>
-				<br>
-				<img class="helpPic rounded" src="/cmsc128/resources/help/help-banner.jpg">
-				<br>
+				<div class="help-banner">
+					<img class="helpPic rounded" src="/cmsc128/resources/help/help-banner.jpg">
+					<h2 class="helpHeader centered">HELP & SUPPORT</h2>
+				</div>
+				<br><br>
 				<ul class="nav nav-tabs nav-pills with-arrow flex-sm-row">
 					<li class="nav-item flex-sm-fill text-center helpTitle">
 						<a class="nav-link<?php if ($default == "help"){echo " active";} ?>" data-toggle="pill" href="#help">Getting Started</a>
@@ -48,13 +49,13 @@
 						<div class="helpText text-center">
 							ZEST is a Productivity App, an application created by a group of aspiring software developers designed to help you in your school work with absolute productivity. It has different features and services that will surely help you in your important work needs.
 							<br>...<br>
-							Learn more about us in the <a href="help.php?help=about">ABOUT</a> section.
+							Learn more about us in the <a class="helpLink" href="help.php?help=about">ABOUT</a> section.
 						</div>
 						<br>
 						<h3>What do we offer?</h3>
 						<br>
 						<div class="helpText text-center">
-							Our <a href="help.php?help=features">features</a> include the SUBJECTS, TASKS and NOTEBOOK sections, as well as different customization tools available for different types of users.
+							Our <a class="helpLink" href="help.php?help=features">features</a> include the SUBJECTS, TASKS and NOTEBOOK sections, as well as different customization tools available for different types of users.
 							The SUBJECTS section is where you can organize your subjects. You are able to add your subjects in a form where you can utilize them in creating your schedule.
 							The TASKS section is where you can create and organize different tasks. Our task manager will be able to remind you when you have upcoming dues and organize them according to your liking.
 							The NOTEBOOK section is where you can create notes with tags so that you can freely sort out your information.
@@ -110,10 +111,10 @@
 						<h3>Quick Links</h3>
 						<br>
 						<div class="helpText text-center">
-							<a href="help.php?help=features">Check out our features...</a><br>
-							<a href="help.php?help=forgot">Did you forget your password?</a><br>
-							<a href="help.php?help=about">Want to know more about us?</a><br>
-							<a href="help.php?help=contact">Do you want to contact the developers?</a>
+							<a class="helpLink" href="help.php?help=features">Check out our features...</a><br>
+							<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
+							<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
+							<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
 						</div>
 					</div>
 					<div id="features" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "features"){echo " active";} else {echo " fade";}?>">
@@ -162,10 +163,10 @@
 						<h3>Quick Links</h3>
 						<br>
 						<div class="helpText text-center">
-							<a href="help.php?help=help">Let's get started!!!</a><br>
-							<a href="help.php?help=forgot">Did you forget your password?</a><br>
-							<a href="help.php?help=about">Want to know more about us?</a><br>
-							<a href="help.php?help=contact">Do you want to contact the developers?</a>
+							<a class="helpLink" href="help.php?help=help">Let's get started!!!</a><br>
+							<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
+							<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
+							<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
 						</div>
 					</div>
 					<div id="forgot" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "forgot"){echo " active";} else {echo " fade";}?>">
@@ -222,7 +223,7 @@
 											<input type="checkbox" name="agree" required=""> I will not change my password again for the next 60 days or I will recieve proper disciplinary action.
 										</div>
 									</li>
-									<button class="btn btn-primary" type="submit">Submit</button>
+									<button class="btn btn-dark" type="submit">Submit</button>
 								</ol>
 							</form>
 						</div>
@@ -251,10 +252,10 @@
 						<h3>Quick Links</h3>
 						<br>
 						<div class="helpText text-center">
-							<a href="help.php?help=help">Let's get started!!!</a><br>
-							<a href="help.php?help=features">Check out our features...</a><br>
-							<a href="help.php?help=forgot">Did you forget your password?</a><br>
-							<a href="help.php?help=contact">Do you want to contact the developers?</a>
+							<a class="helpLink" href="help.php?help=help">Let's get started!!!</a><br>
+							<a class="helpLink" href="help.php?help=features">Check out our features...</a><br>
+							<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
+							<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
 						</div>
 					</div>
 					<div id="contact" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "contact"){echo " active";} else {echo " fade";}?>">
@@ -293,10 +294,10 @@
 						<h3>Quick Links</h3>
 						<br>
 						<div class="helpText text-center">
-							<a href="help.php?help=help">Let's get started!!!</a><br>
-							<a href="help.php?help=features">Check out our features...</a><br>
-							<a href="help.php?help=forgot">Did you forget your password?</a><br>
-							<a href="help.php?help=about">Want to know more about us?</a><br>
+							<a class="helpLink" href="help.php?help=help">Let's get started!!!</a><br>
+							<a class="helpLink" href="help.php?help=features">Check out our features...</a><br>
+							<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
+							<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
 						</div>
 					</div>
 				</div>
