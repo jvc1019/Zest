@@ -28,25 +28,25 @@
             $sDayCode = $sDayCode.$subjectDay;
             switch ($subjectDay){
                 case "1":
-                    $sDay = $sDay."Mon, ";
+                    $sDay = $sDay."MON, ";
                     break;
                 case "2":
-                    $sDay = $sDay."Tue, ";
+                    $sDay = $sDay."TUE, ";
                     break;
                 case "3":
-                    $sDay = $sDay."Wed, ";
+                    $sDay = $sDay."WED, ";
                     break;
                 case "4":
-                    $sDay = $sDay."Thu, ";
+                    $sDay = $sDay."THU, ";
                     break;
                 case "5":
-                    $sDay = $sDay."Fri, ";
+                    $sDay = $sDay."FRI, ";
                     break;
                 case "6":
-                    $sDay = $sDay."Sat, ";
+                    $sDay = $sDay."SAT, ";
                     break;
                 default:
-                    $sDay = $sDay."Sun, ";
+                    $sDay = $sDay."SUN, ";
                     break;
 
             }
@@ -55,6 +55,30 @@
         $sDay = substr_replace($sDay ,"", -1);	
         $sDay = substr_replace($sDay ,"", -1);
 
+        if ($sDayCode == "1234567"){
+            $sDay = "EVERYDAY";
+        }
+        else if ($sDayCode == "1"){
+            $sDay = "MONDAY";
+        }
+        else if ($sDayCode == "2"){
+            $sDay = "TUESDAY";
+        }
+        else if ($sDayCode == "3"){
+            $sDay = "WEDNESDAY";
+        }
+        else if ($sDayCode == "4"){
+            $sDay = "THURSDAY";
+        }
+        else if ($sDayCode == "5"){
+            $sDay = "FRIDAY";
+        }
+        else if ($sDayCode == "6"){
+            $sDay = "SATURDAY";
+        }
+        else if ($sDayCode == "7"){
+            $sDay = "SUNDAY";
+        }
     }
     else{
         $sDay = null;
@@ -66,7 +90,7 @@
                     WHERE subject_ID='$sID'";
     
     #take note of the 'and' here, very important for num_rows case
-    $subjectlist = "SELECT `subject_Name` FROM `subject` where `subject_name`='$sName' and `subject_ID`!=$sID";
+    $subjectlist = "SELECT `subject_Name` FROM `subject` WHERE `subject_name`='$sName' AND `subject_ID`!=$sID AND `user_ID`='$u_ID'";
     $result = $conn->query($subjectlist);
 
     #This is essentially the same as the one I put in subject just that its querying a different query
