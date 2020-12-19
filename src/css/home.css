@@ -106,6 +106,12 @@
     padding: 0px 20px 0px 20px;
 }
 
+.helpFormText {
+    background-color: black;
+    border-color: black;
+    color: rgb(239, 253, 95);
+}
+
 .helpLink, .helpLink:active, .helpLink:visited {
     color: rgb(255, 140, 0);
 }

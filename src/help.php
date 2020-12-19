@@ -190,30 +190,30 @@
 										Please input your username and email here:</div>
 										<br>
 										<div class="form-group">
-											Username: <input type="text" name="userName" placeholder="ex: Username123" required="">
+											Username: <input class="helpFormText" type="text" name="userName" placeholder="ex: Username123" required="">
 										</div>
 										<div class="form-group">
-											Email: <input type="email" name="userEmail" placeholder="ex: jdcruz@email.com" required="">
+											Email: <input class="helpFormText" type="email" name="userEmail" placeholder="ex: jdcruz@email.com" required="">
 										</div>
 									</li>
 									<li>
 										<div>Please input your current password and new password.</div>
 										<br>
 										<div class="form-group">
-											Current Password: <input type="password" name="userPassword" placeholder="Enter password" required="">
+											Current Password: <input class="helpFormText" type="password" name="userPassword" placeholder="Enter password" required="">
 										</div>
 										<div class="form-group">
-											Reenter Password: <input type="password" name="userRePassword" placeholder="Reenter password" required="">
+											Reenter Password: <input class="helpFormText" type="password" name="userRePassword" placeholder="Reenter password" required="">
 										</div>
 										<div class="form-group">
-											New Password: <input type="password" name="userNewPassword" placeholder="Enter new password" required="">
+											New Password: <input class="helpFormText" type="password" name="userNewPassword" placeholder="Enter new password" required="">
 										</div>
 									</li>
 									<li>
 										<div>We must know that you are human. Please enter the code in the picture:</div>
 										<img src="../resources/fake-captcha.png" style="width: 300px">
 										<div class="form-group">
-											Code: <input type="text" name="code" placeholder="Enter code" required="">
+											Code: <input class="helpFormText" type="text" name="code" placeholder="Enter code" required="">
 										</div>
 									</li>
 									<li>
