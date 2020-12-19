@@ -1,6 +1,5 @@
 <div id="notes_list">
     <div class="card-deck fourcolumns mt-3">
-        <!-- <div class="row"> -->
         <?php
         require_once("conn.php");
         include_once('user_details.php');
@@ -26,7 +25,7 @@
                     <div class="card-footer text-center">
 
                     <!-- view/edit note -->
-                        <a href="notes_editor.php?note_ID=<?php echo $row['note_ID']; ?>" id="editnote" class="btn text-primary btn-sm">
+                        <a href="#editNote<?php echo $row['note_ID']; ?>" data-toggle="modal" class="btn text-primary btn-sm">
                             <span>
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -80,10 +79,6 @@
                         </div>
                     </div>
                 </div>
-
-        <?php
-            }
-        }
-        ?>
+            <?php include('notes_modal.php'); }} ?>
     </div>
 </div>
