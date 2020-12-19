@@ -114,17 +114,43 @@ include("notification.php");
                                             </svg>
                                             Schedule:
                                         </label>
-                                        <div class="input-group">
-                                            <select id="addSubjectDay" class="custom-select text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="subjectDay">
-                                                <option hidden value="">Click to select a day</option>
-                                                <option>Monday</option>
-                                                <option>Tuesday</option>
-                                                <option>Wednesday</option>
-                                                <option>Thursday</option>
-                                                <option>Friday</option>
-                                                <option>Saturday</option>
-                                                <option>Sunday</option>
-                                            </select>
+                                        <br>
+
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="1" name="subjectDay[]">Mon
+                                            </label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="2" name="subjectDay[]">Tue
+                                            </label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="3" name="subjectDay[]">Wed
+                                            </label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="4" name="subjectDay[]">Thu
+                                            </label>
+                                        </div>
+                                        <br>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="5" name="subjectDay[]">Fri
+                                            </label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="6" name="subjectDay[]">Sat
+                                            </label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="7" name="subjectDay[]">Sun
+                                            </label>
                                         </div>
                                     </div>
 

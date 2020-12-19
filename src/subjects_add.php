@@ -9,10 +9,21 @@
     $sType = $_POST ["subjectType"];
     $sInstructor = $_POST ["subjectInstructor"];
     $sDesc = $_POST ["subjectDesc"];
-    $sDay = $_POST ["subjectDay"];
     $sTimeStart = $_POST ["subjectTimeStart"];
     $sTimeEnd = $_POST ["subjectTimeEnd"];
     $uID = $_POST['user_ID'];
+
+    
+    //For the subject day (M,T,W,Th,F,Sa,Su --> Respectively)
+    if (!empty($_POST['subjectDay'])){
+        $Days = "";
+        foreach ($_POST['subjectDay'] as $subjectDay){
+            $sDay = $sDay.$subjectDay;
+        }
+    }
+    else{
+        $sDay = null;
+    }
 
     $subjectsql = "INSERT INTO subject (subject_Image, subject_Name, subject_Type, subject_Instructor, subject_Desc, 
                     subject_Day, subject_Time_Start, subject_Time_End, user_ID)
@@ -44,5 +55,5 @@
     
 
     //tasks.php?status_heading=This is a status heading&status=This is a status text&type=notif
-    header("Location:subjects.php?status_heading=".$status_heading."&status=". $status. "&type=notif");
+    // header("Location:subjects.php?status_heading=".$status_heading."&status=". $status. "&type=notif");
 ?>
