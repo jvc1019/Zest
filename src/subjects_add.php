@@ -89,5 +89,5 @@
     
 
     //tasks.php?status_heading=This is a status heading&status=This is a status text&type=notif
-    // header("Location:subjects.php?status_heading=".$status_heading."&status=". $status. "&type=notif");
+    header("Location:subjects.php?status_heading=".$status_heading."&status=". $status. "&type=notif");
 ?>
