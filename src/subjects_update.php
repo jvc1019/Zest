@@ -120,8 +120,3 @@
     
     $status_heading = "Update Subject";
     header("Location:subjects.php?status_heading=".$status_heading."&status=". $status. "&type=notif");
-
-
-//     UPDATE posts
-// SET subject='This is a test', content='This is the new content'
-// WHERE id='1'
