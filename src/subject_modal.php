@@ -99,44 +99,61 @@
                                         Schedule:
                                     </label>
                                     <br>
-
-                                    <div class="form-check-inline">
-                                        <label class="form-check-label">                                                                                            
-                                            <input type="checkbox" class="form-check-input" value="1" name="subjectDay[]" <?php if (strpos($subjects['subject_DayCode'],"1") !== false) echo "checked" ?>>Mon
-                                        </label>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">                                                                                            
+                                                    <input type="checkbox" class="form-check-input" value="1" name="subjectDay[]" <?php if (strpos($subjects['subject_DayCode'],"1") !== false) echo "checked" ?>>Mon
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="2" name="subjectDay[]" <?php if (strpos($subjects['subject_DayCode'],"2") !== false) echo "checked" ?>>Tue
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="3" name="subjectDay[]" <?php if (strpos($subjects['subject_DayCode'],"3") !== false) echo "checked" ?>>Wed
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-check-inline">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="2" name="subjectDay[]" <?php if (strpos($subjects['subject_DayCode'],"2") !== false) echo "checked" ?>>Tue
-                                        </label>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="4" name="subjectDay[]" <?php if (strpos($subjects['subject_DayCode'],"4") !== false) echo "checked" ?>>Thu
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="5" name="subjectDay[]" <?php if (strpos($subjects['subject_DayCode'],"5") !== false) echo "checked" ?>>Fri
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="6" name="subjectDay[]" <?php if (strpos($subjects['subject_DayCode'],"6") !== false) echo "checked" ?>>Sat
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-check-inline">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="3" name="subjectDay[]" <?php if (strpos($subjects['subject_DayCode'],"3") !== false) echo "checked" ?>>Wed
-                                        </label>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="7" name="subjectDay[]" <?php if (strpos($subjects['subject_DayCode'],"7") !== false) echo "checked" ?>>Sun
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-check-inline">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="4" name="subjectDay[]" <?php if (strpos($subjects['subject_DayCode'],"4") !== false) echo "checked" ?>>Thu
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="form-check-inline">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="5" name="subjectDay[]" <?php if (strpos($subjects['subject_DayCode'],"5") !== false) echo "checked" ?>>Fri
-                                        </label>
-                                    </div>
-                                    <div class="form-check-inline">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="6" name="subjectDay[]" <?php if (strpos($subjects['subject_DayCode'],"6") !== false) echo "checked" ?>>Sat
-                                        </label>
-                                    </div>
-                                    <div class="form-check-inline">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="7" name="subjectDay[]" <?php if (strpos($subjects['subject_DayCode'],"7") !== false) echo "checked" ?>>Sun
-                                        </label>
-                                    </div>
-
 
                                 </div>
 
