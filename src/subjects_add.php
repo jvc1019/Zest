@@ -21,7 +21,7 @@
         foreach ($_POST['subjectDay'] as $subjectDay){
             
             #this day code allows for placeholders in subjects update
-            #It's not THAT elegant, but its the best way I can think of (• ▽ •;) Go Me! XD
+            #It's not THAT elegant, but its the best way I can think of (• ▽ •;)
             $sDayCode = $sDayCode.$subjectDay;
             switch ($subjectDay){
                 case "1":
@@ -47,11 +47,9 @@
                     break;
 
             }
-            //fix this, this is supposed to remove ', ' at the last bit of $sDay string
-            substr_replace($sDay ,"", -1);	
-            substr_replace($sDay ,"", -1);
-
         }
+        $sDay = substr_replace($sDay ,"", -1);	
+        $sDay = substr_replace($sDay ,"", -1);
 
     }
     else{
