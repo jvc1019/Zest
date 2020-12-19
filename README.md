@@ -42,12 +42,13 @@ This will be the repository for CMSC 128 - Section 3. Files included would be fo
 -   Home page looks different, with new design and features
 -   Fixed bugs and issues.
 
-### 4. Final Output
+### 5. Final Prototype
 
 -   Ongoing
 
 ## Consultations
 
+-   December 22, 2020 (Final Presentation) *TENTATIVE!!!*
 -   November 26, 2020 (Overall UI Consultation #1)
 -   November 4, 2020 (Wireframe Consultation)
 
