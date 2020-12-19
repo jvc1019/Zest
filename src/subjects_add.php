@@ -16,18 +16,50 @@
     
     //For the subject day (M,T,W,Th,F,Sa,Su --> Respectively)
     if (!empty($_POST['subjectDay'])){
-        $Days = "";
+        $sDayCode = "";
+        $sDay = "";
         foreach ($_POST['subjectDay'] as $subjectDay){
-            $sDay = $sDay.$subjectDay;
+            
+            #this day code allows for placeholders in subjects update
+            #It's not THAT elegant, but its the best way I can think of (• ▽ •;)
+            $sDayCode = $sDayCode.$subjectDay;
+            switch ($subjectDay){
+                case "1":
+                    $sDay = $sDay."Mon, ";
+                    break;
+                case "2":
+                    $sDay = $sDay."Tue, ";
+                    break;
+                case "3":
+                    $sDay = $sDay."Wed, ";
+                    break;
+                case "4":
+                    $sDay = $sDay."Thu, ";
+                    break;
+                case "5":
+                    $sDay = $sDay."Fri, ";
+                    break;
+                case "6":
+                    $sDay = $sDay."Sat, ";
+                    break;
+                default:
+                    $sDay = $sDay."Sun, ";
+                    break;
+
+            }
         }
+        $sDay = substr_replace($sDay ,"", -1);	
+        $sDay = substr_replace($sDay ,"", -1);
+
     }
     else{
         $sDay = null;
+        $sDayCode = null;
     }
 
     $subjectsql = "INSERT INTO subject (subject_Image, subject_Name, subject_Type, subject_Instructor, subject_Desc, 
-                    subject_Day, subject_Time_Start, subject_Time_End, user_ID)
-                    VALUES ('$sImg', '$sName', '$sType', '$sInstructor', '$sDesc', '$sDay', '$sTimeStart', '$sTimeEnd', '$uID')";
+                    subject_Day, subject_DayCode, subject_Time_Start, subject_Time_End, user_ID)
+                    VALUES ('$sImg', '$sName', '$sType', '$sInstructor', '$sDesc', '$sDay', '$sDayCode', '$sTimeStart', '$sTimeEnd', '$uID')";
 
 
     $status_heading = "Add Subject";
@@ -45,7 +77,7 @@
 
         #Case for if user decides not to select a time
         #apparently mysql doesn't like empty values so after thorough research, it had to be forced into NULL
-        if (strlen($sTimeStart) == 0 && strlen($sTimeEnd) == 0){
+        if (strlen($sTimeStart) == 0 || strlen($sTimeEnd) == 0){
             echo "hello";
 
             $nullsql = "UPDATE subject SET subject_Time_Start=null, subject_Time_End=null WHERE `subject_name`='$sName'";
@@ -55,5 +87,5 @@
     
 
     //tasks.php?status_heading=This is a status heading&status=This is a status text&type=notif
-    // header("Location:subjects.php?status_heading=".$status_heading."&status=". $status. "&type=notif");
+    header("Location:subjects.php?status_heading=".$status_heading."&status=". $status. "&type=notif");
 ?>

@@ -115,42 +115,60 @@ include("notification.php");
                                             Schedule:
                                         </label>
                                         <br>
-
-                                        <div class="form-check-inline">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" value="1" name="subjectDay[]">Mon
-                                            </label>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input" value="1" name="subjectDay[]">Mon
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input" value="2" name="subjectDay[]">Tue
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input" value="3" name="subjectDay[]">Wed
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-check-inline">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" value="2" name="subjectDay[]">Tue
-                                            </label>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input" value="4" name="subjectDay[]">Thu
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input" value="5" name="subjectDay[]">Fri
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input" value="6" name="subjectDay[]">Sat
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-check-inline">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" value="3" name="subjectDay[]">Wed
-                                            </label>
-                                        </div>
-                                        <div class="form-check-inline">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" value="4" name="subjectDay[]">Thu
-                                            </label>
-                                        </div>
-                                        <br>
-                                        <div class="form-check-inline">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" value="5" name="subjectDay[]">Fri
-                                            </label>
-                                        </div>
-                                        <div class="form-check-inline">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" value="6" name="subjectDay[]">Sat
-                                            </label>
-                                        </div>
-                                        <div class="form-check-inline">
-                                            <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" value="7" name="subjectDay[]">Sun
-                                            </label>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input" value="7" name="subjectDay[]">Sun
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 

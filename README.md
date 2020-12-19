@@ -1,9 +1,9 @@
 # CMSC128
 
-## NOTICE: ALWAYS UPDATE DATABASE!!!
-## ALWAYS "GIT PULL/FETCH" BEFORE "GIT PUSH".
+## NOTICE: If you decided to update the database, please put (UPDATED DATABASE!!!) in your commit so that the rest of us will know.
+## NOTICE TOO: ALWAYS "GIT PULL/FETCH" BEFORE "GIT PUSH".
 
-This will be the repository for CMSC 128 - Section 3. Files included would be for the prototype system we will create in the scrum process through series of sprints.
+This will be the repository for CMSC 128 - Section 3. Files included would be for the prototype system we will create in the scrum process through series of sprints. The project will reach 4 sprints before the final prototype is created.
 
 ## Zoom Meeting Details:
 
@@ -42,12 +42,13 @@ This will be the repository for CMSC 128 - Section 3. Files included would be fo
 -   Home page looks different, with new design and features
 -   Fixed bugs and issues.
 
-### 4. Final Output
+### 5. Final Prototype
 
 -   Ongoing
 
 ## Consultations
 
+-   December 22, 2020 (Final Presentation) *TENTATIVE!!!*
 -   November 26, 2020 (Overall UI Consultation #1)
 -   November 4, 2020 (Wireframe Consultation)
 
@@ -67,7 +68,7 @@ This will be the repository for CMSC 128 - Section 3. Files included would be fo
 -   Garcia, Mico (Subjects)
 -   Jomoc, Gracielou (Notebook)
 -   Luciano, Kirl (Notebook)
--   Molina, Janley (Tasks, Reminders, Notebook (text editor) and other backend modules)
+-   Molina, Janley (Tasks, Reminders, Notebook (text editor))
 -   Rabe, Jett Adriel (Subjects)
 -   Zamudio, Kent (Login and Registration Pages)
 

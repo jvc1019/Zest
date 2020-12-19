@@ -19,16 +19,50 @@
 
     //For the subject day (M,T,W,Th,F,Sa,Su --> Respectively)
     if (!empty($_POST['subjectDay'])){
-        $Days = "";
+        $sDayCode = "";
+        $sDay = "";
         foreach ($_POST['subjectDay'] as $subjectDay){
-            $sDay = $sDay.$subjectDay;
+            
+            #this day code allows for placeholders in subjects update
+            #It's not THAT elegant, but its the best way I can think of (• ▽ •;)
+            $sDayCode = $sDayCode.$subjectDay;
+            switch ($subjectDay){
+                case "1":
+                    $sDay = $sDay."Mon, ";
+                    break;
+                case "2":
+                    $sDay = $sDay."Tue, ";
+                    break;
+                case "3":
+                    $sDay = $sDay."Wed, ";
+                    break;
+                case "4":
+                    $sDay = $sDay."Thu, ";
+                    break;
+                case "5":
+                    $sDay = $sDay."Fri, ";
+                    break;
+                case "6":
+                    $sDay = $sDay."Sat, ";
+                    break;
+                default:
+                    $sDay = $sDay."Sun, ";
+                    break;
+
+            }
+            //fix this, this is supposed to remove ', ' at the last bit of $sDay string
         }
+        $sDay = substr_replace($sDay ,"", -1);	
+        $sDay = substr_replace($sDay ,"", -1);
+
     }
     else{
         $sDay = null;
+        $sDayCode = null;
     }
 
-    $sqlUpdate = "UPDATE subject SET subject_Image='$sImg', subject_Name='$sName', subject_Type='$sType', subject_Instructor='$sInstructor', subject_Desc='$sDesc', subject_Day='$sDay', subject_Time_Start='$sTimeStart', subject_Time_End='$sTimeEnd' 
+
+    $sqlUpdate = "UPDATE subject SET subject_Image='$sImg', subject_Name='$sName', subject_Type='$sType', subject_Instructor='$sInstructor', subject_Desc='$sDesc', subject_Day='$sDay', subject_DayCode='$sDayCode', subject_Time_Start='$sTimeStart', subject_Time_End='$sTimeEnd' 
                     WHERE subject_ID='$sID'";
     
     #take note of the 'and' here, very important for num_rows case
