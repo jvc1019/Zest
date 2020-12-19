@@ -52,7 +52,7 @@
             }
             //fix this, this is supposed to remove ', ' at the last bit of $sDay string
         }
-       #cleanup for excess " '"
+       #cleanup for excess ", "
        $sDay = substr_replace($sDay ,"", -1);	
        $sDay = substr_replace($sDay ,"", -1);
 
