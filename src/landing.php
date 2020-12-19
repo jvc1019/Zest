@@ -6,10 +6,11 @@
             <div class="col-sm-6 p-5">
                 <div class="p-5 my-5">
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-6">
                             <img src="../resources/icons/lemon-icon.png" class="img-fluid title-img">
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-sm-6">
+                            <br><br>
                             <h1 class="text-light title my-0">Zest</h1>
                             <h4 class="text-light">Work + Productivity</h4>
                         </div>
@@ -30,7 +31,7 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control form-rounded" name="password" placeholder="Enter password" required="">
-                                    <a class="forgot" href="help.php?help=forgot" target="_blank"><small>Forgot your password?</small></a>
+                                    <a class="forgot" href="help.php?help=forgot" target="_blank"><br>Forgot your password?</a>
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary btn-block" type="submit">Log In</button>

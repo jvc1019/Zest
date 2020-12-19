@@ -18,9 +18,7 @@ if ($row['user_Name'] == $username && $row['user_Password'] == $password) {
 	session_start();
 	$_SESSION['user_Name'] = $username;
 	$logged = true;
-	// header("Location:index.php?status_heading=Welcome&status=You have successfully logged in");
-	header("Location:notes.php?status_heading=Welcome $username&status=You have succesfully logged in&type=notif");
+	header("Location:index.php?status_heading=Welcome $username&status=You have succesfully logged in&type=notif");
 } else {
-	header("Location:notes.php?status_heading=Login failed&status=Invalid username or password&type=notif");
-	// header("Location:login.php?status_heading=Login failed&status=Invalid username or password&isNotif=true");
+	header("Location:index.php?status_heading=Login failed&status=Invalid username or password&type=notif");
 }

@@ -30,5 +30,8 @@
 			</div>
 		</div>
 		<?php include("profile_modal.php"); ?>
+		<script>
+			spawnNotification();
+		</script>
 	</div>
 </body>

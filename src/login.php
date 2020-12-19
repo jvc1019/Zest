@@ -29,6 +29,7 @@
 								</div>
 							</form>
 						</div>
+						<br>
 						<div class="form-links">
 							<div class="text-gray-dark">Don't have an account yet?</div>
 							<a class="text-light" href="signup-page.php">Create an Account</a>

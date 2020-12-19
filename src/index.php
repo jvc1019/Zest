@@ -66,6 +66,8 @@ include("notification.php");
 					<h1 class="text-light" id="time"></h1>
 					<p class="text-light" id="date"></p>
 					<script>
+						spawnNotification();
+						
 						function setTime() {
 							$("#time").text(moment().format("h:mm A"));
 							$("#date").text(moment().format("dddd, MMMM DD YYYY"));
