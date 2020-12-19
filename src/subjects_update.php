@@ -52,38 +52,42 @@
             }
             //fix this, this is supposed to remove ', ' at the last bit of $sDay string
         }
-        $sDay = substr_replace($sDay ,"", -1);	
-        $sDay = substr_replace($sDay ,"", -1);
+       #cleanup for excess " '"
+       $sDay = substr_replace($sDay ,"", -1);	
+       $sDay = substr_replace($sDay ,"", -1);
 
-        if ($sDayCode == "1234567"){
-            $sDay = "EVERYDAY";
-        }
-        else if ($sDayCode == "1"){
-            $sDay = "MONDAY";
-        }
-        else if ($sDayCode == "2"){
-            $sDay = "TUESDAY";
-        }
-        else if ($sDayCode == "3"){
-            $sDay = "WEDNESDAY";
-        }
-        else if ($sDayCode == "4"){
-            $sDay = "THURSDAY";
-        }
-        else if ($sDayCode == "5"){
-            $sDay = "FRIDAY";
-        }
-        else if ($sDayCode == "6"){
-            $sDay = "SATURDAY";
-        }
-        else if ($sDayCode == "7"){
-            $sDay = "SUNDAY";
-        }
-    }
-    else{
-        $sDay = null;
-        $sDayCode = null;
-    }
+       #Special cases for better display
+       switch ($sDayCode){
+           case "1234567":
+               $sDay = "EVERYDAY";
+               break;
+           case "1":
+               $sDay = "MONDAY";
+               break;
+           case "2":
+               $sDay = "TUESDAY";
+               break;
+           case "3":
+               $sDay = "WEDNESDAY";
+                   break;
+           case "4":
+               $sDay = "THURSDAY";
+               break;
+           case "5":
+               $sDay = "FRIDAY";
+               break;
+           case "6":
+               $sDay = "SATURDAY";
+               break;
+           case "7":
+               $sDay = "SUNDAY";
+                   break;
+       }
+   }
+   else{
+       $sDay = null;
+       $sDayCode = null;
+   }
 
 
     $sqlUpdate = "UPDATE subject SET subject_Image='$sImg', subject_Name='$sName', subject_Type='$sType', subject_Instructor='$sInstructor', subject_Desc='$sDesc', subject_Day='$sDay', subject_DayCode='$sDayCode', subject_Time_Start='$sTimeStart', subject_Time_End='$sTimeEnd' 
