@@ -17,7 +17,7 @@
 						<input class="mr-2 form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" type="text" name="note_Title" value="<?php echo $row['note_Title'] ?>">
 					</div>
 					<div class="col">
-						<input class="ml-0 form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" type=" text" name="note_Tags" value="<?php echo $row['note_Tags'] ?>">
+						<input class="ml-0 form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" type=" text" name="note_Tags" onkeyup="nospaces(this)" value="<?php echo $row['note_Tags'] ?>">
 					</div>
 				</div>
 			</div>
@@ -49,3 +49,9 @@
 
 		</form>
 		<div>
+<script>
+    function nospaces(t){
+	if(t.value.match(/\s/g)){
+		alert('Separate multiple tags by a comma with no spaces.');
+		t.value=t.value.replace(/\s/g,''); }}
+</script>
