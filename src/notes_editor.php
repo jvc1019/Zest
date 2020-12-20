@@ -4,7 +4,7 @@
 	
 	$result = mysqli_query($conn, "SELECT * FROM note WHERE note_ID='" . $_GET['note_ID'] . "'");
 	$row = mysqli_fetch_array($result);?>
-	<center><h1 style="padding: 20px"> Edit Note <h1></center>
+	<center><h3 style="padding: 20px; color:#2786DD"> Edit Note <h3></center>
 
 	<div class="container" id="editnote">
 		<form method="POST" action="notes_edit.php" enctype="multipart/form-data">

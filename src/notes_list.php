@@ -35,7 +35,8 @@
                         </a>
 
                     <!-- view/edit note modal -->
-                    <div class="modal fade" id="editNote<?php echo $row['note_ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="Task Details" aria-hidden="true">	<div class="modal-dialog modal-lg">
+                    <div class="modal fade" id="editNote<?php echo $row['note_ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="Note Details" aria-hidden="true">	
+                        <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title text-primary">Edit Note</h5>
