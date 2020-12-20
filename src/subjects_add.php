@@ -1,6 +1,4 @@
-<!--used in adding new subjects-->
-<!--To be worked on by Mico and Jett-->
-
+<!--For adding new subjects-->
 <?php
     include("conn.php");
 

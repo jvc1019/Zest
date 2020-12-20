@@ -1,5 +1,7 @@
-<!--php file responsible for adding, editing, maintaining and deleting subjects-->
-<!--To be worked on by Mico and Jett-->
+<!--Main php file responsible for displaying the subjects. Adding, editing/updating, and deleting subjects can be done in this are
+Subjects are displayed in cards with 4 subjects maximum per row. Code by Mico and Jett (Adriel).
+Credits: Modal format based on Janley's task modal. -->
+
 <?php
 include("header.php");
 include("user_details.php");
@@ -277,14 +279,12 @@ include("notification.php");
         </div>
         <br>
 
-        <!-- <div class="shadow-none p-3 mb-8 bg-light rounded"> -->
+        <!--Start of card display-->
         <div class="card-deck fourcolumns">
             <?php
             // Hi, this is a query to get subjects
             $user_Name = $_SESSION['user_Name'];
             $user = $conn->query("SELECT * FROM user WHERE user_Name='$user_Name'")->fetch_assoc();
-
-            //fix this line, there is already something for this @ user_details
             $user_ID = $user['user_ID'];
 
             // $subjects = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
@@ -344,7 +344,6 @@ include("notification.php");
                     </div>
                     <?php include("subject_modal.php"); ?>
 
-
             <?php
                 }
             }
@@ -353,6 +352,7 @@ include("notification.php");
         </div>
     </div>
     <script>
+        //For notificaitons
         spawnNotification();
     </script>
 </body>

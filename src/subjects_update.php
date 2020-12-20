@@ -1,6 +1,4 @@
-<!--Hi Adriel here, some restrictions will be added by Mico or me soon
-    For now, the focus was a working update function
--->
+<!--For updating subjects, code is kinda sorta similar with subjects_add.php but I assure you its not XD-->
 <?php
 
     include("conn.php");
@@ -50,7 +48,6 @@
                     break;
 
             }
-            //fix this, this is supposed to remove ', ' at the last bit of $sDay string
         }
        #cleanup for excess ", "
        $sDay = substr_replace($sDay ,"", -1);	
