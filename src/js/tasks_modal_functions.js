@@ -38,7 +38,9 @@ function validate_tags(source) {
             return true;
         } else {
             for (let i = 0; i < split.length; i++) {
-                if (split[i].length > 12 || !/^[a-zA-Z0-9]+$/.test(split[i])) {
+                if (split[i].trim().length === 0){
+                    continue;
+                } else if (split[i].trim().length > 12 || !/^[a-zA-Z0-9]+$/.test(split[i].trim())) {
                     return true;
                 }
             }
