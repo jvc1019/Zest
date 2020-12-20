@@ -124,7 +124,6 @@ include('notification.php');
         </div>
     </div>
 
-</script>
     <script>
         $(document).ready(function() {
             // Spawn notification if GET value is set
