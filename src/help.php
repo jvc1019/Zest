@@ -1,4 +1,5 @@
 <?php include('header.php'); ?>
+<?php include('notification.php'); ?>
 <?php
 	session_start();
 	$default = $_GET['help'];
@@ -362,5 +363,8 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			spawnNotification()
+		</script>
 	</div>
 </body>
