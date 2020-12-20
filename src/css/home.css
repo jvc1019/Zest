@@ -13,27 +13,39 @@
     background-image: url("/cmsc128/resources/zest-cover.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    border-top-left-radius: 1rem !important;
+    border-bottom-left-radius: 1rem !important;
 }
 
 .form-box {
     background-color: #ffba33;
     padding: 0px 0px 0px 0px !important;
+    border-radius: 1rem !important;
+
 }
 .signup-head {
     background-color: white;
     padding: 20px 20px 20px 20px;
     margin: 40px 20px 0px 20px;
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
 }
 
 .form-head {
     background-color: white;
     padding: 20px 20px 20px 20px;
     margin: 70px 20px 0px 20px;
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+
+
 }
 .form-inner {
     background-color: white;
     padding: 30px 50px 30px 50px !important;
     margin: -5px 20px 20px 20px;
+    border-bottom-left-radius: 1rem !important;
+    border-bottom-right-radius: 1rem !important;
 }
 
 .form-links {
@@ -45,7 +57,6 @@
 }
 
 /*help css*/
-
 .helpHolder {
     background-color: rgb(25, 25, 25, 0.6);
     color: black;
