@@ -12,6 +12,10 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
+                <div class="text-info" style="font-style: italic; font-size: 12px;">
+                    Changing your account password is not included here.<br>Please click <a href="help.php?help=change">here</a> to change your password.
+                </div>
+                <br>
                 <form method="POST" action="profile_update.php?user_ID=<?php echo $user_ID; ?>" enctype="multipart/form-data">
                     <input type="hidden" name="userID" value="<?php echo $user['user_ID']; ?>">
                     <div class="form-group">
