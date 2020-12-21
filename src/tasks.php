@@ -175,10 +175,10 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             $("#search").on("input", sort);
 
             function sort() {
-                $sortBy = $("#sortBy").val();
-                $sortDir = $("#sortDir").val();
-                $searchQuery = $("#search").val();
-                window.location.search = "sortBy=" + $sortBy + "&sortDir=" + $sortDir + "&search=" + $searchQuery;
+                sortBy = $("#sortBy").val();
+                sortDir = $("#sortDir").val();
+                searchQuery = $("#search").val();
+                window.location.search = "sortBy=" + sortBy + "&sortDir=" + sortDir + "&search=" + searchQuery;
             }
 
             // END OF SORTING HANDLER
