@@ -4,6 +4,7 @@
 
     $sImg = $_POST ['subjectBanner'];
     $sName = $_POST ["subjectName"];
+    $sName = str_replace("'","\'",$sName);
     $sType = $_POST ["subjectType"];
     $sInstructor = $_POST ["subjectInstructor"];
     $sDesc = $_POST ["subjectDesc"];
