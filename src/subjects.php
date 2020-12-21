@@ -19,32 +19,17 @@ include("notification.php");
                     <h3 class="text-primary text-center">Subjects</h3>
                 </div>
                 <div class="col-sm-1 text-center">Sort by: </div>
-                <div class="col-sm-7">
-                    <select id="sortBy" class="btn btn-sm">
-                        <?php
-                        $value = isset($_GET['sortBy']) ? $_GET['sortBy'] : 0;
-                        if ($value == 0) {
-                        ?>
-                            <option selected value='0'>Type</option>
-                            <option value="1">Name</option>
-                            <option value="2">Day</option>
-                        <?php
-                        } elseif ($value == 1) {
-                        ?>
-                            <option value='0'>Type</option>
-                            <option selected value="1">Name</option>
-                            <option value="2">Day</option>
-                        <?php
-                        } elseif ($value == 2) {
-                        ?>
-                            <option value='0'>Type</option>
-                            <option value="1">Name</option>
-                            <option selected value="2">Day</option>
-                        <?php
-                        }
-                        ?>
-                    </select>
-                </div>
+                <form class="form-inline" name="sort" action="subjects.php" method="post">
+                    <div class="form-group">
+                        <select name="order" class="btn btn-sm">
+                                <option value="subject_Name" <?php echo (isset($_POST['order']) && $_POST['order'] == 'subject_Name') ? 'selected="selected"' : ''; ?>>Name</option>
+                                <option value="subject_Type" <?php echo (isset($_POST['order']) && $_POST['order'] == 'subject_Type') ? 'selected="selected"' : ''; ?>>Type</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-primary">Sort</button>  
+                </form>
+                <div class="col-sm-5">
+                </div>    
                 <!-- New Subject button -->
                 <div class="col-sm-2">
                     <button href="#" data-toggle="modal" data-target="#addSubjectModal" class="btn btn-sm btn-primary btn-block">
@@ -287,10 +272,10 @@ include("notification.php");
             $user = $conn->query("SELECT * FROM user WHERE user_Name='$user_Name'")->fetch_assoc();
             $user_ID = $user['user_ID'];
 
-            // $subjects = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
-            // $result = mysqli_query($conn, $query);
+            //Hi, this is a query to get sorting method
+            $sort_value = isset($_POST['order']) ? $_POST['order'] : "subject_Name";
 
-            $subjects = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY `subject_ID` ASC";
+            $subjects = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY ".$sort_value." ASC";
             $result = $conn->query($subjects);
 
             if (!($result->num_rows > 0)) { ?>
