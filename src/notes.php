@@ -57,13 +57,6 @@ include('notification.php');
         </div>
         <div id="display">
         <?php
-
-            $sort = "ASC";
-            if (!empty($_GET['sort'])) {
-                $sort = $_GET['sort'];
-                $sort = ($value == 0) ? "ASC" : "DESC";
-            }
-
             if (!empty($_GET['tag'])) {
                 $keyword = $_GET['tag'];
                 $pattern = preg_quote("\b$keyword\b");
@@ -170,7 +163,6 @@ include('notification.php');
 
         // sorting
         $("#sort").on("change", sort);
-        $("#search").on("input", sort);
         function sort() {
             $sort = $("#sort").val();
             window.location.search = "&sort=" + $sort;

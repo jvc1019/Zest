@@ -3,6 +3,11 @@
         <?php
         require_once("conn.php");
         include_once('user_details.php');
+        $sort = "ASC";
+        if (!empty($_GET['sort'])) {
+            $sort = $_GET['sort'];
+            $sort = ($value == 0) ? "ASC" : "DESC";
+        }
         $query = "SELECT * FROM note LEFT JOIN user ON note.user_ID=user.user_ID WHERE note.user_ID=$user_ID ORDER BY note_Title $sort";
         $result = $conn->query($query);
         if (!($result->num_rows > 0)) { ?>
