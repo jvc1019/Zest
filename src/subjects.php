@@ -291,7 +291,8 @@ include("notification.php");
                     <!--Cards Section-->
                     <div class="card">
                         <!--Card Banner-->
-                        <img class="card-img-top" src="/cmsc128/resources/subjectBanners/<?php echo $subjects['subject_Image']; ?>">
+                        <?php $sImg = isset($subjects['subject_Image']) ? $subjects['subject_Image'] : "img_breakfast.jpg";  ?>
+                        <img class="card-img-top" src="/cmsc128/resources/subjectBanners/<?php echo $sImg; ?>">
 
                         <!--Card Body-->
                         <div class="card-body overflow-hidden" style="height:9em">
