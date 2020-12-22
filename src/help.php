@@ -61,8 +61,6 @@
 							<br>...<br>
 							Learn more about us in the <a class="helpLink" href="help.php?help=about">ABOUT</a> section.
 						</div>
-						<br>
-						<a class="helpLink" href="#top">Back to Top</a>
 						<br><br>
 						<h3>What do we offer?</h3>
 						<br>
@@ -72,6 +70,9 @@
 							The TASKS section is where you can create and organize different tasks. Our task manager will be able to remind you when you have upcoming dues and organize them according to your liking.
 							The NOTEBOOK section is where you can create notes with tags so that you can freely sort out your information.
 						</div>
+						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br>
 						<hr>
 						<br>
 
@@ -101,10 +102,12 @@
 							</div>
 						</div>
 						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br>
 						<div class="row">
 							<div class="col-6 d-flex align-items-stretch">
 								<div class="card">
-									<img class="card-img-top" src="/cmsc128/resources/help/help-register.jpg">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-home.png">
 									<div class="card-body">
 										<h4 class="card-title">Home Page</h4>
 										<div class="card-text text-center">
@@ -116,7 +119,7 @@
 
 							<div class="col-6 d-flex align-items-stretch">
 								<div class="card">
-									<img class="card-img-top" src="/cmsc128/resources/help/help-login.jpg">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-profile.png">
 									<div class="card-body">
 										<h4 class="card-title">Profile Page</h4>
 										<div class="card-text text-center">
@@ -126,12 +129,13 @@
 								</div>
 							</div>
 						</div>
-
 						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br>
 						<div class="row">
 							<div class="col-6 d-flex align-items-stretch">
 								<div class="card">
-									<img class="card-img-top" src="/cmsc128/resources/help/help-register.jpg">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-avatars.jpg">
 									<div class="card-body">
 										<h4 class="card-title">Avatars and Themes</h4>
 										<div class="card-text text-center">
@@ -157,6 +161,9 @@
 								</div>
 							</div>
 						</div>
+						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br>
 					</div>
 
 <!--  -->
