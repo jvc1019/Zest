@@ -74,6 +74,13 @@
 						<br>
 						<hr>
 						<br>
+						<h3>Account Basics</h3>
+						<div class="helpText text-center">
+							Oh, so you want to know the basics of using this web app?<br>
+							Well, if you in-ZEST...
+						</div>
+						<br>
+
 
 						<div class="row">
 							<div class="col-6 d-flex align-items-stretch">
@@ -82,7 +89,7 @@
 									<div class="card-body">
 										<h4 class="card-title">Registration</h4>
 										<div class="card-text text-justify">
-											Creating an account in Zest is simple, you will be asked to enter a Username, an existing e-mail and your desired password. Registration for Zest is completely free. When you register for Zest you will not be asked sensitive information like your bank account or credit card information. When choosing a password for Zest make sure to use a strong password for maximum security!
+											Creating an account in Zest is simple, you will be asked to enter a Username, an existing e-mail and your desired password. Registration for Zest is completely free. When you register for Zest, you will not be asked sensitive information like your bank account or credit card information. When choosing a password for Zest make sure to use a strong password for maximum security!
 										</div>
 									</div>
 								</div>
@@ -172,7 +179,14 @@
 
 					<div id="features" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "features"){echo " active";} else {echo " fade";}?>">
 						<h1>Features</h1>
-						<br><br>
+						<br>
+						<div class="helpText text-center">
+							Zest offers three major features: Subjects, Tasks and Notebook.<br>
+							If you want to learn more on how to use each of them, continue reading this page.<br>
+							Go on! Try something new! Just like what they say...<br><br>
+							When life gives you lemons, make lem- NO! Go to ZEST!!!
+						</div>
+						<br>
 
 						<div class="row">
 							<div class="d-flex align-items-stretch">
@@ -300,9 +314,9 @@
 						<h1>Forgot your Password?</h1>
 						<br>
 						<div class="helpText text-center">
-							Have you already got an account, but forgotten your password?
-							<br>
-							Say no more! Please follow the steps below to retrieve back your account.
+							Have you already got an account, but forgotten your password?<br>
+							That's sad! But we're here to help you...<br>
+							Please follow the steps below to retrieve back your account.
 						</div>
 						<br>
 						<div class="helpText">
@@ -357,8 +371,8 @@
 						<h1>Change your Password?</h1>
 						<br>
 						<div class="helpText text-center">
-							Is your old password too boring? Well, we've got you covered.
-							<br>
+							Is your old password too boring? Has it gotten under you skin?<br>
+							Maybe under the orange's ZEST? Well, we've got you covered.<br><br>
 							Please follow the steps below to change your account's password.
 						</div>
 						<br>
@@ -432,6 +446,10 @@
 						<div class="helpText text-center">
 							We at ZEST have a strong network of software developers who provide frequent updates to cater to your productivity needs. With our flexible time slots, on-time service guarantee and quality assurance, you can be assured of getting tasks done at your convenience.
 						</div>
+						<br>
+						<div class="helpText text-center">
+							ZEST is at your BEST (in productivity)!!!
+						</div>
 						<br><br>
 						<h3>Quick Links</h3>
 						<br>
@@ -447,6 +465,8 @@
 						<h1>Contact Us</h1>
 						<br>
 						<div class="helpText text-center">
+							You want to find us?<br>
+							Some may say... ZEST is the life!!!<br><br>
 							You may contact us in the following platforms:
 						</div>
 						<br><br>
