@@ -40,6 +40,9 @@
 			<div class="col-lg"></div>
 		</div>
 
+		<script>
+			spawnNotification();
+		</script>
 		<!-- modal -->
 		<div class="modal fade" id="errorLoginModal" tabindex="-1" role="dialog">
 			<div class="modal-dialog">

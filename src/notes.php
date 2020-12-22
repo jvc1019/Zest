@@ -13,25 +13,22 @@ include('notification.php');
                 <div class="col-sm-1">
                     <h3 class="text-primary text-center">Notebook</h3>
                 </div>
-                <div class="col-sm-2 text-right">Sort by title:</div>
 
-                <!-- Sort by and sort direction -->
+                <!-- sorting button -->
+                <div class="col-sm-2 text-right">Sort by title:</div>
                 <div class="col-sm-3">
-                    <select id="sortDir" class="btn btn-sm">
+                    <select id="sort" class="btn btn-sm">
                         <?php
-                        $value = isset($_GET['sortDir']) ? $_GET['sortDir'] : 0;
-                        if ($value == 0) {
-                        ?>
+                        $value = isset($_GET['sort']) ? $_GET['sort'] : 0;
+                        if ($value == 0) {?>
                             <option selected value="0">Ascending</option>
                             <option value='1'>Descending</option>
                         <?php
-                        } elseif ($value == 1) {
-                        ?>
+                        } elseif ($value == 1) {?>
                             <option value="0">Ascending</option>
                             <option selected value="1">Descending</option>
                         <?php
-                        }
-                        ?>
+                        }?>
                     </select>
                 </div>
 
@@ -59,18 +56,18 @@ include('notification.php');
             <?php include('notes_tags.php'); ?>
         </div>
         <div id="display">
-            <?php
+        <?php
             if (!empty($_GET['tag'])) {
                 $keyword = $_GET['tag'];
                 $pattern = preg_quote("\b$keyword\b");
-                $search_tag = "WHERE note_Tags RLIKE '$pattern' AND note.user_ID=$user_ID ORDER BY note_Title";
+                $search_tag = "WHERE note_Tags RLIKE '$pattern' AND note.user_ID=$user_ID";
                 include("notes_tags_search.php");
             } else {
                 include("notes_list.php");
             } ?>
         </div>
     </div>
-
+    
     <!-- add note modal -->
     <div class="modal fade" id="addNoteModal" tabindex="-1" role="dialog" aria-labelledby="Add Note" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -126,7 +123,7 @@ include('notification.php');
 
     <script>
         $(document).ready(function() {
-            // Spawn notification if GET value is set
+            // spawn notification if get value is set
             spawnNotification();
 
             // clears the search box 
@@ -164,11 +161,20 @@ include('notification.php');
             });
         });
 
+        // sorting
+        $("#sort").on("change", sort);
+        function sort() {
+            $sort = $("#sort").val();
+            window.location.search = "&sort=" + $sort;
+        }
+
+        // display notes when searching
         function fill(Value) {
             $('#search').val(Value);
             $('#display').hide();
         }
 
+        // note tags input warning
         function nospaces(t){
 		if(t.value.match(/\s/g)){
 			alert('Separate multiple tags by a comma with no spaces.');

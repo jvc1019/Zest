@@ -1,3 +1,4 @@
+<!--Simple code for deleting subjects-->
 <?php
 
     include("conn.php");

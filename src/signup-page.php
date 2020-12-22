@@ -19,19 +19,16 @@
 							<br>
 							<form method="POST" action="#">
 								<div class="form-group">
-									<input type="text" class="form-control" name="username" placeholder="Enter username" value="<?php echo $username; ?>" required="">
+									<input type="text" class="form-control" id="usernamebox" name="username" placeholder="Enter username" value="<?php echo $username; ?>" required="">
 								</div>
 								<div class="form-group" data-toggle="tooltip" title="username@example.com">
 									<input type="text" class="form-control" name="email" placeholder="Enter email address" value="<?php echo $email; ?>" required="">
 								</div>
-								<div class="form-group" data-toggle="tooltip" data-html="true" title="<b>Password must contain:</b> <br> &#8226 8 characters <br> &#8226 upper and lowercase letters <br> &#8226 at least 1 number <br> &#8226 at least 1 special character">
-									<input type="password" class="form-control" name="password" placeholder="Enter password" required="">
+								<div class="form-group" data-toggle="tooltip" data-html="true" title="Password must contain at least 8 characters">
+									<input type="password" class="form-control" id="passbox" name="password" placeholder="Enter password" required="">
 								</div>
 								<div class="form-group">
-									<?php include('notification.php'); ?>
-								</div>
-								<div class="form-group">
-									<input type="password" class="form-control form-rounded" name="re_password" placeholder="Re-enter password" required="">
+									<input type="password" class="form-control form-rounded" id="repassbox" name="re_password" placeholder="Re-enter password" required="">
 								</div>
 								<div class="form-group">
 									<button class="btn btn-primary btn-block" type="submit" name="register">Sign Up</button>

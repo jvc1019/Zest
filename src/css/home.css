@@ -63,11 +63,18 @@
     min-height: 100px;
     min-width: 100px;
     padding: 20px 20px 0px 20px;
+    border-radius: 1rem !important;
 }
 
 .help-banner {
     position: relative;
     text-align: center;
+    background-image: url("/cmsc128/resources/help/help-banner.jpg");
+    
+    /* border: 5px solid black; */
+    height: 10%;
+    border-radius: 1rem !important;
+   
 }
 
 .centered {

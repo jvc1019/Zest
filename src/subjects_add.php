@@ -1,11 +1,10 @@
-<!--used in adding new subjects-->
-<!--To be worked on by Mico and Jett-->
-
+<!--For adding new subjects-->
 <?php
     include("conn.php");
 
     $sImg = $_POST ['subjectBanner'];
     $sName = $_POST ["subjectName"];
+    $sName = str_replace("'","\'",$sName);
     $sType = $_POST ["subjectType"];
     $sInstructor = $_POST ["subjectInstructor"];
     $sDesc = $_POST ["subjectDesc"];

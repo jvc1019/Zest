@@ -1,3 +1,7 @@
+    <!--PHP file containing the delete modal and update modal
+    Update modal bears some similarities with add modal found in subjects.php
+    The main difference is that the modal here contains placeholders-->
+    
     <!--Delete Modal-->
     <div id="deleteSubjectModal<?php echo $subjects['subject_ID']; ?>" class="modal fade" role="dialog" aria-labelledby="Delete Subject" aria-hidden="true">
         <div class="modal-dialog">

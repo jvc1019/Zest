@@ -13,8 +13,8 @@
 			<div class="col-md-1"></div>
 			<div class="col-md-10 helpHolder">
 				<br>
-				<div class="help-banner">
-					<img class="helpPic rounded" src="/cmsc128/resources/help/help-banner.jpg">
+				<div class="help-banner shadow-lg p-3">
+					<!-- <img class="helpPic" src="/cmsc128/resources/help/help-banner.jpg"> -->
 					<h2 class="helpHeader centered">HELP & SUPPORT</h2>
 				</div>
 				<br><br>
