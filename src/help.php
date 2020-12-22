@@ -66,48 +66,48 @@
 						</div>
 						<br>
 						<h3>Registration</h3>
+						<br><br>
+						<img class="helpPic" src="/cmsc128/resources/help/help-register.jpg">
 						<br>
 						<div class="helpText text-center">
 							Creating an account in Zest is simple, you will be asked to enter a Username, an existing e-mail and your desired password. Registration for Zest is completely free. When you register for Zest you will not be asked sensitive information like your bank account or credit card information. When choosing a password for Zest make sure to use a strong password for maximum security!
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-register.jpg">
-							<br><br>
 						</div>
 						<br>
 						<h3>Logging In</h3>
-						<br>
+						<br><br>
+						<img class="helpPic" src="/cmsc128/resources/help/help-login.jpg">
+						<br><br>
 						<div class="helpText text-center">
 							To log-in to your existing Zest account, you will be asked to enter your username and password. We guarantee that this will take less than a few seconds and that there are no extra steps. Once logged-in, you will be able to fully access the features that Zest has to offer.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-login.jpg">
-							<br><br>
 						</div>
 						<br>
 						<h3>Home Page</h3>
-						<br>
+						<br><br>
+						<img class="helpPic" src="/cmsc128/resources/help/help-home.jpg">
+						<br><br>
 						<div class="helpText text-center">
  							The Home Page is where the productivity starts. We want this experience to be welcoming and informative, wasting absolutely no time. Upon landing in the home page, you will be greeted with upcoming tasks or tasks that are due for the day and due for the following day. The home page is where you can access all the features such as the Subjects, Tasks, and Notebook.						
-	 						<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-home.jpg">
-							<br><br>
 	 					</div>
 						<br>
 						<h3>Profile Page</h3>
-						<br>
+						<br><br>
+						<img class="helpPic" src="/cmsc128/resources/help/help-profile.jpg">
+						<br><br>
 						<div class="helpText text-center">
 							The Profile Page allows you to give additional information such as your profile description or bio, as well as update/edit your existing information such as your username and email address. You can also select from various avatars and themes that satisfy to your liking.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-profile.jpg">
-							<br><br>
 						</div>
 						<br>
 						<h3>Avatars and Themes</h3>
 						<br>
 						<div class="helpText text-center">
 							Introducing Avatar and Theme support in Zest. This allows you to change your profile avatar or icon and choose from a variety of themes that will give your workspace more vibrance and personality depending on your personal preferences.
+							<br>
+							You can choose from the existing avatars found below.
 							<br><br>
 							<img class="helpPic" src="/cmsc128/resources/help/help-avatars.jpg">
-							<br><br>
+							<br>
+							You can choose from the existing themes found below.
+							<br>
 							<img class="helpPic" src="/cmsc128/resources/help/help-themes.jpg">
 							<br><br>
 						</div>
@@ -189,7 +189,7 @@
 										<div class="form-group">
 											<input class="helpFormText" type="hidden" name="changeType" value="forgot">
 										</div>
-										<div>We will send a non-existent message to your email for verification.<br>
+										<div>We will send a non-existent message to your email for verification.<br>If the username and email inputted here match an existing account, then you are allowed to retrieve it with a new password.<br>
 										Please input your username and email.</div>
 										<br>
 										<div class="form-group">
