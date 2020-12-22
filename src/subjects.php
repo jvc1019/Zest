@@ -19,20 +19,22 @@ include("notification.php");
                     <h3 class="text-primary text-center">Subjects</h3>
                 </div>
                 <div class="col-sm-1 text-center">Sort by: </div>
-                <form class="form-inline" name="sort" action="subjects.php" method="post">
-                    <div class="col-sm-8 text-center">
-                        <div class="form-group">
-                            <select name="order" class="btn btn-sm">
-                                    <option value="subject_Name" <?php echo (isset($_POST['order']) && $_POST['order'] == 'subject_Name') ? 'selected="selected"' : ''; ?>>Name</option>
-                                    <option value="subject_Type" <?php echo (isset($_POST['order']) && $_POST['order'] == 'subject_Type') ? 'selected="selected"' : ''; ?>>Type</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 text-center">
-                        <button type="submit" class="btn btn-sm btn-primary">Sort</button>
-                    </div>
-                </form>
-                <div class="col-sm-5">
+                <div class="col-sm-3">
+                    <select id="sort" class="btn btn-sm">
+                        <?php
+                        $value = isset($_GET['sort']) ? $_GET['sort'] : 0;
+                        if ($value == 0) {?>
+                            <option selected value="0">Name</option>
+                            <option value='1'>Type</option>
+                        <?php
+                        } elseif ($value == 1) {?>
+                            <option value="0">Name</option>
+                            <option selected value="1">Type</option>
+                        <?php
+                        }?>
+                    </select>
+                </div>
+                <div class="col-sm-4">
                 </div>    
                 <!-- New Subject button -->
                 <div class="col-sm-2">
@@ -277,9 +279,13 @@ include("notification.php");
             $user_ID = $user['user_ID'];
 
             //Hi, this is a query to get sorting method
-            $sort_value = isset($_POST['order']) ? $_POST['order'] : "subject_Name";
+            $sort = "subject_Name";
+            if (!empty($_GET['sort'])) {
+                $sort = $_GET['sort'];
+                $sort = ($value == 0) ? "subject_Name" : "subject_Type";
+            }
 
-            $subjects = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY ".$sort_value." ASC";
+            $subjects = "SELECT * FROM `subject` WHERE `user_ID`=$user_ID ORDER BY ".$sort." ASC";
             $result = $conn->query($subjects);
 
             if (!($result->num_rows > 0)) { ?>
@@ -344,5 +350,13 @@ include("notification.php");
     <script>
         //For notificaitons
         spawnNotification();
+
+        // sorting
+        $("#sort").on("change", sort);
+        function sort() {
+            $sort = $("#sort").val();
+            window.location.search = "&sort=" + $sort;
+        }
+
     </script>
 </body>
