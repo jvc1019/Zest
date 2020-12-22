@@ -6,9 +6,6 @@
     background-attachment: fixed;
 }
 
-/* body{
-    background-color: rgb(0,0,0);
-} */
 .feature-bg{
     filter: blur(4px);
 /*     opacity: 0.6; */
@@ -20,6 +17,45 @@
     height: 100%; 
     z-index: -90;
 }
+
+.text-primary{
+    color: #38040e !important;
+}
+
+h5.text-primary, #show_completed_tasks{
+    color: #ff8c64 !important;
+    text-shadow: 2px 2px 10px #000000;
+} 
+
+.text-muted{
+    color: #FFFFFE !important;
+}
+
+.border-primary{
+    border-color: #38040e !important;
+}
+
+.btn-primary{
+    background-color: #38040e;
+    border-color: #38040e;
+}
+
+.btn-primary:hover{
+    background-color: #F48C06;
+    border-color: #F48C06;
+}
+
+.btn-primary:focus{
+    background-color: #e85d04;
+    border-color: #e85d04;
+}
+
+.btn-primary:active{
+    background-color: #dc2f02 !important;
+    border-color: #dc2f02 !important;
+    box-shadow: 0 0 0 0.2rem #38040e !important;
+}
+
 
 .reminderHolder ul > li {
     background-color: rgba(255, 255, 255, 0.8);

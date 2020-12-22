@@ -19,3 +19,7 @@
 .applink {
     border-radius: 1rem !important;
 }
+
+.text-shadow{
+    text-shadow: 2px 2px 8px #000000;
+}
