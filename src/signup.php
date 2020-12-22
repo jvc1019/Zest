@@ -15,14 +15,18 @@ if (isset($_POST['register'])) {
 	$avatar = "default";
 
 
-	//check if password and re-entered password are the same
-	if ($password !== $re_password) {
-		$errorMsg = "Password doesn't match";
+	//password minimum length is 8
+	if (strlen($password) < 8) {
 		?>
 		<script>
-			 $(document).ready(function(){
-				$("#errorSignupModal").modal("show");
-			});
+			spawnNotificationBase("Password Error", "Password should be at least 8 characters", "notif", 0);
+		</script>
+		<?php
+	// password and reentered password should be the same
+	} else if ($password !== $re_password) {
+		?>
+		<script>
+			spawnNotificationBase("Password Error", "Passwords does not match", "notif", 0);
 		</script>
 		<?php
 	} else {
@@ -33,14 +37,11 @@ if (isset($_POST['register'])) {
 		if ($conn->query($sql)) { 
 			session_start();
 			$_SESSION['user_Name'] = $username;
-			header("Location:index.php?status=Signup successfull. Welcome $username");
+			header("Location:index.php?status_heading=Welcome $username&status=You have succesfully logged in&type=notif");
 		} else {
-			$errorMsg = "Username already taken.";
 			?>
 				<script>
-					 $(document).ready(function(){
-						$("#errorSignupModal").modal("show");
-					});
+					spawnNotificationBase("Signup Error", "Username already taken", "alarm", 0);
 				</script>
 			<?php
 		}
