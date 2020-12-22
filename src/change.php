@@ -17,16 +17,20 @@
         header('location:help.php?help=change&status_heading=Change unsuccessful&status=User does not exist&type=notif');
     }
     else{
-        if ($Code == "smwm" and $Agree == "on"){
-            if ($Password == $RePassword and $Password == $user_Password){
-                $sqlUpdate = "UPDATE user SET user_Password='$NewPassword' WHERE user_ID='$user_ID'";
-                $conn->query($sqlUpdate);
-                header('location:landing.php?status_heading=Change successful&status=Please login again with new password&type=notif');
+        if ($Code == "smwm"){
+            if($Agree == "on"){
+                if ($Password == $RePassword and $Password == $user_Password){
+                    $sqlUpdate = "UPDATE user SET user_Password='$NewPassword' WHERE user_ID='$user_ID'";
+                    $conn->query($sqlUpdate);
+                    header('location:landing.php?status_heading=Change successful&status=Please login again with new password&type=notif');
+                }else{
+                    header('location:help.php?help=change&status_heading=Change unsuccessful&status=Passwords do not match&type=notif');
+                }
             }else{
-                header('location:help.php?help=change&status_heading=Change unsuccessful&status=Passwords do not match&type=notif');
+                header('location:help.php?help=change&status_heading=Change unsuccessful&status=Did not agree to terms&type=notif');
             }
         }else{
-            header('location:help.php?help=change&status_heading=Change unsuccessful&status=Code does not match or did not agree to terms&type=notif');
+            header('location:help.php?help=change&status_heading=Change unsuccessful&status=Entered code is incorrect&type=notif');
         }
     }
 ?>

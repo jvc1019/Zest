@@ -227,7 +227,7 @@
 										<div class="form-group">
 											<input class="helpFormText" type="hidden" name="changeType" value="forgot">
 										</div>
-										<div>We will send a non-existent message to your email for verification.<br>
+										<div>We will send a non-existent message to your email for verification.<br>If the username and email inputted here match an existing account, then you are allowed to retrieve it with a new password.<br>
 										Please input your username and email.</div>
 										<br>
 										<div class="form-group">
