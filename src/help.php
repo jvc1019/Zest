@@ -20,7 +20,6 @@
 			<div class="col-md-10 helpHolder">
 				<br>
 				<div id="top" class="help-banner shadow-lg p-3">
-					<!-- <img class="helpPic" src="/cmsc128/resources/help/help-banner.jpg"> -->
 					<h2 class="helpHeader centered">HELP & SUPPORT</h2>
 				</div>
 				<br>
@@ -157,6 +156,7 @@
 											<div class="helpText text-center">
 												<a class="helpLink" href="help.php?help=features">Check out our features...</a><br>
 												<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
+												<a class="helpLink" href="help.php?help=change">Do you want to change your password?</a><br>
 												<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
 												<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
 											</div>
@@ -283,6 +283,7 @@
 											<div class="helpText text-center">
 												<a class="helpLink" href="help.php?help=help">Let's get started!!!</a><br>
 												<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
+												<a class="helpLink" href="help.php?help=change">Do you want to change your password?</a><br>
 												<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
 												<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
 											</div>
@@ -438,6 +439,7 @@
 							<a class="helpLink" href="help.php?help=help">Let's get started!!!</a><br>
 							<a class="helpLink" href="help.php?help=features">Check out our features...</a><br>
 							<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
+							<a class="helpLink" href="help.php?help=change">Do you want to change your password?</a><br>
 							<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
 						</div>
 					</div>
@@ -480,6 +482,7 @@
 							<a class="helpLink" href="help.php?help=help">Let's get started!!!</a><br>
 							<a class="helpLink" href="help.php?help=features">Check out our features...</a><br>
 							<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
+							<a class="helpLink" href="help.php?help=change">Do you want to change your password?</a><br>
 							<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
 						</div>
 					</div>

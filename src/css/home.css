@@ -70,8 +70,7 @@
     position: relative;
     text-align: center;
     background-image: url("/cmsc128/resources/help/help-banner.jpg");
-    
-    /* border: 5px solid black; */
+    background-size: cover;
     height: 20rem;
     border-radius: 1rem !important;
    
@@ -88,12 +87,6 @@
     color: white;
     font-size: 60px;
     text-shadow: 5px 5px 4px #000000;
-}
-
-.helpPic {
-    width: 100%;
-    max-height: 100%;
-    border: 5px solid black;
 }
 
 .helpContent {
