@@ -162,55 +162,86 @@
 					<div id="features" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "features"){echo " active";} else {echo " fade";}?>">
 						<h1>Features</h1>
 						<br><br>
-						<h3>Subjects</h3>
+
+						<div class="row">
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-register.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Subjects</h4>
+										<h6 class="card-subtitle mb-2 text-muted">The "Subjects" section allows you to organize, edit and personalize your subjects.</h6>
+										<div class="card-text text-center">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.	
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-register.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Task</h4>
+										<h6 class="card-subtitle mb-2 text-muted">The "Tasks" section allows you to arrange and organize your tasks in a form of a To-Do list.</h6>
+										<div class="card-text text-center">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.	
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
 						<br>
-						<div class="helpText text-center">
-							The "Subjects" section allows you to organize, edit and personalize your subjects.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-subjects.jpg">
-							<br><br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
+						<div class="row">
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-register.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Notebook</h4>
+										<h6 class="card-subtitle mb-2 text-muted">The "Notebook" section allows you to create notes for different uses.</h6>
+										<div class="card-text text-center">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.	
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-register.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Upcoming Features</h4>
+										<h6 class="card-subtitle mb-2 text-muted">We will probably have more features in our web app when the time comes. For now, just enjoy the existing ones that will surely catch your attention and help you on your daily needs.</h6>
+										<div class="card-text text-center">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.	
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 						<br>
-						<h3>Tasks</h3>
 						<br>
-						<div class="helpText text-center">
-							The "Tasks" section allows you to arrange and organize your tasks in a form of a To-Do list.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-tasks.jpg">
-							<br><br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
-						</div>
-						<br>
-						<h3>Notebook</h3>
-						<br>
-						<div class="helpText text-center">
-							The "Notebook" section allows you to create notes for different uses.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-notes.jpg">
-							<br><br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
-						</div>
-						<br>
-						<h3>Upcoming Features?</h3>
-						<br>
-						<div class="helpText text-center">
-							We will probably have more features in our web app when the time comes. For now, just enjoy the existing ones that will surely catch your attention and help you on your daily needs.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-more.jpg">
-							<br><br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
-						</div>
-						<br><br>
-						<h3>Quick Links</h3>
-						<br>
-						<div class="helpText text-center">
-							<a class="helpLink" href="help.php?help=help">Let's get started!!!</a><br>
-							<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
-							<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
-							<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
+						<div class="row">
+							<div class="col-sm-3"></div>
+							<div class="col-sm-6">
+								<div class="card">
+									<div class="card-body">
+										<h4 class="card-title">Quick Links</h4>
+										<div class="card-text text-center">
+											<div class="helpText text-center">
+												<a class="helpLink" href="help.php?help=help">Let's get started!!!</a><br>
+												<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
+												<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
+												<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3"></div>
 						</div>
 					</div>
+
 					<div id="forgot" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "forgot"){echo " active";} else {echo " fade";}?>">
 						<h1>Forgot your Password?</h1>
 						<br>

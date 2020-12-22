@@ -87,6 +87,7 @@
 .helpHeader {
     color: white;
     font-size: 60px;
+    text-shadow: 5px 5px 4px #000000;
 }
 
 .helpPic {
