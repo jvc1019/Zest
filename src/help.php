@@ -7,7 +7,13 @@
 ?>
 
 <body class="help-bg">
-	<!-- navbar goes here -->
+	<nav class="navbar fixed-top navbar-dark bg-dark">
+  		<a class="navbar-brand" href="../src">
+			<img src="../resources/icons/lemon-icon.png" width="30" height="30" class="d-inline-block align-top">  ZEST 
+  		</a>
+	</nav>
+
+	<br><br>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-1"></div>
@@ -17,7 +23,7 @@
 					<!-- <img class="helpPic" src="/cmsc128/resources/help/help-banner.jpg"> -->
 					<h2 class="helpHeader centered">HELP & SUPPORT</h2>
 				</div>
-				<br><br>
+				<br>
 				<ul class="nav nav-tabs nav-pills with-arrow flex-sm-row">
 					<li class="nav-item flex-sm-fill text-center helpTitle">
 						<a class="nav-link<?php if ($default == "help"){echo " active";} ?>" data-toggle="pill" href="#help">Getting Started</a>
@@ -64,63 +70,95 @@
 							The TASKS section is where you can create and organize different tasks. Our task manager will be able to remind you when you have upcoming dues and organize them according to your liking.
 							The NOTEBOOK section is where you can create notes with tags so that you can freely sort out your information.
 						</div>
+						<hr>
 						<br>
-						<h3>Registration</h3>
-						<br>
-						<div class="helpText text-center">
-							Creating an account in Zest is simple, you will be asked to enter a Username, an existing e-mail and your desired password. Registration for Zest is completely free. When you register for Zest you will not be asked sensitive information like your bank account or credit card information. When choosing a password for Zest make sure to use a strong password for maximum security!
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-register.jpg">
-							<br><br>
+
+						<div class="row">
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-register.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Registration</h4>
+										<div class="card-text text-center">
+											Creating an account in Zest is simple, you will be asked to enter a Username, an existing e-mail and your desired password. Registration for Zest is completely free. When you register for Zest you will not be asked sensitive information like your bank account or credit card information. When choosing a password for Zest make sure to use a strong password for maximum security!
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-login.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Logging In</h4>
+										<div class="card-text text-center">
+											To log-in to your existing Zest account, you will be asked to enter your username and password. We guarantee that this will take less than a few seconds and that there are no extra steps. Once logged-in, you will be able to fully access the features that Zest has to offer.
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 						<br>
-						<h3>Logging In</h3>
-						<br>
-						<div class="helpText text-center">
-							To log-in to your existing Zest account, you will be asked to enter your username and password. We guarantee that this will take less than a few seconds and that there are no extra steps. Once logged-in, you will be able to fully access the features that Zest has to offer.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-login.jpg">
-							<br><br>
+						<div class="row">
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-register.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Home Page</h4>
+										<div class="card-text text-center">
+											The Home Page is where the productivity starts. We want this experience to be welcoming and informative, wasting absolutely no time. Upon landing in the home page, you will be greeted with upcoming tasks or tasks that are due for the day and due for the following day. The home page is where you can access all the features such as the Subjects, Tasks, and Notebook.	
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-login.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Profile Page</h4>
+										<div class="card-text text-center">
+											The Profile Page allows you to give additional information such as your profile description or bio, as well as update/edit your existing information such as your username and email address. You can also select from various avatars and themes that satisfy to your liking.
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
+
 						<br>
-						<h3>Home Page</h3>
-						<br>
-						<div class="helpText text-center">
- 							The Home Page is where the productivity starts. We want this experience to be welcoming and informative, wasting absolutely no time. Upon landing in the home page, you will be greeted with upcoming tasks or tasks that are due for the day and due for the following day. The home page is where you can access all the features such as the Subjects, Tasks, and Notebook.						
-	 						<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-home.jpg">
-							<br><br>
-	 					</div>
-						<br>
-						<h3>Profile Page</h3>
-						<br>
-						<div class="helpText text-center">
-							The Profile Page allows you to give additional information such as your profile description or bio, as well as update/edit your existing information such as your username and email address. You can also select from various avatars and themes that satisfy to your liking.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-profile.jpg">
-							<br><br>
-						</div>
-						<br>
-						<h3>Avatars and Themes</h3>
-						<br>
-						<div class="helpText text-center">
-							Introducing Avatar and Theme support in Zest. This allows you to change your profile avatar or icon and choose from a variety of themes that will give your workspace more vibrance and personality depending on your personal preferences.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-avatars.jpg">
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-themes.jpg">
-							<br><br>
-						</div>
-						<br>
-						<h3>Quick Links</h3>
-						<br>
-						<div class="helpText text-center">
-							<a class="helpLink" href="help.php?help=features">Check out our features...</a><br>
-							<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
-							<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
-							<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
+						<div class="row">
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-register.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Avatars and Themes</h4>
+										<div class="card-text text-center">
+											Introducing Avatar and Theme support in Zest. This allows you to change your profile avatar or icon and choose from a variety of themes that will give your workspace more vibrance and personality depending on your personal preferences.	
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-banner.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Quick Links</h4>
+										<div class="card-text text-center">
+											<div class="helpText text-center">
+												<a class="helpLink" href="help.php?help=features">Check out our features...</a><br>
+												<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
+												<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
+												<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
+
+<!--  -->
+
 					<div id="features" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "features"){echo " active";} else {echo " fade";}?>">
 						<h1>Features</h1>
 						<br><br>
