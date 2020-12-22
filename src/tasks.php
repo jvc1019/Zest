@@ -13,6 +13,7 @@ If the user presses the check button, the task_isDone of the tasks item is marke
 If the user presses the "add new task" button, a pop-up will appear, asking for the details. -->
 
 <body>
+    <div class="feature-bg"></div>
     <!-- navigation bar -->
     <?php include("sidebar.php"); ?>
     <div class="container-fluid with-sidebar">

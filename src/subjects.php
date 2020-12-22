@@ -9,7 +9,7 @@ include("notification.php");
 ?>
 
 <body>
-
+    <div class="feature-bg"></div>
     <!-- navigation bar -->
     <?php include('sidebar.php'); ?>
     <div class="container-fluid with-sidebar">

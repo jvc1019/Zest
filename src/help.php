@@ -369,6 +369,7 @@
 											<input class="helpFormText" type="hidden" name="changeType" value="change">
 										</div>
 										<div>We will send a non-existent message to your email for verification.<br>
+											<link href="../src/index.php" rel="import" />
 										Please input your username and email.</div>
 										<br>
 										<div class="form-group">
