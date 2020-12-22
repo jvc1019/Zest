@@ -13,7 +13,7 @@
 			<div class="col-md-1"></div>
 			<div class="col-md-10 helpHolder">
 				<br>
-				<div class="help-banner shadow-lg p-3">
+				<div id="top" class="help-banner shadow-lg p-3">
 					<!-- <img class="helpPic" src="/cmsc128/resources/help/help-banner.jpg"> -->
 					<h2 class="helpHeader centered">HELP & SUPPORT</h2>
 				</div>
@@ -56,6 +56,8 @@
 							Learn more about us in the <a class="helpLink" href="help.php?help=about">ABOUT</a> section.
 						</div>
 						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br>
 						<h3>What do we offer?</h3>
 						<br>
 						<div class="helpText text-center">
@@ -65,38 +67,48 @@
 							The NOTEBOOK section is where you can create notes with tags so that you can freely sort out your information.
 						</div>
 						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br>
 						<h3>Registration</h3>
 						<br><br>
-						<img class="helpPic" src="/cmsc128/resources/help/help-register.jpg">
+						<img class="helpPic" src="/cmsc128/resources/help/help-register.png">
 						<br>
 						<div class="helpText text-center">
 							Creating an account in Zest is simple, you will be asked to enter a Username, an existing e-mail and your desired password. Registration for Zest is completely free. When you register for Zest you will not be asked sensitive information like your bank account or credit card information. When choosing a password for Zest make sure to use a strong password for maximum security!
 						</div>
 						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br>
 						<h3>Logging In</h3>
 						<br><br>
-						<img class="helpPic" src="/cmsc128/resources/help/help-login.jpg">
+						<img class="helpPic" src="/cmsc128/resources/help/help-login.png">
 						<br><br>
 						<div class="helpText text-center">
 							To log-in to your existing Zest account, you will be asked to enter your username and password. We guarantee that this will take less than a few seconds and that there are no extra steps. Once logged-in, you will be able to fully access the features that Zest has to offer.
 						</div>
 						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br>
 						<h3>Home Page</h3>
 						<br><br>
-						<img class="helpPic" src="/cmsc128/resources/help/help-home.jpg">
+						<img class="helpPic" src="/cmsc128/resources/help/help-home.png">
 						<br><br>
 						<div class="helpText text-center">
  							The Home Page is where the productivity starts. We want this experience to be welcoming and informative, wasting absolutely no time. Upon landing in the home page, you will be greeted with upcoming tasks or tasks that are due for the day and due for the following day. The home page is where you can access all the features such as the Subjects, Tasks, and Notebook.						
 	 					</div>
-						<br>
+	 					<br>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br>
 						<h3>Profile Page</h3>
 						<br><br>
-						<img class="helpPic" src="/cmsc128/resources/help/help-profile.jpg">
+						<img class="helpPic" src="/cmsc128/resources/help/help-profile.png">
 						<br><br>
 						<div class="helpText text-center">
 							The Profile Page allows you to give additional information such as your profile description or bio, as well as update/edit your existing information such as your username and email address. You can also select from various avatars and themes that satisfy to your liking.
 						</div>
 						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br>
 						<h3>Avatars and Themes</h3>
 						<br>
 						<div class="helpText text-center">
@@ -105,13 +117,14 @@
 							You can choose from the existing avatars found below.
 							<br><br>
 							<img class="helpPic" src="/cmsc128/resources/help/help-avatars.jpg">
-							<br>
-							You can choose from the existing themes found below.
-							<br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-themes.jpg">
 							<br><br>
+							Using themes is a great way to personalize your account. You can choose from the existing themes such as:<br>
+							Skyscraper (Default theme), Study, Sunset, Street, Seashore, and more.<br>
+							You can edit your theme in your Profile page by clicking "Edit Profile" and selecting a theme.
 						</div>
 						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br>
 						<h3>Quick Links</h3>
 						<br>
 						<div class="helpText text-center">
@@ -129,40 +142,44 @@
 						<div class="helpText text-center">
 							The "Subjects" section allows you to organize, edit and personalize your subjects.
 							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-subjects.jpg">
+							<img class="helpPic" src="/cmsc128/resources/help/help-subjects.png">
 							<br><br>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
 						</div>
 						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br>
 						<h3>Tasks</h3>
 						<br>
 						<div class="helpText text-center">
 							The "Tasks" section allows you to arrange and organize your tasks in a form of a To-Do list.
 							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-tasks.jpg">
+							<img class="helpPic" src="/cmsc128/resources/help/help-tasks.png">
 							<br><br>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
 						</div>
 						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br>
 						<h3>Notebook</h3>
 						<br>
 						<div class="helpText text-center">
 							The "Notebook" section allows you to create notes for different uses.
 							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-notes.jpg">
+							<img class="helpPic" src="/cmsc128/resources/help/help-notes.png">
 							<br><br>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
 						</div>
 						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br>
 						<h3>Upcoming Features?</h3>
 						<br>
 						<div class="helpText text-center">
-							We will probably have more features in our web app when the time comes. For now, just enjoy the existing ones that will surely catch your attention and help you on your daily needs.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-more.jpg">
-							<br><br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
+							We will probably have more features in our web app when the time comes. For now, just enjoy the existing ones that will surely catch your attention and help you on your daily needs. If you have any suggestions for modifications with our features or suggestions of new features, please feel free to <a class="helpLink" href="help.php?help=contact">contact us</a>.
 						</div>
+						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
 						<br><br>
 						<h3>Quick Links</h3>
 						<br>
@@ -183,7 +200,7 @@
 						</div>
 						<br>
 						<div class="helpText">
-							<form type="GET" action="change.php">
+							<form type="GET" action="forgot.php">
 								<ol>
 									<li>
 										<div class="form-group">
