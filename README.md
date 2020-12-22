@@ -39,16 +39,19 @@ This will be the repository for CMSC 128 - Section 3. Files included would be fo
 -   Project now has an interactive and pleasantly working UI.
 -   There is now a profile page with working profile themes and avatars.
 -   There is also a Help Page, with many access points.
--   Home page looks different, with new design and features
+-   Home page looks different, with new design and features.
 -   Fixed bugs and issues.
 
-### 5. Final Prototype
+### 5. Final Prototype (ended December 22, 2020)
 
--   Ongoing
+-   Home page looks different, with new design and features.
+-   Created new things in different features.
+-   Help Page is now fully interactive with pictures and links.
+-   Fixed all bugs and issues.
 
 ## Consultations
 
--   December 22, 2020 (Final Presentation) *TENTATIVE!!!*
+-   December 23, 2020 (Final Presentation)
 -   November 26, 2020 (Overall UI Consultation #1)
 -   November 4, 2020 (Wireframe Consultation)
 
