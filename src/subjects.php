@@ -20,13 +20,17 @@ include("notification.php");
                 </div>
                 <div class="col-sm-1 text-center">Sort by: </div>
                 <form class="form-inline" name="sort" action="subjects.php" method="post">
-                    <div class="form-group">
-                        <select name="order" class="btn btn-sm">
-                                <option value="subject_Name" <?php echo (isset($_POST['order']) && $_POST['order'] == 'subject_Name') ? 'selected="selected"' : ''; ?>>Name</option>
-                                <option value="subject_Type" <?php echo (isset($_POST['order']) && $_POST['order'] == 'subject_Type') ? 'selected="selected"' : ''; ?>>Type</option>
-                        </select>
+                    <div class="col-sm-8 text-center">
+                        <div class="form-group">
+                            <select name="order" class="btn btn-sm">
+                                    <option value="subject_Name" <?php echo (isset($_POST['order']) && $_POST['order'] == 'subject_Name') ? 'selected="selected"' : ''; ?>>Name</option>
+                                    <option value="subject_Type" <?php echo (isset($_POST['order']) && $_POST['order'] == 'subject_Type') ? 'selected="selected"' : ''; ?>>Type</option>
+                            </select>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-sm btn-primary">Sort</button>  
+                    <div class="col-sm-4 text-center">
+                        <button type="submit" class="btn btn-sm btn-primary">Sort</button>
+                    </div>
                 </form>
                 <div class="col-sm-5">
                 </div>    
