@@ -90,7 +90,7 @@
 
 
     $status_heading = "Add Subject";
-    $subjectlist = "SELECT `subject_Name` FROM `subject` WHERE `subject_name`='$sName' AND `user_ID`='$u_ID'";
+    $subjectlist = "SELECT `subject_Name` FROM `subject` WHERE `subject_name`='$sName' AND `user_ID`='$uID'";
     $result = $conn->query($subjectlist);
 
     #Check if subject has duplicate name
