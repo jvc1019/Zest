@@ -10,7 +10,11 @@ body{
 }
 .feature-bg{
     filter: blur(4px);
-    opacity: 0.2;
+    opacity: 0.6;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     width: 100%;
     height: 100%; 
     z-index: -90;
@@ -42,6 +46,10 @@ body{
     background-color: #dc2f02 !important;
     border-color: #dc2f02 !important;
     box-shadow: 0 0 0 0.2rem #faa307 !important;
+}
+
+h6.text-center{
+    color:#faa307 !important;
 }
 
 

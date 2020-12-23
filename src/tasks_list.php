@@ -21,7 +21,7 @@
     <?php
     if (($due_today_tasks->num_rows > 0)) {
     ?>
-        <h5 class="text-primary">Due today <small class="text-muted">sorted by time</small></h5>
+        <h5 class="text-primary modifiable">Due today <small class="text-muted">sorted by time</small></h5>
         <ul id="due_today_tasks" class="list-group">
             <?php
             while ($row = $due_today_tasks->fetch_assoc()) {
@@ -121,7 +121,7 @@
             } ?>
         </ul>
         <br>
-        <h5 class="text-primary">All tasks</h5>
+        <h5 class="text-primary modifiable">All tasks</h5>
     <?php
     }
     ?>
@@ -130,7 +130,7 @@
     <?php
     if (!($incomplete_tasks->num_rows > 0)) {
     ?>
-        <h6 class="text-center">（＾∀＾●）ﾉｼ There's nothing around here. You're all set!</h6>
+        <h6 class="text-center modifiable">（＾∀＾●）ﾉｼ There's nothing around here. You're all set!</h6>
     <?php
     } else { ?>
         <ul id="incomplete_tasks" class="list-group">

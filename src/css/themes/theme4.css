@@ -22,10 +22,11 @@ body{
     z-index: -90;
 }
 
-h5.text-primary, #show_completed_tasks{
+h6.text-center, #show_completed_tasks, .modifiable{
     color: #a8dadc !important;
-    text-shadow: 2px 2px 2px #000814;
+    text-shadow: 1px 1px 2px #000814;
 }
+
 
 .text-muted{
     color:  #ededed !important;

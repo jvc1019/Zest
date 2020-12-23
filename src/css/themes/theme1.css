@@ -23,8 +23,9 @@ body{
 .text-primary{
     color: #faa317 !important;
 }
-h5.text-primary, #show_completed_tasks{
-    text-shadow: 5px 5px 4px #000000;
+.modifiable, #show_completed_tasks, h6.text-center{
+    color: #faa317 !important;
+    text-shadow: 1px 1px 2px #000000;
 }
 
 .text-muted{
