@@ -11,6 +11,7 @@
         $query = "SELECT * FROM note LEFT JOIN user ON note.user_ID=user.user_ID WHERE note.user_ID=$user_ID ORDER BY note_Title $sort";
         $result = $conn->query($query);
         if (!($result->num_rows > 0)) { ?>
+            </div>
             <h6 class="text-center">There's nothing around here. Add some notes!</h6>
     <?php
         } else {
