@@ -38,7 +38,7 @@ h6.text-center, #show_completed_tasks, .modifiable{
 }
 
 .text-light {
-    color: rgb(0, 51, 0) !important;
+    color: rgb(255, 230, 255) !important;
 }
 
 .reminderHolder ul > li {
