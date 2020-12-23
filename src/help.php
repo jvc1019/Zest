@@ -51,12 +51,13 @@
 						<br>
 						<img src="../resources/icons/lemon-icon.png">
 						<br><br>
-						<div class="helpText text-center">
+						<div class="text-info text-center">
 							Welcome to ZEST, a developing productivity web application designed for your school/study needs.
 						</div>
 						<br>
-						<div class="helpText text-center">
-							ZEST is a Productivity App, an application created by a group of aspiring software developers designed to help you in your school work with absolute productivity. It has different features and services that will surely help you in your important work needs.
+						<div class=" text-center text-dark">
+							ZEST is a Productivity App, an application created by a group of aspiring software developers designed <br>
+							to help you in your school work with absolute productivity. It has different features and services <br> that will surely help you in your important work needs.
 							<br>...<br>
 							Learn more about us in the <a class="helpLink" href="help.php?help=about">ABOUT</a> section.
 						</div>
@@ -180,7 +181,7 @@
 					<div id="features" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "features"){echo " active";} else {echo " fade";}?>">
 						<h1>Features</h1>
 						<br>
-						<div class="helpText text-center">
+						<div class="text-muted text-center">
 							Zest offers three major features: Subjects, Tasks and Notebook.<br>
 							If you want to learn more on how to use each of them, continue reading this page.<br>
 							Go on! Try something new! Just like what they say...<br><br>
@@ -189,7 +190,8 @@
 						<br>
 
 						<div class="row">
-							<div class="d-flex align-items-stretch">
+							<div class="col-1"></div>
+							<div class="col-10 d-flex align-items-stretch">
 								<div class="card">	
 									<div class="card-body">
 										<h4 class="card-title">Subjects</h4>
@@ -213,12 +215,15 @@
 									</div>
 								</div>
 							</div>
+							<div class="col-1"></div>
+
 						</div>
 						<br>
 						<a class="helpLink" href="#top">Back to Top</a>
 						<br><br><br>
 						<div class="row">
-							<div class="d-flex align-items-stretch">
+							<div class="col-1"></div>
+							<div class="col-10 d-flex align-items-stretch">
 								<div class="card">
 									<div class="card-body">
 										<h4 class="card-title">Task</h4>
@@ -242,12 +247,14 @@
 									</div>
 								</div>
 							</div>
+							<div class="col-1"></div>
 						</div>
 						<br>
 						<a class="helpLink" href="#top">Back to Top</a>
 						<br><br><br>			
 						<div class="row">
-							<div class="d-flex align-items-stretch">
+							<div class="col-1"></div>
+							<div class="col-10 d-flex align-items-stretch">
 								<div class="card">
 									<div class="card-body">
 										<h4 class="card-title">Notebook</h4>
@@ -271,6 +278,7 @@
 									</div>
 								</div>
 							</div>
+							<div class="col-1"></div>
 						</div>
 						<br>
 						<a class="helpLink" href="#top">Back to Top</a>
@@ -323,7 +331,7 @@
 							<form type="GET" action="forgot.php">
 								<ol>
 									<li>
-										<div class="form-group">
+										<div class="form-group bg-white">
 											<input class="helpFormText" type="hidden" name="changeType" value="forgot">
 										</div>
 										<div>We will send a non-existent message to your email for verification.<br>If the username and email inputted here match an existing account, then you are allowed to retrieve it with a new password.<br>
