@@ -7,8 +7,11 @@
  * Spawn a notification/alarm via GET value
  */
 function spawnNotification() {
-    var GET = window.location.search
-        .substr(1)
+    var parsedString = $("<textarea/>")
+        .html(window.location.href.split("?")[1])
+        .text();
+
+    var GET = parsedString
         .split("&")
         .reduce(
             (o, i) => (
@@ -19,6 +22,7 @@ function spawnNotification() {
             ),
             {}
         );
+
     spawnNotificationBase(GET["status_heading"], GET["status"], GET["type"], 0);
 }
 
@@ -31,7 +35,12 @@ function spawnNotification() {
  */
 
 function spawnNotificationBase(status_heading, status, type, delay) {
-    if (status === undefined || ((type != "notif") && (type != "alarm")) || isNaN(delay)) return;
+    if (
+        status === undefined ||
+        (type != "notif" && type != "alarm") ||
+        isNaN(delay)
+    )
+        return;
 
     if (status.length) {
         var toast = $(".toast-template").clone();

@@ -7,7 +7,7 @@
 	<?php include('sidebar.php'); ?>
 	<div class="container-fluid fullpage with-sidebar">
 		<div class="row py-5">
-			<div class="card profileHolder mx-auto">
+			<div class="card profileHolder mx-auto shadow p-5">
 				<?php echo "<img class='card-img-top' src='/cmsc128/resources/avatars/$user_Avatar.jpg'>" ?>
 				<div class="card-body">
 					<h2 class="text-center"><?php echo $user_Name ?></h2>

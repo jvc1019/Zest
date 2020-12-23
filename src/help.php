@@ -7,17 +7,22 @@
 ?>
 
 <body class="help-bg">
-	<!-- navbar goes here -->
+	<nav class="navbar fixed-top navbar-dark bg-dark">
+  		<a class="navbar-brand" href="../src">
+			<img src="../resources/icons/lemon-icon.png" width="30" height="30" class="d-inline-block align-top">  ZEST 
+  		</a>
+	</nav>
+
+	<br><br>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-10 helpHolder">
 				<br>
-				<div class="help-banner">
-					<img class="helpPic rounded" src="/cmsc128/resources/help/help-banner.jpg">
+				<div id="top" class="help-banner shadow-lg p-3">
 					<h2 class="helpHeader centered">HELP & SUPPORT</h2>
 				</div>
-				<br><br>
+				<br>
 				<ul class="nav nav-tabs nav-pills with-arrow flex-sm-row">
 					<li class="nav-item flex-sm-fill text-center helpTitle">
 						<a class="nav-link<?php if ($default == "help"){echo " active";} ?>" data-toggle="pill" href="#help">Getting Started</a>
@@ -42,154 +47,313 @@
 					<div id="help" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "help"){echo " active";} else {echo " fade";}?>">
 						<h1>Getting Started</h1>
 						<br><br>
-						<h3>What is ZEST?</h3>
+						<div class="row">
+							<div class="col-4">
+								<img src="../resources/icons/lemon-icon.png">
+								
+							</div>
+							<div class="col-7">
+								<h3>What is ZEST?</h3>
+								<br>
+								<div class="text-dark font-weight-bold text-center">
+									Welcome to ZEST, a developing productivity web application designed <br> for your school/study needs.
+								</div>
+								<br>
+								<div class=" text-center text-break text-dark">
+									ZEST is a Productivity App, an application created by a group of aspiring software developers designed to help you in your school work with absolute productivity. It has different features and services that will surely help you in your important work needs.
+									<br>...<br>
+									<a class="helpLink" href="help.php?help=about"><button class="btn btn-warning"><div class="font-weight-bold">Learn more </div></button></a>
+								</div>
+							</div>
+							<div class="col-1"></div>
+						</div>
+						<br><hr><br>
+						<div class="row">
+							<div class="col-3"></div>
+							<div class="col-6">
+								<h3>What do we offer?</h3>
+								<br>
+								<div class="text-break text-center">
+									Our <a class="helpLink" href="help.php?help=features">features</a> include the <b>SUBJECTS</b>, <b>TASK</b> and <b>SUBJECTS</b> sections, as well as different customization tools available for different types of users.
+									
+									The SUBJECTS section is where you can organize your subjects. You are able to add your subjects in a form where you can utilize them in creating your schedule.
+
+									The TASKS section is where you can create and organize different tasks. Our task manager will be able to remind you when you have upcoming dues and organize them according to your liking.
+
+									The NOTEBOOK section is where you can create notes with tags so that you can freely sort out your information.
+									</div>
+									<br>
+									<a class="helpLink" href="#top">Back to Top</a>
+									<br>
+							</div>
+							<div class="col-3"></div>
+						</div>
+						
+						<hr>
 						<br>
-						<img src="../resources/icons/lemon-icon.png">
+						<h3>Account Basics</h3>
+						<div class="helpText text-center">
+							Oh, so you want to know the basics of using this web app?<br>
+							Well, if you in-ZEST...
+						</div>
+						<br>
+
+
+						<div class="row">
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-register.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Registration</h4>
+										<div class="card-text text-justify">
+											Creating an account in Zest is simple, you will be asked to enter a Username, an existing e-mail and your desired password. Registration for Zest is completely free. When you register for Zest, you will not be asked sensitive information like your bank account or credit card information. When choosing a password for Zest make sure to use a strong password for maximum security!
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-login.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Logging In</h4>
+										<div class="card-text text-justify">
+											To log-in to your existing Zest account, you will be asked to enter your username and password. We guarantee that this will take less than a few seconds and that there are no extra steps. Once logged-in, you will be able to fully access the features that Zest has to offer.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
 						<br><br>
-						<div class="helpText text-center">
-							Welcome to ZEST, a developing productivity web application designed for your school/study needs.
+						<div class="row">
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-home.png">
+									<div class="card-body">
+										<h4 class="card-title">Home Page</h4>
+										<div class="card-text text-justify">
+											The Home Page is where the productivity starts. We want this experience to be welcoming and informative, wasting absolutely no time. After logging in, you will arrive at your home page. Upon landing in the home page, you will be greeted with your upcoming tasks (tasks that are due for the day and due for the following day). The home page is where you can access all the features such as the Subjects, Tasks, and Notebook.
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-profile.png">
+									<div class="card-body">
+										<h4 class="card-title">Profile Page</h4>
+										<div class="card-text text-justify">
+											The Profile Page allows you to give additional information such as your profile description or bio, as well as update/edit your existing information such as your username and email address. You can also select from various avatars and themes that satisfy to your liking.
+											<br><br>
+											You can go to your profile page by clicking your username in the sidebar to the left of your screen. This sidebar can be accessed throughout all the different pages.
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 						<br>
-						<div class="helpText text-center">
-							ZEST is a Productivity App, an application created by a group of aspiring software developers designed to help you in your school work with absolute productivity. It has different features and services that will surely help you in your important work needs.
-							<br>...<br>
-							Learn more about us in the <a class="helpLink" href="help.php?help=about">ABOUT</a> section.
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br>
+						<div class="row">
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-avatars.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Avatars and Themes</h4>
+										<div class="card-text text-justify">
+											Introducing Avatar and Theme support in Zest. This allows you to change your profile avatar or icon and choose from a variety of themes that will give your workspace more vibrance and personality depending on your personal preferences.
+											<br><br>
+											To change your avatar and theme, simply go to the Profile page and click "Edit Profile", there you can choose a new avatar and new theme, as well as edit your profile information.
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-banner.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Quick Links</h4>
+										<div class="card-text">
+											<div class="helpText text-center">
+												<a class="helpLink" href="help.php?help=features">Check out our features...</a><br>
+												<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
+												<a class="helpLink" href="help.php?help=change">Do you want to change your password?</a><br>
+												<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
+												<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 						<br>
-						<h3>What do we offer?</h3>
+						<a class="helpLink" href="#top">Back to Top</a>
 						<br>
-						<div class="helpText text-center">
-							Our <a class="helpLink" href="help.php?help=features">features</a> include the SUBJECTS, TASKS and NOTEBOOK sections, as well as different customization tools available for different types of users.
-							The SUBJECTS section is where you can organize your subjects. You are able to add your subjects in a form where you can utilize them in creating your schedule.
-							The TASKS section is where you can create and organize different tasks. Our task manager will be able to remind you when you have upcoming dues and organize them according to your liking.
-							The NOTEBOOK section is where you can create notes with tags so that you can freely sort out your information.
-						</div>
-						<br>
-						<h3>Registration</h3>
-						<br>
-						<div class="helpText text-center">
-							Creating an account in Zest is simple, you will be asked to enter a Username, an existing e-mail and your desired password. Registration for Zest is completely free. When you register for Zest you will not be asked sensitive information like your bank account or credit card information. When choosing a password for Zest make sure to use a strong password for maximum security!
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-register.jpg">
-							<br><br>
-						</div>
-						<br>
-						<h3>Logging In</h3>
-						<br>
-						<div class="helpText text-center">
-							To log-in to your existing Zest account, you will be asked to enter your username and password. We guarantee that this will take less than a few seconds and that there are no extra steps. Once logged-in, you will be able to fully access the features that Zest has to offer.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-login.jpg">
-							<br><br>
-						</div>
-						<br>
-						<h3>Home Page</h3>
-						<br>
-						<div class="helpText text-center">
- 							The Home Page is where the productivity starts. We want this experience to be welcoming and informative, wasting absolutely no time. Upon landing in the home page, you will be greeted with upcoming tasks or tasks that are due for the day and due for the following day. The home page is where you can access all the features such as the Subjects, Tasks, and Notebook.						
-	 						<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-home.jpg">
-							<br><br>
-	 					</div>
-						<br>
-						<h3>Profile Page</h3>
-						<br>
-						<div class="helpText text-center">
-							The Profile Page allows you to give additional information such as your profile description or bio, as well as update/edit your existing information such as your username and email address. You can also select from various avatars and themes that satisfy to your liking.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-profile.jpg">
-							<br><br>
-						</div>
-						<br>
-						<h3>Avatars and Themes</h3>
-						<br>
-						<div class="helpText text-center">
-							Introducing Avatar and Theme support in Zest. This allows you to change your profile avatar or icon and choose from a variety of themes that will give your workspace more vibrance and personality depending on your personal preferences.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-avatars.jpg">
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-themes.jpg">
-							<br><br>
-						</div>
-						<br>
-						<h3>Quick Links</h3>
-						<br>
-						<div class="helpText text-center">
-							<a class="helpLink" href="help.php?help=features">Check out our features...</a><br>
-							<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
-							<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
-							<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
-						</div>
 					</div>
+
 					<div id="features" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "features"){echo " active";} else {echo " fade";}?>">
 						<h1>Features</h1>
-						<br><br>
-						<h3>Subjects</h3>
 						<br>
-						<div class="helpText text-center">
-							The "Subjects" section allows you to organize, edit and personalize your subjects.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-subjects.jpg">
-							<br><br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
+						<div class="text-muted text-center">
+							Zest offers three major features: Subjects, Tasks and Notebook.<br>
+							If you want to learn more on how to use each of them, continue reading this page.<br>
+							Go on! Try something new! Just like what they say...<br><br>
+							When life gives you lemons, make lem- NO! Go to ZEST!!!
 						</div>
 						<br>
-						<h3>Tasks</h3>
-						<br>
-						<div class="helpText text-center">
-							The "Tasks" section allows you to arrange and organize your tasks in a form of a To-Do list.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-tasks.jpg">
-							<br><br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
+
+						<div class="row">
+							<div class="col-1"></div>
+							<div class="col-10 d-flex align-items-stretch">
+								<div class="card rounded-all-1rem">	
+									<div class="card-body">
+										<h4 class="card-title">Subjects</h4>
+										<h6 class="card-subtitle mb-2 text-muted">The "Subjects" section allows you to organize, edit and personalize your subjects.</h6>
+										<br>
+									</div>
+									<img class="card-img-top" src="/cmsc128/resources/help/help-subjects.png">
+									<div class="card-body">
+										<div class="card-text text-justify">
+											In this section, you can be able to add, edit or delete subjects. To add a new subject, simply click the "New Subject" button on the top left of the screen. This will show a dialog box that you will enter the subject information inside.
+											<br><br>
+											Once the dialog box is opened, you may start creating your subject. First, you must enter the subject name. This name is required and will be used in order to track this subject later on. Secondly, you can choose if the subject is a Lecture or a Laboratory. Next, you can enter a short descripiton. You may enter the subject's instructor and the schedule of the subject with the days of the week and time that it is scheduled. Lastly, you can choose a subject banner from the different selections for style and customization.
+											<br><br>
+											If you're finally done with your subject, you may click "Save" at the bottom of the box. If you decided that you don't want to add this subject anymore, you can click "Cancel" to remove it. If you want to clear the form, you may click on "Clear".
+											<br><br>
+											You may also edit existing subjects. To do this, you simply click on the "Details" button at the bottom of the subject you want to edit. Once the dialog box is opened, you may start editing your subject.
+											<br><br>
+											If you're finally done editing your subject, you may click "Save" at the bottom of the box. If you decided that you don't want to save these changes anymore, you can click "Cancel".
+											<br><br>
+											If you want to delete a subject, simply click the "Delete" button at the bottom of the subject. A message will appear stating that you will delete the subject permanently and will never see it again. Click on the "Delete" button to permanently delete the subject. If you decided that you don't want to delete it anymore, you may simply click "Cancel".
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-1"></div>
+
 						</div>
 						<br>
-						<h3>Notebook</h3>
-						<br>
-						<div class="helpText text-center">
-							The "Notebook" section allows you to create notes for different uses.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-notes.jpg">
-							<br><br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br><br>
+						<div class="row">
+							<div class="col-1"></div>
+							<div class="col-10 d-flex align-items-stretch">
+								<div class="card rounded-all-1rem">
+									<div class="card-body">
+										<h4 class="card-title">Task</h4>
+										<h6 class="card-subtitle mb-2 text-muted">The "Tasks" section allows you to arrange and organize your tasks in a form of a To-Do list.</h6>
+										<br>
+									</div>
+									<img class="card-img-top" src="/cmsc128/resources/help/help-tasks.png">
+									<div class="card-body">
+										<div class="card-text text-justify">
+											In this section, you can be able to add, edit or delete tasks. To add a new task, simply click the "New Task" button on the top left of the screen. This will show a dialog box that you will enter the task information inside.
+											<br><br>
+											Once the dialog box is opened, you may start writing your task. First, you must enter the task name. This name is required and will be used in order to track this task later on. Next, you may put a due date and a reminder date. The due date is the date you must finish this task, while the reminder date will be the date you will be reminded of this task. You can be reminded before or after the due date. However, it is more productive when the reminder date is before the due date. Lastly, you may place tags for this task so that you can filter this out when searching.
+											<br><br>
+											If you're finally done with your task, you may click "Save" at the bottom of the box. If you decided that you don't want to add this task anymore, you can click "Cancel" to remove it. If you want to clear the form, you may click on "Clear".
+											<br><br>
+											You may also edit existing tasks. To do this, you simply click on the "Details" button at the bottom of the task you want to edit. Once the dialog box is opened, you may start editing your task.
+											<br><br>
+											If you're finally done editing your task, you may click "Update" at the bottom of the box. If you decided that you don't want to save these changes anymore, you can click "Cancel".
+											<br><br>
+											If you want to delete a task, simply click the "Delete" button at the bottom of the task. A message will appear stating that you will delete the task permanently and will never see it again. Click on the "Delete" button to permanently delete the task. If you decided that you don't want to delete it anymore, you may simply click "Cancel".
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-1"></div>
 						</div>
 						<br>
-						<h3>Upcoming Features?</h3>
-						<br>
-						<div class="helpText text-center">
-							We will probably have more features in our web app when the time comes. For now, just enjoy the existing ones that will surely catch your attention and help you on your daily needs.
-							<br><br>
-							<img class="helpPic" src="/cmsc128/resources/help/help-more.jpg">
-							<br><br>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non quam lacus suspendisse faucibus interdum. Odio facilisis mauris sit amet massa vitae tortor condimentum. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Quam nulla porttitor massa id. Nisl nisi scelerisque eu ultrices vitae. Tristique senectus et netus et malesuada fames ac. Morbi quis commodo odio aenean. Est placerat in egestas erat imperdiet sed euismod nisi. Eget mauris pharetra et ultrices. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Phasellus egestas tellus rutrum tellus pellentesque eu.
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br><br>			
+						<div class="row">
+							<div class="col-1"></div>
+							<div class="col-10 d-flex align-items-stretch">
+								<div class="card rounded-all-1rem">
+									<div class="card-body">
+										<h4 class="card-title">Notebook</h4>
+										<h6 class="card-subtitle mb-2 text-muted">The "Notebook" section allows you to create notes for different uses.</h6>
+										<br>
+									</div>
+									<img class="card-img-top" src="/cmsc128/resources/help/help-notes.png">
+									<div class="card-body">
+										<div class="card-text text-justify">
+											In this section, you can be able to add, edit or delete notes. To add a new note, simply click the "New Note" button on the top left of the screen. This will show a dialog box that you will enter the note information inside.
+											<br><br>
+											Once the dialog box is opened, you may start writing your note. First, you must enter the note title. This title is required and will be used in order to track this note later on. Secondly, you may place tags for this note so that you can filter this out when searching. Lastly, start writing the note. There are also different formatting styles which will be useful when writing these notes.
+											<br><br>
+											If you're finally done with your note, you may click "Save" at the bottom of the box. If you decided that you don't want to add this note anymore, you can click "Cancel" to remove it.
+											<br><br>
+											You may also edit existing notes. To do this, you simply click on the "Details" button at the bottom of the note you want to edit. Once the dialog box is opened, you may start editing your note.
+											<br><br>
+											If you're finally done editing your note, you may click "Save" at the bottom of the box. If you decided that you don't want to save these changes anymore, you can click "Cancel".
+											<br><br>
+											If you want to delete a note, simply click the "Delete" button at the bottom of the note. A message will appear stating that you will delete the note permanently and will never see it again. Click on the "Delete" button to permanently delete the note. If you decided that you don't want to delete it anymore, you may simply click "Cancel".
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-1"></div>
 						</div>
-						<br><br>
-						<h3>Quick Links</h3>
 						<br>
-						<div class="helpText text-center">
-							<a class="helpLink" href="help.php?help=help">Let's get started!!!</a><br>
-							<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
-							<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
-							<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
+						<a class="helpLink" href="#top">Back to Top</a>
+						<br><br><br>
+						<div class="row">
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card rounded-all-1rem">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-banner.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Upcoming Features</h4>
+										<h6 class="card-subtitle mb-2 text-muted"></h6>
+										<div class="card-text text-justify">
+											We will probably have more features in our web app when the time comes. For now, just enjoy the existing ones that will surely catch your attention and help you on your daily needs. If you have any suggestions with new features or modifications to existing one, please feel free to <a class="helpLink" href="help.php?help=contact">contact us</a>.
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-6 d-flex align-items-stretch">
+								<div class="card rounded-all-1rem">
+									<img class="card-img-top" src="/cmsc128/resources/help/help-banner.jpg">
+									<div class="card-body">
+										<h4 class="card-title">Quick Links</h4>
+										<div class="card-text">
+											<div class="helpText text-center">
+												<a class="helpLink" href="help.php?help=help">Let's get started!!!</a><br>
+												<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
+												<a class="helpLink" href="help.php?help=change">Do you want to change your password?</a><br>
+												<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
+												<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
+						<br>
+						<a class="helpLink" href="#top">Back to Top</a>
 					</div>
+
 					<div id="forgot" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "forgot"){echo " active";} else {echo " fade";}?>">
 						<h1>Forgot your Password?</h1>
 						<br>
 						<div class="helpText text-center">
-							Have you already got an account, but forgotten your password?
-							<br>
-							Say no more! Please follow the steps below to retrieve back your account.
+							Have you already got an account, but forgotten your password?<br>
+							That's sad! But we're here to help you...<br>
+							Please follow the steps below to retrieve back your account.
 						</div>
 						<br>
 						<div class="helpText">
-							<form type="GET" action="change.php">
+							<form type="GET" action="forgot.php">
 								<ol>
 									<li>
-										<div class="form-group">
+										<div class="form-group bg-white">
 											<input class="helpFormText" type="hidden" name="changeType" value="forgot">
 										</div>
-										<div>We will send a non-existent message to your email for verification.<br>
+										<div>We will send a non-existent message to your email for verification.<br>If the username and email inputted here match an existing account, then you are allowed to retrieve it with a new password.<br>
 										Please input your username and email.</div>
 										<br>
 										<div class="form-group">
@@ -234,8 +398,8 @@
 						<h1>Change your Password?</h1>
 						<br>
 						<div class="helpText text-center">
-							Is your old password too boring? Well, we've got you covered.
-							<br>
+							Is your old password too boring? Has it gotten under you skin?<br>
+							Maybe under the orange's ZEST? Well, we've got you covered.<br><br>
 							Please follow the steps below to change your account's password.
 						</div>
 						<br>
@@ -247,6 +411,7 @@
 											<input class="helpFormText" type="hidden" name="changeType" value="change">
 										</div>
 										<div>We will send a non-existent message to your email for verification.<br>
+											<link href="../src/index.php" rel="import" />
 										Please input your username and email.</div>
 										<br>
 										<div class="form-group">
@@ -308,6 +473,10 @@
 						<div class="helpText text-center">
 							We at ZEST have a strong network of software developers who provide frequent updates to cater to your productivity needs. With our flexible time slots, on-time service guarantee and quality assurance, you can be assured of getting tasks done at your convenience.
 						</div>
+						<br>
+						<div class="helpText text-center">
+							ZEST is at your BEST (in productivity)!!!
+						</div>
 						<br><br>
 						<h3>Quick Links</h3>
 						<br>
@@ -315,6 +484,7 @@
 							<a class="helpLink" href="help.php?help=help">Let's get started!!!</a><br>
 							<a class="helpLink" href="help.php?help=features">Check out our features...</a><br>
 							<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
+							<a class="helpLink" href="help.php?help=change">Do you want to change your password?</a><br>
 							<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
 						</div>
 					</div>
@@ -322,6 +492,8 @@
 						<h1>Contact Us</h1>
 						<br>
 						<div class="helpText text-center">
+							You want to find us?<br>
+							Some may say... ZEST is the life!!!<br><br>
 							You may contact us in the following platforms:
 						</div>
 						<br><br>
@@ -357,6 +529,7 @@
 							<a class="helpLink" href="help.php?help=help">Let's get started!!!</a><br>
 							<a class="helpLink" href="help.php?help=features">Check out our features...</a><br>
 							<a class="helpLink" href="help.php?help=forgot">Did you forget your password?</a><br>
+							<a class="helpLink" href="help.php?help=change">Do you want to change your password?</a><br>
 							<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
 						</div>
 					</div>

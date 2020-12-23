@@ -13,6 +13,7 @@ If the user presses the check button, the task_isDone of the tasks item is marke
 If the user presses the "add new task" button, a pop-up will appear, asking for the details. -->
 
 <body>
+    <div class="feature-bg"></div>
     <!-- navigation bar -->
     <?php include("sidebar.php"); ?>
     <div class="container-fluid with-sidebar">
@@ -175,10 +176,10 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             $("#search").on("input", sort);
 
             function sort() {
-                $sortBy = $("#sortBy").val();
-                $sortDir = $("#sortDir").val();
-                $searchQuery = $("#search").val();
-                window.location.search = "sortBy=" + $sortBy + "&sortDir=" + $sortDir + "&search=" + $searchQuery;
+                sortBy = $("#sortBy").val();
+                sortDir = $("#sortDir").val();
+                searchQuery = $("#search").val();
+                window.location.search = "sortBy=" + sortBy + "&sortDir=" + sortDir + "&search=" + searchQuery;
             }
 
             // END OF SORTING HANDLER
