@@ -1,0 +1,25 @@
+/* index bg */
+.index-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),
+        url("/cmsc128/resources/bg/home-default.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.landing-bg,
+.help-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),
+        url("/cmsc128/resources/bg/default.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.applink {
+    border-radius: 1rem !important;
+}
+
+.text-shadow{
+    text-shadow: 2px 2px 8px #000000;
+}

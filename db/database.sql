@@ -6,9 +6,10 @@ CREATE TABLE `user` (
   `user_ID` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
   `user_Name` varchar(30) NOT NULL,
   `user_Email` varchar(100) NOT NULL,
-  `user_Desc` varchar(400) NOT NULL,
   `user_Password` varchar(125) NOT NULL, -- before placed here, the string is hashed via MD5
+  `user_Desc` varchar(30) NOT NULL,
   `user_Theme` varchar(50) NOT NULL DEFAULT "default", -- stores the theme name of the user
+  `user_Avatar` varchar(50) NOT NULL DEFAULT "default", -- stores the avatar of the user
   PRIMARY KEY (`user_ID`),
   UNIQUE KEY `user_Name` (`user_Name`),
   UNIQUE KEY `user_Email` (`user_Email`)
@@ -46,7 +47,8 @@ CREATE TABLE `subject` (
   `subject_Type` varchar(3) NOT NULL DEFAULT "LEC",
   `subject_Instructor` varchar(100) DEFAULT NULL,
   `subject_Desc` mediumtext DEFAULT NULL,
-  `subject_Day` varchar(9) DEFAULT NULL,
+  `subject_Day` varchar(40) DEFAULT NULL,
+  `subject_DayCode` varchar(9) DEFAULT NULL,
   `subject_Time_Start` time DEFAULT NULL,
   `subject_Time_End` time DEFAULT NULL,
   `user_ID` int(10) ZEROFILL NOT NULL,

@@ -27,14 +27,15 @@ Notification:
 Alarm: 
     tasks.php?status_heading=This is a status heading&status=This is a status text&type=alarm
 
-On tasks.php
-
+On tasks.php:
+<script>
 spawnNotification();
+</script>
 -->
 
 <!-- A Bootstrap Toast -->
-<div id="notification" style="position:absolute; bottom:1em; right:1em; min-width: 350px; z-index:1080;">
-    <div class="toast toast-template" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+<div id="notification" style="position:fixed; bottom:1em; right:1em; min-width: 350px; z-index:1080;">
+    <div class="toast toast-template" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false" hidden>
         <div class="toast-header">
             <div class="toast-title mr-auto font-weight-bold text-primary">
             </div>

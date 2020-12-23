@@ -1,8 +1,9 @@
 # CMSC128
 
-NOTICE: ALWAYS UPDATE DATABASE!!! ALWAYS "GIT PULL/FETCH" BEFORE "GIT PUSH".
+## NOTICE: If you decided to update the database, please put (UPDATED DATABASE!!!) in your commit so that the rest of us will know.
+## NOTICE TOO: ALWAYS "GIT PULL/FETCH" BEFORE "GIT PUSH".
 
-This will be the repository for CMSC 128 - Section 3. Files included would be for the prototype system we will create in the scrum process through series of sprints.
+This will be the repository for CMSC 128 - Section 3. Files included would be for the prototype system we will create in the scrum process through series of sprints. The project will reach 4 sprints before the final prototype is created.
 
 ## Zoom Meeting Details:
 
@@ -12,20 +13,18 @@ This will be the repository for CMSC 128 - Section 3. Files included would be fo
 
 ## Sprints
 
-Fourth sprint ends on December 10, 2020.
-
-### 1. First sprint (October 22, 2020)
+### 1. First sprint (ended October 22, 2020)
 
 -   The first sprint included the mockup designs for our project.
 -   It also included the relational model of the database.
 
-### 2. Second sprint (November 12, 2020)
+### 2. Second sprint (ended November 12, 2020)
 
 -   Project now includes the basic Php files.
 -   Initial design and UI are working.
 -   Fixed bugs and issues.
 
-### 3. Third sprint (November 26, 2020)
+### 3. Third sprint (ended November 26, 2020)
 
 -   Project now has a good working UI.
 -   There is uniformity on different pages.
@@ -35,12 +34,28 @@ Fourth sprint ends on December 10, 2020.
 -   Reminders shown on home page.
 -   Fixed bugs and issues.
 
+### 4. Fourth sprint (ended December 10, 2020)
+
+-   Project now has an interactive and pleasantly working UI.
+-   There is now a profile page with working profile themes and avatars.
+-   There is also a Help Page, with many access points.
+-   Home page looks different, with new design and features.
+-   Fixed bugs and issues.
+
+### 5. Final Prototype (ended December 22, 2020)
+
+-   Home page looks different, with new design and features.
+-   Created new things in different features.
+-   Help Page is now fully interactive with pictures and links.
+-   Fixed all bugs and issues.
+
 ## Consultations
 
+-   December 23, 2020 (Final Presentation)
 -   November 26, 2020 (Overall UI Consultation #1)
 -   November 4, 2020 (Wireframe Consultation)
 
-## Members:
+## Members/Developers:
 
 ### 1. FRONT END (User Interface)
 
@@ -56,7 +71,7 @@ Fourth sprint ends on December 10, 2020.
 -   Garcia, Mico (Subjects)
 -   Jomoc, Gracielou (Notebook)
 -   Luciano, Kirl (Notebook)
--   Molina, Janley (Tasks, Reminders, Notebook (text editor) and other backend modules)
+-   Molina, Janley (Tasks, Reminders, Notebook (text editor))
 -   Rabe, Jett Adriel (Subjects)
 -   Zamudio, Kent (Login and Registration Pages)
 
@@ -183,7 +198,7 @@ git clone https://github.com/jvc1019/CMSC128.git
 3. For subcomponents that need database access, you can include `conn.php`. Check out `tasks_add.php` to see how it works.
 
 ```php
-include("conn.php");
+require_once("conn.php");
 ```
 
 4. To implement notifications, you may use `notification.php`. Check out `notification.php` to see how to use it, and around line 142 on `tasks.php` to see a sample implementation. **UPDATE: Notifications will now appear at the bottom right of the screen for consistency.**

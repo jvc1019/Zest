@@ -9,7 +9,7 @@ if ($all_tasks->num_rows > 0) {
         $_tag = !empty(explode(",", $row["task_Tags"])) ? explode(",", $row["task_Tags"]) : $row["task_Tags"];
         $task_Tags = array_merge($task_Tags, $_tag);
     }
-    // TODO: Sort the array by appearance
+
     $valueCount = array_count_values($task_Tags);
     usort($task_Tags, function ($a, $b) use ($valueCount) {
         return $valueCount[$b] - $valueCount[$a];

@@ -13,9 +13,10 @@ If the user presses the check button, the task_isDone of the tasks item is marke
 If the user presses the "add new task" button, a pop-up will appear, asking for the details. -->
 
 <body>
+    <div class="feature-bg"></div>
     <!-- navigation bar -->
-    <?php include("navbar.php"); ?>
-    <div class="container">
+    <?php include("sidebar.php"); ?>
+    <div class="container-fluid with-sidebar">
         <div class="alert alert-light shadow sticky-top">
             <!-- Tasks | sort by | sort direction | search box | add new task -->
             <!--   2   |          3               |      5     |       2      -->
@@ -23,7 +24,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 <div class="col-sm-2">
                     <h3 class="text-primary text-center">Tasks</h3>
                 </div>
-                <h5 class="text-secondary text-center">Sort by:</h5>
+                <div class="col-sm-1 text-center">Sort by: </div>
                 <!-- Sort by and sort direction -->
                 <div class="col-sm-3 form-inline">
                     <select id="sortBy" class="btn btn-sm">
@@ -34,7 +35,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                             <option selected value="0">Name</option>
                             <option value="1">Due date</option>
                         <?php
-                        } elseif ($value == 1) {
+                        } else if ($value == 1) {
                         ?>
                             <option value="0">Name</option>
                             <option selected value="1">Due date</option>
@@ -50,7 +51,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                             <option selected value="0">Ascending</option>
                             <option value="1">Descending</option>
                         <?php
-                        } elseif ($value == 1) {
+                        } else if ($value == 1) {
                         ?>
                             <option value="0">Ascending</option>
                             <option selected value="1">Descending</option>
@@ -60,9 +61,9 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                     </select>
                 </div>
                 <!-- Search box -->
-                <div class="col-sm-5 input-group">
+                <div class="col-sm-4 input-group">
                     <input type="text" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="search" placeholder="Search tasks by name..." value="<?php if (!empty($_GET['search']) && empty($_GET['tag'])) {
-                                                                                                                                                                                                            echo $_GET['search'];
+                                                                                                                                                                                                            echo html_entity_decode($_GET['search'], ENT_COMPAT);
                                                                                                                                                                                                         } else {
                                                                                                                                                                                                             echo "";
                                                                                                                                                                                                         }
@@ -102,7 +103,7 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
                 $search = "";
                 $searchQuery = "";
                 if (!empty($_GET['search'])) {
-                    $searchQuery = $_GET['search'];
+                    $searchQuery = htmlentities($_GET['search'], ENT_QUOTES);
                     $search = "WHERE task_Name LIKE '$searchQuery%' AND task.user_ID=$user_ID ORDER BY $sortBy $sortDir";
                 }
 
@@ -133,11 +134,6 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
     </div>
     <script src="js/tasks_modal_functions.js"></script>
     <script>
-        // Enable all tooltips
-        $(function() {
-            $("[data-toggle='tooltip']").tooltip()
-        })
-
         $(document).ready(function() {
             // Spawn notification if GET value is set
             spawnNotification();
@@ -180,11 +176,12 @@ If the user presses the "add new task" button, a pop-up will appear, asking for 
             $("#search").on("input", sort);
 
             function sort() {
-                $sortBy = $("#sortBy").val();
-                $sortDir = $("#sortDir").val();
-                $searchQuery = $("#search").val();
-                window.location.search = "sortBy=" + $sortBy + "&sortDir=" + $sortDir + "&search=" + $searchQuery;
+                sortBy = $("#sortBy").val();
+                sortDir = $("#sortDir").val();
+                searchQuery = $("#search").val();
+                window.location.search = "sortBy=" + sortBy + "&sortDir=" + sortDir + "&search=" + searchQuery;
             }
+
             // END OF SORTING HANDLER
 
             // Show completed tasks button

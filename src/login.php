@@ -1,10 +1,9 @@
 <?php include('header.php'); ?>
 <?php include('notification.php') ?>
 
-
-<body class="index-bg">
+<body>
 	<!-- navbar goes here -->
-	<div class="container">
+	<div class="container-fluid fullpage landing-bg">
 		<div class="row page-center">
 			<div class="col-lg"></div>
 			<div class="col-md-8">
@@ -12,7 +11,7 @@
 					<div class="col-md login-cover rounded-left"></div>
 					<div class="col-md-7 text-center">
 						<div class="form-group rounded-top form-head shadow p-3 sticky-top">
-							<div class="text-right">Need help?</div>
+							<div class="text-right"><a href="help.php?help=help" target="_blank">Need help?</a></div>
 						</div>
 						<div class="rounded-top rounded-bottom form-inner shadow p-3">
 							<br>
@@ -22,13 +21,15 @@
 								</div>
 								<div class="form-group">
 									<input type="password" class="form-control form-rounded" name="password" placeholder="Enter password" required="">
-									<a class="forgot" href="#">Forgot your password?</a>
+									<br>
+									<a class="forgot" href="help.php?help=forgot" target="_blank">Forgot your password?</a>
 								</div>
 								<div class="form-group">
 									<button class="btn btn-primary btn-block" type="submit">Log In</button>
 								</div>
 							</form>
 						</div>
+						<br>
 						<div class="form-links">
 							<div class="text-gray-dark">Don't have an account yet?</div>
 							<a class="text-light" href="signup-page.php">Create an Account</a>
@@ -39,10 +40,9 @@
 			<div class="col-lg"></div>
 		</div>
 
-
-
-
-
+		<script>
+			spawnNotification();
+		</script>
 		<!-- modal -->
 		<div class="modal fade" id="errorLoginModal" tabindex="-1" role="dialog">
 			<div class="modal-dialog">

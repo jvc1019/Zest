@@ -1,11 +1,9 @@
-<?php include('header.php');
-include('notification.php');
-?>
+<?php include('header.php'); ?>
+<?php include('notification.php'); ?>
 
-
-<body class="index-bg">
+<body>
 	<!-- navbar goes here -->
-	<div class="container">
+	<div class="container-fluid fullpage landing-bg">
 		<!-- processor for signup form -->
 		<?php include('signup.php'); ?>
 		<div class="row page-center">
@@ -15,33 +13,30 @@ include('notification.php');
 					<div class="col-md login-cover rounded-left"></div>
 					<div class="col-md-7 text-center">
 						<div class="form-group rounded-top signup-head shadow p-3 sticky-top">
-							<div class="text-right">Need help?</div>
+							<div class="text-right"><a href="help.php?help=help" target="_blank">Need help?</a></div>
 						</div>
 						<div class="rounded-top rounded-bottom form-inner shadow p-3">
 							<br>
 							<form method="POST" action="#">
 								<div class="form-group">
-									<input type="text" class="form-control" name="username" placeholder="Enter username" value="<?php echo $username; ?>" required="">
+									<input type="text" class="form-control" id="usernamebox" name="username" placeholder="Enter username" value="<?php echo $username; ?>" required="">
 								</div>
 								<div class="form-group" data-toggle="tooltip" title="username@example.com">
 									<input type="text" class="form-control" name="email" placeholder="Enter email address" value="<?php echo $email; ?>" required="">
 								</div>
-								<div class="form-group" data-toggle="tooltip" data-html="true" title="<b>Password must contain:</b> <br> &#8226 8 characters <br> &#8226 upper and lowercase letters <br> &#8226 at least 1 number <br> &#8226 at least 1 special character">
-									<input type="password" class="form-control" name="password" placeholder="Enter password" required="">
+								<div class="form-group" data-toggle="tooltip" data-html="true" title="Password must contain at least 8 characters">
+									<input type="password" class="form-control" id="passbox" name="password" placeholder="Enter password" required="">
 								</div>
 								<div class="form-group">
-									<?php include('notification.php'); ?>
-								</div>
-								<div class="form-group">
-									<input type="password" class="form-control form-rounded" name="re_password" placeholder="Re-enter password" required="">
+									<input type="password" class="form-control form-rounded" id="repassbox" name="re_password" placeholder="Re-enter password" required="">
 								</div>
 								<div class="form-group">
 									<button class="btn btn-primary btn-block" type="submit" name="register">Sign Up</button>
 								</div>
 							</form>
 						</div>
-						<div class="signup-links">
-							<div class="text-gray-dark">Have an account??</div>
+						<div class="form-links">
+							<div class="text-gray-dark">Have an account?</div>
 							<a class="text-light" href="login.php">Login</a>
 						</div>
 					</div>
@@ -49,10 +44,6 @@ include('notification.php');
 			</div>
 			<div class="col-lg"></div>
 		</div>
-
-
-
-
 
 		<!-- modal -->
 		<div class="modal fade" id="errorSignupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -74,12 +65,6 @@ include('notification.php');
 			</div>
 		</div>
 	</div>
-	<script>
-		// Enable all tooltips
-		$(function() {
-			$("[data-toggle='tooltip']").tooltip()
-		})
-	</script>
 </body>
 
 </html>

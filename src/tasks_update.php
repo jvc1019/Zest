@@ -4,7 +4,7 @@
 -->
 
 <?php
-include('conn.php');
+require_once("conn.php");
 
 $task_ID = $_GET['task_ID'];
 $task_isChecked = $_GET['task_isChecked'];
