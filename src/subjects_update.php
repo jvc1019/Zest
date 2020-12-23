@@ -91,7 +91,7 @@
                     WHERE subject_ID='$sID'";
     
     #take note of the 'and' here, very important for num_rows case
-    $subjectlist = "SELECT `subject_Name` FROM `subject` WHERE `subject_name`='$sName' AND `subject_ID`!=$sID AND `user_ID`='$u_ID'";
+    $subjectlist = "SELECT `subject_Name` FROM `subject` WHERE `subject_Name`='$sName' AND `subject_ID`!=$sID AND `user_ID`='$uID'";
     $result = $conn->query($subjectlist);
 
     #This is essentially the same as the one I put in subject just that its querying a different query
@@ -106,10 +106,9 @@
 
         #Case for if user decides not to select a time
         #apparently mysql doesn't like empty values so after thorough research, it had to be forced into NULL
-        if (strlen($sTimeStart) == 0 && strlen($sTimeEnd) == 0){
-            echo "hello";
+        if (strlen($sTimeStart) == 0 || strlen($sTimeEnd) == 0){
 
-            $nullsql = "UPDATE subject SET subject_Time_Start=null, subject_Time_End=null WHERE `subject_name`='$sName'";
+            $nullsql = "UPDATE subject SET subject_Time_Start=null, subject_Time_End=null WHERE `subject_Name`='$sName'";
             $conn->query($nullsql);
         }
     }    
