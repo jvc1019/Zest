@@ -47,32 +47,48 @@
 					<div id="help" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "help"){echo " active";} else {echo " fade";}?>">
 						<h1>Getting Started</h1>
 						<br><br>
-						<h3>What is ZEST?</h3>
-						<br>
-						<img src="../resources/icons/lemon-icon.png">
-						<br><br>
-						<div class="text-info text-center">
-							Welcome to ZEST, a developing productivity web application designed for your school/study needs.
+						<div class="row">
+							<div class="col-4">
+								<img src="../resources/icons/lemon-icon.png">
+								
+							</div>
+							<div class="col-7">
+								<h3>What is ZEST?</h3>
+								<br>
+								<div class="text-dark font-weight-bold text-center">
+									Welcome to ZEST, a developing productivity web application designed <br> for your school/study needs.
+								</div>
+								<br>
+								<div class=" text-center text-break text-dark">
+									ZEST is a Productivity App, an application created by a group of aspiring software developers designed to help you in your school work with absolute productivity. It has different features and services that will surely help you in your important work needs.
+									<br>...<br>
+									<a class="helpLink" href="help.php?help=about"><button class="btn btn-warning"><div class="font-weight-bold">Learn more </div></button></a>
+								</div>
+							</div>
+							<div class="col-1"></div>
 						</div>
-						<br>
-						<div class=" text-center text-dark">
-							ZEST is a Productivity App, an application created by a group of aspiring software developers designed <br>
-							to help you in your school work with absolute productivity. It has different features and services <br> that will surely help you in your important work needs.
-							<br>...<br>
-							Learn more about us in the <a class="helpLink" href="help.php?help=about">ABOUT</a> section.
+						<br><hr><br>
+						<div class="row">
+							<div class="col-3"></div>
+							<div class="col-6">
+								<h3>What do we offer?</h3>
+								<br>
+								<div class="text-break text-center">
+									Our <a class="helpLink" href="help.php?help=features">features</a> include the <b>SUBJECTS</b>, <b>TASK</b> and <b>SUBJECTS</b> sections, as well as different customization tools available for different types of users.
+									
+									The SUBJECTS section is where you can organize your subjects. You are able to add your subjects in a form where you can utilize them in creating your schedule.
+
+									The TASKS section is where you can create and organize different tasks. Our task manager will be able to remind you when you have upcoming dues and organize them according to your liking.
+
+									The NOTEBOOK section is where you can create notes with tags so that you can freely sort out your information.
+									</div>
+									<br>
+									<a class="helpLink" href="#top">Back to Top</a>
+									<br>
+							</div>
+							<div class="col-3"></div>
 						</div>
-						<br><br>
-						<h3>What do we offer?</h3>
-						<br>
-						<div class="helpText text-justify">
-							Our <a class="helpLink" href="help.php?help=features">features</a> include the SUBJECTS, TASKS and NOTEBOOK sections, as well as different customization tools available for different types of users.
-							The SUBJECTS section is where you can organize your subjects. You are able to add your subjects in a form where you can utilize them in creating your schedule.
-							The TASKS section is where you can create and organize different tasks. Our task manager will be able to remind you when you have upcoming dues and organize them according to your liking.
-							The NOTEBOOK section is where you can create notes with tags so that you can freely sort out your information.
-						</div>
-						<br>
-						<a class="helpLink" href="#top">Back to Top</a>
-						<br>
+						
 						<hr>
 						<br>
 						<h3>Account Basics</h3>
@@ -192,13 +208,14 @@
 						<div class="row">
 							<div class="col-1"></div>
 							<div class="col-10 d-flex align-items-stretch">
-								<div class="card">	
+								<div class="card rounded-all-1rem">	
 									<div class="card-body">
 										<h4 class="card-title">Subjects</h4>
 										<h6 class="card-subtitle mb-2 text-muted">The "Subjects" section allows you to organize, edit and personalize your subjects.</h6>
 										<br>
-										<img class="card-img-top" src="/cmsc128/resources/help/help-subjects.png">
-										<br><br>
+									</div>
+									<img class="card-img-top" src="/cmsc128/resources/help/help-subjects.png">
+									<div class="card-body">
 										<div class="card-text text-justify">
 											In this section, you can be able to add, edit or delete subjects. To add a new subject, simply click the "New Subject" button on the top left of the screen. This will show a dialog box that you will enter the subject information inside.
 											<br><br>
@@ -224,13 +241,14 @@
 						<div class="row">
 							<div class="col-1"></div>
 							<div class="col-10 d-flex align-items-stretch">
-								<div class="card">
+								<div class="card rounded-all-1rem">
 									<div class="card-body">
 										<h4 class="card-title">Task</h4>
 										<h6 class="card-subtitle mb-2 text-muted">The "Tasks" section allows you to arrange and organize your tasks in a form of a To-Do list.</h6>
 										<br>
-										<img class="card-img-top" src="/cmsc128/resources/help/help-tasks.png">
-										<br><br>
+									</div>
+									<img class="card-img-top" src="/cmsc128/resources/help/help-tasks.png">
+									<div class="card-body">
 										<div class="card-text text-justify">
 											In this section, you can be able to add, edit or delete tasks. To add a new task, simply click the "New Task" button on the top left of the screen. This will show a dialog box that you will enter the task information inside.
 											<br><br>
@@ -255,13 +273,14 @@
 						<div class="row">
 							<div class="col-1"></div>
 							<div class="col-10 d-flex align-items-stretch">
-								<div class="card">
+								<div class="card rounded-all-1rem">
 									<div class="card-body">
 										<h4 class="card-title">Notebook</h4>
 										<h6 class="card-subtitle mb-2 text-muted">The "Notebook" section allows you to create notes for different uses.</h6>
 										<br>
-										<img class="card-img-top" src="/cmsc128/resources/help/help-notes.png">
-										<br><br>
+									</div>
+									<img class="card-img-top" src="/cmsc128/resources/help/help-notes.png">
+									<div class="card-body">
 										<div class="card-text text-justify">
 											In this section, you can be able to add, edit or delete notes. To add a new note, simply click the "New Note" button on the top left of the screen. This will show a dialog box that you will enter the note information inside.
 											<br><br>
@@ -285,7 +304,7 @@
 						<br><br><br>
 						<div class="row">
 							<div class="col-6 d-flex align-items-stretch">
-								<div class="card">
+								<div class="card rounded-all-1rem">
 									<img class="card-img-top" src="/cmsc128/resources/help/help-banner.jpg">
 									<div class="card-body">
 										<h4 class="card-title">Upcoming Features</h4>
@@ -297,7 +316,7 @@
 								</div>
 							</div>
 							<div class="col-6 d-flex align-items-stretch">
-								<div class="card">
+								<div class="card rounded-all-1rem">
 									<img class="card-img-top" src="/cmsc128/resources/help/help-banner.jpg">
 									<div class="card-body">
 										<h4 class="card-title">Quick Links</h4>

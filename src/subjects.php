@@ -289,7 +289,8 @@ include("notification.php");
             $result = $conn->query($subjects);
 
             if (!($result->num_rows > 0)) { ?>
-                <h6>No subjects to display ( ˘･з･)</h6>
+                </div>
+                <h6 class="text-center">No subjects to display ( ˘･з･)</h6>
                 <?php
             } else {
                 while ($subjects = $result->fetch_assoc()) { ?>
