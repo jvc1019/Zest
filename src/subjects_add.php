@@ -12,7 +12,7 @@
     $sTimeEnd = $_POST ["subjectTimeEnd"];
     $uID = $_POST['user_ID'];
 
-    
+    echo $sName;
     //For the subject day (M,T,W,Th,F,Sa,Su --> Respectively)
     if (!empty($_POST['subjectDay'])){
         $sDayCode = "";
@@ -90,7 +90,7 @@
 
 
     $status_heading = "Add Subject";
-    $subjectlist = "SELECT `subject_Name` FROM `subject` WHERE `subject_name`='$sName' AND `user_ID`='$uID'";
+    $subjectlist = "SELECT `subject_Name` FROM `subject` WHERE `subject_Name`='$sName' AND `user_ID`='$uID'";
     $result = $conn->query($subjectlist);
 
     #Check if subject has duplicate name
@@ -105,9 +105,9 @@
         #Case for if user decides not to select a time
         #apparently mysql doesn't like empty values so after thorough research, it had to be forced into NULL
         if (strlen($sTimeStart) == 0 || strlen($sTimeEnd) == 0){
-            echo "hello";
 
-            $nullsql = "UPDATE subject SET subject_Time_Start=null, subject_Time_End=null WHERE `subject_name`='$sName'";
+
+            $nullsql = "UPDATE subject SET subject_Time_Start=null, subject_Time_End=null WHERE `subject_Name`='$sName'";
             $conn->query($nullsql);
         }
     }
