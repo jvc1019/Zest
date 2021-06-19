@@ -26,19 +26,25 @@
                         Avatar:
                         <div class="input-group">
                             <select id="addUserAvatar" class="form-control text-truncate border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="userAvatar">
-                                <option <?php if ($user['user_Avatar'] == "default") echo "selected" ?> value="default">Default</option>
-                                <option <?php if ($user['user_Avatar'] == "avatar1") echo "selected" ?> value="avatar1">Male Avatar 1</option>
-                                <option <?php if ($user['user_Avatar'] == "avatar2") echo "selected" ?> value="avatar2">Male Avatar 2</option>
-                                <option <?php if ($user['user_Avatar'] == "avatar3") echo "selected" ?> value="avatar3">Male Avatar 3</option>
-                                <option <?php if ($user['user_Avatar'] == "avatar4") echo "selected" ?> value="avatar4">Male Avatar 4</option>
-                                <option <?php if ($user['user_Avatar'] == "avatar5") echo "selected" ?> value="avatar5">Male Avatar 5</option>
-                                <option <?php if ($user['user_Avatar'] == "avatar6") echo "selected" ?> value="avatar6">Male Avatar 6</option>
-                                <option <?php if ($user['user_Avatar'] == "avatar7") echo "selected" ?> value="avatar7">Female Avatar 1</option>
-                                <option <?php if ($user['user_Avatar'] == "avatar8") echo "selected" ?> value="avatar8">Female Avatar 2</option>
-                                <option <?php if ($user['user_Avatar'] == "avatar9") echo "selected" ?> value="avatar9">Female Avatar 3</option>
-                                <option <?php if ($user['user_Avatar'] == "avatar10") echo "selected" ?> value="avatar10">Female Avatar 4</option>
-                                <option <?php if ($user['user_Avatar'] == "avatar11") echo "selected" ?> value="avatar11">Female Avatar 5</option>
-                                <option <?php if ($user['user_Avatar'] == "avatar12") echo "selected" ?> value="avatar12">Female Avatar 6</option>
+                            	<optgroup>
+                            		<option <?php if ($user['user_Avatar'] == "default") echo "selected" ?> value="default">Default</option>
+                            	</optgroup>
+                            	<optgroup label="Male">
+	                                <option <?php if ($user['user_Avatar'] == "avatar1") echo "selected" ?> value="avatar1">Avatar 1</option>
+	                                <option <?php if ($user['user_Avatar'] == "avatar2") echo "selected" ?> value="avatar2">Avatar 2</option>
+	                                <option <?php if ($user['user_Avatar'] == "avatar3") echo "selected" ?> value="avatar3">Avatar 3</option>
+	                                <option <?php if ($user['user_Avatar'] == "avatar4") echo "selected" ?> value="avatar4">Avatar 4</option>
+	                                <option <?php if ($user['user_Avatar'] == "avatar5") echo "selected" ?> value="avatar5">Avatar 5</option>
+	                                <option <?php if ($user['user_Avatar'] == "avatar6") echo "selected" ?> value="avatar6">Avatar 6</option>
+                                </optgroup>
+                                <optgroup label="Female">
+	                                <option <?php if ($user['user_Avatar'] == "avatar7") echo "selected" ?> value="avatar7">Avatar 7</option>
+	                                <option <?php if ($user['user_Avatar'] == "avatar8") echo "selected" ?> value="avatar8">Avatar 8</option>
+	                                <option <?php if ($user['user_Avatar'] == "avatar9") echo "selected" ?> value="avatar9">Avatar 9</option>
+	                                <option <?php if ($user['user_Avatar'] == "avatar10") echo "selected" ?> value="avatar10">Avatar 10</option>
+	                                <option <?php if ($user['user_Avatar'] == "avatar11") echo "selected" ?> value="avatar11">Avatar 11</option>
+	                                <option <?php if ($user['user_Avatar'] == "avatar12") echo "selected" ?> value="avatar12">Avatar 12</option>
+                                </optgroup>
                             </select>
                         </div>
                     </div>

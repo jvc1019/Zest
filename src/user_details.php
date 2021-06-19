@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_Name'])) {
 } else if (isset($_SESSION['user_Name'])) {
     $user_Name = $_SESSION['user_Name']; /* you can also access $user_Name on your php as long as you 
 											include header.php*/
-    $user = $conn->query("SELECT * FROM user WHERE user_Name='$user_Name'")->fetch_assoc();
+    $user = $conn->query("SELECT * FROM `user` WHERE `user`.`user_Name`='$user_Name'")->fetch_assoc();
     $user_ID = $user['user_ID']; /* you can also access $user_ID on your php as long as you 
 										include header.php*/
     $user_Email = $user['user_Email'];
