@@ -54,7 +54,8 @@ This will be the repository for Zest - The Productivity App. Files included woul
 
 ## Consultations
 
--   December 23, 2020 (Final Presentation)
+-   June 23, 2021 (Sprint Review)
+-   December 23, 2020 (Prototype Presentation)
 -   November 26, 2020 (Overall UI Consultation #1)
 -   November 4, 2020 (Wireframe Consultation)
 
