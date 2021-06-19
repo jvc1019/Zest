@@ -1,6 +1,6 @@
-# CMSC128
+# ZEST - THE PRODUCTIVITY APP
 
-This will be the repository for CMSC 128 - Section 3. Files included would be for the prototype system we will create in the scrum process through series of sprints. The project will reach 4 sprints before the final prototype is created.
+This will be the repository for Zest - The Productivity App. Files included would be for the prototype system we will create in the scrum process through series of sprints.
 
 ## Zoom Meeting Details:
 
@@ -39,12 +39,18 @@ This will be the repository for CMSC 128 - Section 3. Files included would be fo
 -   Home page looks different, with new design and features.
 -   Fixed bugs and issues.
 
-### 5. Final Prototype (ended December 22, 2020)
+### 5. Fifth Sprint (ended December 22, 2020)
 
 -   Home page looks different, with new design and features.
 -   Created new things in different features.
 -   Help Page is now fully interactive with pictures and links.
 -   Fixed all bugs and issues.
+
+### 6. Sixth Sprint (ONGOING)
+
+-   Add new things.
+-   Improve UI.
+-   Fix bugs and issues.
 
 ## Consultations
 
@@ -54,15 +60,15 @@ This will be the repository for CMSC 128 - Section 3. Files included would be fo
 
 ## Members/Developers:
 
-### 1. FRONT END (User Interface)
+### 1. FRONTEND (User Interface)
 
 -   Carpio, Eman (Notebook)
 -   Faeldonea, Ken (Home and other Pages)
 -   Jinon, Robien (Notebook)
--   Visto, Ronald (Subjects)
+-   Visto, Ronn (Subjects)
 -   Castañeda, Jayvee (Profile, Themes)
 
-### 2. BACK END (Database)
+### 2. BACKEND (Database)
 
 -   Castañeda, Jayvee (Reminders, Profile, Help/Support)
 -   Garcia, Mico (Subjects)
