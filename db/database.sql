@@ -73,6 +73,18 @@ CREATE TABLE `note` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `resetkey`
+--
+
+CREATE TABLE `resetkey` (
+  `email` varchar(100) DEFAULT NULL,
+  `passkey` varchar(100) DEFAULT NULL,
+  `expire` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- These are dummy values to prevent errors with AUTO_INCREMENT,
 -- therefore the lowest possible ID for user-generated entries is 2
 INSERT INTO `user` (`user_ID`, `user_Name`, `user_Email`, `user_Desc`, `user_Password`) VALUES
