@@ -9,7 +9,7 @@
     $Theme = $_POST ['userTheme'];
     $Avatar = $_POST ['userAvatar'];
 
-    $sqlUpdate = "UPDATE user SET user_Name='$Name', user_Email='$Email', user_Desc='$Desc', user_Theme='$Theme', user_Avatar='$Avatar' WHERE user_ID='$ID'";
+    $sqlUpdate = "UPDATE `user` SET `user_Name`='$Name', `user_Email`='$Email', `user_Desc`='$Desc', `user_Theme`='$Theme', `user_Avatar`='$Avatar' WHERE `user`.`user_ID`='$ID'";
     $conn->query($sqlUpdate);
 
     header("Location:profile.php?status_heading=Profile Updated&status=You have succesfully updated your profile, $Name&type=notif");

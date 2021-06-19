@@ -1,5 +1,5 @@
 <?php include('header.php'); ?>
-<?php include("user_details.php") ?>
+<?php include("user_details.php"); ?>
 <?php include('notification.php'); ?>
 
 <body class="index-bg">
