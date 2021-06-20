@@ -80,7 +80,7 @@ CREATE TABLE `note` (
 --
 
 CREATE TABLE `resetkey` (
-  `email` varchar(100) DEFAULT NULL,
+  `user_Name` varchar(100) DEFAULT NULL,
   `passkey` varchar(100) DEFAULT NULL,
   `expire` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
