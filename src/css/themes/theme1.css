@@ -1,5 +1,5 @@
-.index-bg, .feature-bg{
-    background-image: url("/cmsc128/resources/bg/study.jpg");
+.index-bg, .feature-bg {
+    background-image: url("/Zest/resources/bg/study.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
