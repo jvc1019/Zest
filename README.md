@@ -48,13 +48,17 @@ This will be the repository for Zest - The Productivity App. Files included woul
 
 ### 6. Sixth Sprint (ONGOING)
 
--   Add new things.
--   Improve UI.
--   Fix bugs and issues.
+-   Two (2) New Themes Added
+-   Forgot Password (Security) Implementation
+-   Online Database
+-   Remote Installer
+-   Changed code for consistency
+-   Improve Overall UI
+-   Fixed bugs and issues
 
 ## Consultations
 
--   June 23, 2021 (Sprint Review)
+-   June 24, 2021 (Sprint 6 Review)
 -   December 23, 2020 (Prototype Presentation)
 -   November 26, 2020 (Overall UI Consultation #1)
 -   November 4, 2020 (Wireframe Consultation)
