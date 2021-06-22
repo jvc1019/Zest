@@ -5,6 +5,6 @@
 :::::::::::::::::::::::::::::::::::::::
 
 :: Copies the folder and subfolder extracted into htdocs of xampp. xampp must be installed
-ROBOCOPY /mir .\Zest C:\Zest
+ROBOCOPY /mir /mt:8 .\Zest C:\Zest
 XCOPY "Zest.lnk" "%UserProfile%\Desktop"
 
