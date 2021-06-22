@@ -86,6 +86,8 @@
                                 <option <?php if ($user['user_Theme'] == "theme2") echo "selected" ?> value="theme2">Sunset</option>
                                 <option <?php if ($user['user_Theme'] == "theme3") echo "selected" ?> value="theme3">Street</option>
                                 <option <?php if ($user['user_Theme'] == "theme4") echo "selected" ?> value="theme4">Seashore</option>
+                                <option <?php if ($user['user_Theme'] == "theme5") echo "selected" ?> value="theme5">Solid</option>
+                                <option <?php if ($user['user_Theme'] == "theme6") echo "selected" ?> value="theme6">Sashimi</option>
                             </select>
                         </div>
                     </div>
