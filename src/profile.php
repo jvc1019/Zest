@@ -21,7 +21,7 @@
 						</svg> Edit Profile
 					</button>
 					<br>
-					<div class="mx-auto text-justify" style="font-style:italic <?php if (empty($user_Desc)) { echo ', color:gray'; }?> ">
+					<div class="mx-auto font-italic<?php if (empty($user_Desc)) { echo ' text-center noDesc'; } else { echo ' text-justify'; } ?>">
 						<?php
 						if (empty($user_Desc)) {
 							$user_Desc = "User has no description.";
