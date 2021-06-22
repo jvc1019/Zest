@@ -8,7 +8,7 @@
 	<div class="container-fluid fullpage with-sidebar">
 		<div class="row py-2">
 			<div class="card profileHolder mx-auto shadow p-3">
-				<?php echo "<img class='card-img-top img-fluid' src='../resources/avatars/$user_Avatar.jpg' alt='Profile Avatar'>" ?>
+				<?php echo "<img src='../resources/avatars/$user_Avatar.jpg' alt='Profile Avatar'>" ?>
 				<div class="card-body">
 					<h2 class="text-center"><?php echo $user_Name ?></h2>
 					<p class="text-center font-italic"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
@@ -21,8 +21,7 @@
 						</svg> Edit Profile
 					</button>
 					<br>
-					<div class="mx-auto text-justify" style="<?php if (empty($user_Desc)) {
-							echo "color:gray, "; }?> font-style:italic">
+					<div class="mx-auto text-justify" style="font-style:italic <?php if (empty($user_Desc)) { echo ', color:gray'; }?> ">
 						<?php
 						if (empty($user_Desc)) {
 							$user_Desc = "User has no description.";
