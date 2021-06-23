@@ -54,7 +54,7 @@
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">
-						<img src="../resources/icons/circle-x-8x.png">
+						<img src="/resources/icons/circle-x-8x.png">
 						<br>
 						<h6><?php echo $errorMsg ?></h6>
 					</div>
@@ -66,4 +66,3 @@
 		</div>
 	</div>
 </body>
-

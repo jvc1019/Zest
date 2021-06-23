@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Heavitas";
-    src: local("Heavitas"), url("/Zest/resources/fonts/Heavitas.ttf");
+    src: local("Heavitas"), url("/resources/fonts/Heavitas.ttf");
 }
 
 .title {
@@ -76,7 +76,6 @@
     background-image: url("/resources/help/help-banner.jpg");
     background-size: cover;
     height: 15rem;
-   
 }
 
 .centered {
@@ -101,7 +100,6 @@
 .card {
     flex: 0 0 auto;
 }
-
 
 .helpTitle {
     background-color: inherit;
@@ -132,7 +130,9 @@
     color: rgb(255, 208, 100);
 }
 
-.helpLink, .helpLink:active, .helpLink:visited {
+.helpLink,
+.helpLink:active,
+.helpLink:visited {
     color: rgb(255, 208, 100);
 }
 

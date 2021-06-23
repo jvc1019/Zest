@@ -7,7 +7,7 @@
                 <div class="p-5 my-5">
                     <div class="row">
                         <div class="col-sm-6">
-                            <img src="../resources/icons/lemon-icon.png" class="img-fluid title-img">
+                            <img src="/resources/icons/lemon-icon.png" class="img-fluid title-img">
                         </div>
                         <div class="col-sm-6">
                             <br><br>

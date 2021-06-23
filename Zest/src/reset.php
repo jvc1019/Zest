@@ -9,6 +9,7 @@ $username = $_SESSION['user'];
 $key = $_SESSION['key'];
 $email = $_SESSION['email'];
 ?>
+
 <body>
     <script>
         spawnNotification();
@@ -20,7 +21,7 @@ $email = $_SESSION['email'];
                 <div class="p-5 my-5">
                     <div class="row">
                         <div class="col-sm-6">
-                            <img src="../resources/icons/lemon-icon.png" class="img-fluid title-img">
+                            <img src="/resources/icons/lemon-icon.png" class="img-fluid title-img">
                         </div>
                         <div class="col-sm-6">
                             <br><br>
@@ -31,10 +32,10 @@ $email = $_SESSION['email'];
                 </div>
             </div>
             <div class="col-sm-6 p-5">
-               <div class="row rounded form-box shadow mx-5">
+                <div class="row rounded form-box shadow mx-5">
                     <div class="col-md text-center">
                         <div class="form-group rounded-top form-head shadow p-3 sticky-top">
-                            <div class="text-right"><a href="help.php?help=help" target="_blank">Need help?</a></div> 
+                            <div class="text-right"><a href="help.php?help=help" target="_blank">Need help?</a></div>
                         </div>
                         <div class="rounded-top rounded-bottom form-inner shadow p-3">
                             <div>
@@ -43,9 +44,9 @@ $email = $_SESSION['email'];
                             </div>
                             <form method="POST" action="#">
                                 <div class="form-group">
-                                <input type="password" class="form-control" name="pass" placeholder="Enter new password" required="">
+                                    <input type="password" class="form-control" name="pass" placeholder="Enter new password" required="">
                                 </div>
-                                
+
                                 <div class="form-group" data-toggle="tooltip" data-html="true" title="Password must contain at least 8 characters">
                                     <input type="password" class="form-control form-rounded" name="repass" placeholder="Re-enter new password" required="">
                                 </div>
@@ -53,7 +54,7 @@ $email = $_SESSION['email'];
                                     <button class="btn btn-primary btn-block" type="submit" name="resetpass">Reset My Password</button>
                                 </div>
                                 <div class="form-group">
-                                    <a class="forgot" href="login.php" ><br>Login to my account</a>
+                                    <a class="forgot" href="login.php"><br>Login to my account</a>
                                 </div>
                             </form>
                         </div>
@@ -63,4 +64,3 @@ $email = $_SESSION['email'];
         </div>
     </div>
 </body>
-

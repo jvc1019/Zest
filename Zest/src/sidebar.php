@@ -1,9 +1,9 @@
-<?php include("logout_modal.php");?>
+<?php include("logout_modal.php"); ?>
 
 <div id="sidebar" class="sidebar">
     <div>
         <a href="index.php">
-            <img class="nav-icon" src="../resources/icons/lemon-icon.svg" style="filter:invert(100%)">
+            <img class="nav-icon" src="/resources/icons/lemon-icon.svg" style="filter:invert(100%)">
             <span class="icon-text"> Home</span>
         </a>
         <hr class="border-secondary">
@@ -43,7 +43,7 @@
         if (!empty($user_Name)) {
         ?>
             <a href="profile.php">
-                <img class="nav-icon rounded" src="../resources/avatars/<?php echo $user_Avatar; ?>.jpg">
+                <img class="nav-icon rounded" src="/resources/avatars/<?php echo $user_Avatar; ?>.jpg">
                 <span class='icon-text'><?php echo $user_Name; ?></span>
             </a>
 

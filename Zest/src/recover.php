@@ -6,6 +6,7 @@
 session_start();
 // php file to send an email to the user for password recovery
 ?>
+
 <body>
     <script>
         spawnNotification();
@@ -17,7 +18,7 @@ session_start();
                 <div class="p-5 my-5">
                     <div class="row">
                         <div class="col-sm-6">
-                            <img src="../resources/icons/lemon-icon.png" class="img-fluid title-img">
+                            <img src="/resources/icons/lemon-icon.png" class="img-fluid title-img">
                         </div>
                         <div class="col-sm-6">
                             <br><br>
@@ -42,7 +43,7 @@ session_start();
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="username" placeholder="Enter username" required="">
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <input type="text" class="form-control form-rounded" name="email" placeholder="Enter email" required="">
                                 </div>
@@ -50,7 +51,7 @@ session_start();
                                     <button class="btn btn-primary btn-block" type="submit" name="sendkey">Get My Private Key</button>
                                 </div>
                                 <div class="form-group">
-                                    <a class="forgot" href="login.php" ><br>Login to my account</a>
+                                    <a class="forgot" href="login.php"><br>Login to my account</a>
                                 </div>
                             </form>
                         </div>
