@@ -31,7 +31,7 @@
 						<a class="nav-link<?php if ($default == "features"){echo " active";} ?>" data-toggle="pill" href="#features">Features</a>
 					</li>
 					<li class="nav-item flex-sm-fill text-center helpTitle">
-						<a class="nav-link<?php if ($default == "forgot"){echo " active";} ?>" data-toggle="pill" href="#forgot">Forgot your Password?</a>
+						<a class="nav-link" href="index.php">Forgot your Password?</a>
 					</li>
 					<li class="nav-item flex-sm-fill text-center helpTitle">
 						<a class="nav-link<?php if ($default == "change"){echo " active";} ?>" data-toggle="pill" href="#change">Change your Password?</a>
@@ -335,64 +335,6 @@
 						</div>
 						<br>
 						<a class="helpLink" href="#top">Back to Top</a>
-					</div>
-
-					<div id="forgot" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "forgot"){echo " active";} else {echo " fade";}?>">
-						<h1>Forgot your Password?</h1>
-						<br>
-						<div class="helpText text-center">
-							Have you already got an account, but forgotten your password?<br>
-							That's sad! But we're here to help you...<br>
-							Please follow the steps below to retrieve back your account.
-						</div>
-						<br>
-						<div class="helpText">
-							<form type="GET" action="forgot.php">
-								<ol>
-									<li>
-										<div class="form-group bg-white">
-											<input class="helpFormText" type="hidden" name="changeType" value="forgot">
-										</div>
-										<div>We will send a non-existent message to your email for verification.<br>If the username and email inputted here match an existing account, then you are allowed to retrieve it with a new password.<br>
-										Please input your username and email.</div>
-										<br>
-										<div class="form-group">
-											Username: <input class="helpFormText" type="text" name="userName" placeholder="ex: Username123" required="">
-										</div>
-										<div class="form-group">
-											Email: <input class="helpFormText" type="email" name="userEmail" placeholder="ex: jdcruz@email.com" required="">
-										</div>
-									</li>
-									<li>
-										<div>What is supposedly sent to your email will be a message about inputting a new password since it was now verified.<br>
-										But since we are unable to do that, it will be done here.</div>
-										<div>Please input your new password.</div>
-										<br>
-										<div class="form-group">
-											New Password: <input class="helpFormText" type="password" name="userNewPassword" placeholder="Enter new password" required="">
-										</div>
-										<div class="form-group">
-											Reenter Password: <input class="helpFormText" type="password" name="userRePassword" placeholder="Reenter password" required="">
-										</div>
-									</li>
-									<li>
-										<div>We must know that you are human. Please enter the code in the picture:</div>
-										<img src="../resources/fake-captcha.png" style="width: 300px">
-										<div class="form-group">
-											Code: <input class="helpFormText" type="text" name="code" placeholder="Enter code" required="">
-										</div>
-									</li>
-									<li>
-										<div>Lastly, check the box to ensure that you agree with our currently non-existent terms of service.<br>
-										You are not allowed to change your password after 60 days.</div><br>
-										<div class="form-group">
-											<input type="checkbox" name="agree" required=""> I will not change my password again for the next 60 days or I will recieve proper disciplinary action.
-										</div>
-									</li>
-									<button class="btn btn-dark" type="submit">Submit</button>
-								</ol>
-							</form>
-						</div>
 					</div>
 					<div id="change" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "change"){echo " active";} else {echo " fade";}?>">
 						<h1>Change your Password?</h1>
