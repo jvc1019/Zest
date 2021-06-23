@@ -1,8 +1,7 @@
 How to use ZEST 
 
-1.) xampp must be installed in the device in order to open the .bat files.
-Download xampp at https://www.apachefriends.org/download.html
+1.) Run setup.cmd. This will open Command line and unpack all necessary files
+needed to run Zest. A shortcut for Zest will appear in the Desktop
 
-2.) Run setup.bat only for the first time to install components of the website
-
-3.) After setup.bat finishes, you can now freely access the website using zest.bat
+2.) Zest can be opened by running the Zest shortcut in the Desktop
+or Zest.cmd found inside the Zest folder in Local Disk C:
