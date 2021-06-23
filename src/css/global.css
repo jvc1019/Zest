@@ -7,7 +7,14 @@
     background-attachment: fixed;
 }
 
-.landing-bg,
+.landing-bg{
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),
+        url("/Zest/resources/bg/default.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 .help-bg {
     background-color: rgba(10, 10, 0, 0.2);
 }
