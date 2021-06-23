@@ -3,7 +3,10 @@
 :: By Ronn Ian Visto and Adriel Rabe ::
 :::::::::::::::::::::::::::::::::::::::
 
+::Kills running Apache processes
+TASKKILL /f /im httpd.exe
+
 ::Deletes directory of Zest and the shortcut in Desktop
-RMDIR /S /Q C:\Zest
-del %UserProfile%\Desktop\Zest.lnk
-del "Uninstall.lnk" "%AppData%\Microsoft\Windows\Start Menu\Programs\Zest"
+DEL /f /q "%UserProfile%\Desktop\Zest.lnk"
+RMDIR /s /q "%AppData%\Microsoft\Windows\Start Menu\Programs\Zest"
+RMDIR /s /q "C:\Zest"
