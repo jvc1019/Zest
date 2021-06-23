@@ -4,7 +4,7 @@
 
 		<ul class="list-group">
 			<?php
-			$query = "SELECT * FROM task WHERE user_ID = $user_ID AND DATE(task_Due) = CURDATE() ORDER BY task_Due";
+			$query = "SELECT * FROM task WHERE user_ID = $user_ID AND DATE(task_Due) = CURDATE() AND task_isDone = 0 ORDER BY task_Due";
 			$result = $conn->query($query);
 			$count = 0;
 
@@ -44,7 +44,7 @@
 
 		<ul class="list-group">
 			<?php
-			$query = "SELECT * FROM task WHERE user_ID = $user_ID AND DATE(task_Due) = CURDATE() + INTERVAL 1 DAY ORDER BY task_Due";
+			$query = "SELECT * FROM task WHERE user_ID = $user_ID AND DATE(task_Due) = CURDATE() + INTERVAL 1 DAY AND task_isDone = 0 ORDER BY task_Due";
 			$result = $conn->query($query);
 			$count = 0;
 
