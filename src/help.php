@@ -417,14 +417,16 @@
 					<div id="change" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "change"){echo " active";} else {echo " fade";}?>">
 						<div class="row rounded shadow bg-white">
 							<div class="col-12"><
-								<h1>Change your Password?</h1>
+								<center><h1>Change your Password?</h1></center>
 								<br>
 								<div class="helpText text-center">
 									Is your old password too boring? Has it gotten under you skin?<br>
 									Maybe under the orange's ZEST? Well, we've got you covered.<br><br>
-									Please follow the steps below to change your account's password.
+									<!--Please follow the steps below to change your account's password.-->
 								</div>
 								<br>
+								<center><a class="helpLink" href="change.php">Click here to change password</a></center><br><br>
+								<!--
 								<div class="helpText">
 									<form type="GET" action="change.php">
 										<ol>
@@ -474,6 +476,7 @@
 										</ol>
 									</form>
 								</div>
+							-->
 							</div>
 						</div>
 					</div>
