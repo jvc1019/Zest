@@ -1,7 +1,11 @@
+@font-face {
+    font-family: "Heavitas";
+    src: local("Heavitas"), url("/Zest/resources/fonts/Heavitas.ttf");
+}
+
 .title {
     font-family: "Heavitas";
     font-size: 6em;
-    src: local("Heavitas"), url("/fonts/Heavitas.ttf");
 }
 
 /* login, signup css */
@@ -71,8 +75,7 @@
     text-align: center;
     background-image: url("/resources/help/help-banner.jpg");
     background-size: cover;
-    height: 20rem;
-    border-radius: 1rem !important;
+    height: 15rem;
    
 }
 
@@ -84,15 +87,21 @@
 }
 
 .helpHeader {
-    color: white;
+    color: rgb(255, 208, 100);
     font-size: 60px;
     text-shadow: 5px 5px 4px #000000;
 }
 
-.helpContent {
-    background-color: rgb(239, 253, 95);
-    border-color: rgb(239, 253, 95);
+.scrolling-wrapper-flexbox {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
+
+.card {
+    flex: 0 0 auto;
+}
+
 
 .helpTitle {
     background-color: inherit;
@@ -105,8 +114,8 @@
 }
 
 .helpTitle a:hover {
-    background-color: rgb(239, 253, 95) !important;
-    border-color: rgb(239, 253, 95) !important;
+    background-color: rgb(255, 208, 100) !important;
+    border-color: rgb(255, 208, 100) !important;
     color: black !important;
 }
 
@@ -120,25 +129,26 @@
 .helpFormText {
     background-color: black;
     border-color: black;
-    color: rgb(239, 253, 95);
+    color: rgb(255, 208, 100);
 }
 
 .helpLink, .helpLink:active, .helpLink:visited {
-    color: rgb(255, 140, 0);
+    color: rgb(255, 208, 100);
 }
 
 .helpLink:hover {
-    color: rgb(135, 155, 12);
+    color: rgb(255, 208, 100);
 }
 
 .with-arrow .nav-link {
-    background-color: inherit;
-    color: rgb(239, 253, 95) !important;
+    background-color: white;
+    color: black !important;
+    border-radius: 0px;
 }
 
 .with-arrow .nav-link.active {
     background-color: black !important;
-    color: rgb(239, 253, 95) !important;
+    color: rgb(255, 208, 100) !important;
     border-color: black !important;
     position: relative;
 }

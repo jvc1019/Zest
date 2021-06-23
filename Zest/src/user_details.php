@@ -12,6 +12,7 @@ if (!isset($_SESSION['user_Name'])) {
 										include header.php*/
     $user_Email = $user['user_Email'];
     $user_Desc = $user['user_Desc'];
+    $user_Ints = $user['user_Ints'];
     $user_Theme = $user['user_Theme'];
     $user_Avatar = $user['user_Avatar'];
 

@@ -11,6 +11,7 @@ if (isset($_POST['register'])) {
 	$password = $_POST['password'];
 	$re_password = $_POST['re_password'];
 	$desc = "";
+	$ints = "";
 	$theme = "default";
 	$avatar = "default";
 
@@ -31,7 +32,7 @@ if (isset($_POST['register'])) {
 		<?php
 	} else {
 
-		$sql = "INSERT INTO user(`user_Name`, `user_Email`, `user_Password`, `user_Desc`, `user_Theme`, `user_Avatar`) VALUES ('$username', '$email', '$password', '$desc', '$theme', '$avatar');";
+		$sql = "INSERT INTO user(`user_Name`, `user_Email`, `user_Password`, `user_Desc`, `user_Ints`, `user_Theme`, `user_Avatar`) VALUES ('$username', '$email', '$password', '$desc', '$ints', '$theme', '$avatar');";
 
 		//if username is nonexistent
 		if ($conn->query($sql)) { 

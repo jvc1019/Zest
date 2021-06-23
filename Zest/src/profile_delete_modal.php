@@ -11,6 +11,9 @@
                 <form method="POST" action="profile_delete.php?user_ID=<?php echo $user_ID; ?>">
                     <input type="hidden" name="userID" value="<?php echo $user['user_ID']; ?>">
                     <h5 class="text-center">Are you sure you want to delete your account?</h5><br>
+                    <h8 class="text-center" style="font-style: italic; font-size: 12px;">Please enter your password to continue.</h8><br><br>
+                    <div> Password: <input type="password" class="font-weight-bold border-primary border-top-0 border-left-0 border-right-0 rounded-0" name="verifyPass" required>
+                    </div><br>
                     <h8 class="text-center" style="font-style: italic; font-size: 12px;">Note: This action is permanent. You cannot retrieve your account back anymore.</h8>
             </div>
             <div class="modal-footer">

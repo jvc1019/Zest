@@ -12,9 +12,9 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="text-info" style="font-style: italic; font-size: 12px;">
+                <!--<div class="text-info" style="font-style: italic; font-size: 12px;">
                     Changing your account password is not included here.<br>Please click <a href="help.php?help=change">here</a> to change your password.
-                </div>
+                </div>-->
                 <br>
                 <form method="POST" action="profile_update.php?user_ID=<?php echo $user_ID; ?>" enctype="multipart/form-data">
                     <input type="hidden" name="userID" value="<?php echo $user['user_ID']; ?>">
@@ -63,6 +63,84 @@
                         <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                         </svg>
                         Email: <input type="text" class="form-control border-primary border-top-0 border-left-0 border-right-0 rounded-0" id="addUserEmail" name="userEmail" value="<?php echo $user['user_Email']; ?>" required>
+                    </div>
+                    <!-- Profile Interests -->
+                    <div class="form-group">
+                        <label for="addSubjectDay" class="form-label h6">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                            </svg>
+                            Interests:
+                        </label>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">                                  
+                                        <input type="checkbox" class="form-check-input" value="1" name="userInts[]" <?php if (strpos($user['user_Ints'],"1") !== false) echo "checked" ?>>Art
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" value="2" name="userInts[]" <?php if (strpos($user['user_Ints'],"2") !== false) echo "checked" ?>>Collecting
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" value="3" name="userInts[]" <?php if (strpos($user['user_Ints'],"3") !== false) echo "checked" ?>>Cooking
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" value="4" name="userInts[]" <?php if (strpos($user['user_Ints'],"4") !== false) echo "checked" ?>>Gaming
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" value="5" name="userInts[]" <?php if (strpos($user['user_Ints'],"5") !== false) echo "checked" ?>>Reading
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" value="6" name="userInts[]" <?php if (strpos($user['user_Ints'],"6") !== false) echo "checked" ?>>Movies
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" value="7" name="userInts[]" <?php if (strpos($user['user_Ints'],"7") !== false) echo "checked" ?>>Music
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" value="8" name="userInts[]" <?php if (strpos($user['user_Ints'],"8") !== false) echo "checked" ?>>Sports
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" value="9" name="userInts[]" <?php if (strpos($user['user_Ints'],"9") !== false) echo "checked" ?>>Travel
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- Profile Description -->
                     <div class="form-group">
