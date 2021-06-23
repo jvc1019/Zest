@@ -365,10 +365,12 @@
 											</ol>
 											<br><br>
 											<h4>Edit Note</h4>
-											You may also edit existing notes. To do this, you simply click on the "Details" button at the bottom of the note you want to edit. Once the dialog box is opened, you may start editing your note.
+											<ol>
+												<li>Click on the "Details" button at the bottom of the note you want to edit. Once the dialog box is opened, you may start editing your note.</li>
+												<li>Click "Save" at the bottom of the box. If you decided that you don't want to save these changes anymore, you can click "Cancel".</li>
+											</ol>
 											<br><br>
-											If you're finally done editing your note, you may click "Save" at the bottom of the box. If you decided that you don't want to save these changes anymore, you can click "Cancel".
-											<br><br>
+											<h4>Delete Note</h4>
 											If you want to delete a note, simply click the "Delete" button at the bottom of the note. A message will appear stating that you will delete the note permanently and will never see it again. Click on the "Delete" button to permanently delete the note. If you decided that you don't want to delete it anymore, you may simply click "Cancel".
 										</div>
 									</div>
