@@ -6,6 +6,9 @@
 session_start();
 ?>
 <body>
+    <script>
+        spawnNotification();
+    </script>
     <div class="container-fluid fullpage landing-bg">
         <?php include('verifier.php'); ?>
         <div class="row">
@@ -49,9 +52,6 @@ session_start();
                                     <a class="forgot" href="login.php" ><br>Login to my account</a>
                                 </div>
                             </form>
-<script>
-spawnNotification();
-</script>
                         </div>
                     </div>
                 </div>
