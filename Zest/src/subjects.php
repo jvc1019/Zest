@@ -299,7 +299,7 @@ include("notification.php");
                     <div class="card">
                         <!--Card Banner-->
                         <?php $sImg = isset($subjects['subject_Image']) ? $subjects['subject_Image'] : "img_breakfast.jpg";  ?>
-                        <img class="card-img-top" src="/Zest/resources/subjectBanners/<?php echo $sImg; ?>">
+                        <img class="card-img-top" src="/resources/subjectBanners/<?php echo $sImg; ?>">
 
                         <!--Card Body-->
                         <div class="card-body overflow-hidden" style="height:9em">
