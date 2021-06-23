@@ -35,7 +35,12 @@
 <?php include('notification.php'); ?>
 <?php
 	session_start();
-	$default = $_GET['help'];
+	if($_GET){
+		$default = $_GET['help'];
+	} 
+	if(!$_GET){
+		$default = 'help';
+	}
 	$_SESSION['default'] = $_GET['help'];
 ?>
 <body class="help-bg">
@@ -47,14 +52,15 @@
 
 	<br><br>
 	<div class="container-fluid">
+		<div id="top" class="help-banner">
+			<h2 class="helpHeader centered"><img src="/Zest/resources/icons/lemon-icon.png" width="70" height="70" class="d-inline-block">ZEST SUPPORT</h2>
+		</div>
+
+		<br>
+
 		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-10 helpHolder">
-				<br>
-				<div id="top" class="help-banner shadow-lg p-3">
-					<h2 class="helpHeader centered">HELP & SUPPORT</h2>
-				</div>
-				<br>
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
 				<ul class="nav nav-tabs nav-pills with-arrow flex-sm-row">
 					<li class="nav-item flex-sm-fill text-center helpTitle">
 						<a class="nav-link<?php if ($default == "help"){echo " active";} ?>" data-toggle="pill" href="#help">Getting Started</a>
@@ -75,20 +81,21 @@
 						<a class="nav-link<?php if ($default == "contact"){echo " active";} ?>" data-toggle="pill" href="#contact">Contact Us</a>
 					</li>
 				</ul>
+				<br>
 				<div class="tab-content">
-					<div id="help" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "help"){echo " active";} else {echo " fade";}?>">
-						<h1>Getting Started</h1>
-						<br><br>
-						<div class="row">
+					<div id="help" class="tab-pane container<?php if ($default == "help"){echo " active";} else {echo " fade";}?>">
+						<div class="row  bg-white rounded shadow">
+							<br>
 							<div class="col-4">
+								<br>
 								<img src="../resources/icons/lemon-icon.png">
 								
 							</div>
 							<div class="col-7">
-								<h3>What is ZEST?</h3>
 								<br>
+								<h3 class="text-center">Zest</h3>
 								<div class="text-dark font-weight-bold text-center">
-									Welcome to ZEST, a developing productivity web application designed <br> for your school/study needs.
+									Your web-based productivity app.
 								</div>
 								<br>
 								<div class=" text-center text-break text-dark">
@@ -96,45 +103,56 @@
 									<br>...<br>
 									<a class="helpLink" href="help.php?help=about"><button class="btn btn-warning"><div class="font-weight-bold">Learn more </div></button></a>
 								</div>
+								<br>
+								<br>
+							</div>
+							<div class="col-1"></div>
+							
+						</div>
+						<br><br>
+						<div class="row bg-white rounded shadow">
+							<div class="col-1"></div>
+							
+							<div class="col-10">
+								<br><br>
+								<h3 class="text-center">What do we offer?</h3>
+								<br>
+								<div class="text-center"><img class="rounded" src="../resources/help/features.png" style="height:10rem">
+								</div>
+								<br>
+								<div class="text-break text-center">
+									
+									Our <a class="helpLink" href="help.php?help=features">features</a> include the <b>SUBJECTS</b>, <b>TASK</b> and <b>SUBJECTS</b> sections, as well as different <br>customization tools available for different types of users.
+									<br><br>
+									<a class="helpLink" href="index.php"><button class="btn btn-warning"><div class="font-weight-bold">Try Now </div></button></a>
+									</div>
+									<br>
+									<a class="helpLink text-center" href="#top">⬆ Back to top</a>
+									<br><br>
+
 							</div>
 							<div class="col-1"></div>
 						</div>
-						<br><hr><br>
-						<div class="row">
-							<div class="col-3"></div>
-							<div class="col-6">
-								<h3>What do we offer?</h3>
-								<br>
-								<div class="text-break text-center">
-									Our <a class="helpLink" href="help.php?help=features">features</a> include the <b>SUBJECTS</b>, <b>TASK</b> and <b>SUBJECTS</b> sections, as well as different customization tools available for different types of users.
-									
-									The SUBJECTS section is where you can organize your subjects. You are able to add your subjects in a form where you can utilize them in creating your schedule.
-
-									The TASKS section is where you can create and organize different tasks. Our task manager will be able to remind you when you have upcoming dues and organize them according to your liking.
-
-									The NOTEBOOK section is where you can create notes with tags so that you can freely sort out your information.
-									</div>
-									<br>
-									<a class="helpLink" href="#top">Back to Top</a>
-									<br>
-							</div>
-							<div class="col-3"></div>
-						</div>
 						
-						<hr>
-						<br>
-						<h3>Account Basics</h3>
-						<div class="helpText text-center">
-							Oh, so you want to know the basics of using this web app?<br>
-							Well, if you in-ZEST...
+						<br><br>
+
+						<div class="row bg-white shadow rounded ">
+							<div class="col-md-12">
+								<br>
+								<h3 class="text-center">Account Basics</h3>
+								<div class="text-center">
+									<br>Here are the basic account controls you can modify
+								</div>
+								<br>
+							</div>
 						</div>
+
 						<br>
-
-
 						<div class="row">
+
 							<div class="col-6 d-flex align-items-stretch">
 								<div class="card">
-									<img class="card-img-top" src="/cmsc128/resources/help/help-register.jpg">
+									<img class="card-img-top" src="/Zest/resources/help/help-register.jpg">
 									<div class="card-body">
 										<h4 class="card-title">Registration</h4>
 										<div class="card-text text-justify">
@@ -143,10 +161,9 @@
 									</div>
 								</div>
 							</div>
-
 							<div class="col-6 d-flex align-items-stretch">
 								<div class="card">
-									<img class="card-img-top" src="/cmsc128/resources/help/help-login.jpg">
+									<img class="card-img-top" src="/Zest/resources/help/help-login.jpg">
 									<div class="card-body">
 										<h4 class="card-title">Logging In</h4>
 										<div class="card-text text-justify">
@@ -156,13 +173,12 @@
 								</div>
 							</div>
 						</div>
+
 						<br>
-						<a class="helpLink" href="#top">Back to Top</a>
-						<br><br>
 						<div class="row">
 							<div class="col-6 d-flex align-items-stretch">
 								<div class="card">
-									<img class="card-img-top" src="/cmsc128/resources/help/help-home.png">
+									<img class="card-img-top" src="/Zest/resources/help/help-home.png">
 									<div class="card-body">
 										<h4 class="card-title">Home Page</h4>
 										<div class="card-text text-justify">
@@ -174,7 +190,7 @@
 
 							<div class="col-6 d-flex align-items-stretch">
 								<div class="card">
-									<img class="card-img-top" src="/cmsc128/resources/help/help-profile.png">
+									<img class="card-img-top" src="/Zest/resources/help/help-profile.png">
 									<div class="card-body">
 										<h4 class="card-title">Profile Page</h4>
 										<div class="card-text text-justify">
@@ -186,13 +202,12 @@
 								</div>
 							</div>
 						</div>
+
 						<br>
-						<a class="helpLink" href="#top">Back to Top</a>
-						<br><br>
 						<div class="row">
 							<div class="col-6 d-flex align-items-stretch">
 								<div class="card">
-									<img class="card-img-top" src="/cmsc128/resources/help/help-avatars.jpg">
+									<img class="card-img-top" src="/Zest/resources/help/help-avatars.jpg">
 									<div class="card-body">
 										<h4 class="card-title">Avatars and Themes</h4>
 										<div class="card-text text-justify">
@@ -205,7 +220,7 @@
 							</div>
 							<div class="col-6 d-flex align-items-stretch">
 								<div class="card">
-									<img class="card-img-top" src="/cmsc128/resources/help/help-banner.jpg">
+									<img class="card-img-top" src="/Zest/resources/help/help-banner.jpg">
 									<div class="card-body">
 										<h4 class="card-title">Quick Links</h4>
 										<div class="card-text">
@@ -215,15 +230,16 @@
 												<a class="helpLink" href="help.php?help=change">Do you want to change your password?</a><br>
 												<a class="helpLink" href="help.php?help=about">Want to know more about us?</a><br>
 												<a class="helpLink" href="help.php?help=contact">Do you want to contact the developers?</a>
+												<br><br>
+												<img src="../resources/icons/lemon-icon.png">
+
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<br>
-						<a class="helpLink" href="#top">Back to Top</a>
-						<br>
+						<br><br>
 					</div>
 
 					<div id="features" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "features"){echo " active";} else {echo " fade";}?>">
@@ -246,7 +262,7 @@
 										<h6 class="card-subtitle mb-2 text-muted">The "Subjects" section allows you to organize, edit and personalize your subjects.</h6>
 										<br>
 									</div>
-									<img class="card-img-top" src="/cmsc128/resources/help/help-subjects.png">
+									<img class="card-img-top" src="/Zest/resources/help/help-subjects.png">
 									<div class="card-body">
 										<div class="card-text text-justify">
 											In this section, you can be able to add, edit or delete subjects. To add a new subject, simply click the "New Subject" button on the top left of the screen. This will show a dialog box that you will enter the subject information inside.
@@ -268,7 +284,7 @@
 
 						</div>
 						<br>
-						<a class="helpLink" href="#top">Back to Top</a>
+						<a class="helpLink" href="#top">⬆ Back to top</a>
 						<br><br><br>
 						<div class="row">
 							<div class="col-1"></div>
@@ -279,7 +295,7 @@
 										<h6 class="card-subtitle mb-2 text-muted">The "Tasks" section allows you to arrange and organize your tasks in a form of a To-Do list.</h6>
 										<br>
 									</div>
-									<img class="card-img-top" src="/cmsc128/resources/help/help-tasks.png">
+									<img class="card-img-top" src="/Zest/resources/help/help-tasks.png">
 									<div class="card-body">
 										<div class="card-text text-justify">
 											In this section, you can be able to add, edit or delete tasks. To add a new task, simply click the "New Task" button on the top left of the screen. This will show a dialog box that you will enter the task information inside.
@@ -300,7 +316,7 @@
 							<div class="col-1"></div>
 						</div>
 						<br>
-						<a class="helpLink" href="#top">Back to Top</a>
+						<a class="helpLink" href="#top">⬆ Back to top</a>
 						<br><br><br>			
 						<div class="row">
 							<div class="col-1"></div>
@@ -311,7 +327,7 @@
 										<h6 class="card-subtitle mb-2 text-muted">The "Notebook" section allows you to create notes for different uses.</h6>
 										<br>
 									</div>
-									<img class="card-img-top" src="/cmsc128/resources/help/help-notes.png">
+									<img class="card-img-top" src="/Zest/resources/help/help-notes.png">
 									<div class="card-body">
 										<div class="card-text text-justify">
 											In this section, you can be able to add, edit or delete notes. To add a new note, simply click the "New Note" button on the top left of the screen. This will show a dialog box that you will enter the note information inside.
@@ -332,12 +348,12 @@
 							<div class="col-1"></div>
 						</div>
 						<br>
-						<a class="helpLink" href="#top">Back to Top</a>
+						<a class="helpLink" href="#top">⬆ Back to top</a>
 						<br><br><br>
 						<div class="row">
 							<div class="col-6 d-flex align-items-stretch">
 								<div class="card rounded-all-1rem">
-									<img class="card-img-top" src="/cmsc128/resources/help/help-banner.jpg">
+									<img class="card-img-top" src="/Zest/resources/help/help-banner.jpg">
 									<div class="card-body">
 										<h4 class="card-title">Upcoming Features</h4>
 										<h6 class="card-subtitle mb-2 text-muted"></h6>
@@ -349,7 +365,7 @@
 							</div>
 							<div class="col-6 d-flex align-items-stretch">
 								<div class="card rounded-all-1rem">
-									<img class="card-img-top" src="/cmsc128/resources/help/help-banner.jpg">
+									<img class="card-img-top" src="/Zest/resources/help/help-banner.jpg">
 									<div class="card-body">
 										<h4 class="card-title">Quick Links</h4>
 										<div class="card-text">
@@ -366,7 +382,7 @@
 							</div>
 						</div>
 						<br>
-						<a class="helpLink" href="#top">Back to Top</a>
+						<a class="helpLink" href="#top">⬆ Back to top</a>
 					</div>
 					<div id="change" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "change"){echo " active";} else {echo " fade";}?>">
 						<h1>Change your Password?</h1>
