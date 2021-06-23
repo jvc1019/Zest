@@ -2,6 +2,8 @@
 <?php include('header.php'); ?>
 <?php include('notification.php'); ?>
 <?php include('user_details.php'); ?>
+<?php include('sidebar.php'); ?>
+
 
 <body>
     <script>
@@ -37,19 +39,16 @@
                             </div>
                             <form method="POST" action="#">
                                 <div class="form-group">
-                                    <input type="password" class="form-control" name="oldPass" placeholder="Enter old password" required="">
-                                </div>
+                                    <input type="password" class="form-control" name="oldPass" placeholder="Enter old password" required=""><br>
                                     <input type="password" class="form-control" name="pass" placeholder="Enter new password" required="">
+                                    <input type="password" class="form-control form-rounded" name="repass" placeholder="Re-enter new password" required="">
                                 </div>
                                 
                                 <div class="form-group" data-toggle="tooltip" data-html="true" title="Password must contain at least 8 characters">
-                                    <input type="password" class="form-control form-rounded" name="repass" placeholder="Re-enter new password" required="">
+                                    
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary btn-block" type="submit" name="resetpass">Change Password</button>
-                                </div>
-                                <div class="form-group">
-                                    <a class="forgot" href="login.php" ><br>Login to my account</a>
                                 </div>
                             </form>
                         </div>
