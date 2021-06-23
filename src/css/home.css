@@ -1,7 +1,7 @@
 .title {
     font-family: "Heavitas";
     font-size: 6em;
-    src: local("Heavitas"), url("/cmsc128/resources/fonts/Heavitas.ttf");
+    src: local("Heavitas"), url("/Zest/resources/fonts/Heavitas.ttf");
 }
 
 /* login, signup css */
