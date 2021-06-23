@@ -35,12 +35,12 @@
 <?php include('notification.php'); ?>
 <?php
 	session_start();
-	if($_GET){
-		$default = $_GET['help'];
-	} 
-	if(!$_GET){
+	if(!$_GET || !in_array($_GET['help'], array("help", "features", "change", "about"))){
 		$default = 'help';
 	}
+	else if ($_GET){
+		$default = $_GET['help'];
+	} 
 	$_SESSION['default'] = $_GET['help'];
 ?>
 <body class="help-bg">
@@ -236,22 +236,29 @@
 							</div>
 						</div>
 						<br><br>
+						<a class="helpLink text-center" href="#top">⬆ Back to top</a>
+									<br>
 					</div>
 
 					<div id="features" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "features"){echo " active";} else {echo " fade";}?>">
-						<h1>Features</h1>
-						<br>
-						<div class="text-muted text-center">
-							Zest offers three major features: Subjects, Tasks and Notebook.<br>
-							If you want to learn more on how to use each of them, continue reading this page.<br>
-							Go on! Try something new! Just like what they say...<br><br>
-							When life gives you lemons, make lem- NO! Go to ZEST!!!
+						<div class="row rounded shadow bg-white">
+							<div class="col-12">
+								<br>
+								<h1 class="text-center">Features</h1>
+								<br>
+								<div class="text-muted text-center">
+									Zest offers three major features: <b>Subjects</b>, <b>Tasks</b> and <b>Notebook</b>.<br>
+									You may learn how these feature works below.<br>
+									Go and try something new!<br>
+								</div>
+								<br>
+							</div>
 						</div>
+
 						<br>
 
 						<div class="row">
-							<div class="col-1"></div>
-							<div class="col-10 d-flex align-items-stretch">
+							<div class="col-12 d-flex align-items-stretch">
 								<div class="card rounded-all-1rem">	
 									<div class="card-body">
 										<h4 class="card-title">Subjects</h4>
@@ -261,30 +268,42 @@
 									<img class="card-img-top" src="/Zest/resources/help/help-subjects.png">
 									<div class="card-body">
 										<div class="card-text text-justify">
-											In this section, you can be able to add, edit or delete subjects. To add a new subject, simply click the "New Subject" button on the top left of the screen. This will show a dialog box that you will enter the subject information inside.
+											In this section, you can be able to add, edit or delete subjects. 
 											<br><br>
-											Once the dialog box is opened, you may start creating your subject. First, you must enter the subject name. This name is required and will be used in order to track this subject later on. Secondly, you can choose if the subject is a Lecture or a Laboratory. Next, you can enter a short descripiton. You may enter the subject's instructor and the schedule of the subject with the days of the week and time that it is scheduled. Lastly, you can choose a subject banner from the different selections for style and customization.
+											<h4>Creating a Subject</h4> 
+											<ol>
+												<li>lick the "New Subject" button on the top left of the screen. This will show a dialog box that you will enter the subject information inside.</li>
+												<li>Enter the subject name. This name is required and will be used in order to track this subject later on.</li>
+												<li>Choose if the subject is a Lecture or a Laboratory.</li>
+												<li>Enter a short descripiton. You may enter the subject's instructor and the schedule of the subject with the days of the week and time that it is scheduled.</li>
+												<li>Choose a subject banner from the different selections for style and customization.</li>
+												<li>Click "Save" at the bottom of the box. If you decided that you don't want to add this subject anymore, you can click "Cancel" to remove it. If you want to clear the form, you may click on "Clear".</li>
+											</ol>
 											<br><br>
-											If you're finally done with your subject, you may click "Save" at the bottom of the box. If you decided that you don't want to add this subject anymore, you can click "Cancel" to remove it. If you want to clear the form, you may click on "Clear".
+											<h4>Edit Subject</h4>
+											<ol>
+												<li>Click on the "Details" button at the bottom of the subject you want to edit. </li>
+												<li>Once the dialog box is opened, you may start editing your subject.</li>
+												<li>Click "Save" at the bottom of the box. If you decided that you don't want to save these changes anymore, you can click "Cancel".
+												</li>
+											</ol>
 											<br><br>
-											You may also edit existing subjects. To do this, you simply click on the "Details" button at the bottom of the subject you want to edit. Once the dialog box is opened, you may start editing your subject.
-											<br><br>
-											If you're finally done editing your subject, you may click "Save" at the bottom of the box. If you decided that you don't want to save these changes anymore, you can click "Cancel".
-											<br><br>
-											If you want to delete a subject, simply click the "Delete" button at the bottom of the subject. A message will appear stating that you will delete the subject permanently and will never see it again. Click on the "Delete" button to permanently delete the subject. If you decided that you don't want to delete it anymore, you may simply click "Cancel".
+
+											<h4>Delete Subject</h4>
+											<ol>
+												<li>Click the "Delete" button at the bottom of the subject. A message will appear stating that you will delete the subject permanently and will never see it again. </li>
+												<li>Click on the "Delete" button to permanently delete the subject. If you decided that you don't want to delete it anymore, you may simply click "Cancel".</li>
+											</ol>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-1"></div>
 
 						</div>
 						<br>
-						<a class="helpLink" href="#top">⬆ Back to top</a>
-						<br><br><br>
+						<br>
 						<div class="row">
-							<div class="col-1"></div>
-							<div class="col-10 d-flex align-items-stretch">
+							<div class="col-12 d-flex align-items-stretch">
 								<div class="card rounded-all-1rem">
 									<div class="card-body">
 										<h4 class="card-title">Task</h4>
@@ -294,22 +313,32 @@
 									<img class="card-img-top" src="/Zest/resources/help/help-tasks.png">
 									<div class="card-body">
 										<div class="card-text text-justify">
-											In this section, you can be able to add, edit or delete tasks. To add a new task, simply click the "New Task" button on the top left of the screen. This will show a dialog box that you will enter the task information inside.
+											In this section, you can be able to add, edit or delete tasks.
+											<br>
+											<h4>Add Task</h4>
+											<ol>
+												<li>Click the "New Task" button on the top left of the screen. This will show a dialog box that you will enter the task information inside. Once the dialog box is opened, you may start writing your task. </li>
+												<li>Enter the task name. This name is required and will be used in order to track this task later on.</li>
+												<li>You may put a due date and a reminder date. The due date is the date you must finish this task, while the reminder date will be the date you will be reminded of this task. You can be reminded before or after the due date. However, it is more productive when the reminder date is before the due date. </li>
+												<li>Place tags for this task so that you can filter this out when searching.</li>
+												<li>Click "Save" at the bottom of the box. If you decided that you don't want to add this task anymore, you can click "Cancel" to remove it. If you want to clear the form, you may click on "Clear".</li>
+											</ol>
 											<br><br>
-											Once the dialog box is opened, you may start writing your task. First, you must enter the task name. This name is required and will be used in order to track this task later on. Next, you may put a due date and a reminder date. The due date is the date you must finish this task, while the reminder date will be the date you will be reminded of this task. You can be reminded before or after the due date. However, it is more productive when the reminder date is before the due date. Lastly, you may place tags for this task so that you can filter this out when searching.
+											<h4>Edit Task</h4>
+											<ol>
+												<li>Click on the "Details" button at the bottom of the task you want to edit. Once the dialog box is opened, you may start editing your task.</li>
+												<li>Click "Update" at the bottom of the box. If you decided that you don't want to save these changes anymore, you can click "Cancel".</li>
+											</ol>
 											<br><br>
-											If you're finally done with your task, you may click "Save" at the bottom of the box. If you decided that you don't want to add this task anymore, you can click "Cancel" to remove it. If you want to clear the form, you may click on "Clear".
-											<br><br>
-											You may also edit existing tasks. To do this, you simply click on the "Details" button at the bottom of the task you want to edit. Once the dialog box is opened, you may start editing your task.
-											<br><br>
-											If you're finally done editing your task, you may click "Update" at the bottom of the box. If you decided that you don't want to save these changes anymore, you can click "Cancel".
-											<br><br>
-											If you want to delete a task, simply click the "Delete" button at the bottom of the task. A message will appear stating that you will delete the task permanently and will never see it again. Click on the "Delete" button to permanently delete the task. If you decided that you don't want to delete it anymore, you may simply click "Cancel".
+											<h4>Delete Task</h4>
+											<ol>
+												<li>Click the "Delete" button at the bottom of the task. A message will appear stating that you will delete the task permanently and will never see it again. </li>
+												<li>Click on the "Delete" button to permanently delete the task. If you decided that you don't want to delete it anymore, you may simply click "Cancel".</li>
+											</ol>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-1"></div>
 						</div>
 						<br>
 						<a class="helpLink" href="#top">⬆ Back to top</a>
@@ -326,12 +355,16 @@
 									<img class="card-img-top" src="/Zest/resources/help/help-notes.png">
 									<div class="card-body">
 										<div class="card-text text-justify">
-											In this section, you can be able to add, edit or delete notes. To add a new note, simply click the "New Note" button on the top left of the screen. This will show a dialog box that you will enter the note information inside.
+											In this section, you can be able to add, edit or delete notes. <br>
+											<h4>Add Note</h4>
+											<ol>
+												<li>Click the "New Note" button on the top left of the screen. This will show a dialog box that you will enter the note information inside. Once the dialog box is opened, you may start writing your note.</li>
+												<li>Enter the note title. This title is required and will be used in order to track this note later on.</li>
+												<li>Place tags for this note so that you can filter this out when searching. Lastly, start writing the note. There are also different formatting styles which will be useful when writing these notes.</li>
+												<li>Click "Save" at the bottom of the box. If you decided that you don't want to add this note anymore, you can click "Cancel" to remove it.</li>
+											</ol>
 											<br><br>
-											Once the dialog box is opened, you may start writing your note. First, you must enter the note title. This title is required and will be used in order to track this note later on. Secondly, you may place tags for this note so that you can filter this out when searching. Lastly, start writing the note. There are also different formatting styles which will be useful when writing these notes.
-											<br><br>
-											If you're finally done with your note, you may click "Save" at the bottom of the box. If you decided that you don't want to add this note anymore, you can click "Cancel" to remove it.
-											<br><br>
+											<h4>Edit Note</h4>
 											You may also edit existing notes. To do this, you simply click on the "Details" button at the bottom of the note you want to edit. Once the dialog box is opened, you may start editing your note.
 											<br><br>
 											If you're finally done editing your note, you may click "Save" at the bottom of the box. If you decided that you don't want to save these changes anymore, you can click "Cancel".
@@ -380,62 +413,66 @@
 						<a class="helpLink" href="#top">⬆ Back to top</a>
 					</div>
 					<div id="change" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "change"){echo " active";} else {echo " fade";}?>">
-						<h1>Change your Password?</h1>
-						<br>
-						<div class="helpText text-center">
-							Is your old password too boring? Has it gotten under you skin?<br>
-							Maybe under the orange's ZEST? Well, we've got you covered.<br><br>
-							Please follow the steps below to change your account's password.
-						</div>
-						<br>
-						<div class="helpText">
-							<form type="GET" action="change.php">
-								<ol>
-									<li>
-										<div class="form-group">
-											<input class="helpFormText" type="hidden" name="changeType" value="change">
-										</div>
-										<div>We will send a non-existent message to your email for verification.<br>
-											<link href="../src/index.php" rel="import" />
-										Please input your username and email.</div>
-										<br>
-										<div class="form-group">
-											Username: <input class="helpFormText" type="text" name="userName" placeholder="ex: Username123" required="">
-										</div>
-										<div class="form-group">
-											Email: <input class="helpFormText" type="email" name="userEmail" placeholder="ex: jdcruz@email.com" required="">
-										</div>
-									</li>
-									<li>
-										<div>Please input your current password and new password.</div>
-										<br>
-										<div class="form-group">
-											Current Password: <input class="helpFormText" type="password" name="userPassword" placeholder="Enter password" required="">
-										</div>
-										<div class="form-group">
-											Reenter Password: <input class="helpFormText" type="password" name="userRePassword" placeholder="Reenter password" required="">
-										</div>
-										<div class="form-group">
-											New Password: <input class="helpFormText" type="password" name="userNewPassword" placeholder="Enter new password" required="">
-										</div>
-									</li>
-									<li>
-										<div>We must know that you are human. Please enter the code in the picture:</div>
-										<img src="../resources/fake-captcha.png" style="width: 300px">
-										<div class="form-group">
-											Code: <input class="helpFormText" type="text" name="code" placeholder="Enter code" required="">
-										</div>
-									</li>
-									<li>
-										<div>Lastly, check the box to ensure that you agree with our currently non-existent terms of service.<br>
-										You are not allowed to change your password after 60 days.</div><br>
-										<div class="form-group">
-											<input type="checkbox" name="agree" required=""> I will not change my password again for the next 60 days or I will recieve proper disciplinary action.
-										</div>
-									</li>
-									<button class="btn btn-dark" type="submit">Submit</button>
-								</ol>
-							</form>
+						<div class="row rounded shadow bg-white">
+							<div class="col-12"><
+								<h1>Change your Password?</h1>
+								<br>
+								<div class="helpText text-center">
+									Is your old password too boring? Has it gotten under you skin?<br>
+									Maybe under the orange's ZEST? Well, we've got you covered.<br><br>
+									Please follow the steps below to change your account's password.
+								</div>
+								<br>
+								<div class="helpText">
+									<form type="GET" action="change.php">
+										<ol>
+											<li>
+												<div class="form-group">
+													<input class="helpFormText" type="hidden" name="changeType" value="change">
+												</div>
+												<div>We will send a non-existent message to your email for verification.<br>
+													<link href="../src/index.php" rel="import" />
+												Please input your username and email.</div>
+												<br>
+												<div class="form-group">
+													Username: <input class="helpFormText" type="text" name="userName" placeholder="ex: Username123" required="">
+												</div>
+												<div class="form-group">
+													Email: <input class="helpFormText" type="email" name="userEmail" placeholder="ex: jdcruz@email.com" required="">
+												</div>
+											</li>
+											<li>
+												<div>Please input your current password and new password.</div>
+												<br>
+												<div class="form-group">
+													Current Password: <input class="helpFormText" type="password" name="userPassword" placeholder="Enter password" required="">
+												</div>
+												<div class="form-group">
+													Reenter Password: <input class="helpFormText" type="password" name="userRePassword" placeholder="Reenter password" required="">
+												</div>
+												<div class="form-group">
+													New Password: <input class="helpFormText" type="password" name="userNewPassword" placeholder="Enter new password" required="">
+												</div>
+											</li>
+											<li>
+												<div>We must know that you are human. Please enter the code in the picture:</div>
+												<img src="../resources/fake-captcha.png" style="width: 300px">
+												<div class="form-group">
+													Code: <input class="helpFormText" type="text" name="code" placeholder="Enter code" required="">
+												</div>
+											</li>
+											<li>
+												<div>Lastly, check the box to ensure that you agree with our currently non-existent terms of service.<br>
+												You are not allowed to change your password after 60 days.</div><br>
+												<div class="form-group">
+													<input type="checkbox" name="agree" required=""> I will not change my password again for the next 60 days or I will recieve proper disciplinary action.
+												</div>
+											</li>
+											<button class="btn btn-dark" type="submit">Submit</button>
+										</ol>
+									</form>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div id="about" class="tab-pane container helpContent rounded px-4 py-5<?php if ($default == "about"){echo " active";} else {echo " fade";}?>">

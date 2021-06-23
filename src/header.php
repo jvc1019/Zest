@@ -10,7 +10,6 @@
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/global.css" rel="stylesheet">
 	<link href="css/home.css" rel="stylesheet">
-	<link href="css/profile.css" rel="stylesheet">
 	<link href="css/sidebar.css" rel="stylesheet">
 	<link href="css/overrides.css" rel="stylesheet">
 
