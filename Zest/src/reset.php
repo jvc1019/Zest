@@ -43,11 +43,11 @@ $email = $_SESSION['email'];
                             </div>
                             <form method="POST" action="#">
                                 <div class="form-group">
-                                <input type="text" class="form-control" name="pass" placeholder="Enter new password" required="">
+                                <input type="password" class="form-control" name="pass" placeholder="Enter new password" required="">
                                 </div>
                                 
                                 <div class="form-group" data-toggle="tooltip" data-html="true" title="Password must contain at least 8 characters">
-                                    <input type="text" class="form-control form-rounded" name="repass" placeholder="Re-enter new password" required="">
+                                    <input type="password" class="form-control form-rounded" name="repass" placeholder="Re-enter new password" required="">
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary btn-block" type="submit" name="resetpass">Reset My Password</button>

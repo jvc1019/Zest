@@ -29,6 +29,7 @@ if(isset($_POST['verifyme'])){
                 window.location.href = "recover.php?status_heading=Expired Key&status=It appears that your key has expired. Please try again.&type=notif";
             </script>                                                                                                       
             <?php
+        }
         // else spawnnotification
     } else {
         ?>
