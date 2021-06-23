@@ -6,3 +6,4 @@
 ::Deletes directory of Zest and the shortcut in Desktop
 RMDIR /S /Q C:\Zest
 del %UserProfile%\Desktop\Zest.lnk
+del "Uninstall.lnk" "%AppData%\Microsoft\Windows\Start Menu\Programs\Zest"
