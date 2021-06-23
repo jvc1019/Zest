@@ -1,5 +1,5 @@
 .index-bg, .feature-bg {
-    background-image: url("/Zest/resources/bg/sunset.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgb(0, 0, 0)), url("/Zest/resources/bg/sashimi.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -21,49 +21,49 @@ body{
 }
 
 .text-primary{
-    color: #faa307 !important;
+    color: #ff0066 !important;
 }
 .border-primary{
-    border-color: #faa307 !important;
+    border-color: #ff0066 !important;
 }
 
 .btn-primary{
-    background-color: #faa307;
-    border-color: #faa307;
+    background-color: #ff0066;
+    border-color: #ff0066;
 }
 
 .btn-primary:hover{
-    background-color: #F48C06;
-    border-color: #F48C06;
+    background-color: #ff99ff;
+    border-color: #ff99ff;
 }
 
 .btn-primary:focus{
-    background-color: #e85d04;
-    border-color: #e85d04;
+    background-color: #ff0066;
+    border-color: #ff0066;
 }
 
 .btn-primary:active{
     background-color: #dc2f02 !important;
     border-color: #dc2f02 !important;
-    box-shadow: 0 0 0 0.2rem #faa307 !important;
+    box-shadow: 0 0 0 0.2rem #ffb3b3 !important;
 }
 
 h6.text-center{
-    color:#faa307 !important;
+    color:#ffb3b3 !important;
 }
 
 
 .applink {
-    background-color: rgba(89, 38, 19, 0.8);
-    color: #f8f9fa;
+    background-color: rgba(255, 204, 153, 0.8);
+    color: black;
 }
 
 .reminderHolder ul > li {
-    background-color: rgba(255, 204, 51, 0.8);
+    background-color: rgba(255, 124, 153, 0.8);
     color: black;
 }
 
 .profileHolder {
-    background-color: rgba(89, 38, 19, 0.8);
-    color: #f8f9fa;
+    background-color: rgba(255, 204, 153, 0.8);
+    color: black;
 }

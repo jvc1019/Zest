@@ -1,5 +1,5 @@
 .index-bg, .feature-bg {
-    background-image: url("/Zest/resources/bg/study.jpg");
+    background-image: url("/Zest/resources/bg/solid.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -21,40 +21,40 @@ body{
 }
 
 .text-primary{
-    color: #faa317 !important;
+    color: #000000 !important;
 }
 .modifiable, #show_completed_tasks, h6.text-center{
-    color: #faa317 !important;
+    color: #FFFFFF !important;
     text-shadow: 1px 1px 2px #000000;
 }
 
 .text-muted{
-    color:  #efefef !important;
+    color:  #FFFFFF !important;
 }
 
 .border-primary{
-    border-color: #faa317 !important;
+    border-color: #FFFFFF !important;
 }
 
 .btn-primary{
-    background-color: #faa307;
-    border-color: #faa307;
+    background-color: #000000;
+    border-color: #000000;
 }
 
 .btn-primary:hover{
-    background-color: #F48C06;
-    border-color: #F48C06;
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
 }
 
 .btn-primary:focus{
-    background-color: #e85d04;
-    border-color: #e85d04;
+    background-color: #000000;
+    border-color: #000000;
 }
 
 .btn-primary:active{
-    background-color: #dc2f02 !important;
-    border-color: #dc2f02 !important;
-    box-shadow: 0 0 0 0.2rem #faa307 !important;
+    background-color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+    box-shadow: 0 0 0 0.2rem #FFFFFF !important;
 }
 
 .applink {
@@ -69,5 +69,5 @@ body{
 
 .profileHolder {
     background-color: rgb(0, 0, 0, 0.8);
-    color: #f8f9fa;
+    color: #FFFFFF;
 }

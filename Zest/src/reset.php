@@ -1,11 +1,20 @@
+<?php include('conn.php'); ?>
 <?php include('header.php'); ?>
 <?php include('notification.php'); ?>
-
+<?php
+//php file for resetting the password in the database
+//
+session_start();
+$username = $_SESSION['user'];
+$key = $_SESSION['key'];
+$email = $_SESSION['email'];
+?>
 <body>
     <script>
         spawnNotification();
     </script>
     <div class="container-fluid fullpage landing-bg">
+        <?php include('resetter.php'); ?>
         <div class="row">
             <div class="col-sm-6 p-5">
                 <div class="p-5 my-5">
@@ -22,29 +31,31 @@
                 </div>
             </div>
             <div class="col-sm-6 p-5">
-                <div class="row rounded form-box shadow mx-5">
+               <div class="row rounded form-box shadow mx-5">
                     <div class="col-md text-center">
                         <div class="form-group rounded-top form-head shadow p-3 sticky-top">
-                            <div class="text-right"><a href="help.php?help=help" target="_blank">Need help?</a></div>
+                            <div class="text-right"><a href="help.php?help=help" target="_blank">Need help?</a></div> 
                         </div>
                         <div class="rounded-top rounded-bottom form-inner shadow p-3">
-                            <br>
-                            <form method="POST" action="user_login.php">
+                            <div>
+                                <h4>New Password</h4>
+                                <p>Please enter your new password.</p>
+                            </div>
+                            <form method="POST" action="#">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="username" placeholder="Enter username" required="">
+                                <input type="text" class="form-control" name="pass" placeholder="Enter new password" required="">
+                                </div>
+                                
+                                <div class="form-group" data-toggle="tooltip" data-html="true" title="Password must contain at least 8 characters">
+                                    <input type="text" class="form-control form-rounded" name="repass" placeholder="Re-enter new password" required="">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control form-rounded" name="password" placeholder="Enter password" required="">
-                                    <a class="forgot" href="help.php?help=forgot" target="_blank"><br>Forgot your password?</a>
+                                    <button class="btn btn-primary btn-block" type="submit" name="resetpass">Reset My Password</button>
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-primary btn-block" type="submit">Log In</button>
+                                    <a class="forgot" href="login.php" ><br>Login to my account</a>
                                 </div>
                             </form>
-                        </div>
-                        <div class="form-links">
-                            <div class="text-gray-dark">Don't have an account yet?</div>
-                            <a class="text-light" href="signup-page.php">Create an Account</a>
                         </div>
                     </div>
                 </div>
@@ -52,3 +63,4 @@
         </div>
     </div>
 </body>
+

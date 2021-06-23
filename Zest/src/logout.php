@@ -2,5 +2,5 @@
 <?php 
 	session_start();
 	session_destroy();
-	header('Location: /CMSC128/src/landing.php');
+	header('Location: /Zest/src/landing.php');
  ?>

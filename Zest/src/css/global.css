@@ -1,19 +1,22 @@
 /* index bg */
 .index-bg {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),
-        url("/cmsc128/resources/bg/home-default.jpg");
+        url("/Zest/resources/bg/home-default.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-.landing-bg,
-.help-bg {
+.landing-bg{
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),
-        url("/cmsc128/resources/bg/default.jpg");
+        url("/Zest/resources/bg/default.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+.help-bg {
+    background-color: rgba(10, 10, 0, 0.2);
 }
 
 .applink {
@@ -26,4 +29,8 @@
 
 .rounded-all-1rem{
     border-radius: 1rem !important;
+}
+
+.carousel-item{
+    max-height: 50%;
 }
