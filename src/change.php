@@ -39,7 +39,7 @@
                             </div>
                             <form method="POST" action="#">
                                 <div class="form-group">
-                                    <input type="password" class="form-control" name="oldPass" placeholder="Enter old password" required=""><br>
+                                    <input type="password" class="form-control" name="oldPass" placeholder="Enter current password" required=""><br>
                                     <input type="password" class="form-control" name="pass" placeholder="Enter new password" required="">
                                     <input type="password" class="form-control form-rounded" name="repass" placeholder="Re-enter new password" required="">
                                 </div>
