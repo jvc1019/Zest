@@ -8,6 +8,9 @@ This will be the repository for Zest - The Productivity App. Files included woul
 -   Meeting ID: 893 4677 4676
 -   Passcode: Cmsc128-3
 
+## Shared Folder for Artifacts
+-   Link: https://drive.google.com/drive/folders/1KXPgIdsNL2uYe_NnURWEC8ZnkyAFmHCM?usp=sharing
+
 ## Sprints
 
 ### 1. First sprint (ended October 22, 2020)

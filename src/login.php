@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control form-rounded" name="password" placeholder="Enter password" required="">
-                                    <a class="forgot" href="help.php?help=forgot" target="_blank"><br>Forgot your password?</a>
+                                    <a class="forgot" href="recover.php" target="_blank"><br>Forgot your password?</a>
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary btn-block" type="submit">Log In</button>
