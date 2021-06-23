@@ -55,9 +55,9 @@ function spawnNotificationBase(status_heading, status, type, delay) {
         var sound;
 
         if (type === "notif") {
-            sound = new Audio("../resources/notification.ogg");
+            sound = new Audio("/resources/notification.ogg");
         } else if (type === "alarm") {
-            sound = new Audio("../resources/alarm.ogg");
+            sound = new Audio("/resources/alarm.ogg");
         }
 
         setTimeout(function () {

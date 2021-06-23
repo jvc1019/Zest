@@ -37,7 +37,7 @@ body{
     display:inline-block;
     width:140px !important;
     height:140px !important;
-    background-image:url("../resources/icons/sad-icon.png");
+    background-image:url("resources/icons/sad-icon.png");
     background-size:cover;
 }
 

@@ -1,7 +1,7 @@
 .title {
     font-family: "Heavitas";
     font-size: 6em;
-    src: local("Heavitas"), url("/cmsc128/resources/fonts/Heavitas.ttf");
+    src: local("Heavitas"), url("/fonts/Heavitas.ttf");
 }
 
 /* login, signup css */
@@ -10,7 +10,7 @@
     align-items: center;
 }
 .login-cover {
-    background-image: url("/Zest/resources/zest-cover.jpg");
+    background-image: url("/resources/zest-cover.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     border-top-left-radius: 1rem !important;
@@ -69,7 +69,7 @@
 .help-banner {
     position: relative;
     text-align: center;
-    background-image: url("/Zest/resources/help/help-banner.jpg");
+    background-image: url("/resources/help/help-banner.jpg");
     background-size: cover;
     height: 20rem;
     border-radius: 1rem !important;

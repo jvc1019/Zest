@@ -1,7 +1,7 @@
 /* index bg */
 .index-bg {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),
-        url("/Zest/resources/bg/home-default.jpg");
+        url("/resources/bg/home-default.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -9,7 +9,7 @@
 
 .landing-bg{
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),
-        url("/Zest/resources/bg/default.jpg");
+        url("/resources/bg/default.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

@@ -1,5 +1,5 @@
 .index-bg, .feature-bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgb(0, 0, 0)), url("/Zest/resources/bg/sashimi.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgb(0, 0, 0)), url("/resources/bg/sashimi.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
