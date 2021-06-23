@@ -1,7 +1,11 @@
+@font-face {
+    font-family: "Heavitas";
+    src: local("Heavitas"), url("/Zest/resources/fonts/Heavitas.ttf");
+}
+
 .title {
     font-family: "Heavitas";
     font-size: 6em;
-    src: local("Heavitas"), url("/Zest/resources/fonts/Heavitas.ttf");
 }
 
 /* login, signup css */
@@ -89,14 +93,15 @@
 }
 
 .scrolling-wrapper-flexbox {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-
-  .card {
-    flex: 0 0 auto;
-  }
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
+
+.card {
+    flex: 0 0 auto;
+}
+
 
 .helpTitle {
     background-color: inherit;
