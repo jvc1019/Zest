@@ -1,14 +1,13 @@
 # ZEST - THE PRODUCTIVITY APP
 
-This will be the repository for Zest - The Productivity App. Files included would be for the prototype system we will create in the scrum process through series of sprints.
+This will be the repository for Zest - The Productivity App. Files included would be for the web application that was created through a series of sprints.
 
-## Zoom Meeting Details:
-
--   Link: https://up-edu.zoom.us/j/89346774676
--   Meeting ID: 893 4677 4676
--   Passcode: Cmsc128-3
+Product Owner: Faeldonea, C. F.
 
 ## Shared Folder for Artifacts
+
+In this link, we include the Product Backlog, as well as the Sprint Timeline, Sprint Backlog and Scrum Board for the current sprint.
+
 -   Link: https://drive.google.com/drive/folders/1KXPgIdsNL2uYe_NnURWEC8ZnkyAFmHCM?usp=sharing
 
 ## Sprints
@@ -49,14 +48,15 @@ This will be the repository for Zest - The Productivity App. Files included woul
 -   Help Page is now fully interactive with pictures and links.
 -   Fixed all bugs and issues.
 
-### 6. Sixth Sprint (ONGOING)
+### 6. Sixth Sprint (ended June 22, 2020)
 
 -   Two (2) New Themes Added
 -   Forgot Password (Security) Implementation
+-   "Delete Account" Feature
 -   Online Database
 -   Remote Installer
 -   Changed code for consistency
--   Improve Overall UI
+-   Improve Overall UI (esp. Profile and HelpDesk)
 -   Fixed bugs and issues
 
 ## Consultations
@@ -70,35 +70,35 @@ This will be the repository for Zest - The Productivity App. Files included woul
 
 ### 1. FRONTEND (User Interface)
 
--   Carpio, Eman (Notebook)
--   Faeldonea, Ken (Home and other Pages)
--   Jinon, Robien (Notebook)
--   Visto, Ronn (Subjects)
--   Castañeda, Jayvee (Profile, Themes)
+-   Carpio, J. (Notebook)
+-   Faeldonea, C. (Home and other Pages)
+-   Jinon, J. (Notebook)
+-   Visto, R. (Subjects)
+-   Castañeda, J. (Profile, Themes)
 
 ### 2. BACKEND (Database)
 
--   Castañeda, Jayvee (Reminders, Profile, Help/Support)
--   Garcia, Mico (Subjects)
--   Jomoc, Gracielou (Notebook)
--   Luciano, Kirl (Notebook)
--   Molina, Janley (Tasks, Reminders, Notebook (text editor))
--   Rabe, Jett Adriel (Subjects)
--   Zamudio, Kent (Login and Registration Pages)
+-   Castañeda, J. (Reminders, Profile, Help/Support)
+-   Garcia, M. (Subjects)
+-   Jomoc, G. (Notebook)
+-   Luciano, K. (Notebook)
+-   Molina, J. (Tasks, Reminders, Notebook (text editor))
+-   Rabe, J. (Subjects)
+-   Zamudio, K. (Login and Registration Pages)
 
 ### 3. Quality Assurance
 
--   Castañeda, Jayvee (UI and UX)
--   Molina, Janley (UI and UX)
--   Rabe, Jett Adriel (Bug Hunter)
--   Faeldonea, Ken (Bug Hunter)
+-   Castañeda, J. (UI and UX)
+-   Faeldonea, C. (Bug Hunter)
+-   Molina, J. (UI and UX)
+-   Rabe, J. (Bug Hunter)
 
 ## Quick Start Guide
 
 ### A. Prerequisites
 
 1. To clone the repository on your machine (on Windows, using WSL)
-    1. Make sure XAMPP is running Apache and MySQL
+    1. Make sure XAMPP is running Apache
     2. Navigate to `xampp\htdocs`
     3. On the navigation bar, type `wsl`
     4. Run the following command:
@@ -247,4 +247,4 @@ spawnNotification();
     4. To commit the changes: `git commit -m message` Note: You can commit even when offline. **Do not commit after every little change.**
     5. Committing your changes only affects your working tree. To push the changes to the remote repository (needs an internet connection): `git push`. But remember to `git pull` or `git fetch` (safer than `git pull`) before `git push` to lessen the chances of "merge conflicts" 🙈. **Must read: [Difference of `git fetch` and `git pull`](https://www.git-tower.com/learn/git/faq/difference-between-git-fetch-git-pull/)**
 
-3.  If you want to report bugs or suggest improvements, you can file an issue here: https://github.com/jvc1019/CMSC128/issues.
+3.  If you want to report bugs or suggest improvements, you can file an issue here: https://github.com/jvc1019/Zest/issues.
