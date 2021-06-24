@@ -28,8 +28,6 @@ if(isset($_POST['resetpass'])){
     } else {
         $changeQuery = "UPDATE `user` SET `user_Password`='".$pass."' WHERE `user_Name`='".$user_Name."' AND `user_Email`='".$user_Email."';";
         if(mysqli_query($conn, $changeQuery)){
-            $deleteQuery = "DELETE FROM `resetkey` WHERE `user_Name`='".$username."' AND `passkey`='".$key."';";
-            mysqli_query($conn, $deleteQuery);   
             ?>                                                     
             <script>                                           
                 window.location.href = "login.php?status_heading=Password Change Successful&status=Stay productive.&type=notif";
