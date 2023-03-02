@@ -12,7 +12,6 @@
 					<div class="row">
 						<div class="col-md-7">
 							<div class="text-center">
-							// This is the profile page
 							<?php echo "<img class='card-img-top img-fluid center' src='../resources/avatars/$user_Avatar.jpg' style='width:250px' alt='Profile Avatar'>" ?>
 							</div><br>
 							<h2 class="text-center"><?php echo $user_Name ?></h2>
