@@ -1,6 +1,7 @@
 <?php include('header.php'); ?>
 <?php include('notification.php'); ?>
 
+// This is the Login Page
 <body>
     <script>
         spawnNotification();
